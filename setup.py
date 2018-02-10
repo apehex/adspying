@@ -28,7 +28,7 @@ test_requirements = [
 
 setup(
     name='wild',
-    version='0.0.0',
+    version='0.0.1',
     description="Collect & evaluate car ads.",
     long_description=readme + '\n\n' + history,
     author="David Mougeolle",
