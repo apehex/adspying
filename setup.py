@@ -27,24 +27,24 @@ test_requirements = [
 ]
 
 setup(
-    name='wild-apehex',
+    name='wild',
     version='0.0.0',
     description="Collect & evaluate car ads.",
     long_description=readme + '\n\n' + history,
     author="apehex",
     author_email='apehex@protonmail.com',
     url='https://github.com/apehex/wild-apehex',
-    packages=find_packages(include=['wild-apehex']),
+    packages=find_packages(include=['wild']),
     entry_points={
         'console_scripts': [
-            'wild-apehex=wild-apehex.cli:main'
+            'wild=wild.cli:main'
         ]
     },
     include_package_data=True,
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,
-    keywords='wild-apehex',
+    keywords='wild',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

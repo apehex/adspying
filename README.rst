@@ -1,20 +1,20 @@
 ============
-wild-apehex
+Wild apehex
 ============
 
 
-.. image:: https://img.shields.io/pypi/v/wild-apehex.svg
-        :target: https://pypi.python.org/pypi/wild-apehex
+.. image:: https://img.shields.io/pypi/v/wild.svg
+        :target: https://pypi.python.org/pypi/wild
 
-.. image:: https://img.shields.io/travis/apehex/wild-apehex.svg
-        :target: https://travis-ci.org/apehex/wild-apehex
+.. image:: https://img.shields.io/travis/apehex/wild.svg
+        :target: https://travis-ci.org/apehex/wild
 
-.. image:: https://readthedocs.org/projects/wild-apehex/badge/?version=latest
-        :target: https://wild-apehex.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/wild/badge/?version=latest
+        :target: https://wild.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/apehex/wild-apehex/shield.svg
-     :target: https://pyup.io/repos/github/apehex/wild-apehex/
+.. image:: https://pyup.io/repos/github/apehex/wild/shield.svg
+     :target: https://pyup.io/repos/github/apehex/wild/
      :alt: Updates
 
 
@@ -22,7 +22,7 @@ Collect & evaluate car ads.
 
 
 * Free software: MIT license
-* Documentation: https://wild-apehex.readthedocs.io.
+* Documentation: https://wild.readthedocs.io.
 
 
 Features

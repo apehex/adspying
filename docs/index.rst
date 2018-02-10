@@ -1,4 +1,4 @@
-Welcome to wild-apehex's documentation!
+Welcome to Wild apehex's documentation!
 ======================================
 
 Contents:

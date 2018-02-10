@@ -1,4 +1,4 @@
-* wild-apehex version:
+* Wild apehex version:
 * Python version:
 * Operating System:
 

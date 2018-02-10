@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use wild-apehex in a project::
+To use Wild apehex in a project::
 
-    import wild-apehex
+    import wild

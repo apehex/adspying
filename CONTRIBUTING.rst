@@ -38,8 +38,8 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-wild-apehex could always use more documentation, whether as part of the
-official wild-apehex docs, in docstrings, or even on the web in blog posts,
+Wild apehex could always use more documentation, whether as part of the
+official Wild apehex docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
@@ -78,7 +78,7 @@ Ready to contribute? Here's how to set up `wild-apehex` for local development.
 
 5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox::
 
-    $ flake8 wild-apehex tests
+    $ flake8 wild tests
     $ python setup.py test or py.test
     $ tox
 
@@ -109,4 +109,4 @@ Tips
 ----
 
 To run a subset of tests::
-    $ py.test tests.test_wild-apehex
+    $ py.test tests.test_wild
