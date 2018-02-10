@@ -4,4 +4,4 @@
 
 __author__ = """apehex"""
 __email__ = 'apehex@protonmail.com'
-__version__ = '0.0.0'
+__version__ = '0.0.1'
