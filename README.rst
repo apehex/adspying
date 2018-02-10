@@ -1,20 +1,20 @@
 ============
-wild-moodule
+Wild Moodule
 ============
 
 
-.. image:: https://img.shields.io/pypi/v/wild-moodule.svg
-        :target: https://pypi.python.org/pypi/wild-moodule
+.. image:: https://img.shields.io/pypi/v/wild.svg
+        :target: https://pypi.python.org/pypi/wild
 
-.. image:: https://img.shields.io/travis/moodule/wild-moodule.svg
-        :target: https://travis-ci.org/moodule/wild-moodule
+.. image:: https://img.shields.io/travis/moodule/wild.svg
+        :target: https://travis-ci.org/moodule/wild
 
-.. image:: https://readthedocs.org/projects/wild-moodule/badge/?version=latest
-        :target: https://wild-moodule.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/wild/badge/?version=latest
+        :target: https://wild.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/moodule/wild-moodule/shield.svg
-     :target: https://pyup.io/repos/github/moodule/wild-moodule/
+.. image:: https://pyup.io/repos/github/moodule/wild/shield.svg
+     :target: https://pyup.io/repos/github/moodule/wild/
      :alt: Updates
 
 
@@ -22,7 +22,7 @@ Collect & evaluate car ads.
 
 
 * Free software: MIT license
-* Documentation: https://wild-moodule.readthedocs.io.
+* Documentation: https://wild.readthedocs.io.
 
 
 Features

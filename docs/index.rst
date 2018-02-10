@@ -1,4 +1,4 @@
-Welcome to wild-moodule's documentation!
+Welcome to Wild Moodule's documentation!
 ======================================
 
 Contents:

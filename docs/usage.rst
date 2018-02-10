@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use wild-moodule in a project::
+To use Wild Moodule in a project::
 
-    import wild-moodule
+    import wild

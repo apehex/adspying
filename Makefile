@@ -31,8 +31,8 @@ clean-pyc:
 	find . -name '*~' -exec rm -f {} +
 
 lint:
-	pipenv run flake8 --output-file=.flake8.txt wild-moodule tests 
-	pipenv run pylint --report=y wild-moodule tests
+	pipenv run flake8 --output-file=.flake8.txt wild tests 
+	pipenv run pylint --report=y wild tests
 
 test:
 	pipenv run py.test --junitxml=report.xml

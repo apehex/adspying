@@ -27,24 +27,24 @@ test_requirements = [
 ]
 
 setup(
-    name='wild-moodule',
+    name='wild',
     version='0.0.0',
     description="Collect & evaluate car ads.",
     long_description=readme + '\n\n' + history,
     author="David Mougeolle",
     author_email='david.mougeolle@moodule.net',
     url='https://github.com/moodule/wild-moodule',
-    packages=find_packages(include=['wild-moodule']),
+    packages=find_packages(include=['wild']),
     entry_points={
         'console_scripts': [
-            'wild-moodule=wild-moodule.cli:main'
+            'wild=wild.cli:main'
         ]
     },
     include_package_data=True,
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,
-    keywords='wild-moodule',
+    keywords='wild',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

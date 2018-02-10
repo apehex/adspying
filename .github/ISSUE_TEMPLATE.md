@@ -1,4 +1,4 @@
-* wild-moodule version:
+* Wild Moodule version:
 * Python version:
 * Operating System:
 

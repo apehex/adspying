@@ -2,6 +2,12 @@
 TODO
 ####
 
+******
+GLOBAL
+******
+
+- replace the '-' in the repo name
+
 *****
 STEPS
 *****
@@ -30,6 +36,8 @@ WRANGLING
 - filter out the cars & trucks : keep only vans
 - merge data & alerts
 - list all vans & utilities
+- remove the samples with 0 / NULL data
+- switch the metric / imperial measures when there's a mistake
 
 *******
 MERGING

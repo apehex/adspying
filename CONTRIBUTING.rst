@@ -38,8 +38,8 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-wild-moodule could always use more documentation, whether as part of the
-official wild-moodule docs, in docstrings, or even on the web in blog posts,
+Wild Moodule could always use more documentation, whether as part of the
+official Wild Moodule docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
@@ -78,7 +78,7 @@ Ready to contribute? Here's how to set up `wild-moodule` for local development.
 
 5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox::
 
-    $ flake8 wild-moodule tests
+    $ flake8 wild tests
     $ python setup.py test or py.test
     $ tox
 
@@ -109,4 +109,4 @@ Tips
 ----
 
 To run a subset of tests::
-    $ py.test tests.test_wild-moodule
+    $ py.test tests.test_wild
