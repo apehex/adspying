@@ -1,0 +1,54 @@
+wild/_conversion.py:1:80: E501 line too long (80 > 79 characters)
+wild/_conversion.py:3:80: E501 line too long (80 > 79 characters)
+wild/_conversion.py:5:21: E261 at least two spaces before inline comment
+wild/_conversion.py:6:21: E261 at least two spaces before inline comment
+wild/_conversion.py:7:16: E261 at least two spaces before inline comment
+wild/_conversion.py:13:1: E302 expected 2 blank lines, found 1
+wild/_conversion.py:16:1: W191 indentation contains tabs
+wild/_conversion.py:17:1: W191 indentation contains tabs
+wild/_conversion.py:19:1: W191 indentation contains tabs
+wild/_conversion.py:20:1: W191 indentation contains tabs
+wild/_conversion.py:21:1: W191 indentation contains tabs
+wild/_conversion.py:22:1: W191 indentation contains tabs
+wild/_conversion.py:23:1: W191 indentation contains tabs
+wild/_conversion.py:24:1: W191 indentation contains tabs
+wild/_conversion.py:25:1: W191 indentation contains tabs
+wild/_conversion.py:26:1: W191 indentation contains tabs
+wild/_conversion.py:27:1: W191 indentation contains tabs
+wild/_conversion.py:29:1: E302 expected 2 blank lines, found 1
+wild/_conversion.py:32:1: W191 indentation contains tabs
+wild/_conversion.py:33:1: W191 indentation contains tabs
+wild/_conversion.py:35:1: W191 indentation contains tabs
+wild/_conversion.py:36:1: W191 indentation contains tabs
+wild/_conversion.py:37:1: W191 indentation contains tabs
+wild/_conversion.py:38:1: W191 indentation contains tabs
+wild/_conversion.py:39:1: W191 indentation contains tabs
+wild/_conversion.py:40:1: W191 indentation contains tabs
+wild/_conversion.py:41:1: W191 indentation contains tabs
+wild/_conversion.py:42:1: W191 indentation contains tabs
+wild/_conversion.py:43:1: W191 indentation contains tabs
+wild/_conversion.py:44:1: W191 indentation contains tabs
+wild/_conversion.py:44:1: W293 blank line contains whitespace
+wild/_conversion.py:49:1: W191 indentation contains tabs
+wild/_conversion.py:50:1: W191 indentation contains tabs
+wild/_conversion.py:52:1: W191 indentation contains tabs
+wild/_conversion.py:53:1: W191 indentation contains tabs
+wild/_conversion.py:54:1: W191 indentation contains tabs
+wild/_conversion.py:55:1: W191 indentation contains tabs
+wild/_conversion.py:57:1: E302 expected 2 blank lines, found 1
+wild/_conversion.py:60:1: W191 indentation contains tabs
+wild/_conversion.py:61:1: W191 indentation contains tabs
+wild/_conversion.py:63:1: W191 indentation contains tabs
+wild/_conversion.py:64:1: W191 indentation contains tabs
+wild/_conversion.py:65:1: W191 indentation contains tabs
+wild/_conversion.py:66:1: W191 indentation contains tabs
+wild/_conversion.py:66:30: W292 no newline at end of file
+wild/_scraping.py:4:80: E501 line too long (89 > 79 characters)
+wild/_scraping.py:7:24: F821 undefined name 'page'
+wild/_wrangling.py:1:1: F401 'numpy as np' imported but unused
+wild/_wrangling.py:10:18: F821 undefined name 'preprocessing'
+wild/_wrangling.py:16:39: W292 no newline at end of file
+tests/test_wild.py:9:1: F401 'wild.wild' imported but unused
+tests/test_wild.py:12:1: E302 expected 2 blank lines, found 1
+tests/test_wild.py:26:1: E302 expected 2 blank lines, found 0
+tests/test_wild.py:35:1: W391 blank line at end of file
