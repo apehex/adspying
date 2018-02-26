@@ -34,7 +34,7 @@ lint:
 	pipenv run flake8 --output-file=.flake8.txt wild tests
 
 test:
-	pipenv run py.test --junitxml=report.xml
+	pipenv run py.test --junitxml=tests_report.xml
 
 test-all:
 	tox

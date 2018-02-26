@@ -49,7 +49,9 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
+tests_report.xml
 *,cover
+.pytest_cache/
 .hypothesis/
 
 # Translations
