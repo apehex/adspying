@@ -10,6 +10,7 @@ GLOBAL
 - [ ] move the wrangling scripts into the data folder
 - [ ] keep only the modules in wild
 - [ ] move relevant sections to README (workflow, overall steps)
+- [ ] put all the initiation steps on a jupyter notebook
 
 *******
 WORFLOW
@@ -67,24 +68,25 @@ COLLECTION
       - [ ] price
       - [ ] mileage
       - [ ] contact
+      - [ ] ad age
+      - [ ] ad update count
 - [ ] fill the gaps by asking the seller
 
 *********
 WRANGLING
 *********
 
-- [ ] filter out the cars & trucks : keep only vans
-- [ ] merge data & alerts
+- [ ] filter out the cars & trucks : keep only vans ?
 - [ ] list all vans & utilities
 - [ ] remove the samples with 0 / NULL data
-- [ ] swap the mpg / lpkm confusion errors
+- [x] swap the mpg / lpkm confusion errors
 - [ ] switch the metric / imperial measures when there's a mistake
 
 *******
 MERGING
 *******
 
-- [ ] define the headers
+- [x] define the headers
 - [ ] common units
 - [ ] merge consumption / size
 - [ ] merge ads with referential (complete the ad infos)
@@ -101,8 +103,10 @@ DATAVIZ
 MINING
 ******
 
-- [ ] plot consumption vs emission (by fuel type)
-- [ ] linear regression mpg vs emission
+- [x] plot consumption vs emission (by fuel type)
+- [x] linear regression :
+  - [x] mpg vs emission vs fuel type
+  - [ ] mpg vs (gross) weight
 - [x] estimation from combustion chemistry
 
 *************
@@ -149,11 +153,18 @@ DASHBOARD
   - [ ] miles / months, year, total
   - [ ] priorities (relative weights) : price, space, (mile)age, 
   - [ ] ranges : consumption (from budget vs miles)
-- [ ] Costs :
-  - [ ] kW/h
+- [ ] Conversion costs :
+  - [ ] materials
+  - [ ] tools
+  - [ ] garage
+- [ ] Living costs :
+  - [ ] electricity : kW/h
   - [ ] diesel
+  - [ ] petrol
   - [ ] lpg
   - [ ] insurance
+  - [ ] parking (% time idle)
+  - [ ] total (over a period / distance)
 - [ ] highlight ads
 
 ************
