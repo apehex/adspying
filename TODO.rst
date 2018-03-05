@@ -8,9 +8,11 @@ GLOBAL
 
 - [x] replace the '-' in the package name
 - [ ] move the wrangling scripts into the data folder
+- [ ] move the scraping scripts into the data folder
 - [ ] keep only the modules in wild
 - [ ] move relevant sections to README (workflow, overall steps)
 - [ ] put all the initiation steps on a jupyter notebook
+- [ ] create a dashboard in dash / bokeh
 
 *******
 WORFLOW
@@ -39,9 +41,9 @@ STEPS TO VANLIFE :)
 - [ ] & finally buying ! and begining a new chapter !..
 - [ ] diy conversion : electricity, internet, solar, water, bedding, furniture, insulation
 
-**********
-COLLECTION
-**********
+***************
+DATA COLLECTION
+***************
 
 - [ ] replace the datasets with a download script, in the repo
 - [ ] car (especially van) size (volume)
@@ -51,25 +53,31 @@ COLLECTION
 - [ ] insurance prices database / scraping
 - [x] van / utility list
 - [ ] repairs costs
-- [ ] scraping leboncoin
-  - [ ] referential :
-    - [ ] regions
-    - [ ] cities
-    - [ ] ad categories
-    - [ ] url formats by categories => parameters dict (cat => param => url parts)
-    - [ ] xpath to data
-  - [ ] configure search : date, max price, min & max years, mileage
-  - [ ] extract informations :
-    - [ ] by fixing filtering input (location, price etc)
-    - [ ] by scraping the html
-      - [ ] manufacturer
-      - [ ] model
-      - [ ] location
-      - [ ] price
-      - [ ] mileage
-      - [ ] contact
-      - [ ] ad age
-      - [ ] ad update count
+- [ ] conversion costs
+- [ ] parking costs
+
+************
+ADS SCRAPING
+************
+
+- [ ] referential :
+  - [ ] regions
+  - [ ] cities
+  - [ ] ad categories
+  - [ ] url formats by categories => parameters dict (cat => param => url parts)
+  - [ ] xpath to data
+- [ ] configure search : date, max price, min & max years, mileage
+- [ ] extract informations :
+  - [ ] by fixing filtering input (location, price etc)
+  - [ ] by scraping the html
+    - [ ] manufacturer
+    - [ ] model
+    - [ ] location
+    - [ ] price
+    - [ ] mileage
+    - [ ] contact
+    - [ ] ad age
+    - [ ] ad update count
 - [ ] fill the gaps by asking the seller
 
 *********
@@ -142,6 +150,8 @@ HONESTY
 *******
 
 - [ ] compare the informations from the seller to the ref
+- [ ] détails et contenu de l'annonce (déjà la taille...)
+- [ ] ratio estimated value / price
 
 *********
 DASHBOARD
@@ -153,8 +163,17 @@ DASHBOARD
   - [ ] miles / months, year, total
   - [ ] priorities (relative weights) : price, space, (mile)age, 
   - [ ] ranges : consumption (from budget vs miles)
+- [ ] Reparation costs :
+  - [ ] MOT
+  - [ ] paint
+  - [ ] tyres
+  - [ ] mech ?
 - [ ] Conversion costs :
   - [ ] materials
+  - [ ] insulation
+  - [ ] water tank
+  - [ ] batteries
+  - [ ] solar panels ?
   - [ ] tools
   - [ ] garage
 - [ ] Living costs :
@@ -165,7 +184,7 @@ DASHBOARD
   - [ ] insurance
   - [ ] parking (% time idle)
   - [ ] total (over a period / distance)
-- [ ] highlight ads
+- [ ] rank & highlight ads
 
 ************
 VERIFICATION
