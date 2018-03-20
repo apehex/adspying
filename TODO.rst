@@ -7,12 +7,14 @@ GLOBAL
 ******
 
 - [x] replace the '-' in the package name
-- [ ] move the wrangling scripts into the data folder
+- [x] move the wrangling scripts into the data folder
 - [ ] move the scraping scripts into the data folder
 - [ ] keep only the modules in wild
 - [ ] move relevant sections to README (workflow, overall steps)
 - [ ] put all the initiation steps on a jupyter notebook
 - [ ] create a dashboard in dash / bokeh
+- [ ] move the referential in the python package
+- [ ] init script / notebook
 
 *******
 WORFLOW
@@ -30,7 +32,6 @@ WORFLOW
 STEPS TO VANLIFE :)
 *******************
 
-- [ ] stacking money
 - [x] data collection
 - [ ] data cleaning & merging
 - [ ] ad scraping & alerts
@@ -40,6 +41,7 @@ STEPS TO VANLIFE :)
 - [ ] contact, verification of ads
 - [ ] & finally buying ! and begining a new chapter !..
 - [ ] diy conversion : electricity, internet, solar, water, bedding, furniture, insulation
+- [ ] stacking money
 
 ***************
 DATA COLLECTION
@@ -201,3 +203,10 @@ DIY CONVERSION
 - [ ] cost of diy materials / tools / etc
 - [ ] planning & tracking of the conversion
 - [ ] satellite dish => internet connection
+
+****
+TEST
+****
+
+- [ ] find model & make
+- [ ] find closest make
