@@ -1,0 +1,16 @@
+bump2version==0.5.11
+coverage==4.5.4
+flake8==3.7.8
+nltk==3.4.5
+numpy==1.17.2
+pip==19.2.3
+pytest==4.6.5
+pytest-runner==5.1
+scrapy==1.7.3
+tox==3.14.0
+twine==1.14.0
+watchdog==0.9.0
+wheel==0.33.6
+Click==7.0
+Sphinx==1.8.5
+-e git+https://github.com/apehex/typical.git@v0.1.1#egg=typical
