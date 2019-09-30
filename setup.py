@@ -12,60 +12,58 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'Click>=6.0',
-    # TODO: put package requirements here
-]
+    'nltk',
+    'numpy',
+    'scrapy',
+    'Click', ]
 
 setup_requirements = [
-    'bumpversion>=0.5.3',
-    'wheel>=0.29.0',
-    'watchdog>=0.8.3',
-    'Sphinx>=1.4.8',
-    # TODO(moodule): put setup requirements (distutils extensions, etc.) here
-]
+    'bump2version',
+    'pytest-runner',
+    'twine',
+    'wheel',
+    'Shpinx', ]
 
 test_requirements = [
-    'pytest>=2.9.2',
-    'pytest-runner>=2.11.1',
-    'flake8>=2.6.0',
-    'tox>=2.3.1',
-    'coverage>=4.1'
-    # TODO: put package test requirements here
-]
+    'coverage',
+    'flake8',
+    'pytest',
+    'tox',
+    'watchdog', ]
 
 setup(
-    name='wild',
-    version='0.0.1',
-    description="Collect & evaluate car ads.",
-    long_description=readme + '\n\n' + history,
     author="David Mougeolle",
-    author_email='david.mougeolle@moodule.net',
-    url='https://github.com/moodule/wild-moodule',
-    packages=find_packages(include=['wild']),
-    entry_points={
-        'console_scripts': [
-            'wild=wild.cli:main'
-        ]
-    },
-    include_package_data=True,
-    install_requires=requirements,
-    license="MIT license",
-    zip_safe=False,
-    keywords='wild',
+    author_email='moodule@protonmail.com',
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
+    description="Find the most relevant ads on the whole web! :dart:",
+    entry_points={
+        'console_scripts': [
+            'wild=wild.cli:main',
+        ],
+    },
+    install_requires=requirements,
+    license="MIT license",
+    long_description=readme + '\n\n' + history,
+    include_package_data=True,
+    keywords='wild',
+    name='wild',
+    packages=find_packages(include=['wild', 'wild.*']),
+    setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    setup_requires=setup_requirements,
+    url='https://github.com/moodule/wild',
+    version='0.1.0',
+    zip_safe=False,
 )

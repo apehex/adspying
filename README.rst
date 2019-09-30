@@ -1,40 +1,67 @@
 ============
 Wild Moodule
 ============
+.. image:: `pypi-shield`_
+        :target: `pypi-target`_
 
+.. image:: `travis-shield`_
+        :target: `travis-target`_
 
-.. image:: https://img.shields.io/pypi/v/wild.svg
-        :target: https://pypi.python.org/pypi/wild
-
-.. image:: https://img.shields.io/travis/moodule/wild.svg
-        :target: https://travis-ci.org/moodule/wild
-
-.. image:: https://readthedocs.org/projects/wild/badge/?version=latest
-        :target: https://wild.readthedocs.io/en/latest/?badge=latest
+.. image:: `readthedocs-shield`_
+        :target: `readthedocs-target`_
         :alt: Documentation Status
-
-.. image:: https://pyup.io/repos/github/moodule/wild/shield.svg
-     :target: https://pyup.io/repos/github/moodule/wild/
+.. image:: `pyup-shield`_
+     :target: `pyup-target`_
      :alt: Updates
 
-
-Collect & evaluate car ads.
-
-
+Find the most relevant ads on the whole web! :dart:
 * Free software: MIT license
-* Documentation: https://wild.readthedocs.io.
+* Documentation: `readthedocs-target`_.
 
+Table of Contents
+-----------------
+
+- `Table of Contents`_
+- `Features`_
+- `Development`_
+- `Credits`_
 
 Features
 --------
 
 * TODO
 
+Development
+-----------
+
+Contributions welcome! Read the `contribution guidelines`_ first.
+
+History
+~~~~~~~
+
+See the `history`_.
+
+Community
+~~~~~~~~~
+
+See the `code of conduct`_.
+
 Credits
----------
+-------
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _`pypi-shield`: https://img.shields.io/pypi/v/wild.svg
+.. _`pypi-target`: https://pypi.python.org/pypi/wild
+.. _`pyup-shield`: https://pyup.io/repos/github/moodule/wild/shield.svg
+.. _`pyup-target`: https://pyup.io/repos/github/moodule/wild/
+.. _`readthedocs-shield`: https://readthedocs.org/projects/wild/badge/?version=latest
+.. _`readthedocs-target`: https://wild.readthedocs.io/en/latest/
+.. _`travis-shield`: https://img.shields.io/travis/moodule/wild.svg
+.. _`travis-target`: https://travis-ci.org/moodule/wild
 
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _`code of conduct`: CODE_OF_CONDUCT.rst
+.. _`contribution guidelines`: CONTRIBUTING.rst
+.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
+.. _`history`: HISTORY.rst
