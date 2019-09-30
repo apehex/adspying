@@ -1,14 +1,29 @@
 # -*- coding: utf-8 -*-
 
-"""Top-level package for Wild Moodule."""
+"""
+========
+Wild Ads
+========
+
+Find the most relevant ads from heterogeneous sources.
+"""
+
+from __future__ import absolute_import, division, print_function
+
+import os
+
+import numpy as np
+import pandas as 
+
+#####################################################################
+# CONTENT
+#####################################################################
 
 __author__ = """David Mougeolle"""
 __email__ = 'david.mougeolle@moodule.net'
-__version__ = '0.0.1'
+__version__ = '0.1.0'
 
-import numpy as np
-import os
-import pandas as pd
+__all__ = []
 
 #####################################################################
 # SCRIPT PATH
