@@ -14,6 +14,7 @@ with open('HISTORY.rst') as history_file:
 requirements = [
     'nltk',
     'numpy',
+    'pandas',
     'scrapy',
     'Click', ]
 
@@ -22,7 +23,7 @@ setup_requirements = [
     'pytest-runner',
     'twine',
     'wheel',
-    'Shpinx', ]
+    'Sphinx', ]
 
 test_requirements = [
     'coverage',

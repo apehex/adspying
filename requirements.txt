@@ -3,6 +3,7 @@ coverage==4.5.4
 flake8==3.7.8
 nltk==3.4.5
 numpy==1.17.2
+pandas==0.25.1
 pip==19.2.3
 pytest==4.6.5
 pytest-runner==5.1
