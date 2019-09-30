@@ -1,7 +1,12 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tools to assess the fuel consumption."""
+"""
+====
+Fuel
+====
+
+Assess the fuel consumption.
+"""
 
 from __future__ import absolute_import, division, print_function
 
@@ -9,13 +14,13 @@ from __future__ import absolute_import, division, print_function
 # CONSTANTS
 #####################################################################
 
-US_GALLON = 3.785412	# l
-IMP_GALLON = 4.54609	# l
-MILE = 1.609344	# km
+US_GALLON = 3.785412 # l
+IMP_GALLON = 4.54609 # l
+MILE = 1.609344 # km
 
-PETROL_COST = 1.56  # €/l
-DIESEL_COST = 1.52  # €/l
-ELECTRICITY_COST = 0.15	# €/kWh
+PETROL_COST = 1.56 # €/l
+DIESEL_COST = 1.52 # €/l
+ELECTRICITY_COST = 0.15 # €/kWh
 
 #####################################################################
 # FUEL EFFICIENCY

@@ -1,12 +1,24 @@
+# -*- coding: utf-8 -*-
+
+"""
+==============
+Data Wrangling
+==============
+
+Make the data exploitable.
+"""
+
 from __future__ import absolute_import, division, print_function
 
-"""Data cleaning tools."""
+from typical import checks
 
 #####################################################################
 # ENCODING & FORMAT
 #####################################################################
 
-def convert_unicode_to_lower_string(unicode_bytes):
+@checks
+def convert_unicode_to_lower_string(
+		unicode_bytes: str) -> str:
     """Convert a unicode byte object to a standard string.
 
     Args:
