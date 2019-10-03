@@ -105,10 +105,19 @@ class LeboncoinSpider(scrapy.Spider):
         __urls = [
             'http://www.leboncoin.fr/recherche/?',
         ]
+        __args = {
+            'category': LEBONCOIN_CATEGORIES[re.sub(
+                '\W+',
+                '',
+                getattr(object=self, name='category', default='real_estate'))],
+            'locations': LEBONCOIN_LOCATIONS[re.sub(
+                '\W+',
+                '',
+                getattr(object=self, name='locations', default='rhone_alpes'))]}
 
         for __url in __urls:
             yield scrapy.Request(
-                url=__url,
+                url=__url + urllib.parse.urlencode(__args),
                 callback=self.parse)
 
     def parse(self, response):
