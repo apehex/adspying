@@ -109,11 +109,11 @@ class LeboncoinSpider(scrapy.Spider):
             'category': LEBONCOIN_CATEGORIES[re.sub(
                 '\W+',
                 '',
-                getattr(object=self, name='category', default='real_estate'))],
+                getattr(self, 'category', 'real_estate'))],
             'locations': LEBONCOIN_LOCATIONS[re.sub(
                 '\W+',
                 '',
-                getattr(object=self, name='locations', default='rhone_alpes'))]}
+                getattr(self, 'locations', 'rhone_alpes'))]}
 
         for __url in __urls:
             yield scrapy.Request(
@@ -123,8 +123,7 @@ class LeboncoinSpider(scrapy.Spider):
     def parse(self, response):
         """
         """
-        page = response.url.split("/")[-2]
-        filename = 'quotes-%s.html' % page
+        filename = 'leboncoin.html'
         with open(filename, 'wb') as f:
             f.write(response.body)
         self.log('Saved file %s' % filename)
