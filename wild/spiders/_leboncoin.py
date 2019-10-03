@@ -10,9 +10,24 @@ Customize the spiders for leboncoin.
 
 from __future__ import division, print_function, absolute_import
 
-import urllib
+import urllib.parse
 
 from typical import checks
+
+#####################################################################
+# REFERENTIALS
+#####################################################################
+
+LEBONCOIN_CATEGORIES = {
+    None: '',
+    'caravaning': '4',
+    'real_estate': '9'
+}
+
+LEBONCOIN_LOCATIONS = {
+    None: '',
+    'rhone_alpes': 'r_22'
+}
 
 #####################################################################
 # URL TEMPLATE
@@ -24,13 +39,13 @@ LEBONCOIN_URL_ARGS = {
     'result_page_number': 'o',
     'min_year': 'rs',
     'max_year': 're',
-    'min_price': 'ps',
+    'min_price': 'price=min-',
     'max_price': 'pe',
     'min_mileage': 'ms',
     'max_mileage': 'me',
     'fuel_type': 'fu'}
 
-LEBONCOIN_PRICE_DICT = {
+LEBONCOIN_PRICE_ARG = {
     0: 0,
     1: 500,
     2: 1000,
@@ -48,7 +63,7 @@ LEBONCOIN_PRICE_DICT = {
     14: 30000,
     15: -1}
 
-LEBONCOIN_FUEL_DICT = {
+LEBONCOIN_FUEL_ARG = {
     'petrol': 1,
     'diesel': 2,
     'lpg': 3,
@@ -62,38 +77,17 @@ LEBONCOIN_FUEL_DICT = {
 #####################################################################
 
 #This will create a list of buyers:
-titles = tree.xpath('//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/h2[@class="item_title"]/text()')
+titles_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/h2[@class="item_title"]/text()'
 #This will create a list of prices
-prices = tree.xpath('//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/h3[@class="item_price"]/@content')
+prices_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/h3[@class="item_price"]/@content'
 #The corresponding locations
-cities = tree.xpath('//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/p[@itemprop="availableAtOrFrom"]/meta[1]/@content')
-areas = tree.xpath('//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/p[@itemprop="availableAtOrFrom"]/meta[2]/@content')
+cities_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/p[@itemprop="availableAtOrFrom"]/meta[1]/@content'
+areas_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/p[@itemprop="availableAtOrFrom"]/meta[2]/@content'
 #The creation dates
-publication_dates = tree.xpath('//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/aside/p[@itemprop="availabilityStarts"]/@content')
+publication_dates_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/aside/p[@itemprop="availabilityStarts"]/@content'
 
 #####################################################################
 # STRIP IRRELEVANT CHARS
 #####################################################################
 
-titles = [t.strip() for t in titles]
-
-#####################################################################
-# TRANSLATE IN REFERENTIAL TERMS
-#####################################################################
-
-#TODO : areas to fr department code
-#TODO : cities to fr postal code
-
-print(titles[2])
-print(prices[2])
-print(cities[2])
-print(areas[2])
-print(publication_dates[2])
-
-# TODO
-# strip spaces, tabs, symbols etc
-# extract
-#   manufacturer (from csv)
-#   model (from csv)
-#   price
-# calculate the age of the ad
+# titles = [t.strip() for t in titles]
