@@ -11,6 +11,9 @@ Customize the spiders for leboncoin.
 from __future__ import division, print_function, absolute_import
 
 import urllib.parse
+import re
+
+import scrapy
 
 from typical import checks
 
@@ -91,3 +94,28 @@ publication_dates_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section
 #####################################################################
 
 # titles = [t.strip() for t in titles]
+
+class LeboncoinSpider(scrapy.Spider):
+    name = 'leboncoin'
+    allowed_domains = ['www.leboncoin.fr/recherche/?']
+
+    def start_requests(self):
+        """
+        """
+        __urls = [
+            'http://www.leboncoin.fr/recherche/?',
+        ]
+
+        for __url in __urls:
+            yield scrapy.Request(
+                url=__url,
+                callback=self.parse)
+
+    def parse(self, response):
+        """
+        """
+        page = response.url.split("/")[-2]
+        filename = 'quotes-%s.html' % page
+        with open(filename, 'wb') as f:
+            f.write(response.body)
+        self.log('Saved file %s' % filename)
