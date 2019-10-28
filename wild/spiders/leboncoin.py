@@ -95,6 +95,25 @@ FUEL_ARG = {
 # DATA PARSING
 #####################################################################
 
+LISTING_ITEM_XPATH = '//section[@id="container"]/main/div/div[contains(@class,"_3iQ0i")]/div[contains(@class,"l17WS")]/div/div[contains(@class,"_2Njaz")]/div[contains(@class,"_358dQ")]/div/div/ul/li'
+LISTING_ITEM_ATTRIBUTE_XPATH = {
+    'image': 'a/div/span[contains(@class, "_a3cT")]/div/img/@src',
+    'title': 'a/@title',
+    'price': 'a/section[contains(@class, "_2EDA9")]/div/div/span/span[contains(@class, "_1NfL7")]/text()',
+    'location': 'a/section[contains(@class, "_2EDA9")]/div/p[contains(@class,"_2qeuk")]/text()',
+    'last_updated': 'a/section[contains(@class, "_2EDA9")]/div/p[contains(@class,"mAnae")]/text()',
+    'url': 'a/@href',
+}
+
+ITEM_AD_XPATH = {
+    'image': '',
+    'title': '',
+    'price': '',
+    'location': '',
+    'last_updated': '',
+    'description': '',
+}
+
 #This will create a list of buyers:
 titles_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/h2[@class="item_title"]/text()'
 #This will create a list of prices
