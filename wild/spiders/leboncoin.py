@@ -18,6 +18,14 @@ import scrapy
 from typical import checks
 
 #####################################################################
+# URL TEMPLATE
+#####################################################################
+
+LEBONCOIN_BASE_URL = 'https://www.leboncoin.fr/recherche/?'
+
+PRICE_VALUE_TEMPLATE = '{min}-{max}'
+
+#####################################################################
 # GENERIC ARGS
 #####################################################################
 
@@ -35,12 +43,6 @@ LEBONCOIN_LOCATIONS = {
     None: '',
     'rhone_alpes': 'r_22'
 }
-
-#####################################################################
-# URL TEMPLATE
-#####################################################################
-
-LEBONCOIN_BASE_URL = 'https://www.leboncoin.fr/recherche/?'
 
 LEBONCOIN_URL_ARGS = {
     'result_page_number': 'o',
@@ -97,17 +99,15 @@ publication_dates_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section
 # STRIP IRRELEVANT CHARS
 #####################################################################
 
-# titles = [t.strip() for t in titles]
-
 class LeboncoinSpider(scrapy.Spider):
     name = 'leboncoin'
-    allowed_domains = ['www.leboncoin.fr/recherche/?']
+    allowed_domains = [LEBONCOIN_BASE_URL]
 
     def start_requests(self):
         """
         """
         __urls = [
-            'http://www.leboncoin.fr/recherche/?',
+            LEBONCOIN_BASE_URL,
         ]
         __args = {
             'category': LEBONCOIN_CATEGORIES[re.sub(
