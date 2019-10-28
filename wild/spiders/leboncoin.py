@@ -29,20 +29,48 @@ PRICE_VALUE_TEMPLATE = '{min}-{max}'
 # GENERIC ARGS
 #####################################################################
 
-CATEGORIES = {
+CATEGORY_VALUES = {
     None: '',
     'appliances': '20',
     'caravaning': '4',
+    'utility': '5', 
     'networking': '17',
     'real_estate': '9',
     'shoes': '53',
     'sports': '29',
 }
 
-LOCATIONS = {
+LOCATION_VALUES = {
     None: '',
     'rhone_alpes': 'r_22'
 }
+
+PRICE_VALUES = {
+    None: [],
+    'appliances': (
+        [0, 5]
+        + list(range(10, 50, 10))
+        + list(range(50, 100, 25))
+        + list(range(100, 550, 100))),
+    'caravaning': (
+        list(range(0, 1000, 250))
+        + list(range(1000, 3000, 500))
+        + list(range(3000, 15000, 1000))
+        + list(range(15000, 30000, 2500))
+        + list(range(30000, 55000, 5000))),
+    'networking': (
+        [0, 5]
+        + list(range(10, 50, 10))
+        + list(range(50, 100, 25))
+        + list(range(100, 550, 100))),
+    'real_estate': [],
+    'shoes': [],
+    'sports': [],
+}
+
+#####################################################################
+# VEHICULE ARGS
+#####################################################################
 
 URL_ARGS = {
     'result_page_number': 'o',
@@ -53,24 +81,6 @@ URL_ARGS = {
     'min_mileage': 'ms',
     'max_mileage': 'me',
     'fuel_type': 'fu'}
-
-PRICE_ARG = {
-    0: 0,
-    1: 500,
-    2: 1000,
-    3: 2000,
-    4: 3000,
-    5: 4000,
-    6: 5000,
-    7: 6000,
-    8: 7000,
-    9: 8000,
-    10: 9000,
-    11: 10000,
-    12: 15000,
-    13: 20000,
-    14: 30000,
-    15: -1}
 
 FUEL_ARG = {
     'petrol': 1,
@@ -110,11 +120,11 @@ class LeboncoinSpider(scrapy.Spider):
             BASE_URL,
         ]
         __args = {
-            'category': CATEGORIES[re.sub(
+            'category': CATEGORY_VALUES[re.sub(
                 '\W+',
                 '',
                 getattr(self, 'category', 'real_estate'))],
-            'locations': LOCATIONS[re.sub(
+            'locations': LOCATION_VALUES[re.sub(
                 '\W+',
                 '',
                 getattr(self, 'locations', 'rhone_alpes'))]}
