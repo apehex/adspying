@@ -21,7 +21,7 @@ from typical import checks
 # URL TEMPLATE
 #####################################################################
 
-LEBONCOIN_BASE_URL = 'https://www.leboncoin.fr/recherche/?'
+BASE_URL = 'https://www.leboncoin.fr/recherche/?'
 
 PRICE_VALUE_TEMPLATE = '{min}-{max}'
 
@@ -29,7 +29,7 @@ PRICE_VALUE_TEMPLATE = '{min}-{max}'
 # GENERIC ARGS
 #####################################################################
 
-LEBONCOIN_CATEGORIES = {
+CATEGORIES = {
     None: '',
     'appliances': '20',
     'caravaning': '4',
@@ -39,12 +39,12 @@ LEBONCOIN_CATEGORIES = {
     'sports': '29',
 }
 
-LEBONCOIN_LOCATIONS = {
+LOCATIONS = {
     None: '',
     'rhone_alpes': 'r_22'
 }
 
-LEBONCOIN_URL_ARGS = {
+URL_ARGS = {
     'result_page_number': 'o',
     'min_year': 'rs',
     'max_year': 're',
@@ -54,7 +54,7 @@ LEBONCOIN_URL_ARGS = {
     'max_mileage': 'me',
     'fuel_type': 'fu'}
 
-LEBONCOIN_PRICE_ARG = {
+PRICE_ARG = {
     0: 0,
     1: 500,
     2: 1000,
@@ -72,7 +72,7 @@ LEBONCOIN_PRICE_ARG = {
     14: 30000,
     15: -1}
 
-LEBONCOIN_FUEL_ARG = {
+FUEL_ARG = {
     'petrol': 1,
     'diesel': 2,
     'lpg': 3,
@@ -101,20 +101,20 @@ publication_dates_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section
 
 class LeboncoinSpider(scrapy.Spider):
     name = 'leboncoin'
-    allowed_domains = [LEBONCOIN_BASE_URL]
+    allowed_domains = [BASE_URL]
 
     def start_requests(self):
         """
         """
         __urls = [
-            LEBONCOIN_BASE_URL,
+            BASE_URL,
         ]
         __args = {
-            'category': LEBONCOIN_CATEGORIES[re.sub(
+            'category': CATEGORIES[re.sub(
                 '\W+',
                 '',
                 getattr(self, 'category', 'real_estate'))],
-            'locations': LEBONCOIN_LOCATIONS[re.sub(
+            'locations': LOCATIONS[re.sub(
                 '\W+',
                 '',
                 getattr(self, 'locations', 'rhone_alpes'))]}
