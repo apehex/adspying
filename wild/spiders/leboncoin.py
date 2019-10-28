@@ -18,13 +18,17 @@ import scrapy
 from typical import checks
 
 #####################################################################
-# REFERENTIALS
+# GENERIC ARGS
 #####################################################################
 
 LEBONCOIN_CATEGORIES = {
     None: '',
+    'appliances': '20',
     'caravaning': '4',
-    'real_estate': '9'
+    'networking': '17',
+    'real_estate': '9',
+    'shoes': '53',
+    'sports': '29',
 }
 
 LEBONCOIN_LOCATIONS = {
