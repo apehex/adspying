@@ -268,3 +268,33 @@ class SmartphoneAd(scrapy.Item):
 
     # Additional
     user_rating = scrapy.Field()
+
+#####################################################################
+# UTILITY VEHICULES
+#####################################################################
+
+class VanAd(scrapy.Item):
+    """
+    """
+    # Ad
+    title = scrapy.Field()
+    price = scrapy.Field()
+    first_post = scrapy.Field()
+    last_update = scrapy.Field()
+    description = scrapy.Field()
+
+    # Generic
+    vendor = scrapy.Field()
+    model = scrapy.Field()
+    make = scrapy.Field()
+    price_new = scrapy.Field()
+
+    # Specifications
+    fuel = scrapy.Field()
+    mileage = scrapy.Field()
+    consumption = scrapy.Field()
+    size_inside = scrapy.Field()
+    size_outside = scrapy.Field()
+
+    # Additional
+    user_rating = scrapy.Field()
