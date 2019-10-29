@@ -236,3 +236,35 @@ class CasingAd(scrapy.Item):
 
     # Additional
     user_rating = scrapy.Field()
+
+#####################################################################
+# SMARTPHONES
+#####################################################################
+
+class SmartphoneAd(scrapy.Item):
+    """
+    """
+    # Ad
+    title = scrapy.Field()
+    price = scrapy.Field()
+    first_post = scrapy.Field()
+    last_updated = scrapy.Field()
+    description = scrapy.Field()
+
+    # Generic
+    vendor = scrapy.Field()
+    model = scrapy.Field()
+    make = scrapy.Field()
+    price_new = scrapy.Field()
+
+    # Specifications
+    os = scrapy.Field()
+    ram = scrapy.Field()
+    ssd = scrapy.Field()
+    battery = scrapy.Field()
+    camera = scrapy.Field()
+    size = scrapy.Field()
+    weight = scrapy.Field()
+
+    # Additional
+    user_rating = scrapy.Field()
