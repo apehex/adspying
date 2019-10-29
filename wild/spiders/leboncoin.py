@@ -92,10 +92,16 @@ FUEL_ARG = {
 # urllib.urlencode(url_args)
 
 #####################################################################
-# DATA PARSING
+# DATA SELECTION
 #####################################################################
 
-LISTING_ITEM_XPATH = '//section[@id="container"]/main/div/div[contains(@class,"_3iQ0i")]/div[contains(@class,"l17WS")]/div/div[contains(@class,"_2Njaz")]/div[contains(@class,"_358dQ")]/div/div/ul/li'
+LISTING_ITEM_XPATH = (
+    '//section[@id="container"]/main/div'
+    + '/div[contains(@class,"_3iQ0i")]'
+    + '/div[contains(@class,"l17WS")]/div'
+    + '/div[contains(@class,"_2Njaz")]'
+    + '/div[contains(@class,"_358dQ")]'
+    + '/div/div/ul/li')
 LISTING_ITEM_ATTRIBUTE_XPATH = {
     'image': 'a/div/span[contains(@class, "_a3cT")]/div/img/@src',
     'title': 'a/@title',
@@ -113,16 +119,6 @@ ITEM_AD_XPATH = {
     'last_updated': '',
     'description': '',
 }
-
-#This will create a list of buyers:
-titles_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/h2[@class="item_title"]/text()'
-#This will create a list of prices
-prices_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/h3[@class="item_price"]/@content'
-#The corresponding locations
-cities_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/p[@itemprop="availableAtOrFrom"]/meta[1]/@content'
-areas_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/p[@itemprop="availableAtOrFrom"]/meta[2]/@content'
-#The creation dates
-publication_dates_xpath = '//*[@id="listingAds"]/section/section/ul/li/a/section[@class="item_infos"]/aside/p[@itemprop="availabilityStarts"]/@content'
 
 #####################################################################
 # STRIP IRRELEVANT CHARS
