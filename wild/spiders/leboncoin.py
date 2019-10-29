@@ -164,7 +164,9 @@ class LeboncoinSpider(scrapy.Spider):
             'locations': LOCATION_VALUES[re.sub(
                 '\W+',
                 '',
-                getattr(self, 'locations', 'rhone_alpes'))]}
+                getattr(self, 'locations', 'rhone_alpes'))],
+            'text': trim(
+                getattr(self, 'query', ''))}
 
         for __url in __urls:
             yield scrapy.Request(
