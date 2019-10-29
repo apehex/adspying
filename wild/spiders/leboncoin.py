@@ -131,7 +131,9 @@ ITEM_AD_ATTRIBUTE_XPATH = {
         + '/div[contains(@class, "_3aOPO")]'
         + '/div[contains(@class, "_14taM")]'
         + '/div[contains(@class, "eVLNz")]/div/span/text()'),
-    'location': '',
+    'location': (
+        'div[5]/div[2]/div/div/div[2]'
+        + '/span/text()'),
     'last_updated': (
         'div[contains(@class, "_2NKYa")]'
         + '/div[contains(@class, "_3aOPO")]'
