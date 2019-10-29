@@ -13,71 +13,49 @@ from __future__ import division, print_function, absolute_import
 import scrapy
 
 #####################################################################
+# GENERIC AD
+#####################################################################
+
+class SecondHandAd(scrapy.Item):
+    """
+    """
+    # Ad
+    title = scrapy.Field()
+    price = scrapy.Field()
+    first_posted = scrapy.Field()
+    last_updated = scrapy.Field()
+    description = scrapy.Field()
+
+    # Generic
+    vendor = scrapy.Field()
+    model = scrapy.Field()
+    make = scrapy.Field()
+    price_new = scrapy.Field()
+
+    # Additional
+    user_rating = scrapy.Field()
+
+#####################################################################
 # COMPUTER
 #####################################################################
 
-class ComputerAd(scrapy.Item):
+class ComputerAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_updated = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     ram_model = scrapy.Field()
     ram_size = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
-class LaptopAd(scrapy.Item):
+class LaptopAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_updated = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     ram_model = scrapy.Field()
     ram_size = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
-class MotherBoardAd(scrapy.Item):
+class MotherBoardAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_updated = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     chipset = scrapy.Field()
     bus = scrapy.Field()
@@ -87,25 +65,9 @@ class MotherBoardAd(scrapy.Item):
     graphics = scrapy.Field()
     connections = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
-class GraphicsCardAd(scrapy.Item):
+class GraphicsCardAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_update = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     gpu_frequency = scrapy.Field()
     gpu_cores = scrapy.Field()
@@ -114,149 +76,53 @@ class GraphicsCardAd(scrapy.Item):
     port = scrapy.Field()
     connections = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
-class HardDriveAd(scrapy.Item):
+class HardDriveAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_update = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     speed = scrapy.Field()
     size = scrapy.Field()
     technology = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
-class SolidStateDriveAd(scrapy.Item):
+class SolidStateDriveAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_update = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     speed = scrapy.Field()
     size = scrapy.Field()
     technology = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
-class RamAd(scrapy.Item):
+class RamAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_update = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     speed = scrapy.Field()
     size = scrapy.Field()
     technology = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
-class PowerSupplyAd(scrapy.Item):
+class PowerSupplyAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_update = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     power = scrapy.Field()
     noise = scrapy.Field()
     size = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
-class CasingAd(scrapy.Item):
+class CasingAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_update = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     outside_size = scrapy.Field()
     motherboard_size = scrapy.Field()
     connections = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
 #####################################################################
 # SMARTPHONES
 #####################################################################
 
-class SmartphoneAd(scrapy.Item):
+class SmartphoneAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_updated = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     os = scrapy.Field()
     ram = scrapy.Field()
@@ -266,29 +132,13 @@ class SmartphoneAd(scrapy.Item):
     size = scrapy.Field()
     weight = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
 #####################################################################
 # UTILITY VEHICULES
 #####################################################################
 
-class VanAd(scrapy.Item):
+class VanAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_update = scrapy.Field()
-    description = scrapy.Field()
-
-    # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
-
     # Specifications
     fuel = scrapy.Field()
     mileage = scrapy.Field()
@@ -296,23 +146,13 @@ class VanAd(scrapy.Item):
     size_inside = scrapy.Field()
     size_outside = scrapy.Field()
 
-    # Additional
-    user_rating = scrapy.Field()
-
 #####################################################################
 # REAL ESTATE
 #####################################################################
 
-class HomeAd(scrapy.Item):
+class HomeAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_update = scrapy.Field()
-    description = scrapy.Field()
-
     # Generic
     location = scrapy.Field()
 
@@ -325,18 +165,11 @@ class HomeAd(scrapy.Item):
 
     # Computed
     age = scrapy.Field()
-    distance_to_work = scrapy.Field()
+    time_to_work = scrapy.Field()
 
-class LandAd(scrapy.Item):
+class LandAd(SecondHandAd):
     """
     """
-    # Ad
-    title = scrapy.Field()
-    price = scrapy.Field()
-    first_post = scrapy.Field()
-    last_update = scrapy.Field()
-    description = scrapy.Field()
-
     # Generic
     location = scrapy.Field()
 
@@ -346,4 +179,4 @@ class LandAd(scrapy.Item):
 
     # Computed
     age = scrapy.Field()
-    distance_to_work = scrapy.Field()
+    time_to_work = scrapy.Field()
