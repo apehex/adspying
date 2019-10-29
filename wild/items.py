@@ -11,6 +11,7 @@ Items scraped from second hand ads.
 from __future__ import division, print_function, absolute_import
 
 import scrapy
+from scrapy.loader.processors import TakeFirst
 
 #####################################################################
 # GENERIC AD
@@ -20,6 +21,7 @@ class SecondHandAd(scrapy.Item):
     """
     """
     # Ad
+    url = scrapy.Field()
     title = scrapy.Field()
     price = scrapy.Field()
     first_posted = scrapy.Field()
