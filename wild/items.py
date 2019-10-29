@@ -298,3 +298,52 @@ class VanAd(scrapy.Item):
 
     # Additional
     user_rating = scrapy.Field()
+
+#####################################################################
+# REAL ESTATE
+#####################################################################
+
+class HomeAd(scrapy.Item):
+    """
+    """
+    # Ad
+    title = scrapy.Field()
+    price = scrapy.Field()
+    first_post = scrapy.Field()
+    last_update = scrapy.Field()
+    description = scrapy.Field()
+
+    # Generic
+    location = scrapy.Field()
+
+    # Specifications
+    rooms = scrapy.Field()
+    floors = scrapy.Field()
+    indoor_area = scrapy.Field()
+    outdoor_area = scrapy.Field()
+    energy_grade = scrapy.Field()
+
+    # Computed
+    age = scrapy.Field()
+    distance_to_work = scrapy.Field()
+
+class LandAd(scrapy.Item):
+    """
+    """
+    # Ad
+    title = scrapy.Field()
+    price = scrapy.Field()
+    first_post = scrapy.Field()
+    last_update = scrapy.Field()
+    description = scrapy.Field()
+
+    # Generic
+    location = scrapy.Field()
+
+    # Specifications
+    area = scrapy.Field()
+    buildable = scrapy.Field()
+
+    # Computed
+    age = scrapy.Field()
+    distance_to_work = scrapy.Field()
