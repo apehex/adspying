@@ -24,6 +24,7 @@ class SecondHandAd(scrapy.Item):
     url = scrapy.Field()
     title = scrapy.Field()
     price = scrapy.Field()
+    location = scrapy.Field()
     first_posted = scrapy.Field()
     last_updated = scrapy.Field()
     description = scrapy.Field()
