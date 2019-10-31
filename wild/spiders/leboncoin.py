@@ -10,8 +10,8 @@ Customize the spiders for leboncoin.
 
 from __future__ import division, print_function, absolute_import
 
-import urllib.parse
 import re
+from urllib.parse import urlencode, urljoin
 
 import scrapy
 
@@ -89,8 +89,6 @@ FUEL_ARG = {
     'electric': 4,
     'hybrid': 5}
 
-# urllib.urlencode(url_args)
-
 #####################################################################
 # DATA SELECTION
 #####################################################################
@@ -108,8 +106,7 @@ LISTING_ITEM_ATTRIBUTE_XPATH = {
     'price': 'a/section[contains(@class, "_2EDA9")]/div/div/span/span[contains(@class, "_1NfL7")]/text()',
     'location': 'a/section[contains(@class, "_2EDA9")]/div/p[contains(@class,"_2qeuk")]/text()',
     'last_updated': 'a/section[contains(@class, "_2EDA9")]/div/p[contains(@class,"mAnae")]/text()',
-    'url': 'a/@href',
-}
+    'url': 'a/@href',}
 
 ITEM_AD_XPATH = (
     '//section[@id="container"]/main/div/div[2]/div'
@@ -169,6 +166,9 @@ class LeboncoinSpider(scrapy.Spider):
             'rhone_alpes')
 
         __urls = [
+            BASE_URL, # repeat for each target page
+            BASE_URL, # search page 2
+            BASE_URL, # etc
             BASE_URL,
         ]
         __args = {
@@ -178,10 +178,26 @@ class LeboncoinSpider(scrapy.Spider):
             'locations': __location,
             'text': getattr(self, 'query', '')}
 
-        for __url in __urls:
+        for i, __url in enumerate(__urls):
+            __args['page'] = str(i + 1)
             yield scrapy.Request(
-                url=__url + urllib.parse.urlencode(__args),
-                callback=self.parse)
+                url=__url + urlencode(__args),
+                callback=self.parse_listing)
+
+    def parse_listing(self, response):
+        """
+        """
+        __page = re.match(r'.*page=(\d{1,2}).*', response.url).group(1)
+        __item_links = response.xpath(LISTING_ITEM_XPATH).xpath(LISTING_ITEM_ATTRIBUTE_XPATH['url']).getall()
+
+        for __link in __item_links:
+            yield scrapy.Request(
+                url=urljoin('https://www.leboncoin.fr/', __link),
+                callback=self.parse_item)
+
+        self.log('[Page {page}] {count} ads queued...'.format(
+            page = __page,
+            count = len(__item_links)))
 
     def parse(self, response):
         """
