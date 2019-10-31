@@ -14,8 +14,11 @@ import re
 from urllib.parse import urlencode, urljoin
 
 import scrapy
+from scrapy.loader import ItemLoader
 
 from typical import checks
+
+from wild.items import SecondHandAd
 
 #####################################################################
 # URL TEMPLATE
@@ -199,10 +202,18 @@ class LeboncoinSpider(scrapy.Spider):
             page = __page,
             count = len(__item_links)))
 
-    def parse(self, response):
+    def parse_item(self, response):
         """
         """
-        filename = 'leboncoin.html'
-        with open(filename, 'wb') as f:
-            f.write(response.body)
-        self.log('Saved file %s' % filename)
+        __loader = ItemLoader(
+            item=SecondHandAd(),
+            selector=response.xpath(ITEM_AD_XPATH))
+
+        __loader.add_value('url', response.url)
+        __loader.add_xpath('title', ITEM_AD_ATTRIBUTE_XPATH['title'])
+        __loader.add_xpath('price', ITEM_AD_ATTRIBUTE_XPATH['price'])
+        __loader.add_xpath('location', ITEM_AD_ATTRIBUTE_XPATH['location'])
+        __loader.add_xpath('last_updated', ITEM_AD_ATTRIBUTE_XPATH['last_updated'])
+        __loader.add_xpath('description', ITEM_AD_ATTRIBUTE_XPATH['description'])
+
+        return __loader.load_item()
