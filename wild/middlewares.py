@@ -81,12 +81,12 @@ class RandomUserAgentMiddleware(object):
 
         def __process(request):
             if isinstance(request, Request) and __user_agent:
-                __r = deepcopy(request)
+                __r = request.copy()
                 __r.headers.setdefault('User-Agent', __user_agent)
-                spider.logger.debug(
-                    u'User-Agent: {} {}'.format(
-                        __r.headers.get('User-Agent'),
-                        __r))
+                # spider.logger.debug(
+                #     u'User-Agent: {} {}'.format(
+                #         __r.headers.get('User-Agent'),
+                #         __r))
                 return __r
             else:
                 return request
