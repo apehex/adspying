@@ -18,7 +18,7 @@ from scrapy.loader import ItemLoader
 
 from typical import checks
 
-from wild.items import SecondHandAd
+from wild.items import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
 # URL TEMPLATE
@@ -160,19 +160,19 @@ class LeboncoinSpider(scrapy.Spider):
                 '\W+',
                 '_',
                 getattr(self, 'category', 'real_estate')),
-            'real_estate')
+            '9')
         __location = LOCATION_VALUES.get(
             re.sub(
                 '\W+',
                 '_',
                 getattr(self, 'locations', 'rhone_alpes')),
-            'rhone_alpes')
+            'r_22')
 
         __urls = [
             BASE_URL, # repeat for each target page
-            BASE_URL, # search page 2
-            BASE_URL, # etc
-            BASE_URL,
+            # BASE_URL, # search page 2
+            # BASE_URL, # etc
+            # BASE_URL,
         ]
         __args = {
             'page': '1',
@@ -205,7 +205,7 @@ class LeboncoinSpider(scrapy.Spider):
     def parse_item(self, response):
         """
         """
-        __loader = ItemLoader(
+        __loader = SecondHandAdLoader(
             item=SecondHandAd(),
             selector=response.xpath(ITEM_AD_XPATH))
 

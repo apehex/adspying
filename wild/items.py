@@ -10,33 +10,74 @@ Items scraped from second hand ads.
 
 from __future__ import division, print_function, absolute_import
 
-import scrapy
-from scrapy.loader.processors import TakeFirst
+from scrapy import Field, Item
+from scrapy.loader import ItemLoader
+from scrapy.loader.processors import Identity, Join, TakeFirst
 
 #####################################################################
 # GENERIC AD
 #####################################################################
 
-class SecondHandAd(scrapy.Item):
+class SecondHandAd(Item):
     """
     """
     # Ad
-    url = scrapy.Field()
-    title = scrapy.Field()
-    price = scrapy.Field()
-    location = scrapy.Field()
-    first_posted = scrapy.Field()
-    last_updated = scrapy.Field()
-    description = scrapy.Field()
+    url = Field()
+    title = Field()
+    price = Field()
+    location = Field()
+    first_posted = Field()
+    last_updated = Field()
+    description = Field()
 
     # Generic
-    vendor = scrapy.Field()
-    model = scrapy.Field()
-    make = scrapy.Field()
-    price_new = scrapy.Field()
+    vendor = Field()
+    model = Field()
+    make = Field()
+    price_new = Field()
 
     # Additional
-    user_rating = scrapy.Field()
+    user_rating = Field()
+
+class SecondHandAdLoader(ItemLoader):
+
+    default_output_processor = TakeFirst()
+
+    url_in = TakeFirst()
+    url_out = Identity()
+
+    title_in = Join()
+    title_out = Identity()
+
+    price_in = TakeFirst()
+    price_out = Identity()
+
+    location_in = Join()
+    location_out = Identity()
+
+    first_posted_in = Identity()
+    first_posted_out = Identity()
+
+    last_updated_in = Join()
+    last_updated_out = Identity()
+
+    description_in = Join()
+    description_out = Identity()
+
+    vendor_in = Identity()
+    vendor_out = Identity()
+
+    model_in = Identity()
+    model_out = Identity()
+
+    make_in = Identity()
+    make_out = Identity()
+
+    price_new_in = Identity()
+    price_new_out = Identity()
+
+    user_rating_in = Identity()
+    user_rating_out = Identity()
 
 #####################################################################
 # COMPUTER
@@ -46,78 +87,78 @@ class ComputerAd(SecondHandAd):
     """
     """
     # Specifications
-    ram_model = scrapy.Field()
-    ram_size = scrapy.Field()
+    ram_model = Field()
+    ram_size = Field()
 
 class LaptopAd(SecondHandAd):
     """
     """
     # Specifications
-    ram_model = scrapy.Field()
-    ram_size = scrapy.Field()
+    ram_model = Field()
+    ram_size = Field()
 
 class MotherBoardAd(SecondHandAd):
     """
     """
     # Specifications
-    chipset = scrapy.Field()
-    bus = scrapy.Field()
-    size = scrapy.Field()
-    ethernet = scrapy.Field()
-    wifi = scrapy.Field()
-    graphics = scrapy.Field()
-    connections = scrapy.Field()
+    chipset = Field()
+    bus = Field()
+    size = Field()
+    ethernet = Field()
+    wifi = Field()
+    graphics = Field()
+    connections = Field()
 
 class GraphicsCardAd(SecondHandAd):
     """
     """
     # Specifications
-    gpu_frequency = scrapy.Field()
-    gpu_cores = scrapy.Field()
-    ram_frequency = scrapy.Field()
-    ram_size = scrapy.Field()
-    port = scrapy.Field()
-    connections = scrapy.Field()
+    gpu_frequency = Field()
+    gpu_cores = Field()
+    ram_frequency = Field()
+    ram_size = Field()
+    port = Field()
+    connections = Field()
 
 class HardDriveAd(SecondHandAd):
     """
     """
     # Specifications
-    speed = scrapy.Field()
-    size = scrapy.Field()
-    technology = scrapy.Field()
+    speed = Field()
+    size = Field()
+    technology = Field()
 
 class SolidStateDriveAd(SecondHandAd):
     """
     """
     # Specifications
-    speed = scrapy.Field()
-    size = scrapy.Field()
-    technology = scrapy.Field()
+    speed = Field()
+    size = Field()
+    technology = Field()
 
 class RamAd(SecondHandAd):
     """
     """
     # Specifications
-    speed = scrapy.Field()
-    size = scrapy.Field()
-    technology = scrapy.Field()
+    speed = Field()
+    size = Field()
+    technology = Field()
 
 class PowerSupplyAd(SecondHandAd):
     """
     """
     # Specifications
-    power = scrapy.Field()
-    noise = scrapy.Field()
-    size = scrapy.Field()
+    power = Field()
+    noise = Field()
+    size = Field()
 
 class CasingAd(SecondHandAd):
     """
     """
     # Specifications
-    outside_size = scrapy.Field()
-    motherboard_size = scrapy.Field()
-    connections = scrapy.Field()
+    outside_size = Field()
+    motherboard_size = Field()
+    connections = Field()
 
 #####################################################################
 # SMARTPHONES
@@ -127,13 +168,13 @@ class SmartphoneAd(SecondHandAd):
     """
     """
     # Specifications
-    os = scrapy.Field()
-    ram = scrapy.Field()
-    ssd = scrapy.Field()
-    battery = scrapy.Field()
-    camera = scrapy.Field()
-    size = scrapy.Field()
-    weight = scrapy.Field()
+    os = Field()
+    ram = Field()
+    ssd = Field()
+    battery = Field()
+    camera = Field()
+    size = Field()
+    weight = Field()
 
 #####################################################################
 # UTILITY VEHICULES
@@ -143,11 +184,11 @@ class VanAd(SecondHandAd):
     """
     """
     # Specifications
-    fuel = scrapy.Field()
-    mileage = scrapy.Field()
-    consumption = scrapy.Field()
-    size_inside = scrapy.Field()
-    size_outside = scrapy.Field()
+    fuel = Field()
+    mileage = Field()
+    consumption = Field()
+    size_inside = Field()
+    size_outside = Field()
 
 #####################################################################
 # REAL ESTATE
@@ -157,29 +198,29 @@ class HomeAd(SecondHandAd):
     """
     """
     # Generic
-    location = scrapy.Field()
+    location = Field()
 
     # Specifications
-    rooms = scrapy.Field()
-    floors = scrapy.Field()
-    indoor_area = scrapy.Field()
-    outdoor_area = scrapy.Field()
-    energy_grade = scrapy.Field()
+    rooms = Field()
+    floors = Field()
+    indoor_area = Field()
+    outdoor_area = Field()
+    energy_grade = Field()
 
     # Computed
-    age = scrapy.Field()
-    time_to_work = scrapy.Field()
+    age = Field()
+    time_to_work = Field()
 
 class LandAd(SecondHandAd):
     """
     """
     # Generic
-    location = scrapy.Field()
+    location = Field()
 
     # Specifications
-    area = scrapy.Field()
-    buildable = scrapy.Field()
+    area = Field()
+    buildable = Field()
 
     # Computed
-    age = scrapy.Field()
-    time_to_work = scrapy.Field()
+    age = Field()
+    time_to_work = Field()
