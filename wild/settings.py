@@ -80,9 +80,10 @@ DEPTH_PRIORITY = 1
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'wild.pipelines.WildPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'wild.pipelines.SecondHandAdPipeline': 300,
+}
+EXPORT_FOLDER_PATH = './data/'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
