@@ -150,25 +150,33 @@ ITEM_AD_ATTRIBUTE_XPATH = {
 
 class LeboncoinSpider(scrapy.Spider):
     name = 'leboncoin'
-    allowed_domains = [BASE_URL]
+    allowed_domains = ['www.leboncoin.fr']
 
     def start_requests(self):
         """
         """
+        __category = CATEGORY_VALUES.get(
+            re.sub(
+                '\W+',
+                '_',
+                getattr(self, 'category', 'real_estate')),
+            'real_estate')
+        __location = LOCATION_VALUES.get(
+            re.sub(
+                '\W+',
+                '_',
+                getattr(self, 'locations', 'rhone_alpes')),
+            'rhone_alpes')
+
         __urls = [
             BASE_URL,
         ]
         __args = {
-            'category': CATEGORY_VALUES[re.sub(
-                '\W+',
-                '',
-                getattr(self, 'category', 'real_estate'))],
-            'locations': LOCATION_VALUES[re.sub(
-                '\W+',
-                '',
-                getattr(self, 'locations', 'rhone_alpes'))],
-            'text': trim(
-                getattr(self, 'query', ''))}
+            'page': '1',
+            'shippable': '1',
+            'category': __category,
+            'locations': __location,
+            'text': getattr(self, 'query', '')}
 
         for __url in __urls:
             yield scrapy.Request(
