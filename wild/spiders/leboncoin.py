@@ -36,7 +36,7 @@ CATEGORY_VALUES = {
     None: '',
     'appliances': '20',
     'caravaning': '4',
-    'utility': '5', 
+    'utility': '5', # utility vehicules
     'networking': '17',
     'real_estate': '9',
     'shoes': '53',
@@ -112,14 +112,15 @@ LISTING_ITEM_ATTRIBUTE_XPATH = {
     'url': 'a/@href',}
 
 ITEM_AD_XPATH = (
-    '//section[@id="container"]/main/div/div[2]/div'
+    '//section[@id="container"]/main/div/div/div'
     + '/section/section[contains(@class, "_35sFG")]'
     + '/section[contains(@class, "OjX8R")]')
 ITEM_AD_ATTRIBUTE_XPATH = {
     'image': (
-        'div[contains(@class, "_2NKYa")]/div[1]/div'
+        'div[contains(@class, "_2NKYa")]'
+        + '/div[contains(@data-qa-id, "adview_gallery_container")]/div'
         + '/div[contains(@class, "GwNx3")]/div'
-        + '/div[contains(@class, "_3bgJP")]/div/div[1]/div'
+        + '/div[contains(@class, "_3bgJP")]/div/div/div'
         + '/div[contains(@class, "_2x8BQ")]/img/@src'),
     'title': (
         'div[contains(@class, "_2NKYa")]'
@@ -131,18 +132,17 @@ ITEM_AD_ATTRIBUTE_XPATH = {
         + '/div[contains(@class, "_3aOPO")]'
         + '/div[contains(@class, "_14taM")]'
         + '/div[contains(@class, "eVLNz")]/div/span/text()'),
-    'location': (
-        'div[5]/div[2]/div/div/div[2]'
-        + '/span/text()'),
     'last_updated': (
         'div[contains(@class, "_2NKYa")]'
         + '/div[contains(@class, "_3aOPO")]'
         + '/div[contains(@class, "_14taM")]'
-        + '/div[3]/text()'),
+        + '/div[contains(@data-qa-id, "adview_date")]/text()'),
+    'location': (
+        'div/div/div/div/div[contains(@class, "_1aCZv")]'
+        + '/span/text()'),
     'description': (
-        'div[4]/div[2]/div/div[1]'
-        + '/span[contains(@class, "content-CxPmi")]/text()'),
-}
+        'div/div/div/div'
+        + '/span[contains(@class, "content-CxPmi")]/text()'),}
 
 #####################################################################
 # STRIP IRRELEVANT CHARS
