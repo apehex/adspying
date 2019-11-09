@@ -60,6 +60,7 @@ class SecondHandAdPipeline(object):
                 'url',
                 'title',
                 'price',
+                'condition',
                 'location',
                 'first_posted',
                 'last_updated',
