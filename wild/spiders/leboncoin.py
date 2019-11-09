@@ -227,10 +227,7 @@ class LeboncoinSpider(scrapy.Spider):
             selector=response.xpath(ITEM_AD_XPATH))
 
         __loader.add_value('url', response.url)
-        __loader.add_xpath('title', ITEM_AD_ATTRIBUTE_XPATH['title'])
-        __loader.add_xpath('price', ITEM_AD_ATTRIBUTE_XPATH['price'])
-        __loader.add_xpath('location', ITEM_AD_ATTRIBUTE_XPATH['location'])
-        __loader.add_xpath('last_updated', ITEM_AD_ATTRIBUTE_XPATH['last_updated'])
-        __loader.add_xpath('description', ITEM_AD_ATTRIBUTE_XPATH['description'])
+        for __field, __xpath in ITEM_AD_ATTRIBUTE_XPATH.items():
+            __loader.add_xpath(__field, __xpath)
 
         return __loader.load_item()
