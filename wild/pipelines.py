@@ -64,6 +64,7 @@ class SecondHandAdPipeline(object):
                 'first_posted',
                 'last_updated',
                 'description',
+                'images',
                 'vendor',
                 'model',
                 'make',

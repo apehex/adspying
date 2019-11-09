@@ -93,7 +93,7 @@ FUEL_ARG = {
     'hybrid': 5}
 
 #####################################################################
-# DATA SELECTION
+# GENERIC DATA SELECTION
 #####################################################################
 
 LISTING_ITEM_XPATH = (
@@ -116,7 +116,7 @@ ITEM_AD_XPATH = (
     + '/section/section[contains(@class, "_35sFG")]'
     + '/section[contains(@class, "OjX8R")]')
 ITEM_AD_ATTRIBUTE_XPATH = {
-    'image': (
+    'images': (
         'div[contains(@class, "_2NKYa")]'
         + '/div[contains(@data-qa-id, "adview_gallery_container")]/div'
         + '/div[contains(@class, "GwNx3")]/div'

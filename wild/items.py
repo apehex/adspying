@@ -30,6 +30,7 @@ class SecondHandAd(Item):
     first_posted = Field()
     last_updated = Field()
     description = Field()
+    images = Field()
 
     # Generic
     vendor = Field()
@@ -67,6 +68,9 @@ class SecondHandAdLoader(ItemLoader):
 
     description_in = Join()
     description_out = Identity()
+
+    images_in = Join(', ')
+    images_out = Identity()
 
     vendor_in = Identity()
     vendor_out = Identity()
