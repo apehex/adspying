@@ -132,6 +132,9 @@ ITEM_AD_ATTRIBUTE_XPATH = {
         + '/div[contains(@class, "_3aOPO")]'
         + '/div[contains(@class, "_14taM")]'
         + '/div[contains(@class, "eVLNz")]/div/span/text()'),
+    'condition': (
+        '//div[contains(@data-qa-id, "criteria_item_item_condition")]'
+        + '/div/div[2]/text()'),
     'last_updated': (
         'div[contains(@class, "_2NKYa")]'
         + '/div[contains(@class, "_3aOPO")]'
