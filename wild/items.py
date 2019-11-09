@@ -25,6 +25,7 @@ class SecondHandAd(Item):
     url = Field()
     title = Field()
     price = Field()
+    condition = Field()
     location = Field()
     first_posted = Field()
     last_updated = Field()
@@ -51,6 +52,9 @@ class SecondHandAdLoader(ItemLoader):
 
     price_in = TakeFirst()
     price_out = Identity()
+
+    condition_in = Join()
+    condition_out = Identity()
 
     location_in = Join()
     location_out = Identity()
