@@ -88,6 +88,21 @@ class SecondHandAdLoader(ItemLoader):
     user_rating_out = Identity()
 
 #####################################################################
+# APPLIANCES
+#####################################################################
+
+class AppliancesAd(SecondHandAd):
+    """
+    """
+    # Specifications
+    pass
+
+class AppliancesAdLoader(SecondHandAdLoader):
+    """
+    """
+    pass
+
+#####################################################################
 # COMPUTER
 #####################################################################
 
