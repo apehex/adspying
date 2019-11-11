@@ -51,27 +51,6 @@ LOCATION_VALUES = {
 # SPIDER
 #####################################################################
 
-#####################################################################
-# REAL-ESTATE DATA SELECTION
-#####################################################################
-
-REALESTATE_AD_ATTRIBUTE_XPATH = {
-    'energy': (
-        '//div[contains(@data-qa-id, "criteria_item_energy_rate")]'
-        + '/div/div[2]/text()'),
-    'ges': (
-        '//div[contains(@data-qa-id, "criteria_item_ges")]'
-        + '/div/div[2]/text()'),
-    'rooms': (
-        '//div[contains(@data-qa-id, "criteria_item_rooms")]'
-        + '/div/div[2]/text()'),
-    'square': (
-        '//div[contains(@data-qa-id, "criteria_item_square")]'
-        + '/div/div[2]/text()'),
-    'type': (
-        '//div[contains(@data-qa-id, "criteria_item_real_estate_type")]'
-        + '/div/div[2]/text()'),}
-
 class LeboncoinSpider(scrapy.Spider):
     name = 'leboncoin'
     allowed_domains = ['www.leboncoin.fr']
