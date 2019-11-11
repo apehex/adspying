@@ -256,7 +256,7 @@ class SmartphoneAdLoader(SecondHandAdLoader):
 # UTILITY VEHICULES
 #####################################################################
 
-class VanAd(SecondHandAd):
+class VehiculeAd(SecondHandAd):
     """
     """
     # Specifications
@@ -265,6 +265,25 @@ class VanAd(SecondHandAd):
     consumption = Field()
     size_inside = Field()
     size_outside = Field()
+
+class VehiculeAdLoader(SecondHandAdLoader):
+    """
+    """
+    # Specifications
+    fuel_in = Join()
+    fuel_out = Identity()
+
+    mileage_in = Join()
+    mileage_out = Identity()
+
+    consumption_in = Join()
+    consumption_out = Identity()
+
+    size_inside_in = Join()
+    size_inside_out = Identity()
+
+    size_outside_in = Join()
+    size_outside_out = Identity()
 
 #####################################################################
 # REAL ESTATE

@@ -51,23 +51,6 @@ LOCATION_VALUES = {
 # SPIDER
 #####################################################################
 
-URL_ARGS = {
-    'result_page_number': 'o',
-    'min_year': 'rs',
-    'max_year': 're',
-    'min_price': 'price=min-',
-    'max_price': 'pe',
-    'min_mileage': 'ms',
-    'max_mileage': 'me',
-    'fuel_type': 'fu'}
-
-FUEL_ARG = {
-    'petrol': 1,
-    'diesel': 2,
-    'lpg': 3,
-    'electric': 4,
-    'hybrid': 5}
-
 #####################################################################
 # REAL-ESTATE DATA SELECTION
 #####################################################################
