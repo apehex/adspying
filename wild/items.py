@@ -39,6 +39,7 @@ class SecondHandAd(Item):
     price_new = Field()
 
     # Additional
+    age = Field()
     user_rating = Field()
 
 class SecondHandAdLoader(ItemLoader):
@@ -195,6 +196,18 @@ class ShoesAd(SecondHandAd):
     color = Field()
     size = Field()
 
+class ShoesAdLoader(SecondHandAdLoader):
+    """
+    """
+    category_in = Join()
+    category_out = Identity()
+
+    color_in = Join()
+    color_out = Identity()
+
+    color_in = Join()
+    color_out = Identity()
+
 #####################################################################
 # SMARTPHONES
 #####################################################################
@@ -229,7 +242,7 @@ class VanAd(SecondHandAd):
 # REAL ESTATE
 #####################################################################
 
-class HomeAd(SecondHandAd):
+class RealEstateAd(SecondHandAd):
     """
     """
     # Generic
@@ -243,19 +256,5 @@ class HomeAd(SecondHandAd):
     energy_grade = Field()
 
     # Computed
-    age = Field()
     time_to_work = Field()
-
-class LandAd(SecondHandAd):
-    """
-    """
-    # Generic
-    location = Field()
-
-    # Specifications
-    area = Field()
     buildable = Field()
-
-    # Computed
-    age = Field()
-    time_to_work = Field()
