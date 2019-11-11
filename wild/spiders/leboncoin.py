@@ -130,24 +130,6 @@ REALESTATE_AD_ATTRIBUTE_XPATH = {
         '//div[contains(@data-qa-id, "criteria_item_real_estate_type")]'
         + '/div/div[2]/text()'),}
 
-#####################################################################
-# SHOE DATA SELECTION
-#####################################################################
-
-SHOE_AD_ATTRIBUTE_XPATH = {
-    'category': (
-        '//div[contains(@data-qa-id, "criteria_item_shoe_category")]'
-        + '/div/div[2]/text()'),
-    'color': (
-        '//div[contains(@data-qa-id, "criteria_item_clothing_color")]'
-        + '/div/div[2]/text()'),
-    'size': (
-        '//div[contains(@data-qa-id, "criteria_item_shoe_size")]'
-        + '/div/div[2]/text()'),
-    'type': (
-        '//div[contains(@data-qa-id, "criteria_item_shoe_type")]'
-        + '/div/div[2]/text()'),}
-
 class LeboncoinSpider(scrapy.Spider):
     name = 'leboncoin'
     allowed_domains = ['www.leboncoin.fr']
