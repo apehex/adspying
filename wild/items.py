@@ -23,6 +23,7 @@ class SecondHandAd(Item):
     """
     # Ad
     url = Field()
+    vendor = Field()
     title = Field()
     price = Field()
     condition = Field()
@@ -33,9 +34,10 @@ class SecondHandAd(Item):
     images = Field()
 
     # Generic
-    vendor = Field()
+    brand = Field()
     model = Field()
     make = Field()
+    color = Field()
     price_new = Field()
 
     # Additional
@@ -48,6 +50,9 @@ class SecondHandAdLoader(ItemLoader):
 
     url_in = TakeFirst()
     url_out = Identity()
+
+    vendor_in = Identity()
+    vendor_out = Identity()
 
     title_in = Join()
     title_out = Identity()
@@ -73,14 +78,17 @@ class SecondHandAdLoader(ItemLoader):
     images_in = Join(', ')
     images_out = Identity()
 
-    vendor_in = Identity()
-    vendor_out = Identity()
+    brand_in = Identity()
+    brand_out = Identity()
 
     model_in = Identity()
     model_out = Identity()
 
     make_in = Identity()
     make_out = Identity()
+
+    color_in = Join()
+    color_out = Identity()
 
     price_new_in = Identity()
     price_new_out = Identity()
@@ -193,7 +201,6 @@ class ShoesAd(SecondHandAd):
     """
     # Specifications
     category = Field() # sneakers, city, etc
-    color = Field()
     size = Field()
 
 class ShoesAdLoader(SecondHandAdLoader):
@@ -202,11 +209,8 @@ class ShoesAdLoader(SecondHandAdLoader):
     category_in = Join()
     category_out = Identity()
 
-    color_in = Join()
-    color_out = Identity()
-
-    color_in = Join()
-    color_out = Identity()
+    size_in = Join()
+    size_out = Identity()
 
 #####################################################################
 # SMARTPHONES
