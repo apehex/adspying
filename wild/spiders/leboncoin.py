@@ -47,31 +47,8 @@ LOCATION_VALUES = {
     'rhone_alpes': 'r_22'
 }
 
-PRICE_VALUES = {
-    None: [],
-    'appliances': (
-        [0, 5]
-        + list(range(10, 50, 10))
-        + list(range(50, 100, 25))
-        + list(range(100, 550, 100))),
-    'caravaning': (
-        list(range(0, 1000, 250))
-        + list(range(1000, 3000, 500))
-        + list(range(3000, 15000, 1000))
-        + list(range(15000, 30000, 2500))
-        + list(range(30000, 55000, 5000))),
-    'networking': (
-        [0, 5]
-        + list(range(10, 50, 10))
-        + list(range(50, 100, 25))
-        + list(range(100, 550, 100))),
-    'real_estate': [],
-    'shoes': [],
-    'sports': [],
-}
-
 #####################################################################
-# VEHICULE ARGS
+# SPIDER
 #####################################################################
 
 URL_ARGS = {
@@ -90,24 +67,6 @@ FUEL_ARG = {
     'lpg': 3,
     'electric': 4,
     'hybrid': 5}
-
-#####################################################################
-# NETWORKING DATA SELECTION
-#####################################################################
-
-NETWORKING_AD_ATTRIBUTE_XPATH = {
-    'brand': (
-        '//div[contains(@data-qa-id, "criteria_item_phone_brand")]'
-        + '/div/div[2]/text()'),
-    'color': (
-        '//div[contains(@data-qa-id, "criteria_item_phone_color")]'
-        + '/div/div[2]/text()'),
-    'memory': (
-        '//div[contains(@data-qa-id, "criteria_item_phone_memory")]'
-        + '/div/div[2]/text()'),
-    'model': (
-        '//div[contains(@data-qa-id, "criteria_item_phone_model")]'
-        + '/div/div[2]/text()'),}
 
 #####################################################################
 # REAL-ESTATE DATA SELECTION
