@@ -38,16 +38,14 @@ class SecondHandAdPipeline(object):
         __ad_category = 'none'
         if crawler.spider:
             __spider_name = crawler.spider.name
-            __ad_category = crawler.spider.category
 
         return cls(
             file_path=os.path.join(
                 os.path.realpath(
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
-                '{date}_{spider}_{category}.csv'.format(
+                '{date}_{spider}.csv'.format(
                     date=date.today().strftime('%Y-%m-%d'),
-                    spider=__spider_name,
-                    category=__ad_category)))
+                    spider=__spider_name)))
 
     def open_spider(self, spider):
         __file = open(self.file_path, 'wb')
@@ -56,21 +54,9 @@ class SecondHandAdPipeline(object):
             delimiter=',',
             join_multivalued=' ',
             include_headers_line=True,
-            fields_to_export=[
-                'url',
-                'title',
-                'price',
-                'condition',
-                'location',
-                'first_posted',
-                'last_updated',
-                'description',
-                'images',
-                'vendor',
-                'model',
-                'make',
-                'price_new',
-                'user_rating'])
+            fields_to_export=(
+                list(spider.AD_GENERIC_ATTRIBUTES_XPATH.keys())
+                + list(spider._ad_specific_attributes_xpath.keys())))
         self.exporter.start_exporting()
 
     def close_spider(self, spider):
