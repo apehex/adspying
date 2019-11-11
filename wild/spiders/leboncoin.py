@@ -206,11 +206,11 @@ class LeboncoinSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         """
         """
-        super(MySpider, self).__init__(*args, **kwargs)
+        super(LeboncoinSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
         self._search_args = {
-            'category': ''
+            'category': '',
             'locations': '',
             'page': '1',
             'price': '',

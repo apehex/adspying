@@ -10,11 +10,6 @@ Search for shoes in the list of ads hosted by leboncoin.
 
 from __future__ import division, print_function, absolute_import
 
-import re
-from urllib.parse import urlencode, urljoin
-
-import scrapy
-
 from wild.items import ShoesAd, ShoesAdLoader
 from wild.spiders.leboncoin import LeboncoinSpider
 
@@ -60,11 +55,12 @@ class LeboncoinShoesSpider(LeboncoinSpider):
     def __init__(self, *args, **kwargs):
         """
         """
-        super(MySpider, self).__init__(*args, **kwargs)
+        super(LeboncoinShoesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
         self._search_args = {
-            'category': '53'
+            'category': '53',
+            'locations': '',
             'page': '1',
             'shippable': '1',
             'shoe_category_a': '',
@@ -74,7 +70,7 @@ class LeboncoinShoesSpider(LeboncoinSpider):
             'text': ''}
 
         # scrape the resulting listing
-        self._specific_ad_attributes_xpath = {
+        self._ad_specific_attributes_xpath = {
             'category': (
                 '//div[contains(@data-qa-id, "criteria_item_shoe_category")]'
                 + '/div/div[2]/text()'),
