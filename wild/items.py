@@ -253,6 +253,21 @@ class SmartphoneAdLoader(SecondHandAdLoader):
     weight_out = Identity()
 
 #####################################################################
+# SPORTS
+#####################################################################
+
+class SportsAd(SecondHandAd):
+    """
+    """
+    # Specifications
+    pass
+
+class SportsAdLoader(SecondHandAdLoader):
+    """
+    """
+    pass
+
+#####################################################################
 # UTILITY VEHICULES
 #####################################################################
 
