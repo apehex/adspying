@@ -5,7 +5,20 @@
 Leboncoin
 =========
 
-Customize the spiders for leboncoin.
+Base class for scraping leboncoin.
+
+This parent class defines the meta to query leboncoin over https and
+actually performs the processing.
+
+Every child class customize the meta to fit a specific ad search:
+- query args
+- data selectors
+- ad attributes
+
+For example, an appliance ad will specify the "condition" of the 
+item while a real-estate ad has no use for such an attribute.
+
+But all ads are layed out in a similar way, in HTML.
 """
 
 from __future__ import division, print_function, absolute_import
@@ -17,6 +30,7 @@ import scrapy
 
 from typical import checks
 
+from wild.cli import remove_special_characters
 from wild.items import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
@@ -121,6 +135,21 @@ class LeboncoinSpider(scrapy.Spider):
             + '/span[contains(@class, "content-CxPmi")]/text()'),}
 
     #################################################################
+    # CLI
+    #################################################################
+
+    def _parse_cli_args(
+            self):
+        """
+        Clean, format and translate to match the leboncoin url referential.
+        """
+        for __key, __value in self._search_args.items():
+            self._search_args[__key] = getattr(
+                self,
+                __key,
+                __value) # default to the current value
+
+    #################################################################
     # CRAWLING METHODS
     #################################################################
 
@@ -144,7 +173,7 @@ class LeboncoinSpider(scrapy.Spider):
             # BASE_URL,
         ]
 
-        # 
+        # select data specific to a given ad search (say smartphones)
         self._ad_specific_attributes_xpath = {} # intended to be overriden by the subclass
 
         # classes to store, clean and export the data
@@ -154,19 +183,10 @@ class LeboncoinSpider(scrapy.Spider):
     def start_requests(self):
         """
         """
-        __category = CATEGORY_VALUES.get(
-            re.sub(
-                '\W+',
-                '_',
-                getattr(self, 'category', 'real_estate')),
-            '9')
-        __location = LOCATION_VALUES.get(
-            re.sub(
-                '\W+',
-                '_',
-                getattr(self, 'locations', 'rhone_alpes')),
-            'r_22')
+        # translate the cli args to the url std for leboncoin
+        self._parse_cli_args()
 
+        # forge the search urls & queue the requests
         for i, __url in enumerate(self._urls):
             self._search_args['page'] = str(i + 1)
             yield scrapy.Request(
