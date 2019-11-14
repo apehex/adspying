@@ -52,7 +52,14 @@ class LeboncoinSmartphoneSpider(LeboncoinSpider):
             'phone_model': '',
             'price': '',
             'shippable': '1',
-            'text': ''}
+            'text': (
+                '-fixe%20-fil%20-fax%20-minitel%20-talkie%20-montre%20-touche%20-vintage%20-gps'
+                + '%20-brassard%20-boite'
+                + '%20-ecouteur%20-kit%20-main%20-libre'
+                + '%20-rallonge%20-chargeur%20-adaptateur%20-cable%20-batterie'
+                + '%20-samsung%20-nokia%20-lumia%20-alcatel%20-logicom%20-motorola%20-asus%20-lg%20-jbl%20-siemens%20-doro'
+                + '%20-vitre%20-verre'
+                + '%20-pochette%20-coque%20-protection%20-support%20-housse%20-pied%20-perche%20-selfie%20-trepied%20-etui%20-protege')}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {
