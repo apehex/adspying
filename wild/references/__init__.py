@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 """
-========
-Wild Ads
-========
+==========
+References
+==========
 
-Find the most relevant ads from heterogeneous sources.
+Load the data references.
 """
 
 from __future__ import absolute_import, division, print_function
@@ -45,19 +45,19 @@ _VEHICLE_DATA_PATH = os.path.join(
 # REFERENTIALS
 #####################################################################
 
-MAKE_REFERENTIAL = pd.read_csv(
+MAKE_REFERENCE = pd.read_csv(
     _MAKE_DATA_PATH,
     encoding='utf-8',
     dtype={'make': str},
     header=0)
 
-MODEL_REFERENTIAL = pd.read_csv(
+MODEL_REFERENCE = pd.read_csv(
     _MODEL_DATA_PATH,
     encoding='utf-8',
     dtype={'make': str, 'model': str},
     header=0)
 
-VEHICLE_REFERENTIAL = pd.read_csv(
+VEHICLE_REFERENCE = pd.read_csv(
     _VEHICLE_DATA_PATH,
     encoding='utf-8',
     dtype={
