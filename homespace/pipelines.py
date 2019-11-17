@@ -35,16 +35,24 @@ class SecondHandAdPipeline(object):
     @classmethod
     def from_crawler(cls, crawler):
         __spider_name = 'none'
-        __ad_category = 'none'
+        __query_name = 'none'
         if crawler.spider:
-            __spider_name = crawler.spider.name
+            __spider_name = getattr(
+                crawler.spider,
+                'name',
+                'none')
+            __query_name = getattr(
+                crawler.spider,
+                'query',
+                'none')
 
         return cls(
             file_path=os.path.join(
                 os.path.realpath(
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
                 __spider_name,
-                '{date}.csv'.format(
+                '{query}_{date}.csv'.format(
+                    query=__query_name.replace('_', '-'),
                     date=date.today().strftime('%Y-%m-%d'))))
 
     def open_spider(self, spider):
