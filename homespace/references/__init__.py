@@ -20,7 +20,7 @@ import pandas as pd
 #####################################################################
 
 __author__ = """David Mougeolle"""
-__email__ = 'david.mougeolle@moodule.net'
+__email__ = 'moodule@protonmail.com'
 __version__ = '0.1.0'
 
 __all__ = []
