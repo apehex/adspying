@@ -10,7 +10,7 @@ Search for sports gear items in ad listings.
 
 from __future__ import division, print_function, absolute_import
 
-from homespace.items import SportsGearAd, SportsGearAdLoader
+from homespace.items.sports_gear import SportsGearAd, SportsGearAdLoader
 from homespace.spiders._leboncoin import LeboncoinSpider
 
 #####################################################################
