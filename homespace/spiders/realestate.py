@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
 """
-=====================
-Leboncoin Real-Estate
-=====================
+===========
+Real-Estate
+===========
 
-Search for real-estate in the list of ads hosted by leboncoin.
+Search for real-estate in ad listings.
 """
 
 from __future__ import division, print_function, absolute_import
 
 from homespace.items import RealEstateAd, RealEstateAdLoader
-from homespace.spiders.leboncoin import LeboncoinSpider
+from homespace.spiders._leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES
@@ -35,14 +35,13 @@ TYPE_VALUES = ['old', 'new', 'viager']
 # SPIDER
 #####################################################################
 
-class LeboncoinRealEstateSpider(LeboncoinSpider):
-    name = 'leboncoin_realestate'
-    allowed_domains = ['www.leboncoin.fr']
+class RealEstateSpider(LeboncoinSpider):
+    name = 'realestate'
 
     def __init__(self, *args, **kwargs):
         """
         """
-        super(LeboncoinRealEstateSpider, self).__init__(*args, **kwargs)
+        super(RealEstateSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
         self._search_args = {
