@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
 """
-===============
-Leboncoin Shoes
-===============
+=====
+Shoes
+=====
 
-Search for shoes in the list of ads hosted by leboncoin.
+Search for shoes in ad listings.
 """
 
 from __future__ import division, print_function, absolute_import
 
 from homespace.items import ShoesAd, ShoesAdLoader
-from homespace.spiders.leboncoin import LeboncoinSpider
+from homespace.spiders._leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES
@@ -48,14 +48,13 @@ TYPE_VALUES = {
 # SPIDER
 #####################################################################
 
-class LeboncoinShoesSpider(LeboncoinSpider):
-    name = 'leboncoin_shoes'
-    allowed_domains = ['www.leboncoin.fr']
+class ShoesSpider(LeboncoinSpider):
+    name = 'shoes'
 
     def __init__(self, *args, **kwargs):
         """
         """
-        super(LeboncoinShoesSpider, self).__init__(*args, **kwargs)
+        super(ShoesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
         self._search_args = {

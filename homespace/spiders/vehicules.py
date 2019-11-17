@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
 """
-=====================
-Leboncoin Real-Estate
-=====================
+=========
+Vehicules
+=========
 
-Search for real-estate in the list of ads hosted by leboncoin.
+Search for vehicules in ad listings.
 """
 
 from __future__ import division, print_function, absolute_import
 
 from homespace.items import VehiculeAd, VehiculeAdLoader
-from homespace.spiders.leboncoin import LeboncoinSpider
+from homespace.spiders._leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES
@@ -36,14 +36,13 @@ PRICE_VALUES = (
 # SPIDER
 #####################################################################
 
-class LeboncoinVehiculeSpider(LeboncoinSpider):
-    name = 'leboncoin_vehicule'
-    allowed_domains = ['www.leboncoin.fr']
+class VehiculesSpider(LeboncoinSpider):
+    name = 'vehicules'
 
     def __init__(self, *args, **kwargs):
         """
         """
-        super(LeboncoinVehiculeSpider, self).__init__(*args, **kwargs)
+        super(VehiculesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
         self._search_args = {
