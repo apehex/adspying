@@ -10,7 +10,7 @@ Search for real-estate in ad listings.
 
 from __future__ import division, print_function, absolute_import
 
-from homespace.items import SmartphoneAd, SmartphoneAdLoader
+from homespace.items.smarphones import SmartphoneAd, SmartphoneAdLoader
 from homespace.spiders._leboncoin import LeboncoinSpider
 
 #####################################################################

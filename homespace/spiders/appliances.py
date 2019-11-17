@@ -10,7 +10,7 @@ Search for appliances in ad listings.
 
 from __future__ import division, print_function, absolute_import
 
-from homespace.items import AppliancesAd, AppliancesAdLoader
+from homespace.items.appliances import AppliancesAd, AppliancesAdLoader
 from homespace.spiders._leboncoin import LeboncoinSpider
 
 #####################################################################

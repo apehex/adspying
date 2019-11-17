@@ -13,7 +13,7 @@ Search for computers in ad listings:
 
 from __future__ import division, print_function, absolute_import
 
-from homespace.items import ComputerAd, ComputerAdLoader
+from homespace.items.informatics import ComputerAd, ComputerAdLoader
 from homespace.spiders._leboncoin import LeboncoinSpider
 
 #####################################################################

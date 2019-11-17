@@ -10,7 +10,7 @@ Search for shoes in ad listings.
 
 from __future__ import division, print_function, absolute_import
 
-from homespace.items import ShoesAd, ShoesAdLoader
+from homespace.items.shoes import ShoesAd, ShoesAdLoader
 from homespace.spiders._leboncoin import LeboncoinSpider
 
 #####################################################################
