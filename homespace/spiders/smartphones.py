@@ -54,17 +54,30 @@ class SmartphonesSpider(LeboncoinSpider):
         super(SmartphonesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
-        self._search_args = {
-            'category': '17',
-            'locations': '',
-            'page': '1',
-            'phone_brand': '',
-            'phone_color': '',
-            'phone_memory': '',
-            'phone_model': '',
-            'price': '',
-            'shippable': '1',
-            'text': IRRELEVANT_ITEMS_FILTER}
+        self._queries = {
+            'default': {
+                'category': '17',
+                'locations': '',
+                'page': '1',
+                'phone_brand': '',
+                'phone_color': '',
+                'phone_memory': '',
+                'phone_model': '',
+                'price': '',
+                'shippable': '1',
+                'text': IRRELEVANT_ITEMS_FILTER},
+            'huawei': {
+                'category': '17',
+                'locations': '',
+                'page': '1',
+                'phone_brand': 'huawei',
+                'phone_color': '',
+                'phone_memory': '',
+                'phone_model': '',
+                'price': '',
+                'search_in': 'subject',
+                'shippable': '1',
+                'text': 'huawei%20' + IRRELEVANT_ITEMS_FILTER}}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {

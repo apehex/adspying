@@ -44,17 +44,29 @@ class RealEstateSpider(LeboncoinSpider):
         super(RealEstateSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
-        self._search_args = {
-            'category': '9',
-            'immo_sell_type': '',
-            'locations': '',
-            'page': '1',
-            'real_estate_type': '',
-            'rooms': '',
-            'shippable': '1',
-            'square': '',
-            'price': '',
-            'text': ''}
+        self._queries = {
+            'default': {
+                'category': '9',
+                'immo_sell_type': '',
+                'locations': '',
+                'page': '1',
+                'real_estate_type': '',
+                'rooms': '',
+                'shippable': '1',
+                'square': '',
+                'price': '',
+                'text': ''},
+            'farmily': {
+                'category': '9',
+                'immo_sell_type': '',
+                'locations': '',
+                'page': '1',
+                'real_estate_type': '1,3',
+                'rooms': '2-max',
+                'shippable': '1',
+                'square': '',
+                'price': 'min-250000',
+                'text': ''},}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {

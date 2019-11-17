@@ -138,13 +138,24 @@ class LeboncoinSpider(scrapy.Spider):
     # CLI
     #################################################################
 
-    def _parse_cli_args(
+    def _select_query(
+            self):
+        """
+        Select the query to be executed.
+        """
+        self._current_query_name = getattr(
+            self,
+            'query',
+            'default')
+        self._current_query_args = self._queries.get(self._current_query_name)
+
+    def _fill_current_query_args_with_cli_args(
             self):
         """
         Clean, format and translate to match the leboncoin url referential.
         """
-        for __key, __value in self._search_args.items():
-            self._search_args[__key] = getattr(
+        for __key, __value in self._current_query_args.items():
+            self._current_query_args[__key] = getattr(
                 self,
                 __key,
                 __value) # default to the current value
@@ -159,13 +170,17 @@ class LeboncoinSpider(scrapy.Spider):
         super(LeboncoinSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
-        self._search_args = {
-            'category': '',
-            'locations': '',
-            'page': '1',
-            'price': '',
-            'shippable': '1',
-            'text': ''}
+        self._current_query_name = 'default'
+        self._current_query_args = {}
+        self._queries = {
+            'default': {
+                'category': '',
+                'locations': '',
+                'page': '1',
+                'price': '',
+                'search_in': '',
+                'shippable': '1',
+                'text': ''}}
         self._urls = [
             BASE_URL, # repeat for each target page
             # BASE_URL, # search page 2
@@ -184,13 +199,14 @@ class LeboncoinSpider(scrapy.Spider):
         """
         """
         # translate the cli args to the url std for leboncoin
-        self._parse_cli_args()
+        self._select_query()
+        self._fill_current_query_args_with_cli_args()
 
         # forge the search urls & queue the requests
         for i, __url in enumerate(self._urls):
-            self._search_args['page'] = str(i + 1)
+            self._current_query_args['page'] = str(i + 1)
             yield scrapy.Request(
-                url=__url + urlencode(self._search_args),
+                url=__url + urlencode(self._current_query_args),
                 callback=self.parse_listing)
 
     def parse_listing(self, response):
