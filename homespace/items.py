@@ -289,6 +289,7 @@ class VehiculeAd(SecondHandAd):
     consumption = Field()
     size_inside = Field()
     size_outside = Field()
+    gearbox = Field()
 
 class VehiculeAdLoader(SecondHandAdLoader):
     """
@@ -308,6 +309,9 @@ class VehiculeAdLoader(SecondHandAdLoader):
 
     size_outside_in = Join()
     size_outside_out = Identity()
+
+    gearbox_in = Join()
+    gearbox_out = Identity()
 
 #####################################################################
 # REAL ESTATE
