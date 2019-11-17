@@ -36,13 +36,21 @@ class AppliancesSpider(LeboncoinSpider):
         super(AppliancesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
-        self._search_args = {
-            'category': '20',
-            'locations': '',
-            'page': '1',
-            'price': '',
-            'shippable': '1',
-            'text': ''}
+        self._queries = {
+            'default': {
+                'category': '20',
+                'locations': '',
+                'page': '1',
+                'price': '',
+                'shippable': '1',
+                'text': ''},
+            'sewing_machine': {
+                'category': '20',
+                'locations': '',
+                'page': '1',
+                'price': '',
+                'shippable': '1',
+                'text': 'machine coudre'},}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {}

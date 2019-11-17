@@ -34,7 +34,7 @@ import scrapy
 from typical import checks
 
 from homespace.cli import remove_special_characters
-from homespace.items import SecondHandItem, SecondHandItemLoader
+from homespace.items import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
 # URL TEMPLATE
@@ -75,7 +75,7 @@ class LeboncoinSpider(scrapy.Spider):
     #################################################################
     ITEM_LISTING_XPATH = ''
     ITEM_LISTING_ATTRIBUTES_XPATH = {
-        'images': ''
+        'images': '',
         'title': '',
         'price': '',
         'location': '',
@@ -120,11 +120,12 @@ class LeboncoinSpider(scrapy.Spider):
         super(LeboncoinSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
-        self._search_args = {
-            'i': 'electronics',
-            'k': 'huawei',
-            'rh': 'n:218193031'
-            'page': ''}
+        self._queries = {
+            'default': {
+                'i': 'electronics',
+                'k': 'huawei',
+                'rh': 'n:218193031',
+                'page': ''}}
         self._urls = [
             BASE_URL, # repeat for each target page
             # BASE_URL, # search page 2

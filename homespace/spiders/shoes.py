@@ -57,16 +57,28 @@ class ShoesSpider(LeboncoinSpider):
         super(ShoesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
-        self._search_args = {
-            'category': '53',
-            'locations': '',
-            'page': '1',
-            'shippable': '1',
-            'shoe_category_a': '',
-            'shoe_size': '',
-            'shoe_type': '',
-            'price': '',
-            'text': ''}
+        self._queries = {
+            'default': {
+                'category': '53',
+                'locations': '',
+                'page': '1',
+                'shippable': '1',
+                'shoe_category_a': '',
+                'shoe_size': '',
+                'shoe_type': '',
+                'price': '',
+                'text': ''},
+            'vans': {
+                'category': '53',
+                'locations': 'r_22',
+                'page': '1',
+                'search_in': 'subject',
+                'shippable': '1',
+                'shoe_category_a': '',
+                'shoe_size': '26',
+                'shoe_type': '',
+                'price': 'min-100',
+                'text': 'vans'}}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {

@@ -45,16 +45,27 @@ class VehiculesSpider(LeboncoinSpider):
         super(VehiculesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
-        self._search_args = {
-            'category': '5', # utility vehicules
-            'fuel': '',
-            'locations': '',
-            'mileage': '',
-            'page': '1',
-            'price': '',
-            'regdate': '',
-            'shippable': '1',
-            'text': ''}
+        self._queries = {
+            'default': {
+                'category': '5', # utility vehicules
+                'fuel': '',
+                'locations': '',
+                'mileage': '',
+                'page': '1',
+                'price': '',
+                'regdate': '',
+                'shippable': '1',
+                'text': ''},
+            'vans': {
+                'category': '5', # utility vehicules
+                'fuel': '',
+                'locations': '',
+                'mileage': '',
+                'page': '1',
+                'price': 'min-10000',
+                'regdate': '2000-max',
+                'shippable': '1',
+                'text': ''}}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {

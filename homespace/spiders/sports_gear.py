@@ -28,9 +28,9 @@ PRICE_VALUES = (
 #####################################################################
 
 SKIS_FILTER = (
-    'ski%20randonnée'
-    + '%20-enfant'
-    + '%20-pantalon%20-combinaison%20-masque%20-gant%20-blouson')
+    'ski randonnée'
+    + ' -enfant'
+    + ' -pantalon -combinaison -masque -gant -blouson')
 
 #####################################################################
 # SPIDER
@@ -45,13 +45,23 @@ class SportsGearSpider(LeboncoinSpider):
         super(SportsGearSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
-        self._search_args = {
-            'category': '29',
-            'locations': '',
-            'page': '1',
-            'price': '',
-            'shippable': '1',
-            'text': SKIS_FILTER}
+        self._queries = {
+            'default': {
+                'category': '29',
+                'locations': '',
+                'page': '1',
+                'price': '',
+                'search_in': '',
+                'shippable': '1',
+                'text': ''},
+            'skis': {
+                'category': '29',
+                'locations': 'r_30',
+                'page': '1',
+                'price': 'min-200',
+                'search_in': '',
+                'shippable': '1',
+                'text': SKIS_FILTER}}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {}
