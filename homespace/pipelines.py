@@ -43,9 +43,9 @@ class SecondHandAdPipeline(object):
             file_path=os.path.join(
                 os.path.realpath(
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
-                '{date}_{spider}.csv'.format(
-                    date=date.today().strftime('%Y-%m-%d'),
-                    spider=__spider_name)))
+                __spider_name,
+                '{date}.csv'.format(
+                    date=date.today().strftime('%Y-%m-%d'))))
 
     def open_spider(self, spider):
         __file = open(self.file_path, 'wb')
