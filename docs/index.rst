@@ -1,4 +1,4 @@
-Welcome to Wild Moodule's documentation!
+Welcome to Homespace Moodule's documentation!
 ======================================
 
 .. toctree::

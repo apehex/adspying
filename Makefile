@@ -58,7 +58,7 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	$(ENVIRONMENT) flake8 wild tests
+	$(ENVIRONMENT) flake8 homespace tests
 
 test: ## run tests quickly with the default Python
 	$(ENVIRONMENT) pytest
@@ -67,15 +67,15 @@ test-all: ## run tests on every Python version with tox
 	$(ENVIRONMENT) tox
 
 coverage: ## check code coverage quickly with the default Python
-	$(ENVIRONMENT) coverage run --source wild -m pytest
+	$(ENVIRONMENT) coverage run --source homespace -m pytest
 	$(ENVIRONMENT) coverage report -m
 	$(ENVIRONMENT) coverage html
 	$(BROWSER) htmlcov/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/wild.rst
+	rm -f docs/homespace.rst
 	rm -f docs/modules.rst
-	$(ENVIRONMENT) sphinx-apidoc -o docs/ wild
+	$(ENVIRONMENT) sphinx-apidoc -o docs/ homespace
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html

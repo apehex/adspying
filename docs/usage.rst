@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use Wild Moodule in a project::
+To use Homespace Moodule in a project::
 
-    import wild
+    import homespace

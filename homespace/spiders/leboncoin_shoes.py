@@ -10,8 +10,8 @@ Search for shoes in the list of ads hosted by leboncoin.
 
 from __future__ import division, print_function, absolute_import
 
-from wild.items import ShoesAd, ShoesAdLoader
-from wild.spiders.leboncoin import LeboncoinSpider
+from homespace.items import ShoesAd, ShoesAdLoader
+from homespace.spiders.leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES

@@ -10,8 +10,8 @@ Search for sport items in the list of ads hosted by leboncoin.
 
 from __future__ import division, print_function, absolute_import
 
-from wild.items import SportsAd, SportsAdLoader
-from wild.spiders.leboncoin import LeboncoinSpider
+from homespace.items import SportsAd, SportsAdLoader
+from homespace.spiders.leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES

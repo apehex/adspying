@@ -9,7 +9,7 @@ GLOBAL
 - [x] replace the '-' in the package name
 - [x] move the wrangling scripts into the data folder
 - [ ] move the scraping scripts into the data folder
-- [ ] keep only the modules in wild
+- [ ] keep only the modules in homespace
 - [ ] move relevant sections to README (workflow, overall steps)
 - [ ] put all the initiation steps on a jupyter notebook
 - [ ] create a dashboard in dash / bokeh

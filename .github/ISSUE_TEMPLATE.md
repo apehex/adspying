@@ -1,4 +1,4 @@
-* Wild Moodule version:
+* Homespace Moodule version:
 * Python version:
 * Operating System:
 

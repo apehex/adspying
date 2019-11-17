@@ -8,7 +8,7 @@ from __future__ import absolute_import, division, print_function
 from numpy import isclose
 import pytest
 
-from wild import _fuel
+from homespace import _fuel
 
 def test_conversions_mpg_to_lpkm():
     assert _fuel.us_mpg_to_lpkm(0.0) == 0.0
