@@ -256,13 +256,13 @@ class SmartphoneAdLoader(SecondHandAdLoader):
 # SPORTS
 #####################################################################
 
-class SportsAd(SecondHandAd):
+class SportsGearAd(SecondHandAd):
     """
     """
     # Specifications
     pass
 
-class SportsAdLoader(SecondHandAdLoader):
+class SportsGearAdLoader(SecondHandAdLoader):
     """
     """
     pass

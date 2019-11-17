@@ -10,7 +10,7 @@ Search for sports gear items in ad listings.
 
 from __future__ import division, print_function, absolute_import
 
-from homespace.items import SportsAd, SportsAdLoader
+from homespace.items import SportsGearAd, SportsGearAdLoader
 from homespace.spiders._leboncoin import LeboncoinSpider
 
 #####################################################################
@@ -57,5 +57,5 @@ class SportsGearSpider(LeboncoinSpider):
         self._ad_specific_attributes_xpath = {}
 
         # classes to store, clean and export the data
-        self._item_class = SportsAd
-        self._loader_class = SportsAdLoader
+        self._item_class = SportsGearAd
+        self._loader_class = SportsGearAdLoader
