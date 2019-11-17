@@ -30,8 +30,8 @@ import scrapy
 
 from typical import checks
 
-from wild.cli import remove_special_characters
-from wild.items import SecondHandAd, SecondHandAdLoader
+from homespace.cli import remove_special_characters
+from homespace.items import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
 # URL TEMPLATE

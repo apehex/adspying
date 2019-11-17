@@ -1,4 +1,4 @@
-* Wild apehex version:
+* Homespace apehex version:
 * Python version:
 * Operating System:
 

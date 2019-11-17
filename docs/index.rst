@@ -1,4 +1,4 @@
-Welcome to Wild apehex's documentation!
+Welcome to Homespace apehex's documentation!
 ======================================
 
 .. toctree::

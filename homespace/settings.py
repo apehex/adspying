@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for wild project
+# Scrapy settings for homespace project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -12,10 +12,10 @@
 import os
 import random
 
-BOT_NAME = 'wild'
+BOT_NAME = 'homespace'
 
-SPIDER_MODULES = ['wild.spiders']
-NEWSPIDER_MODULE = 'wild.spiders'
+SPIDER_MODULES = ['homespace.spiders']
+NEWSPIDER_MODULE = 'homespace.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -55,8 +55,8 @@ COOKIES_ENABLED = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
-   'wild.middlewares.RandomUserAgentMiddleware': 100,
-   'wild.middlewares.WildSpiderMiddleware': 543,
+   'homespace.middlewares.RandomUserAgentMiddleware': 100,
+   'homespace.middlewares.HomespaceSpiderMiddleware': 543,
 }
 
 # The maximum depth that will be allowed to crawl for any site.
@@ -70,7 +70,7 @@ DEPTH_PRIORITY = 1
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'wild.middlewares.WildDownloaderMiddleware': 543,
+#    'homespace.middlewares.HomespaceDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -82,7 +82,7 @@ DEPTH_PRIORITY = 1
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'wild.pipelines.SecondHandAdPipeline': 300,
+   'homespace.pipelines.SecondHandAdPipeline': 300,
 }
 EXPORT_FOLDER_PATH = './data/'
 

@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-"""Unit test package for wild-apehex."""
+"""Unit test package for homespace-apehex."""

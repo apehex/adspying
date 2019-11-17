@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-========
-Wild Ads
-========
+=========
+Homespace
+=========
 
 Find the most relevant ads from heterogeneous sources.
 """

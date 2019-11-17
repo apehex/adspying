@@ -10,8 +10,8 @@ Search for real-estate in the list of ads hosted by leboncoin.
 
 from __future__ import division, print_function, absolute_import
 
-from wild.items import VehiculeAd, VehiculeAdLoader
-from wild.spiders.leboncoin import LeboncoinSpider
+from homespace.items import VehiculeAd, VehiculeAdLoader
+from homespace.spiders.leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES

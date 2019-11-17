@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use Wild apehex in a project::
+To use Homespace apehex in a project::
 
-    import wild
+    import homespace

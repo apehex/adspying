@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/apehex/wild/issues.
+Report bugs at https://github.com/apehex/homespace/issues.
 
 If you are reporting a bug, please include:
 
@@ -38,14 +38,14 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Wild apehex could always use more documentation, whether as part of the
-official Wild apehex docs, in docstrings, or even on the web in blog posts,
+Homespace apehex could always use more documentation, whether as part of the
+official homespace apehex docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/apehex/wild/issues.
+The best way to send feedback is to file an issue at https://github.com/apehex/homespace/issues.
 
 If you are proposing a feature:
 
@@ -57,12 +57,12 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `wild` for local development.
+Ready to contribute? Here's how to set up `homespace` for local development.
 
-1. Fork the `wild` repo on GitHub.
+1. Fork the `homespace` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/wild.git
+    $ git clone git@github.com:your_name_here/homespace.git
 3. Assuming you have pipenv installed, you can **create a new environment with all the dependencies** by typing::
 
     $ make init
@@ -102,7 +102,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 2.7, 3.5, 3.6 and 3.7, and for PyPy. Check
-   https://travis-ci.org/apehex/wild/pull_requests
+   https://travis-ci.org/apehex/homespace/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Add a New Test
@@ -139,7 +139,7 @@ Tips
 
 To run a subset of tests::
 
-$ pytest tests.test_wild
+$ pytest tests.test_homespace
 
 
 Deploying
