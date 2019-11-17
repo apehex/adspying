@@ -122,6 +122,15 @@ class ComputerAd(SecondHandAd):
     ram_model = Field()
     ram_size = Field()
 
+class ComputerAdLoader(SecondHandAdLoader):
+    """
+    """
+    ram_model_in = Join()
+    ram_model_out = Identity()
+
+    ram_size_in = Join()
+    ram_size_out = Identity()
+
 class LaptopAd(SecondHandAd):
     """
     """
