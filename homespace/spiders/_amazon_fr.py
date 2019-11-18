@@ -34,7 +34,7 @@ import scrapy
 from typical import checks
 
 from homespace.cli import remove_special_characters
-from homespace.items._ad import SecondHandAd, SecondHandAdLoader
+from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
 # URL TEMPLATE
