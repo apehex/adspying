@@ -20,7 +20,7 @@ from scrapy.loader import ItemLoader
 
 from typical import checks
 
-from homespace.items import SecondHandAd, SecondHandAdLoader
+from homespace.items._ad import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
 # URL TEMPLATE
