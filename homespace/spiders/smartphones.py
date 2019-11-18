@@ -33,13 +33,13 @@ PRICE_VALUES = (
 #####################################################################
 
 IRRELEVANT_ITEMS_FILTER = (
-    '-fixe%20-fil%20-fax%20-minitel%20-talkie%20-montre%20-touche%20-vintage%20-gps'
-    + '%20-brassard%20-boite'
-    + '%20-ecouteur%20-kit%20-main%20-libre'
-    + '%20-rallonge%20-chargeur%20-adaptateur%20-cable%20-batterie'
-    + '%20-samsung%20-nokia%20-lumia%20-alcatel%20-logicom%20-motorola%20-asus%20-lg%20-jbl%20-siemens%20-doro'
-    + '%20-vitre%20-verre'
-    + '%20-pochette%20-coque%20-protection%20-support%20-housse%20-pied%20-perche%20-selfie%20-trepied%20-etui%20-protege')
+    '-fixe -fil -fax -minitel -talkie -montre -touche -vintage -gps'
+    + ' -brassard -boite'
+    + ' -ecouteur -kit -main -libre'
+    + ' -rallonge -chargeur -adaptateur -cable -batterie'
+    + ' -samsung -nokia -lumia -alcatel -logicom -motorola -asus -lg -jbl -siemens -doro'
+    + ' -vitre -verre'
+    + ' -pochette -coque -protection -support -housse -pied -perche -selfie -trepied -etui -protege')
 
 #####################################################################
 # SPIDER
@@ -74,10 +74,10 @@ class SmartphonesSpider(LeboncoinSpider):
                 'phone_color': '',
                 'phone_memory': '',
                 'phone_model': '',
-                'price': '',
+                'price': 'min-100',
                 'search_in': 'subject',
                 'shippable': '1',
-                'text': 'huawei%20' + IRRELEVANT_ITEMS_FILTER}}
+                'text': 'huawei ' + IRRELEVANT_ITEMS_FILTER}}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {
