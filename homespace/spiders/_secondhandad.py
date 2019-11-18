@@ -56,6 +56,18 @@ class SecondHandAdSpider(scrapy.Spider):
                 __key,
                 __value) # default to the current value
 
+    def _set_stop_conditions(
+            self):
+        """
+        Define when the scraping should stop:
+        - after x pages of listing
+        - when the listed ads get older than y
+        """
+        self._max_pages = int(getattr(
+            self,
+            'pages',
+            '1'))
+
     #################################################################
     # CRAWLING METHODS
     #################################################################
@@ -93,6 +105,7 @@ class SecondHandAdSpider(scrapy.Spider):
         """
         """
         # translate the cli args to the url std for leboncoin
+        self._set_stop_conditions()
         self._select_current_query()
         self._fill_current_query_args_with_cli_args()
 
