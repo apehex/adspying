@@ -13,7 +13,7 @@ from __future__ import division, print_function, absolute_import
 from scrapy import Field
 from scrapy.loader.processors import Identity, Join, TakeFirst
 
-from homespace.items._ad import SecondHandAd, SecondHandAdLoader
+from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
 # REAL ESTATE
