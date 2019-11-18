@@ -20,7 +20,7 @@ from scrapy.loader import ItemLoader
 
 from typical import checks
 
-from homespace.items._ad import SecondHandAd, SecondHandAdLoader
+from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
 # URL TEMPLATE
@@ -63,7 +63,7 @@ class SecondHandAdPipeline(object):
             join_multivalued=' ',
             include_headers_line=True,
             fields_to_export=(
-                list(spider.AD_GENERIC_ATTRIBUTES_XPATH.keys())
+                list(spider._ad_generic_attributes_xpath.keys())
                 + list(spider._ad_specific_attributes_xpath.keys())))
         self.exporter.start_exporting()
 
