@@ -1,6 +1,4 @@
-
-
-from scrapy import Field, Item# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 """
 ==============
