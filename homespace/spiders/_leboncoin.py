@@ -207,12 +207,15 @@ class LeboncoinSpider(scrapy.Spider):
             self._current_query_args['page'] = str(i + 1)
             yield scrapy.Request(
                 url=__url + urlencode(self._current_query_args),
-                callback=self.parse_listing)
+                callback=self.parse_listing,
+                meta={'page': str(i+1)})
 
     def parse_listing(self, response):
         """
         """
-        __page = re.match(r'.*page=(\d{1,2}).*', response.url).group(1)
+        __page = response.meta.get(
+            'page',
+            '1')
         __ad_links = response.xpath(
             LeboncoinSpider.AD_LISTING_XPATH).xpath(
             LeboncoinSpider.AD_LISTING_ATTRIBUTES_XPATH['url']).getall()
