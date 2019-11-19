@@ -1,0 +1,65 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "sophia",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "nicolas wirtz",
+        "address": "4 Rue De La Loge, 69005 Lyon, France",
+        "data": ""
+      },
+      "geometry": {
+        "coordinates": [
+          4.828311,
+          45.764629
+        ],
+        "type": "Point"
+      },
+      "id": "address.1678640486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "nicolas wirtz",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "sophia",
+        "address": "4 rue de la loge, 69005 lyon, france",
+        "data": ""
+      },
+      "geometry": {
+        "coordinates": [
+          4.827626,
+          45.764627
+        ],
+        "type": "Point"
+      },
+      "id": "address.791195401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "british antarctic survey",
+        "projects": "aaa",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "high cross, cambridge, cambridge, cb3 0tx, united kingdom",
+        "data": ""
+      },
+      "geometry": {
+        "coordinates": [
+          0.08001,
+          52.212477
+        ],
+        "type": "Point"
+      },
+      "id": "e9e184d7aea3f5bbfbb63117ff499a77"
+    }
+  ],
+  "type": "FeatureCollection"
+}
