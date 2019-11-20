@@ -53,28 +53,28 @@ class CookiesPoliciesSpider(scrapy.Spider):
                 'selector': (
                     '//*[@id="yDmH0d"]/c-wiz/div/div'
                     + '/div[contains(@class, "tk9x4e")]'
-                    + '/div[contains(@class,"vwhFIf")]/text()')},
+                    + '/div[contains(@class,"vwhFIf")]')},
             'stackoverflow': {
                 'url': 'https://stackoverflow.com/legal/cookie-policy',
                 'selector': (
                     '//*[@id="content"]/div/div'
                     + '/div[contains(@class, "grid--cell9")]'
-                    + '/main/text()')},
+                    + '/main')},
             'amazon': {
                 'url': 'https://www.amazon.fr/gp/help/customer/display.html/?nodeId=201890250',
                 'selector': (
                     '/body/div[contains(@class, "cs-help-v4")]'
                     + '/div[contains(@class, "cs-help-container")]'
                     + '/div[contains(@class, "cs-help-content")]'
-                    + '/div[1]/div[contains(@class, "help-content")]/text()')},
+                    + '/div[1]/div[contains(@class, "help-content")]')},
             'wikimedia': {
                 'url': 'https://foundation.wikimedia.org/wiki/Cookie_statement',
-                'selector': '//*[@id="content"]/text()'},
+                'selector': '//*[@id="content"]'},
             'facebook': {
                 'url': 'https://www.facebook.com/policies/cookies/',
                 'selector': (
                     '//*[@id="content"]/div/div/div'
-                    + '/div[contains(@class, "_5tkp")]/text()')}}
+                    + '/div[contains(@class, "_5tkp")]')}}
 
     def start_requests(
             self):
