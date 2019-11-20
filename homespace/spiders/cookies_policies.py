@@ -40,6 +40,9 @@ class CookiesPoliciesSpider(scrapy.Spider):
         """
         super(CookiesPoliciesSpider, self).__init__(*args, **kwargs)
 
+        # enable specific pipelines
+        self._pipelines = ['LegalDocumentPipeline']
+
         #############################################################
         # URLS
         #############################################################

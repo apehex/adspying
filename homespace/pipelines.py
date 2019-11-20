@@ -11,10 +11,9 @@ Exporting data.
 from __future__ import division, print_function, absolute_import
 
 from datetime import date
+from functools import wraps
 import os
-import re
 
-import scrapy
 from scrapy.exporters import CsvItemExporter
 from scrapy.loader import ItemLoader
 
@@ -23,9 +22,26 @@ from typical import checks
 from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
-# URL TEMPLATE
+# ENABLE / DISABLE PIPELINES
 #####################################################################
 
+def toggle_pipeline(
+        process_item_method: callable) -> callable:
+    """
+    This wrapper makes it so pipelines can be turned on and off at a spider level.
+    """
+    @wraps(process_item_method)
+    def wrapper(self, item, spider):
+        if self.__class__.__name__ in spider._pipelines:
+            return process_item_method(self, item, spider)
+        else:
+            return item
+
+    return wrapper
+
+#####################################################################
+# SECOND HAND ADS
+#####################################################################
 
 class SecondHandAdPipeline(object):
 
