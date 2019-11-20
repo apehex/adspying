@@ -83,6 +83,7 @@ DEPTH_PRIORITY = 1
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'homespace.pipelines.SecondHandAdPipeline': 300,
+   'homespace.pipelines.LegalDocumentPipeline': 400,
 }
 EXPORT_FOLDER_PATH = './data/'
 
