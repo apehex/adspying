@@ -43,6 +43,26 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "linda",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "29 rue jules, 35200 Rennes, France",
+        "data": "0774302641"
+      },
+      "geometry": {
+        "coordinates": [, 
+          -1.706362,
+          48.100992
+        ],
+        "type": "Point"
+      },
+      "id": "address.791195401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "british antarctic survey",
         "projects": "aaa",
         "parents": "",
