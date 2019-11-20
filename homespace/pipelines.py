@@ -29,11 +29,19 @@ from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
 class SecondHandAdPipeline(object):
 
-    def __init__(self, file_path):
+    def __init__(
+            self,
+            file_path):
+        """
+        """
         self.file_path = file_path
 
     @classmethod
-    def from_crawler(cls, crawler):
+    def from_crawler(
+            cls,
+            crawler):
+        """
+        """
         __spider_name = 'none'
         __query_name = 'none'
         if crawler.spider:
@@ -55,21 +63,31 @@ class SecondHandAdPipeline(object):
                     query=__query_name.replace('_', '-'),
                     date=date.today().strftime('%Y-%m-%d'))))
 
-    def open_spider(self, spider):
+    def open_spider(
+            self,
+            spider):
+        """
+        """
         __file = open(self.file_path, 'wb')
         self.exporter = CsvItemExporter(
             file=__file,
             delimiter=',',
             join_multivalued=' ',
-            include_headers_line=True,
-            fields_to_export=(
-                list(spider._ad_generic_attributes_xpath.keys())
-                + list(spider._ad_specific_attributes_xpath.keys())))
+            include_headers_line=True)
         self.exporter.start_exporting()
 
-    def close_spider(self, spider):
+    def close_spider(
+            self,
+            spider):
+        """
+        """
         self.exporter.finish_exporting()
 
-    def process_item(self, item, spider):
+    def process_item(
+            self,
+            item,
+            spider):
+        """
+        """
         self.exporter.export_item(item)
         return item
