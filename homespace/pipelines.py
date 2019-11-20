@@ -107,3 +107,58 @@ class SecondHandAdPipeline(object):
         """
         self.exporter.export_item(item)
         return item
+
+#####################################################################
+# LEGAL DOCUMENTS
+#####################################################################
+
+class LegalDocumentPipeline(object):
+
+    def __init__(
+            self,
+            file_path):
+        """
+        """
+        self.file_path = file_path
+
+    @classmethod
+    def from_crawler(
+            cls,
+            crawler):
+        """
+        """
+        __spider_name = 'none'
+        if crawler.spider:
+            __spider_name = getattr(
+                crawler.spider,
+                'name',
+                'none')
+
+        return cls(
+            file_path=os.path.join(
+                os.path.realpath(
+                    crawler.settings.get('EXPORT_FOLDER_PATH')),
+                __spider_name))
+
+    @toggle_pipeline
+    def process_item(
+            self,
+            item,
+            spider):
+        """
+        """
+        __provider = ''.join(item.get(
+            'provider',
+            ['none']))
+        __text = ''.join(item.get(
+            'text',
+            ['']))
+
+        with open(
+                os.path.join(
+                    self.file_path,
+                    __provider + '.html'),
+                'w') as file:
+            file.write(__text)
+
+        return item
