@@ -101,6 +101,9 @@ class SecondHandAdSpider(scrapy.Spider):
         self._item_class = SecondHandAd
         self._loader_class = SecondHandAdLoader
 
+        # enable specific pipelines
+        self._pipelines = ['SecondHandAdPipeline']
+
     def start_requests(self):
         """
         """
