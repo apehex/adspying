@@ -14,17 +14,13 @@ cookies.
 
 from __future__ import division, print_function, absolute_import
 
-import scrapy
-
-from typical import checks
-
-from homespace.items._legaldocument import LegalDocument, LegalDocumentLoader
+from homespace.spiders._legaldocuments import LegalDocumentsSpider
 
 #####################################################################
 # SPIDER
 #####################################################################
 
-class CookiesPoliciesSpider(scrapy.Spider):
+class CookiesPoliciesSpider(LegalDocumentsSpider):
     name = 'cookies_policies'
 
     #################################################################
@@ -39,9 +35,6 @@ class CookiesPoliciesSpider(scrapy.Spider):
         Initiate the scraping env.
         """
         super(CookiesPoliciesSpider, self).__init__(*args, **kwargs)
-
-        # enable specific pipelines
-        self._pipelines = ['LegalDocumentPipeline']
 
         #############################################################
         # URLS
@@ -75,43 +68,3 @@ class CookiesPoliciesSpider(scrapy.Spider):
                 'selector': (
                     '//*[@id="content"]/div/div/div'
                     + '/div[contains(@class, "_5tkp")]')}}
-
-    def start_requests(
-            self):
-        """
-        Queue all the legal document's urls.
-        """
-        # forge the search urls & queue the requests
-        for __provider, __meta in self.providers.items():
-            self.log('[{provider}] requesting cookies policy...'.format(
-                provider=__provider))
-            yield scrapy.Request(
-                url=__meta['url'],
-                callback=self.parse,
-                meta={'provider': __provider, 'selector': __meta['selector']})
-
-    def parse(
-            self,
-            response):
-        """
-        Process the downloaded html pages.
-        """
-        __provider = response.meta.get(
-            'provider',
-            'none')
-        __selector = response.meta.get(
-            'selector',
-            '//body')
-
-        self.log('[{provider}] parsing cookies policy...'.format(
-            provider = __provider))
-
-        __loader = LegalDocumentLoader(
-            item=LegalDocument(),
-            response=response)
-
-        __loader.add_value('url', response.url)
-        __loader.add_value('provider', __provider)
-        __loader.add_xpath('text', __selector)
-
-        return __loader.load_item()
