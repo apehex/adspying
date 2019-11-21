@@ -27,8 +27,8 @@ from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 # SPIDER
 #####################################################################
 
-class SecondHandAdSpider(scrapy.Spider):
-    name = 'second_hand_ad'
+class SecondHandAdsSpider(scrapy.Spider):
+    name = 'second_hand_ads'
 
     #################################################################
     # CLI
