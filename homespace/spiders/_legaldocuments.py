@@ -55,7 +55,7 @@ class LegalDocumentsSpider(scrapy.Spider):
         """
         # forge the search urls & queue the requests
         for __provider, __meta in self.providers.items():
-            self.log('[{provider}] requesting cookies policy...'.format(
+            self.log('[{provider}] requesting...'.format(
                 provider=__provider))
             yield scrapy.Request(
                 url=__meta['url'],
@@ -75,7 +75,7 @@ class LegalDocumentsSpider(scrapy.Spider):
             'selector',
             '//body')
 
-        self.log('[{provider}] parsing cookies policy...'.format(
+        self.log('[{provider}] parsing...'.format(
             provider = __provider))
 
         __loader = LegalDocumentLoader(
