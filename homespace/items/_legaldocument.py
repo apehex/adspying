@@ -12,7 +12,9 @@ from __future__ import division, print_function, absolute_import
 
 from scrapy import Field, Item
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import Identity, Join, TakeFirst
+from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
+
+from homespace._wrangling import extract_text_from_html_markup
 
 #####################################################################
 # GENERIC AD
@@ -46,5 +48,5 @@ class LegalDocumentLoader(ItemLoader):
     last_updated_in = Join()
     last_updated_out = Identity()
 
-    text_in = Join()
-    text_out = Identity()
+    text_in = MapCompose(extract_text_from_html_markup)
+    text_out = Join()
