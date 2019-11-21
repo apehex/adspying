@@ -21,6 +21,7 @@ typical = {editable = true,git = "https://github.com/apehex/typical.git",ref = "
 Scrapy = "==1.7.3"
 Sphinx = "==1.8.5"
 pandas = "==0.25.1"
+beautifulsoup4 = ">=4.8.1"
 
 [requires]
 python_version = "3.7"
