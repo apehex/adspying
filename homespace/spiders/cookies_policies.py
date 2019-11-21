@@ -41,6 +41,18 @@ class CookiesPoliciesSpider(LegalDocumentsSpider):
         #############################################################
 
         self.providers = {
+            'amazon': {
+                'url': 'https://www.amazon.fr/gp/help/customer/display.html/?nodeId=201890250',
+                'selector': (
+                    '//body/div[contains(@class, "cs-help-v4")]'
+                    + '/div[contains(@class, "cs-help-container")]'
+                    + '/div[contains(@class, "cs-help-content")]'
+                    + '/div[1]/div[contains(@class, "help-content")]')},
+            'facebook': {
+                'url': 'https://www.facebook.com/policies/cookies/',
+                'selector': (
+                    '//*[@id="content"]/div/div/div'
+                    + '/div[contains(@class, "_5tkp")]')},
             'google': {
                 'url': 'https://policies.google.com/technologies/cookies',
                 'selector': (
@@ -53,18 +65,6 @@ class CookiesPoliciesSpider(LegalDocumentsSpider):
                     '//*[@id="content"]/div/div'
                     + '/div[contains(@class, "grid--cell9")]'
                     + '/main')},
-            'amazon': {
-                'url': 'https://www.amazon.fr/gp/help/customer/display.html/?nodeId=201890250',
-                'selector': (
-                    '/body/div[contains(@class, "cs-help-v4")]'
-                    + '/div[contains(@class, "cs-help-container")]'
-                    + '/div[contains(@class, "cs-help-content")]'
-                    + '/div[1]/div[contains(@class, "help-content")]')},
             'wikimedia': {
                 'url': 'https://foundation.wikimedia.org/wiki/Cookie_statement',
-                'selector': '//*[@id="content"]'},
-            'facebook': {
-                'url': 'https://www.facebook.com/policies/cookies/',
-                'selector': (
-                    '//*[@id="content"]/div/div/div'
-                    + '/div[contains(@class, "_5tkp")]')}}
+                'selector': '//*[@id="content"]'},}
