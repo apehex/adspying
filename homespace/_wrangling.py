@@ -5,11 +5,12 @@
 Data Wrangling
 ==============
 
-Clean the raw data on vehicles, insurance, etc.
+Clean the raw data scraped from the web.
 """
 
 from __future__ import absolute_import, division, print_function
 
+from bs4 import BeautifulSoup
 from nltk.metrics.distance import edit_distance
 import numpy as np
 import re
@@ -68,3 +69,46 @@ def find_closest_reference(value, references):
     min_index = np.argmin(distances)
     closest_reference = references[min_index]
     return closest_reference
+
+#####################################################################
+# HTML
+#####################################################################
+
+@checks
+def extract_text_from_html_markup(
+        html:str) -> str:
+    """
+    Extract the text *visible* to a user on an internet browser,
+    from a string of html markup.
+    The chunks of text are separated by newlines.
+    Parameters
+    ----------
+    html: str.
+        A string of html markup soup.
+    Returns
+    -------
+    out: str.
+        The visible text.
+    """
+    __soup = BeautifulSoup(markup=html, features="lxml")
+
+    # kill all script and style elements
+    for script in __soup(["script", "style"]):
+        script.extract()    # rip it out
+
+    # get text
+    __text = __soup.get_text(separator='.')
+
+    # break into lines and remove leading and trailing space on each
+    __lines = (
+        __line.strip()
+        for __line in __text.splitlines())
+    # break multi-headlines into a line each
+    __chunks = (
+        __phrase.strip()
+        for __line in __lines
+        for __phrase in __line.split("."))
+    # drop blank lines
+    return '\n'.join(
+        __chunk
+        for __chunk in __chunks if __chunk)
