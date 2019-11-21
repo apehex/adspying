@@ -1,4 +1,5 @@
 {
+  "type": "FeatureCollection",
   "features": [
     {
       "type": "Feature",
@@ -12,11 +13,11 @@
         "data": ""
       },
       "geometry": {
+        "type": "Point",
         "coordinates": [
           4.828311,
           45.764629
-        ],
-        "type": "Point"
+        ]
       },
       "id": "address.1678640486"
     },
@@ -32,11 +33,11 @@
         "data": ""
       },
       "geometry": {
+        "type": "Point",
         "coordinates": [
           4.827626,
           45.764627
-        ],
-        "type": "Point"
+        ]
       },
       "id": "address.791195401"
     },
@@ -52,11 +53,11 @@
         "data": "0774302641"
       },
       "geometry": {
+        "type": "Point",
         "coordinates": [, 
           -1.706362,
           48.100992
-        ],
-        "type": "Point"
+        ]
       },
       "id": "address.791195401"
     },
@@ -72,14 +73,13 @@
         "data": ""
       },
       "geometry": {
+        "type": "Point",
         "coordinates": [
           0.08001,
           52.212477
-        ],
-        "type": "Point"
+        ]
       },
       "id": "e9e184d7aea3f5bbfbb63117ff499a77"
     }
-  ],
-  "type": "FeatureCollection"
+  ]
 }
