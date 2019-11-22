@@ -75,7 +75,7 @@ class SecondHandAdsSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         """
         """
-        super(SecondHandAdSpider, self).__init__(*args, **kwargs)
+        super(SecondHandAdsSpider, self).__init__(*args, **kwargs)
 
         # stop condition
         self._max_pages = 1
