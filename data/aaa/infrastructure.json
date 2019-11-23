@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "astrolabe",
+        "projects": "aaa",
+        "parents": "ipev",
+        "children": "",
+        "relatives": "aad",
+        "address": "",
+        "data": "https://www.institut-polaire.fr/ipev/infrastructures/les-navires/lastrolabe/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        ]
+      },
+      "id": "point."
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "marion dufresne",
+        "projects": "aaa",
+        "parents": "ifremer",
+        "children": "",
+        "relatives": "aad",
+        "address": "",
+        "data": "https://www.institut-polaire.fr/ipev/infrastructures/les-navires/le-marion-dufresne/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        ]
+      },
+      "id": "point."
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RRS James Clark Ross",
+        "projects": "aaa",
+        "parents": "bas|british antarctic survey",
+        "children": "",
+        "relatives": "",
+        "address": "",
+        "data": "https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rrs-james-clark-ross/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        ]
+      },
+      "id": "point."
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RRS Sir David Attenborough",
+        "projects": "aaa",
+        "parents": "bas|british antarctic survey",
+        "children": "",
+        "relatives": "",
+        "address": "",
+        "data": "https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rrs-sir-david-attenborough/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        ]
+      },
+      "id": "point."
+    }
+  ]
+}

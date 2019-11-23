@@ -1,0 +1,59 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ascension island",
+        "projects": "aaa",
+        "parents": "bas|british antarctic survey",
+        "children": "",
+        "relatives": "",
+        "address": "",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        ]
+      },
+      "id": "point."
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "falkland islands",
+        "projects": "aaa",
+        "parents": "bas|british antarctic survey",
+        "children": "",
+        "relatives": "",
+        "address": "",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        ]
+      },
+      "id": "point."
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "crozet",
+        "projects": "aaa",
+        "parents": "ipev| institut polaire français",
+        "children": "",
+        "relatives": "",
+        "address": "",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        ]
+      },
+      "id": "point."
+    }
+  ]
+}
