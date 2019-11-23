@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "british antarctic survey",
+        "projects": "aaa",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "high cross, cambridge, cambridge, cb3 0tx, united kingdom",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.080556,
+          52.212500
+        ]
+      },
+      "id": "point.00441223221400.press.employment.schools.baslib.basarchive.apc.foi.complaints.partnerships.basstudents.polardatacentre.basmagic.fossils.pictures.mapsales.servicedesk@bas.ac.uk"
+    }
+  ]
+}

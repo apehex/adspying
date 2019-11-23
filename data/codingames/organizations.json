@@ -1,0 +1,145 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "wojo hotel dieu",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "4 place amédée bonnet, 69002 lyon",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.836367,
+          45.758555
+        ]
+      },
+      "id": "point.0033184784449.margaux.hourdin@wojo.com"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "wojo monaco",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "16 boulevard Princesse Charlotte, 98000 Monaco",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.857156,
+          45.762487
+        ]
+      },
+      "id": "point.0033184784449.margaux.hourdin@wojo.com"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "tour oxygene",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "rue bonnel, 69003 Lyon",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.857156,
+          45.762487
+        ]
+      },
+      "id": "point..."
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "mama works lyon",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "92 Cours Lafayette, 69003 Lyon",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.857156,
+          45.762487
+        ]
+      },
+      "id": "point.0033153534462.rp@mamashelter.com.contact@mamaworks.com"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "mama works bordeaux",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "51 Quai Lawton, 33300 Bordeaux",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.557224,
+          44.864543
+        ]
+      },
+      "id": "point.0033540248646.rp@mamashelter.com.contact@mamaworks.com"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "mama works lille",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "134 Rue des Templiers, 59000 Lille",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.022681,
+          50.633326
+        ]
+      },
+      "id": "point.0033359824263.rp@mamashelter.com.contact@mamaworks.com"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "les petites cantines lyon",
+        "projects": "codingames",
+        "parents": "",
+        "children": "nicolas wirtz",
+        "relatives": "",
+        "address": "74 rue de la Charité, 69002 Lyon",
+        "data": "annabel.lorene.lucie.marie.tilen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.829989,
+          45.750536
+        ]
+      },
+      "id": "point.0033987044630.perrache@lespetitescantines.org"
+    }
+  ]
+}

@@ -4,12 +4,12 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "sophia",
+        "name": "sophia leplatois",
         "projects": "codingames",
         "parents": "",
         "children": "",
         "relatives": "nicolas wirtz",
-        "address": "4 Rue De La Loge, 69005 Lyon, France",
+        "address": "4 place du Change, 69005 Lyon, France",
         "data": ""
       },
       "geometry": {
@@ -19,18 +19,18 @@
           45.764629
         ]
       },
-      "id": "address.1678640486"
+      "id": "point.1678640486"
     },
     {
       "type": "Feature",
       "properties": {
         "name": "nicolas wirtz",
         "projects": "codingames",
-        "parents": "",
+        "parents": "les petites cantines",
         "children": "",
-        "relatives": "sophia",
+        "relatives": "sophia leplatois",
         "address": "4 rue de la loge, 69005 lyon, france",
-        "data": ""
+        "data": "développeur de talents"
       },
       "geometry": {
         "type": "Point",
@@ -39,7 +39,7 @@
           45.764627
         ]
       },
-      "id": "address.791195401"
+      "id": "point.fr.linkedin.com/in/nicolas-wirtz-793103a6"
     },
     {
       "type": "Feature",
@@ -50,7 +50,7 @@
         "children": "",
         "relatives": "",
         "address": "29 rue jules, 35200 Rennes, France",
-        "data": "0774302641"
+        "data": ""
       },
       "geometry": {
         "type": "Point",
@@ -59,27 +59,43 @@
           48.100992
         ]
       },
-      "id": "address.791195401"
+      "id": "point.0033774302641"
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "british antarctic survey",
-        "projects": "aaa",
+        "name": "agnes",
+        "projects": "codingames",
         "parents": "",
         "children": "",
         "relatives": "",
-        "address": "high cross, cambridge, cambridge, cb3 0tx, united kingdom",
+        "address": "",
+        "data": "readoren"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+        ]
+      },
+      "id": "point.readoren"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "margaux hourdin",
+        "projects": "codingames",
+        "parents": "wojo",
+        "children": "",
+        "relatives": "",
+        "address": "",
         "data": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.08001,
-          52.212477
         ]
       },
-      "id": "e9e184d7aea3f5bbfbb63117ff499a77"
+      "id": "point.margaux.hourdin@wojo.com"
     }
   ]
 }
