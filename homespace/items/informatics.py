@@ -29,11 +29,11 @@ class ComputerAd(SecondHandAd):
 class ComputerAdLoader(SecondHandAdLoader):
     """
     """
-    ram_model_in = Join()
-    ram_model_out = Identity()
+    ram_model_in = Identity()
+    ram_model_out = Join()
 
-    ram_size_in = Join()
-    ram_size_out = Identity()
+    ram_size_in = Identity()
+    ram_size_out = Join()
 
 class LaptopAd(SecondHandAd):
     """

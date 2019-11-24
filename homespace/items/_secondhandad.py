@@ -49,49 +49,49 @@ class SecondHandAdLoader(ItemLoader):
     default_output_processor = TakeFirst()
 
     url_in = TakeFirst()
-    url_out = Identity()
+    url_out = Join()
 
     vendor_in = Identity()
-    vendor_out = Identity()
+    vendor_out = Join()
 
-    title_in = Join()
-    title_out = Identity()
+    title_in = Identity()
+    title_out = Join()
 
     price_in = TakeFirst()
-    price_out = Identity()
+    price_out = Join()
 
-    condition_in = Join()
-    condition_out = Identity()
+    condition_in = Identity()
+    condition_out = Join()
 
-    location_in = Join()
-    location_out = Identity()
+    location_in = Identity()
+    location_out = Join()
 
     first_posted_in = Identity()
-    first_posted_out = Identity()
+    first_posted_out = Join()
 
-    last_updated_in = Join()
-    last_updated_out = Identity()
+    last_updated_in = Identity()
+    last_updated_out = Join()
 
-    description_in = Join()
-    description_out = Identity()
+    description_in = Identity()
+    description_out = Join()
 
     images_in = Join(', ')
-    images_out = Identity()
+    images_out = Join()
 
     brand_in = Identity()
-    brand_out = Identity()
+    brand_out = Join()
 
     model_in = Identity()
-    model_out = Identity()
+    model_out = Join()
 
     make_in = Identity()
-    make_out = Identity()
+    make_out = Join()
 
-    color_in = Join()
-    color_out = Identity()
+    color_in = Identity()
+    color_out = Join()
 
     price_new_in = Identity()
-    price_new_out = Identity()
+    price_new_out = Join()
 
     user_rating_in = Identity()
-    user_rating_out = Identity()
+    user_rating_out = Join()
