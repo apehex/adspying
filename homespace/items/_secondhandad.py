@@ -10,6 +10,8 @@ Base class for all the specific ad items.
 
 from __future__ import division, print_function, absolute_import
 
+from geopy.geocoders import Nominatim
+
 from scrapy import Field, Item
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
@@ -43,6 +45,8 @@ class SecondHandAd(Item):
     price_new = Field()
 
     # Additional
+    latitude = Field()
+    longitude = Field()
     age = Field()
     user_rating = Field()
 
@@ -97,3 +101,18 @@ class SecondHandAdLoader(ItemLoader):
 
     user_rating_in = MapCompose(remove_extra_spacing)
     user_rating_out = Join()
+
+    def load_item(
+            self):
+        """
+        """
+        __item = super(SecondHandAdLoader, self).load_item()
+        __geolocator = Nominatim(user_agent='homespace')
+        __location = __geolocator.geocode(
+            __item['location'],
+            exactly_one=True)
+
+        __item['latitude'] = __location.latitude
+        __item['longitude'] = __location.longitude
+
+        return __item
