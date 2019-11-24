@@ -71,6 +71,18 @@ def find_closest_reference(value, references):
     return closest_reference
 
 #####################################################################
+# TEXT
+#####################################################################
+
+@checks
+def remove_extra_spacing(
+        text: str) -> str:
+    """
+    Replace any spacing by a single whitspace.
+    """
+    return ' '.join(text.split())
+
+#####################################################################
 # HTML
 #####################################################################
 
