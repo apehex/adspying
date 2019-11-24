@@ -12,6 +12,7 @@ from __future__ import division, print_function, absolute_import
 
 from datetime import date
 from functools import wraps
+from inspect import getfullargspec
 import os
 
 from scrapy.exporters import CsvItemExporter
@@ -25,19 +26,77 @@ from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 # ENABLE / DISABLE PIPELINES
 #####################################################################
 
-def toggle_pipeline(
-        process_item_method: callable) -> callable:
+@checks
+def _empty_open_spider(
+        self,
+        spider):
     """
-    This wrapper makes it so pipelines can be turned on and off at a spider level.
+    Alternative "open_spider" method, as replacement when the pipeline
+    is not enabled for the current spider. 
     """
-    @wraps(process_item_method)
-    def wrapper(self, item, spider):
-        if self.__class__.__name__ in spider._pipelines:
-            return process_item_method(self, item, spider)
-        else:
-            return item
+    pass
 
-    return wrapper
+@checks
+def _empty_close_spider(
+        self,
+        spider):
+    """
+    Alternative "close_spider" method, as replacement when the pipeline
+    is not enabled for the current spider.
+    """
+    pass
+
+@checks
+def _empty_process_item(
+        self,
+        item,
+        spider):
+    """
+    Alternative "process_item" method, as replacement when the pipeline
+    is not enabled for the current spider.
+    """
+    return item
+
+@checks
+def redirects(
+        pipeline_method: callable) -> callable:
+    """
+    This decorator turns pipeline methods on/off depending
+    on the current spider.
+
+    In practice, it replaces the wrapped method with an
+    empty one if the conditions are not met.
+    """
+    __arg_spec = getfullargspec(pipeline_method)
+
+    if pipeline_method.__name__ == 'open_spider':
+        @wraps(pipeline_method)
+        def open_spider_wrapper(self, spider):
+            if self.__class__.__name__ in spider._pipelines:
+                return pipeline_method(self, spider)
+            else:
+                return _empty_open_spider(self, spider)
+        return open_spider_wrapper
+
+    elif pipeline_method.__name__ == 'close_spider':
+        @wraps(pipeline_method)
+        def close_spider_wrapper(self, spider):
+            if self.__class__.__name__ in spider._pipelines:
+                return pipeline_method(self, spider)
+            else:
+                return _empty_close_spider(self, spider)
+        return close_spider_wrapper
+
+    elif pipeline_method.__name__ == 'process_item':
+        @wraps(pipeline_method)
+        def process_item_wrapper(self, item, spider):
+            if self.__class__.__name__ in spider._pipelines:
+                return pipeline_method(self, item, spider)
+            else:
+                return _empty_process_item(self, item, spider)
+        return process_item_wrapper
+
+    return pipeline_method
 
 #####################################################################
 # SECOND HAND ADS
@@ -80,6 +139,7 @@ class SecondHandAdPipeline(object):
                     query=__query_name.replace('_', '-'),
                     date=date.today().strftime('%Y-%m-%d'))))
 
+    @redirects
     def open_spider(
             self,
             spider):
@@ -93,6 +153,7 @@ class SecondHandAdPipeline(object):
             include_headers_line=True)
         self.exporter.start_exporting()
 
+    @redirects
     def close_spider(
             self,
             spider):
@@ -100,6 +161,7 @@ class SecondHandAdPipeline(object):
         """
         self.exporter.finish_exporting()
 
+    @redirects
     def process_item(
             self,
             item,
@@ -142,7 +204,7 @@ class LegalDocumentPipeline(object):
                 'gdpr/',
                 __spider_name))
 
-    @toggle_pipeline
+    @redirects
     def process_item(
             self,
             item,
