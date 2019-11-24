@@ -34,23 +34,23 @@ class SmartphoneAd(SecondHandAd):
 class SmartphoneAdLoader(SecondHandAdLoader):
     """
     """
-    os_in = Join()
-    os_out = Identity()
+    os_in = Identity()
+    os_out = Join()
 
-    ram_in = Join()
-    ram_out = Identity()
+    ram_in = Identity()
+    ram_out = Join()
     
-    ssd_in = Join()
-    ssd_out = Identity()
+    ssd_in = Identity()
+    ssd_out = Join()
     
-    battery_in = Join()
-    battery_out = Identity()
+    battery_in = Identity()
+    battery_out = Join()
     
-    camera_in = Join()
-    camera_out = Identity()
+    camera_in = Identity()
+    camera_out = Join()
     
-    size_in = Join()
-    size_out = Identity()
+    size_in = Identity()
+    size_out = Join()
     
-    weight_in = Join()
-    weight_out = Identity()
+    weight_in = Identity()
+    weight_out = Join()

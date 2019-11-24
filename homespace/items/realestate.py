@@ -38,29 +38,29 @@ class RealEstateAd(SecondHandAd):
 class RealEstateAdLoader(SecondHandAdLoader):
     """
     """
-    category_in = Join()
-    category_out = Identity()
+    category_in = Identity()
+    category_out = Join()
 
-    rooms_in = Join()
-    rooms_out = Identity()
+    rooms_in = Identity()
+    rooms_out = Join()
 
-    floors_in = Join()
-    floors_out = Identity()
+    floors_in = Identity()
+    floors_out = Join()
 
-    indoor_area_in = Join()
-    indoor_area_out = Identity()
+    indoor_area_in = Identity()
+    indoor_area_out = Join()
 
-    outdoor_area_in = Join()
-    outdoor_area_out = Identity()
+    outdoor_area_in = Identity()
+    outdoor_area_out = Join()
 
-    energy_grade_in = Join()
-    energy_grade_out = Identity()
+    energy_grade_in = Identity()
+    energy_grade_out = Join()
 
-    ghg_grade_in = Join()
-    ghg_grade_out = Identity()
+    ghg_grade_in = Identity()
+    ghg_grade_out = Join()
 
-    time_to_work_in = Join()
-    time_to_work_out = Identity()
+    time_to_work_in = Identity()
+    time_to_work_out = Join()
 
-    buildable_in = Join()
-    buildable_out = Identity()
+    buildable_in = Identity()
+    buildable_out = Join()

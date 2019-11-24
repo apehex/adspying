@@ -36,17 +36,17 @@ class LegalDocumentLoader(ItemLoader):
 
     default_output_processor = TakeFirst()
 
-    url_in = TakeFirst()
-    url_out = Identity()
+    url_in = Identity()
+    url_out = Join()
 
-    title_in = Join()
-    title_out = Identity()
+    title_in = Identity()
+    title_out = Join()
 
-    provider_in = Join()
-    provider_out = Identity()
+    provider_in = Identity()
+    provider_out = Join()
 
-    last_updated_in = Join()
-    last_updated_out = Identity()
+    last_updated_in = Identity()
+    last_updated_out = Join()
 
     text_in = MapCompose(extract_text_from_html_markup)
     text_out = Join()

@@ -34,20 +34,20 @@ class VehiculeAdLoader(SecondHandAdLoader):
     """
     """
     # Specifications
-    fuel_in = Join()
-    fuel_out = Identity()
+    fuel_in = Identity()
+    fuel_out = Join()
 
-    mileage_in = Join()
-    mileage_out = Identity()
+    mileage_in = Identity()
+    mileage_out = Join()
 
-    consumption_in = Join()
-    consumption_out = Identity()
+    consumption_in = Identity()
+    consumption_out = Join()
 
-    size_inside_in = Join()
-    size_inside_out = Identity()
+    size_inside_in = Identity()
+    size_inside_out = Join()
 
-    size_outside_in = Join()
-    size_outside_out = Identity()
+    size_outside_in = Identity()
+    size_outside_out = Join()
 
-    gearbox_in = Join()
-    gearbox_out = Identity()
+    gearbox_in = Identity()
+    gearbox_out = Join()

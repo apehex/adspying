@@ -29,8 +29,8 @@ class ShoesAd(SecondHandAd):
 class ShoesAdLoader(SecondHandAdLoader):
     """
     """
-    category_in = Join()
-    category_out = Identity()
+    category_in = Identity()
+    category_out = Join()
 
-    size_in = Join()
-    size_out = Identity()
+    size_in = Identity()
+    size_out = Join()
