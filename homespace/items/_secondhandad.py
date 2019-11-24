@@ -12,7 +12,9 @@ from __future__ import division, print_function, absolute_import
 
 from scrapy import Field, Item
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import Identity, Join, TakeFirst
+from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
+
+from homespace._wrangling import remove_extra_spacing
 
 #####################################################################
 # GENERIC AD
@@ -48,50 +50,50 @@ class SecondHandAdLoader(ItemLoader):
 
     default_output_processor = TakeFirst()
 
-    url_in = TakeFirst()
+    url_in = MapCompose(remove_extra_spacing)
     url_out = Join()
 
-    vendor_in = Identity()
+    vendor_in = MapCompose(remove_extra_spacing)
     vendor_out = Join()
 
-    title_in = Identity()
+    title_in = MapCompose(remove_extra_spacing)
     title_out = Join()
 
     price_in = TakeFirst()
     price_out = Join()
 
-    condition_in = Identity()
+    condition_in = MapCompose(remove_extra_spacing)
     condition_out = Join()
 
-    location_in = Identity()
+    location_in = MapCompose(remove_extra_spacing)
     location_out = Join()
 
-    first_posted_in = Identity()
+    first_posted_in = MapCompose(remove_extra_spacing)
     first_posted_out = Join()
 
-    last_updated_in = Identity()
+    last_updated_in = MapCompose(remove_extra_spacing)
     last_updated_out = Join()
 
-    description_in = Identity()
+    description_in = MapCompose(remove_extra_spacing)
     description_out = Join()
 
     images_in = Join(', ')
     images_out = Join()
 
-    brand_in = Identity()
+    brand_in = MapCompose(remove_extra_spacing)
     brand_out = Join()
 
-    model_in = Identity()
+    model_in = MapCompose(remove_extra_spacing)
     model_out = Join()
 
-    make_in = Identity()
+    make_in = MapCompose(remove_extra_spacing)
     make_out = Join()
 
-    color_in = Identity()
+    color_in = MapCompose(remove_extra_spacing)
     color_out = Join()
 
-    price_new_in = Identity()
+    price_new_in = MapCompose(remove_extra_spacing)
     price_new_out = Join()
 
-    user_rating_in = Identity()
+    user_rating_in = MapCompose(remove_extra_spacing)
     user_rating_out = Join()
