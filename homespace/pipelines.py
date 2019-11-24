@@ -74,7 +74,7 @@ class SecondHandAdPipeline(object):
             file_path=os.path.join(
                 os.path.realpath(
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
-                '/homespace/',
+                'homespace/',
                 __spider_name,
                 '{query}_{date}.csv'.format(
                     query=__query_name.replace('_', '-'),
@@ -139,7 +139,7 @@ class LegalDocumentPipeline(object):
             file_path=os.path.join(
                 os.path.realpath(
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
-                '/gdpr/',
+                'gdpr/',
                 __spider_name))
 
     @toggle_pipeline
