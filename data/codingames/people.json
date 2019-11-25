@@ -96,6 +96,46 @@
         ]
       },
       "id": "point.margaux.hourdin@wojo.com"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "anissa",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "28 Rue Pierre-Joseph Proudhon, 69100 Villeurbanne",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.892122,
+          45.773909
+        ]
+      },
+      "id": "point.0033780890961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "carolina",
+        "projects": "codingames",
+        "parents": "",
+        "children": "",
+        "relatives": "",
+        "address": "Rue du dos de l'Âne, 38300 Bourgoin-Jallieu, France",
+        "data": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.278648,
+          45.587663
+        ]
+      },
+      "id": "point.0033780890961"
     }
   ]
 }
