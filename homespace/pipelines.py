@@ -20,6 +20,7 @@ from scrapy.loader import ItemLoader
 
 from typical import checks
 
+from homespace.exporters import GeoJsonItemExporter, HtmlItemExporter
 from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
@@ -106,10 +107,12 @@ class SecondHandAdPipeline(object):
 
     def __init__(
             self,
-            file_path):
+            parent_path,
+            file_prefix):
         """
         """
-        self.file_path = file_path
+        self.parent_path = parent_path
+        self.file_prefix = file_prefix
 
     @classmethod
     def from_crawler(
@@ -130,14 +133,14 @@ class SecondHandAdPipeline(object):
                 'none')
 
         return cls(
-            file_path=os.path.join(
+            parent_path=os.path.join(
                 os.path.realpath(
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
                 'homespace/',
-                __spider_name,
-                '{query}_{date}.csv'.format(
-                    query=__query_name.replace('_', '-'),
-                    date=date.today().strftime('%Y-%m-%d'))))
+                __spider_name),
+            file_prefix='{query}_{date}'.format(
+                query=__query_name.replace('_', '-'),
+                date=date.today().strftime('%Y-%m-%d')))
 
     @redirects
     def open_spider(
@@ -145,13 +148,43 @@ class SecondHandAdPipeline(object):
             spider):
         """
         """
-        __file = open(self.file_path, 'wb')
-        self.exporter = CsvItemExporter(
-            file=__file,
+        __csv_file = open(
+            os.path.join(
+                self.parent_path,
+                self.file_prefix + '.csv'),
+            'wb')
+
+        # __html_file = open(
+        #     os.path.join(
+        #         self.parent_path,
+        #         self.file_prefix + '.html'),
+        #     'wb')
+
+        __json_file = open(
+            os.path.join(
+                self.parent_path,
+                self.file_prefix + '.json'),
+            'wb')
+
+        # export as csv data file
+        self.csv_exporter = CsvItemExporter(
+            file=__csv_file,
             delimiter=',',
             join_multivalued=' ',
             include_headers_line=True)
-        self.exporter.start_exporting()
+        self.csv_exporter.start_exporting()
+
+        # export as csv data file
+        # self.html_exporter = HtmlItemExporter(
+        #     file=__html_file,
+        #     join_multivalued=' ',
+        #     include_headers_line=True)
+        # self.html_exporter.start_exporting()
+
+        # export as csv data file
+        self.json_exporter = GeoJsonItemExporter(
+            file=__json_file)
+        self.json_exporter.start_exporting()
 
     @redirects
     def close_spider(
@@ -159,7 +192,9 @@ class SecondHandAdPipeline(object):
             spider):
         """
         """
-        self.exporter.finish_exporting()
+        self.csv_exporter.finish_exporting()
+        # self.html_exporter.finish_exporting()
+        self.json_exporter.finish_exporting()
 
     @redirects
     def process_item(
@@ -168,7 +203,9 @@ class SecondHandAdPipeline(object):
             spider):
         """
         """
-        self.exporter.export_item(item)
+        self.csv_exporter.export_item(item)
+        # self.html_exporter.export_item(item)
+        self.json_exporter.export_item(item)
         return item
 
 #####################################################################
@@ -179,10 +216,10 @@ class LegalDocumentPipeline(object):
 
     def __init__(
             self,
-            file_path):
+            parent_path):
         """
         """
-        self.file_path = file_path
+        self.parent_path = parent_path
 
     @classmethod
     def from_crawler(
@@ -198,7 +235,7 @@ class LegalDocumentPipeline(object):
                 'none')
 
         return cls(
-            file_path=os.path.join(
+            parent_path=os.path.join(
                 os.path.realpath(
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
                 'gdpr/',
@@ -220,7 +257,7 @@ class LegalDocumentPipeline(object):
 
         with open(
                 os.path.join(
-                    self.file_path,
+                    self.parent_path,
                     __provider + '.html'),
                 'w') as file:
             file.write(__text)
