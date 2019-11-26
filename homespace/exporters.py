@@ -65,10 +65,10 @@ class HtmlItemExporter(BaseItemExporter):
         return value
 
     def start_exporting(self):
-        self.stream.write(b'<table>')
+        self.stream.write('<table>')
 
     def finish_exporting(self):
-        self.stream.write(b"</tbody></table>")
+        self.stream.write('</tbody></table>')
 
     def export_item(self, item):
         if self._headers_not_written:
@@ -109,12 +109,11 @@ class HtmlItemExporter(BaseItemExporter):
                     tag='<thead>'),
                 self.encoding))
 
-        self.stream.write(b'<tbody>')
+        self.stream.write('<tbody>')
 
 #####################################################################
 # GEOJSON
 #####################################################################
-
 
 class GeoJsonItemExporter(JsonItemExporter):
 
