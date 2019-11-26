@@ -154,11 +154,11 @@ class SecondHandAdPipeline(object):
                 self.file_prefix + '.csv'),
             'wb')
 
-        # __html_file = open(
-        #     os.path.join(
-        #         self.parent_path,
-        #         self.file_prefix + '.html'),
-        #     'wb')
+        __html_file = open(
+            os.path.join(
+                self.parent_path,
+                self.file_prefix + '.html'),
+            'wb')
 
         __json_file = open(
             os.path.join(
@@ -175,11 +175,11 @@ class SecondHandAdPipeline(object):
         self.csv_exporter.start_exporting()
 
         # export as csv data file
-        # self.html_exporter = HtmlItemExporter(
-        #     file=__html_file,
-        #     join_multivalued=' ',
-        #     include_headers_line=True)
-        # self.html_exporter.start_exporting()
+        self.html_exporter = HtmlItemExporter(
+            file=__html_file,
+            join_multivalued=' ',
+            include_headers_line=True)
+        self.html_exporter.start_exporting()
 
         # export as csv data file
         self.json_exporter = GeoJsonItemExporter(
@@ -193,7 +193,7 @@ class SecondHandAdPipeline(object):
         """
         """
         self.csv_exporter.finish_exporting()
-        # self.html_exporter.finish_exporting()
+        self.html_exporter.finish_exporting()
         self.json_exporter.finish_exporting()
 
     @redirects
@@ -204,7 +204,7 @@ class SecondHandAdPipeline(object):
         """
         """
         self.csv_exporter.export_item(item)
-        # self.html_exporter.export_item(item)
+        self.html_exporter.export_item(item)
         self.json_exporter.export_item(item)
         return item
 
