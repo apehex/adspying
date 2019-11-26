@@ -28,35 +28,43 @@ from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 #####################################################################
 
 @checks
-def _empty_open_spider(
-        self,
-        spider):
+def _redirects_open_spider(
+        pipeline_method: callable) -> callable:
     """
-    Alternative "open_spider" method, as replacement when the pipeline
-    is not enabled for the current spider. 
+    Redirects to an empty "open_spider" method,
+    as replacement when the pipeline is not enabled for the current spider.
     """
-    pass
+    @wraps(pipeline_method)
+    def open_spider_wrapper(self, spider):
+        if self.__class__.__name__ in spider._pipelines:
+            return pipeline_method(self, spider)
+        else:
+            return lambda self, spider: None
+    return open_spider_wrapper
 
 @checks
-def _empty_close_spider(
-        self,
-        spider):
+def _redirects_close_spider(
+        pipeline_method: callable) -> callable:
     """
-    Alternative "close_spider" method, as replacement when the pipeline
-    is not enabled for the current spider.
+    Redirects to an empty "close_spider" method,
+    as replacement when the pipeline is not enabled for the current spider.
     """
-    pass
+    return _redirects_open_spider(pipeline_method)
 
 @checks
-def _empty_process_item(
-        self,
-        item,
-        spider):
+def _redirects_process_item(
+        pipeline_method: callable) -> callable:
     """
-    Alternative "process_item" method, as replacement when the pipeline
-    is not enabled for the current spider.
+    Redirects to an empty "process_item" method,
+    as replacement when the pipeline is not enabled for the current spider.
     """
-    return item
+    @wraps(pipeline_method)
+    def process_item_wrapper(self, item, spider):
+        if self.__class__.__name__ in spider._pipelines:
+            return pipeline_method(self, item, spider)
+        else:
+            return lambda self, item, spider: item
+    return process_item_wrapper
 
 @checks
 def redirects(
@@ -71,33 +79,14 @@ def redirects(
     __arg_spec = getfullargspec(pipeline_method)
 
     if pipeline_method.__name__ == 'open_spider':
-        @wraps(pipeline_method)
-        def open_spider_wrapper(self, spider):
-            if self.__class__.__name__ in spider._pipelines:
-                return pipeline_method(self, spider)
-            else:
-                return _empty_open_spider(self, spider)
-        return open_spider_wrapper
-
+        return _redirects_open_spider(pipeline_method)
     elif pipeline_method.__name__ == 'close_spider':
-        @wraps(pipeline_method)
-        def close_spider_wrapper(self, spider):
-            if self.__class__.__name__ in spider._pipelines:
-                return pipeline_method(self, spider)
-            else:
-                return _empty_close_spider(self, spider)
-        return close_spider_wrapper
-
+        return _redirects_close_spider(pipeline_method)
     elif pipeline_method.__name__ == 'process_item':
-        @wraps(pipeline_method)
-        def process_item_wrapper(self, item, spider):
-            if self.__class__.__name__ in spider._pipelines:
-                return pipeline_method(self, item, spider)
-            else:
-                return _empty_process_item(self, item, spider)
-        return process_item_wrapper
+        return _redirects_process_item(pipeline_method)
 
     return pipeline_method
+
 
 #####################################################################
 # SECOND HAND ADS
