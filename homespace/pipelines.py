@@ -39,7 +39,7 @@ def _redirects_open_spider(
         if self.__class__.__name__ in spider._pipelines:
             return pipeline_method(self, spider)
         else:
-            return lambda self, spider: None
+            return (lambda __self, __spider: None)(self, spider)
     return open_spider_wrapper
 
 @checks
@@ -63,7 +63,8 @@ def _redirects_process_item(
         if self.__class__.__name__ in spider._pipelines:
             return pipeline_method(self, item, spider)
         else:
-            return lambda self, item, spider: item
+            return (lambda __self, __item, __spider: __item)(
+                self, item, spider)
     return process_item_wrapper
 
 @checks
@@ -86,7 +87,6 @@ def redirects(
         return _redirects_process_item(pipeline_method)
 
     return pipeline_method
-
 
 #####################################################################
 # SECOND HAND ADS
