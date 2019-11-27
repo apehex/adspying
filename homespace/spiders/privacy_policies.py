@@ -57,6 +57,9 @@ class PrivacyPoliciesSpider(LegalDocumentsSpider):
             'github': {
                 'url': 'https://help.github.com/articles/github-privacy-statement/',
                 'selector': ''},
+            'linkedin': {
+                'url': 'https://www.linkedin.com/legal/preview/privacy-policy',
+                'selector': '//*[@id="popmain"]/div[contains(@class, "legal-content")]'},
             'pivotal': {
                 'url': 'https://pivotal.io/privacy-policy',
                 'selector': ''},
