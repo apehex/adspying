@@ -31,6 +31,9 @@ class RealEstateAd(SecondHandAd):
     energy_grade = Field()
     ghg_grade = Field()
 
+    # Transactions
+    fees_included = Field()
+
     # Computed
     time_to_work = Field()
     buildable = Field()
@@ -38,6 +41,7 @@ class RealEstateAd(SecondHandAd):
 class RealEstateAdLoader(SecondHandAdLoader):
     """
     """
+    # Specifications
     category_in = Identity()
     category_out = Join()
 
@@ -59,6 +63,11 @@ class RealEstateAdLoader(SecondHandAdLoader):
     ghg_grade_in = Identity()
     ghg_grade_out = Join()
 
+    # Transactions
+    fees_included_in = Identity()
+    fees_included_out = Join()
+
+    # Computed
     time_to_work_in = Identity()
     time_to_work_out = Join()
 
