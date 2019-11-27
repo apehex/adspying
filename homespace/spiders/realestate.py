@@ -49,10 +49,11 @@ class RealEstateSpider(LeboncoinSpider):
                 'category': '9',
                 'immo_sell_type': '',
                 'locations': '',
+                'owner_type': '', # private / pro
                 'page': '1',
                 'real_estate_type': '',
                 'rooms': '',
-                'shippable': '1',
+                'shippable': '',
                 'square': '',
                 'price': '',
                 'text': ''},
@@ -61,10 +62,10 @@ class RealEstateSpider(LeboncoinSpider):
                 'immo_sell_type': '',
                 'locations': '',
                 'page': '1',
-                'real_estate_type': '1,3',
+                'real_estate_type': '1',
                 'rooms': '2-max',
-                'shippable': '1',
-                'square': '',
+                'shippable': '',
+                'square': '60-max',
                 'price': 'min-250000',
                 'text': ''},}
 
@@ -77,7 +78,7 @@ class RealEstateSpider(LeboncoinSpider):
                 '//div[contains(@data-qa-id, "criteria_item_energy_rate")]'
                 + '/div/div[2]/div'
                 + '/div[contains(@class, "_1sd0z")]/text()'),
-            'fees': (
+            'fees_included': (
                 '//div[contains(@data-qa-id, "criteria_item_fai_included")]'
                 + '/div/div[2]/text()'),
             'ghg_grade': (
