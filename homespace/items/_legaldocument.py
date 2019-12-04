@@ -14,8 +14,6 @@ from scrapy import Field, Item
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
-from homespace._wrangling import extract_text_from_html_markup
-
 #####################################################################
 # GENERIC AD
 #####################################################################
@@ -48,5 +46,5 @@ class LegalDocumentLoader(ItemLoader):
     last_updated_in = Identity()
     last_updated_out = Join()
 
-    text_in = MapCompose(extract_text_from_html_markup)
+    text_in = Identity()
     text_out = Join()

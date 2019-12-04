@@ -4,13 +4,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "astrolabe",
-        "projects": "aaa",
-        "parents": "ipev",
-        "children": "",
-        "relatives": "aad",
         "address": "",
-        "data": "https://www.institut-polaire.fr/ipev/infrastructures/les-navires/lastrolabe/"
+        "names": ["astrolabe"],
+        "projects": ["aaa"],
+        "links": ["ipev", "institut polaire emile victor"],
+        "data": ["https://www.institut-polaire.fr/ipev/infrastructures/les-navires/lastrolabe/"]
       },
       "geometry": {
         "type": "Point",
@@ -22,13 +20,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "marion dufresne",
-        "projects": "aaa",
-        "parents": "ifremer",
-        "children": "",
-        "relatives": "aad",
         "address": "",
-        "data": "https://www.institut-polaire.fr/ipev/infrastructures/les-navires/le-marion-dufresne/"
+        "names": ["marion dufresne"],
+        "projects": ["aaa"],
+        "links": ["ifremer", "ipev"],
+        "data": ["https://www.institut-polaire.fr/ipev/infrastructures/les-navires/le-marion-dufresne/"]
       },
       "geometry": {
         "type": "Point",
@@ -40,13 +36,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "RRS James Clark Ross",
-        "projects": "aaa",
-        "parents": "bas|british antarctic survey",
-        "children": "",
-        "relatives": "",
         "address": "",
-        "data": "https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rrs-james-clark-ross/"
+        "names": ["RRS James Clark Ross"],
+        "projects": ["aaa"],
+        "links": ["bas", "british antarctic survey"],
+        "data": ["https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rrs-james-clark-ross/"]
       },
       "geometry": {
         "type": "Point",
@@ -58,13 +52,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "RRS Sir David Attenborough",
-        "projects": "aaa",
-        "parents": "bas|british antarctic survey",
-        "children": "",
-        "relatives": "",
         "address": "",
-        "data": "https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rrs-sir-david-attenborough/"
+        "names": ["RRS Sir David Attenborough"],
+        "projects": ["aaa"],
+        "links": ["bas", "british antarctic survey"],
+        "data": ["https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/rrs-sir-david-attenborough/"]
       },
       "geometry": {
         "type": "Point",
