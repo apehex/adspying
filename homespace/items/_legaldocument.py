@@ -14,6 +14,8 @@ from scrapy import Field, Item
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
+from homespace._wrangling import prettify_html
+
 #####################################################################
 # GENERIC AD
 #####################################################################
@@ -46,5 +48,5 @@ class LegalDocumentLoader(ItemLoader):
     last_updated_in = Identity()
     last_updated_out = Join()
 
-    text_in = Identity()
+    text_in = MapCompose(prettify_html)
     text_out = Join()

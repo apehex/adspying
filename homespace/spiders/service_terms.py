@@ -56,6 +56,6 @@ class ServiceTermsSpider(LegalDocumentsSpider):
             'pornhub': 'https://fr.pornhub.com/information#terms',
             'redditinc': 'https://www.redditinc.com/policies/user-agreement',
             'slack': 'https://slack.com/intl/en-fr/terms-of-service',
-            'stackoverflow': 'https://stackoverflow.com/legal/terms-of-service/public'
+            'stackoverflow': 'https://stackoverflow.com/legal/terms-of-service/public',
             'trustpilot': 'https://legal.trustpilot.com/end-user-terms-and-conditions',
             'xhamster': 'https://fr.xhamster.com/info/terms',}

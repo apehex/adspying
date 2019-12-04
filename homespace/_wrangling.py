@@ -93,6 +93,7 @@ def extract_text_from_html_markup(
     Extract the text *visible* to a user on an internet browser,
     from a string of html markup.
     The chunks of text are separated by newlines.
+
     Parameters
     ----------
     html: str.
@@ -124,3 +125,24 @@ def extract_text_from_html_markup(
     return '\n'.join(
         __chunk
         for __chunk in __chunks if __chunk)
+
+@checks
+def prettify_html(
+        html: str) -> str:
+    """
+    Expand the html markup formatting:
+    - break lines on opening tags
+    - indent lines
+
+    Parameters
+    ----------
+    html: str.
+        A string of html markup soup.
+    Returns
+    -------
+    out: str.
+        The beautified html.
+    """
+    return BeautifulSoup(
+        markup=html,
+        features="lxml").prettify().encode('utf-8')
