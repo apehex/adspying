@@ -41,18 +41,8 @@ class ThirdPartiesSpider(LegalDocumentsSpider):
         #############################################################
 
         self.providers = {
-            'amazon': {
-                'url': 'https://www.amazon.fr/gp/help/customer/display.html?nodeId=GDDFZHDDGWM46YS3',
-                'selector': ''},
-            'google': {
-                '': 'https://policies.google.com/privacy/google-partners?hl=en&gl=zz',
-                '': ''},
-            'paypal': {
-                '': 'https://www.paypal.com/ie/webapps/mpp/ua/third-parties-list',
-                '': ''},
-            'github': {
-                '': 'https://help.github.com/articles/github-subprocessors-and-cookies/',
-                '': ''},
-            'twitter': {
-                '': 'https://gdpr.twitter.com/en/dpa.html',
-                '': ''}}
+            'amazon': 'https://www.amazon.fr/gp/help/customer/display.html?nodeId=GDDFZHDDGWM46YS3',
+            'google': 'https://policies.google.com/privacy/google-partners?hl=en&gl=zz',
+            'paypal': 'https://www.paypal.com/ie/webapps/mpp/ua/third-parties-list',
+            'github': 'https://help.github.com/articles/github-subprocessors-and-cookies/',
+            'twitter': 'https://gdpr.twitter.com/en/dpa.html'}

@@ -4,13 +4,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "sophia leplatois",
-        "projects": "codingames",
-        "parents": "",
-        "children": "",
-        "relatives": "nicolas wirtz",
         "address": "4 place du Change, 69005 Lyon, France",
-        "data": ""
+        "names": ["sophia leplatois"],
+        "projects": ["codingames"],
+        "links": ["nicolas wirtz"],
+        "data": [""],
       },
       "geometry": {
         "type": "Point",
@@ -24,13 +22,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "nicolas wirtz",
-        "projects": "codingames",
-        "parents": "les petites cantines",
-        "children": "",
-        "relatives": "sophia leplatois",
         "address": "4 rue de la loge, 69005 lyon, france",
-        "data": "développeur de talents"
+        "names": ["nicolas wirtz"],
+        "projects": ["codingames"],
+        "links": ["les petites cantines", "sophia leplatois"],
+        "data": ["développeur de talents"],
       },
       "geometry": {
         "type": "Point",
@@ -44,13 +40,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "linda",
-        "projects": "codingames",
-        "parents": "",
-        "children": "",
-        "relatives": "",
         "address": "29 rue jules, 35200 Rennes, France",
-        "data": ""
+        "names": ["linda"],
+        "projects": ["codingames"],
+        "links": [""],
+        "data": [""],
       },
       "geometry": {
         "type": "Point",
@@ -64,13 +58,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "agnes hirschmann",
-        "projects": "codingames",
-        "parents": "",
-        "children": "",
-        "relatives": "",
         "address": "",
-        "data": "readoren"
+        "names": ["agnes hirschmann"],
+        "projects": ["codingames"],
+        "links": [""],
+        "data": ["readoren"],
       },
       "geometry": {
         "type": "Point",
@@ -82,13 +74,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "margaux hourdin",
-        "projects": "codingames",
-        "parents": "wojo",
-        "children": "",
-        "relatives": "",
         "address": "",
-        "data": ""
+        "names": ["margaux hourdin"],
+        "projects": ["codingames"],
+        "links": ["wojo"],
+        "data": [""],
       },
       "geometry": {
         "type": "Point",
@@ -100,13 +90,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "anissa",
-        "projects": "codingames",
-        "parents": "",
-        "children": "",
-        "relatives": "",
         "address": "28 Rue Pierre-Joseph Proudhon, 69100 Villeurbanne",
-        "data": ""
+        "names": ["anissa"],
+        "projects": ["codingames"],
+        "links": [""],
+        "data": [""],
       },
       "geometry": {
         "type": "Point",
@@ -120,13 +108,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "carolina",
-        "projects": "codingames",
-        "parents": "",
-        "children": "",
-        "relatives": "",
         "address": "Rue du dos de l'Âne, 38300 Bourgoin-Jallieu, France",
-        "data": ""
+        "names": ["carolina"],
+        "projects": ["codingames"],
+        "links": [""],
+        "data": [""]
       },
       "geometry": {
         "type": "Point",
@@ -136,6 +122,24 @@
         ]
       },
       "id": "point.0033780890961"
+    }
+    {
+      "type": "Feature",
+      "properties": {
+        "address": "fuenlabrada, españa",
+        "names": ["niña melon"],
+        "projects": ["codingames"],
+        "links": [""],
+        "data": [""]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.804082,
+          40.290155
+        ]
+      },
+      "id": "point.instagram.com/ninamelonn"
     }
   ]
 }

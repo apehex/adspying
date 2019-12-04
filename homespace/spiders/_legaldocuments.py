@@ -55,13 +55,13 @@ class LegalDocumentsSpider(scrapy.Spider):
         Queue all the legal document's urls.
         """
         # forge the search urls & queue the requests
-        for __provider, __meta in self.providers.items():
+        for __provider, __url in self.providers.items():
             self.log('[{provider}] requesting...'.format(
                 provider=__provider))
             yield scrapy.Request(
-                url=__meta['url'],
+                url=__url,
                 callback=self.parse,
-                meta={'provider': __provider, 'selector': __meta['selector']})
+                meta={'provider': __provider})
 
     def parse(
             self,
@@ -72,9 +72,6 @@ class LegalDocumentsSpider(scrapy.Spider):
         __provider = response.meta.get(
             'provider',
             'none')
-        __selector = response.meta.get(
-            'selector',
-            '//body')
 
         self.log('[{provider}] parsing...'.format(
             provider = __provider))
@@ -85,6 +82,6 @@ class LegalDocumentsSpider(scrapy.Spider):
 
         __loader.add_value('url', response.url)
         __loader.add_value('provider', __provider)
-        __loader.add_xpath('text', __selector)
+        __loader.add_xpath('text', '//body')
 
         return __loader.load_item()

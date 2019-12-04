@@ -41,26 +41,9 @@ class CookiesPoliciesSpider(LegalDocumentsSpider):
         #############################################################
 
         self.providers = {
-            'amazon': {
-                'url': 'https://www.amazon.fr/gp/help/customer/display.html/?nodeId=201890250',
-                'selector': (
-                    '//div[contains(@class, "help-content")]')},
-            'facebook': {
-                'url': 'https://www.facebook.com/policies/cookies/',
-                'selector': (
-                    '//div[@id="content"]//div[contains(@class, "_5tkp")]')},
-            'google': {
-                'url': 'https://policies.google.com/technologies/cookies',
-                'selector': (
-                    '//*[@id="yDmH0d"]//div[contains(@class, "tk9x4e")]'
-                    + '/div[contains(@class,"vwhFIf")]')},
-            'linkedin': {
-                'url': 'https://www.linkedin.com/legal/preview/cookie-policy',
-                'selector': '//div[@id="popmain"]//div[contains(@class, "legal-content")]'},
-            'stackoverflow': {
-                'url': 'https://stackoverflow.com/legal/cookie-policy',
-                'selector': (
-                    '//div[@id="content"]//main')},
-            'wikimedia': {
-                'url': 'https://foundation.wikimedia.org/wiki/Cookie_statement',
-                'selector': '//div[@id="content"]'},}
+            'amazon': 'https://www.amazon.fr/gp/help/customer/display.html/?nodeId=201890250',
+            'facebook': 'https://www.facebook.com/policies/cookies/',
+            'google': 'https://policies.google.com/technologies/cookies',
+            'linkedin': 'https://www.linkedin.com/legal/preview/cookie-policy',
+            'stackoverflow': 'https://stackoverflow.com/legal/cookie-policy',
+            'wikimedia': 'https://foundation.wikimedia.org/wiki/Cookie_statement',}
