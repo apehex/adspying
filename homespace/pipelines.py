@@ -10,7 +10,6 @@ Exporting data.
 
 from __future__ import division, print_function, absolute_import
 
-from datetime import date
 from functools import wraps
 from inspect import getfullargspec
 import os
@@ -135,9 +134,7 @@ class BasePipeline(object):
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
                 __project_name,
                 __spider_name),
-            file_name='{query}_{date}'.format(
-                query=__query_name.replace('_', '-'),
-                date=date.today().strftime('%Y-%m-%d')))
+            file_name=__query_name.replace('_', '-'))
 
     @redirects
     def close_spider(
