@@ -89,19 +89,22 @@ def redirects(
     return pipeline_method
 
 #####################################################################
-# SECOND HAND ADS
+# BASE
 #####################################################################
 
-class SecondHandAdPipeline(object):
+class BasePipeline(object):
 
     def __init__(
             self,
             parent_path,
-            file_prefix):
+            file_name,
+            file_extension='.txt'):
         """
         """
-        self.parent_path = parent_path
-        self.file_prefix = file_prefix
+        self._file_path = os.path.join(
+            parent_path,
+            file_name + file_extension)
+        self._file = open(self._file_path, 'wb')
 
     @classmethod
     def from_crawler(
@@ -109,71 +112,32 @@ class SecondHandAdPipeline(object):
             crawler):
         """
         """
-        __spider_name = 'none'
-        __query_name = 'none'
+        __project_name = 'homespace'
+        __spider_name = 'default'
+        __query_name = 'default'
         if crawler.spider:
+            __project_name = getattr(
+                crawler.spider,
+                'project',
+                'homespace')
             __spider_name = getattr(
                 crawler.spider,
                 'name',
-                'none')
+                'default')
             __query_name = getattr(
                 crawler.spider,
                 'query',
-                'none')
+                'default')
 
         return cls(
             parent_path=os.path.join(
                 os.path.realpath(
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
-                'homespace/',
+                __project_name,
                 __spider_name),
-            file_prefix='{query}_{date}'.format(
+            file_name='{query}_{date}'.format(
                 query=__query_name.replace('_', '-'),
                 date=date.today().strftime('%Y-%m-%d')))
-
-    @redirects
-    def open_spider(
-            self,
-            spider):
-        """
-        """
-        __csv_file = open(
-            os.path.join(
-                self.parent_path,
-                self.file_prefix + '.csv'),
-            'wb')
-
-        __html_file = open(
-            os.path.join(
-                self.parent_path,
-                self.file_prefix + '.html'),
-            'wb')
-
-        __json_file = open(
-            os.path.join(
-                self.parent_path,
-                self.file_prefix + '.json'),
-            'wb')
-
-        # export as csv data file
-        self.csv_exporter = CsvItemExporter(
-            file=__csv_file,
-            delimiter=',',
-            join_multivalued=' ',
-            include_headers_line=True)
-        self.csv_exporter.start_exporting()
-
-        # export as csv data file
-        self.html_exporter = HtmlItemExporter(
-            file=__html_file,
-            join_multivalued=' ',
-            include_headers_line=True)
-        self.html_exporter.start_exporting()
-
-        # export as csv data file
-        self.json_exporter = GeoJsonItemExporter(
-            file=__json_file)
-        self.json_exporter.start_exporting()
 
     @redirects
     def close_spider(
@@ -181,9 +145,10 @@ class SecondHandAdPipeline(object):
             spider):
         """
         """
-        self.csv_exporter.finish_exporting()
-        self.html_exporter.finish_exporting()
-        self.json_exporter.finish_exporting()
+        if self.exporter:
+            self.exporter.finish_exporting()
+        if not self._file.closed:
+            self._file.close()
 
     @redirects
     def process_item(
@@ -192,43 +157,103 @@ class SecondHandAdPipeline(object):
             spider):
         """
         """
-        self.csv_exporter.export_item(item)
-        self.html_exporter.export_item(item)
-        self.json_exporter.export_item(item)
+        if self.exporter:
+            self.exporter.export_item(item)
         return item
 
 #####################################################################
-# LEGAL DOCUMENTS
+# CSV
 #####################################################################
 
-class LegalDocumentPipeline(object):
+class CsvPipeline(BasePipeline):
 
     def __init__(
             self,
-            parent_path):
+            parent_path,
+            file_name):
         """
         """
-        self.parent_path = parent_path
+        super(CsvPipeline, self).__init__(parent_path, file_name, '.csv')
 
-    @classmethod
-    def from_crawler(
-            cls,
-            crawler):
+    @redirects
+    def open_spider(
+            self,
+            spider):
         """
         """
-        __spider_name = 'none'
-        if crawler.spider:
-            __spider_name = getattr(
-                crawler.spider,
-                'name',
-                'none')
+        if self._file:
+            self.exporter = CsvItemExporter(
+                file=self._file,
+                delimiter=',',
+                join_multivalued=' ',
+                include_headers_line=True)
+            self.exporter.start_exporting()
 
-        return cls(
-            parent_path=os.path.join(
-                os.path.realpath(
-                    crawler.settings.get('EXPORT_FOLDER_PATH')),
-                'gdpr/',
-                __spider_name))
+#####################################################################
+# HTML
+#####################################################################
+
+class HtmlTablePipeline(BasePipeline):
+
+    def __init__(
+            self,
+            parent_path,
+            file_name):
+        """
+        """
+        super(HtmlTablePipeline, self).__init__(parent_path, file_name, '.html')
+
+    @redirects
+    def open_spider(
+            self,
+            spider):
+        """
+        """
+        if self._file:
+            self.exporter = HtmlItemExporter(
+                file=self._file,
+                join_multivalued=' ',
+                include_headers_line=True)
+            self.exporter.start_exporting()
+
+#####################################################################
+# JSON
+#####################################################################
+
+class JsonPipeline(BasePipeline):
+
+    def __init__(
+            self,
+            parent_path,
+            file_name):
+        """
+        """
+        super(JsonPipeline, self).__init__(parent_path, file_name, '.json')
+
+    @redirects
+    def open_spider(
+            self,
+            spider):
+        """
+        """
+        if self._file:
+            self.exporter = GeoJsonItemExporter(
+                file=self._file)
+            self.exporter.start_exporting()
+
+#####################################################################
+# RAW
+#####################################################################
+
+class RawPipeline(BasePipeline):
+
+    def __init__(
+            self,
+            parent_path,
+            file_name):
+        """
+        """
+        super(RawPipeline, self).__init__(parent_path, file_name, '.txt')
 
     @redirects
     def process_item(
@@ -246,9 +271,9 @@ class LegalDocumentPipeline(object):
 
         with open(
                 os.path.join(
-                    self.parent_path,
+                    os.path.dirname(self._file_path),
                     __provider + '.html'),
-                'w') as file:
-            file.write(__text)
+                'w') as __file:
+            __file.write(__text)
 
         return item

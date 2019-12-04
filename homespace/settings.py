@@ -82,8 +82,10 @@ DEPTH_PRIORITY = 1
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'homespace.pipelines.SecondHandAdPipeline': 300,
-   'homespace.pipelines.LegalDocumentPipeline': 400,
+   'homespace.pipelines.CsvPipeline': 300,
+   'homespace.pipelines.HtmlTablePipeline': 301,
+   'homespace.pipelines.JsonPipeline': 302,
+   'homespace.pipelines.RawPipeline': 303,
 }
 EXPORT_FOLDER_PATH = './data/'
 

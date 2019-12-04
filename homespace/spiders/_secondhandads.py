@@ -29,6 +29,7 @@ from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
 class SecondHandAdsSpider(scrapy.Spider):
     name = 'second_hand_ads'
+    project = 'homespace'
 
     #################################################################
     # CLI
@@ -102,7 +103,7 @@ class SecondHandAdsSpider(scrapy.Spider):
         self._loader_class = SecondHandAdLoader
 
         # enable specific pipelines
-        self._pipelines = ['SecondHandAdPipeline']
+        self._pipelines = ['CsvPipeline', 'HtmlTablePipeline', 'JsonPipeline']
 
     def start_requests(self):
         """
