@@ -25,6 +25,7 @@ from homespace.items._legaldocument import LegalDocument, LegalDocumentLoader
 
 class LegalDocumentsSpider(scrapy.Spider):
     name = 'legal_documents'
+    project = 'gdpr'
 
     #################################################################
     # CRAWLING METHODS
@@ -40,7 +41,7 @@ class LegalDocumentsSpider(scrapy.Spider):
         super(LegalDocumentsSpider, self).__init__(*args, **kwargs)
 
         # enable specific pipelines
-        self._pipelines = ['LegalDocumentPipeline']
+        self._pipelines = ['RawPipeline']
 
         #############################################################
         # URLS
