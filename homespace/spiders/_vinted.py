@@ -68,14 +68,21 @@ class VintedSpider(SecondHandAdsSpider):
                 'price_to': '',
                 'search_text': '',
                 'size_id[]': '',},
-            'chaussures':{
+            'chaussures_randonnee_41':{
                 'category': 'hommes/chaussures',
                 'locations': '',
                 'page': '1',
                 'price_to': '100',
                 'search_text': 'sportiva scarpa mammut',
                 'size_id[]': '784',},
-            'veste':{
+            'polaire_s':{
+                'category': 'vetements',
+                'locations': '',
+                'page': '1',
+                'price_to': '100',
+                'search_text': 'mammut',
+                'size_id[]': '207',},
+            'veste_hardshell_s':{
                 'category': 'vetements',
                 'locations': '',
                 'page': '1',
@@ -88,29 +95,27 @@ class VintedSpider(SecondHandAdsSpider):
         #############################################################
         self._ad_listing_xpath = (
             '//*[@id="catalog"]'
-            + '/div[contains(@class, "catalog-body")]/div'
-            + '/div[contains(@class, "row")]/div')
+            + '/div[contains(@class, "catalog-body")]'
+            + '//div[contains(@class, "item-box__container")]')
         self._ad_listing_attributes_xpath = {
-            'images': '',
-            'title': '',
-            'price': '',
-            'location': '',
-            'last_updated': '',
-            'url': '',}
+            'images': 'section/figure/div/a/img/@src',
+            'url': 'section/figure/div/a/@href',}
 
 
         #############################################################
         # AD PAGE DATA SELECTION
         #############################################################
-        self._ad_xpath = ''
+        self._ad_xpath = '//main[contains(@class, "item-information")]'
         self._ad_generic_attributes_xpath = {
-            'images': '',
-            'title': '',
-            'price': '',
-            'condition': '',
-            'last_updated': '',
-            'location': '',
-            'description': '',}
+            'images': (
+                '//div[contains(@class, "item-photos")]'
+                + '//figure[contains(@class, "item-photo--1")]/a/@href'),
+            'title': '//div[contains(@itemprop, "name")]/span/text()',
+            'price': '//span[contains(@itemprop, "price")]/div/text()',
+            'condition': '//div[contains(@itemprop, "itemCondition")]/text()',
+            'last_updated': '//time/@datetime',
+            'location': '//div[contains(@class, "details-list--country")]/text()',
+            'description': '//div[contains(@itemprop, "description")]/span/text()',}
 
         # select data specific to a given ad search (say smartphones)
         self._ad_specific_attributes_xpath = {} # intended to be overriden by the subclass
@@ -128,4 +133,4 @@ class VintedSpider(SecondHandAdsSpider):
                 'category',
                 'hommes'))
 
-        super(VintedSpider, self).start_requests()
+        return super(VintedSpider, self).start_requests()
