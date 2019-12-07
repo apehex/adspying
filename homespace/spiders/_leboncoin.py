@@ -74,12 +74,8 @@ class LeboncoinSpider(SecondHandAdsSpider):
         # AD LISTING DATA SELECTION
         #############################################################
         self._ad_listing_xpath = (
-            '//section[@id="container"]/main/div'
-            + '/div[contains(@class,"_3iQ0i")]'
-            + '/div[contains(@class,"l17WS")]/div'
-            + '/div[contains(@class,"_2Njaz")]'
-            + '/div[contains(@class,"_358dQ")]'
-            + '/div/div/ul/li')
+            '//section[@id="container"]'
+            + '//li[contains(@data-qa-id, "aditem_container")]')
         self._ad_listing_attributes_xpath = {
             'images': (
                 'a/div/span[contains(@class, "_a3cT")]'
@@ -111,30 +107,21 @@ class LeboncoinSpider(SecondHandAdsSpider):
                 + '/div[contains(@class, "GwNx3")]/div'
                 + '/div[contains(@class, "_3bgJP")]/div/div/div'
                 + '/div[contains(@class, "_2x8BQ")]/img/@src'),
-            'title': (
-                'div[contains(@class, "_2NKYa")]'
-                + '/div[contains(@class, "_3aOPO")]'
-                + '/div[contains(@class, "_14taM")]'
-                + '/div[1]/h1/text()'),
+            'title': '//div[contains(@data-qa-id, "adview_title")]/h1/text()',
             'price': (
-                'div[contains(@class, "_2NKYa")]'
-                + '/div[contains(@class, "_3aOPO")]'
-                + '/div[contains(@class, "_14taM")]'
-                + '/div[contains(@class, "eVLNz")]/div/span/text()'),
+                '//div[contains(@data-qa-id, "adview_price")]'
+                + '/div/span/text()'),
             'condition': (
                 '//div[contains(@data-qa-id, "criteria_item_item_condition")]'
                 + '/div/div[2]/text()'),
             'last_updated': (
-                'div[contains(@class, "_2NKYa")]'
-                + '/div[contains(@class, "_3aOPO")]'
-                + '/div[contains(@class, "_14taM")]'
-                + '/div[contains(@data-qa-id, "adview_date")]/text()'),
+                '//div[contains(@data-qa-id, "adview_date")]/text()'),
             'location': (
-                'div/div/div/div/div[contains(@class, "_1aCZv")]'
+                '//div[contains(@data-qa-id, "adview_location_informations")]'
                 + '/span/text()'),
             'description': (
-                'div/div/div/div'
-                + '/span[contains(@class, "content-CxPmi")]/text()'),}
+                '//div[contains(@data-qa-id, "adview_description_container")]'
+                + '//span[contains(@class, "content-CxPmi")]/text()'),}
 
         # select data specific to a given ad search (say smartphones)
         self._ad_specific_attributes_xpath = {} # intended to be overriden by the subclass
