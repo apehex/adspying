@@ -103,7 +103,7 @@ class SecondHandAdsSpider(scrapy.Spider):
         self._loader_class = SecondHandAdLoader
 
         # enable specific pipelines
-        self._pipelines = ['CsvPipeline', 'HtmlTablePipeline', 'JsonPipeline']
+        self._pipelines = ['CsvPipeline', 'HtmlTablePipeline', 'JsonPipeline', 'MongoDbPipeline']
 
     def start_requests(self):
         """

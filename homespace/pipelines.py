@@ -14,6 +14,7 @@ from functools import wraps
 from inspect import getfullargspec
 import os
 
+from pymongo import MongoClient
 from scrapy.exporters import CsvItemExporter
 from scrapy.loader import ItemLoader
 
@@ -237,6 +238,85 @@ class JsonPipeline(BasePipeline):
             self.exporter = GeoJsonItemExporter(
                 file=self._file)
             self.exporter.start_exporting()
+
+#####################################################################
+# MONGODB
+#####################################################################
+
+def _update_or_insert(
+        collection,
+        filter,
+        item):
+    """
+    """
+    if collection.count_documents(filter):
+        collection.update_one(
+            filter=filter,
+            update={'$set': dict(item)})
+    else:
+        collection.insert_one(dict(item))
+
+class MongoDbPipeline(object):
+
+    def __init__(self, mongo_uri, mongo_db, mongo_collection='default'):
+        self._mongo_db_uri = mongo_uri
+        self._mongo_db_name = mongo_db
+        self._mongo_db_collection = mongo_collection
+
+    @classmethod
+    def from_crawler(
+            cls,
+            crawler):
+        """
+        """
+        return cls(
+            mongo_uri=crawler.settings.get('MONGO_URI', 'mongodb://localhost:27017/'),
+            mongo_db=crawler.settings.get('MONGO_DATABASE', 'homespace')
+        )
+
+    @redirects
+    def open_spider(
+            self,
+            spider):
+        """
+        """
+        self._mongo_client = MongoClient(self._mongo_db_uri)
+        self._mongo_db_collection = getattr(
+            spider,
+            'name',
+            'default')
+
+        if self._mongo_client:
+            self._mongo_db = self._mongo_client[self._mongo_db_name]
+
+    @redirects
+    def close_spider(
+            self,
+            spider):
+        """
+        """
+        if self._mongo_client:
+            self._mongo_client.close()
+
+    @redirects
+    def process_item(
+            self,
+            item,
+            spider):
+        """
+        """
+        if self._mongo_db:
+            __url = item.get('url', '')
+            __collection = self._mongo_db[self._mongo_db_collection]
+            if __url:
+                _update_or_insert(
+                    __collection,
+                    {'url': __url},
+                    item)
+            else:
+                __collection.insert_one(dict(item))
+
+        return item
 
 #####################################################################
 # RAW

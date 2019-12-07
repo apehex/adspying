@@ -79,15 +79,20 @@ DEPTH_PRIORITY = 1
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 
+# Parent location of all the exports
+EXPORT_FOLDER_PATH = os.path.realpath('./data/')
+MONGO_URI = 'mongodb://localhost:27017/'
+MONGO_DATABASE = 'homespace'
+
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'homespace.pipelines.CsvPipeline': 300,
    'homespace.pipelines.HtmlTablePipeline': 301,
    'homespace.pipelines.JsonPipeline': 302,
-   'homespace.pipelines.RawPipeline': 303,
+   'homespace.pipelines.MongoDbPipeline': 303,
+   'homespace.pipelines.RawPipeline': 304,
 }
-EXPORT_FOLDER_PATH = './data/'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
