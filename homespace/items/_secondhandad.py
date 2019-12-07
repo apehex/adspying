@@ -109,7 +109,7 @@ class SecondHandAdLoader(ItemLoader):
         __item = super(SecondHandAdLoader, self).load_item()
         __geolocator = Nominatim(user_agent='homespace')
         __location = __geolocator.geocode(
-            __item['location'],
+            __item.get('location', 'north pole'),
             exactly_one=True)
 
         __item['latitude'] = __location.latitude
