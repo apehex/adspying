@@ -17,6 +17,7 @@ requirements = [
     'nltk',
     'numpy',
     'pandas',
+    'pymongo',
     'scrapy',
     'Click', ]
 
