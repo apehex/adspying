@@ -39,7 +39,7 @@ def _redirects_open_spider(
         if self.__class__.__name__ in spider._pipelines:
             return pipeline_method(self, spider)
         else:
-            return (lambda __self, __spider: None)(self, spider)
+            return None
     return open_spider_wrapper
 
 @checks
@@ -63,8 +63,7 @@ def _redirects_process_item(
         if self.__class__.__name__ in spider._pipelines:
             return pipeline_method(self, item, spider)
         else:
-            return (lambda __self, __item, __spider: __item)(
-                self, item, spider)
+            return item
     return process_item_wrapper
 
 @checks
