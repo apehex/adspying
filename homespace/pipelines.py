@@ -103,7 +103,7 @@ class BasePipeline(object):
         self._file_path = os.path.join(
             parent_path,
             file_name + file_extension)
-        self._file = open(self._file_path, 'wb')
+        self._file = None
 
     @classmethod
     def from_crawler(
@@ -135,6 +135,15 @@ class BasePipeline(object):
                 __project_name,
                 __spider_name),
             file_name=__query_name.replace('_', '-'))
+
+    @redirects
+    def open_spider(
+            self,
+            spider):
+        """
+        """
+        if self._file_path:
+            self._file = open(self._file_path, 'wb')
 
     @redirects
     def close_spider(
@@ -178,6 +187,7 @@ class CsvPipeline(BasePipeline):
             spider):
         """
         """
+        super(CsvPipeline, self).open_spider(spider)
         if self._file:
             self.exporter = CsvItemExporter(
                 file=self._file,
@@ -206,6 +216,7 @@ class HtmlTablePipeline(BasePipeline):
             spider):
         """
         """
+        super(HtmlTablePipeline, self).open_spider(spider)
         if self._file:
             self.exporter = HtmlItemExporter(
                 file=self._file,
@@ -233,6 +244,7 @@ class JsonPipeline(BasePipeline):
             spider):
         """
         """
+        super(JsonPipeline, self).open_spider(spider)
         if self._file:
             self.exporter = GeoJsonItemExporter(
                 file=self._file)
