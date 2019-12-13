@@ -145,4 +145,4 @@ def prettify_html(
     """
     return BeautifulSoup(
         markup=html,
-        features="lxml").prettify().encode('utf-8')
+        features="lxml").prettify()
