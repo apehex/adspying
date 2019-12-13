@@ -142,7 +142,7 @@ class BasePipeline(object):
             spider):
         """
         """
-        if self._file_path:
+        if getattr(self, '_file_path', ''):
             self._file = open(self._file_path, 'wb')
 
     @redirects
@@ -151,9 +151,9 @@ class BasePipeline(object):
             spider):
         """
         """
-        if self.exporter:
+        if getattr(self, 'exporter', None):
             self.exporter.finish_exporting()
-        if not self._file.closed:
+        if (getattr(self, '_file', None) and not self._file.closed):
             self._file.close()
 
     @redirects
@@ -163,7 +163,7 @@ class BasePipeline(object):
             spider):
         """
         """
-        if self.exporter:
+        if getattr(self, 'exporter', None):
             self.exporter.export_item(item)
         return item
 
