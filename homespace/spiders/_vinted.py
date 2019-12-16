@@ -23,12 +23,6 @@ But all ads are layed out in a similar way, in HTML.
 
 from __future__ import division, print_function, absolute_import
 
-from urllib.parse import urlencode, urljoin
-
-import scrapy
-
-from typical import checks
-
 from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 from homespace.spiders._secondhandads import SecondHandAdsSpider
 
