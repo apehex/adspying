@@ -62,12 +62,17 @@ class VintedSpider(SecondHandAdsSpider):
                 'price_to': '',
                 'search_text': '',
                 'size_id[]': '',},
-            'chaussures_randonnee_41':{
+            'chaussures_scarpa_42':{
                 'category': 'hommes/chaussures',
-                'locations': '',
                 'page': '1',
                 'price_to': '100',
-                'search_text': 'sportiva scarpa mammut',
+                'brand_id[]': '6055',
+                'size_id[]': '784',},
+            'chaussures_sportiva_42':{
+                'category': 'hommes/chaussures',
+                'page': '1',
+                'price_to': '100',
+                'brand_id[]': '201320',
                 'size_id[]': '784',},
             'polaire_s':{
                 'category': 'vetements',
