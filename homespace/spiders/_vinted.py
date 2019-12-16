@@ -94,12 +94,10 @@ class VintedSpider(SecondHandAdsSpider):
         #############################################################
         self._ad_listing_xpath = (
             '//*[@id="catalog"]'
-            + '/div[contains(@class, "catalog-body")]'
             + '//div[contains(@class, "item-box__container")]')
         self._ad_listing_attributes_xpath = {
             'images': 'section/figure/div/a/img/@src',
             'url': 'section/figure/div/a/@href',}
-
 
         #############################################################
         # AD PAGE DATA SELECTION
