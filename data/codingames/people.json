@@ -122,7 +122,7 @@
         ]
       },
       "id": "point.0033780890961"
-    }
+    },
     {
       "type": "Feature",
       "properties": {
@@ -140,6 +140,24 @@
         ]
       },
       "id": "point.instagram.com/ninamelonn"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "address": "7 rue du puy vineux, 63400 chamalieres, france",
+        "names": ["emmanuelle queyriaux"],
+        "projects": ["codingames"],
+        "links": [""],
+        "data": [""]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.057753,
+          45.7864851
+        ]
+      },
+      "id": "point.0033608852298"
     }
   ]
 }
