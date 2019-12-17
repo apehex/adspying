@@ -10,7 +10,7 @@ Derived class for specialized searches of clothing.
 
 from __future__ import division, print_function, absolute_import
 
-from homespace.spiders._vinted import VintedSpider
+from homespace.spiders.vinted._vinted import VintedSpider
 
 #####################################################################
 # SPIDER
