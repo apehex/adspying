@@ -61,33 +61,7 @@ class VintedSpider(SecondHandAdsSpider):
                 'page': '1',
                 'price_to': '',
                 'search_text': '',
-                'size_id[]': '',},
-            'chaussures_scarpa_42':{
-                'category': 'hommes/chaussures',
-                'page': '1',
-                'price_to': '100',
-                'brand_id[]': '6055',
-                'size_id[]': '784',},
-            'chaussures_sportiva_42':{
-                'category': 'hommes/chaussures',
-                'page': '1',
-                'price_to': '100',
-                'brand_id[]': '201320',
-                'size_id[]': '784',},
-            'polaire_s':{
-                'category': 'vetements',
-                'locations': '',
-                'page': '1',
-                'price_to': '100',
-                'search_text': 'mammut',
-                'size_id[]': '207',},
-            'veste_hardshell_s':{
-                'category': 'vetements',
-                'locations': '',
-                'page': '1',
-                'price_to': '200',
-                'search_text': 'mammut',
-                'size_id[]': '207',},}
+                'size_id[]': '',},}
 
         #############################################################
         # AD LISTING DATA SELECTION
@@ -120,14 +94,3 @@ class VintedSpider(SecondHandAdsSpider):
         # classes to store, clean and export the data
         self._item_class = SecondHandAd
         self._loader_class = SecondHandAdLoader
-
-    def start_requests(self):
-        """
-        """
-        self._select_current_query()
-        self._search_page_url = self._search_page_url.format(
-            category=self._current_query_args.get(
-                'category',
-                'hommes'))
-
-        return super(VintedSpider, self).start_requests()
