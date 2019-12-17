@@ -5,13 +5,13 @@
 Smartphones
 ===========
 
-Search for real-estate in ad listings.
+Search for smartphones in ad listings.
 """
 
 from __future__ import division, print_function, absolute_import
 
 from homespace.items.smartphones import SmartphoneAd, SmartphoneAdLoader
-from homespace.spiders._leboncoin import LeboncoinSpider
+from homespace.spiders.leboncoin._leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES
@@ -45,13 +45,13 @@ IRRELEVANT_ITEMS_FILTER = (
 # SPIDER
 #####################################################################
 
-class SmartphonesSpider(LeboncoinSpider):
-    name = 'smartphones'
+class LeboncoinSmartphonesSpider(LeboncoinSpider):
+    name = 'leboncoin_smartphones'
 
     def __init__(self, *args, **kwargs):
         """
         """
-        super(SmartphonesSpider, self).__init__(*args, **kwargs)
+        super(LeboncoinSmartphonesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
         self._queries = {
@@ -74,7 +74,7 @@ class SmartphonesSpider(LeboncoinSpider):
                 'phone_color': '',
                 'phone_memory': '',
                 'phone_model': '',
-                'price': 'min-100',
+                'price': 'min-50',
                 'search_in': 'subject',
                 'shippable': '1',
                 'text': 'huawei ' + IRRELEVANT_ITEMS_FILTER}}

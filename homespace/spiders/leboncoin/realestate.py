@@ -11,7 +11,7 @@ Search for real-estate in ad listings.
 from __future__ import division, print_function, absolute_import
 
 from homespace.items.realestate import RealEstateAd, RealEstateAdLoader
-from homespace.spiders._leboncoin import LeboncoinSpider
+from homespace.spiders.leboncoin._leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES
@@ -35,13 +35,13 @@ TYPE_VALUES = ['old', 'new', 'viager']
 # SPIDER
 #####################################################################
 
-class RealEstateSpider(LeboncoinSpider):
-    name = 'realestate'
+class LeboncoinRealEstateSpider(LeboncoinSpider):
+    name = 'leboncoin_realestate'
 
     def __init__(self, *args, **kwargs):
         """
         """
-        super(RealEstateSpider, self).__init__(*args, **kwargs)
+        super(LeboncoinRealEstateSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
         self._queries = {
