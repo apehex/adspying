@@ -11,7 +11,7 @@ Search for vehicules in ad listings.
 from __future__ import division, print_function, absolute_import
 
 from homespace.items.vehicules import VehiculeAd, VehiculeAdLoader
-from homespace.spiders._leboncoin import LeboncoinSpider
+from homespace.spiders.leboncoin._leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES
