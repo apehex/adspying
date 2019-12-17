@@ -27,11 +27,20 @@ PRICE_VALUES = (
 # FILTERS
 #####################################################################
 
+ICE_AXE_FILTER = (
+    'piolet')
 SKIS_FILTER = (
     'ski randonnée'
     + ' -enfant'
     + ' -pantalon -combinaison -masque -gant -blouson')
-ICE_AXE_FILTER = ('')
+SKI_BOOTS_FILTER = (
+    'ski chaussures'
+    + ' -enfant'
+    + ' -pantalon -combinaison -masque -gant -blouson')
+SKI_FIXATIONS_FILTER = (
+    'ski fixations'
+    + ' -enfant'
+    + ' -pantalon -combinaison -masque -gant -blouson')
 
 #####################################################################
 # SPIDER
@@ -52,28 +61,28 @@ class LeboncoinSportsGearSpider(LeboncoinSpider):
                 'locations': '',
                 'page': '1',
                 'price': '',
-                'search_in': '',
+                'search_in': 'subject',
                 'shippable': '1',
                 'text': ''},
             'hardshell_jacket': {
                 'category': '29',
-                'locations': 'r_30',
+                'locations': '',
                 'page': '1',
-                'price': 'min-200',
+                'price': 'min-100',
                 'search_in': '',
                 'shippable': '1',
-                'text': SKIS_FILTER},
+                'text': 'mammut'},
             'ice_axe': {
                 'category': '29',
-                'locations': 'r_30',
+                'locations': '',
                 'page': '1',
-                'price': 'min-200',
-                'search_in': '',
+                'price': 'min-50',
+                'search_in': 'subject',
                 'shippable': '1',
-                'text': SKIS_FILTER},
+                'text': ICE_AXE_FILTER},
             'skis': {
                 'category': '29',
-                'locations': 'r_30',
+                'locations': '',
                 'page': '1',
                 'price': 'min-200',
                 'search_in': '',
@@ -81,20 +90,20 @@ class LeboncoinSportsGearSpider(LeboncoinSpider):
                 'text': SKIS_FILTER},
             'ski_boots': {
                 'category': '29',
-                'locations': 'r_30',
+                'locations': '',
                 'page': '1',
-                'price': 'min-200',
+                'price': 'min-100',
                 'search_in': '',
                 'shippable': '1',
-                'text': SKIS_FILTER}
+                'text': SKI_BOOTS_FILTER},
             'ski_fixations': {
                 'category': '29',
-                'locations': 'r_30',
+                'locations': '',
                 'page': '1',
-                'price': 'min-200',
+                'price': 'min-100',
                 'search_in': '',
                 'shippable': '1',
-                'text': SKIS_FILTER},}
+                'text': SKI_FIXATIONS_FILTER},}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {}
