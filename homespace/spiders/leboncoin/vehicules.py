@@ -33,16 +33,22 @@ PRICE_VALUES = (
     + list(range(30000, 55000, 5000)))
 
 #####################################################################
+# FILTERS
+#####################################################################
+
+VANS_FILTER = ('')
+
+#####################################################################
 # SPIDER
 #####################################################################
 
-class VehiculesSpider(LeboncoinSpider):
-    name = 'vehicules'
+class LeboncoinVehiculesSpider(LeboncoinSpider):
+    name = 'leboncoin_vehicules'
 
     def __init__(self, *args, **kwargs):
         """
         """
-        super(VehiculesSpider, self).__init__(*args, **kwargs)
+        super(LeboncoinVehiculesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
         self._queries = {

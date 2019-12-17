@@ -11,7 +11,7 @@ Search for shoes in ad listings.
 from __future__ import division, print_function, absolute_import
 
 from homespace.items.shoes import ShoesAd, ShoesAdLoader
-from homespace.spiders._leboncoin import LeboncoinSpider
+from homespace.spiders.leboncoin._leboncoin import LeboncoinSpider
 
 #####################################################################
 # SEARCH ARG VALUES
@@ -48,13 +48,13 @@ TYPE_VALUES = {
 # SPIDER
 #####################################################################
 
-class ShoesSpider(LeboncoinSpider):
-    name = 'shoes'
+class LeboncoinShoesSpider(LeboncoinSpider):
+    name = 'leboncoin_shoes'
 
     def __init__(self, *args, **kwargs):
         """
         """
-        super(ShoesSpider, self).__init__(*args, **kwargs)
+        super(LeboncoinShoesSpider, self).__init__(*args, **kwargs)
 
         # forge a url to query leboncoin
         self._queries = {
@@ -70,7 +70,7 @@ class ShoesSpider(LeboncoinSpider):
                 'text': ''},
             'vans': {
                 'category': '53',
-                'locations': 'r_22',
+                'locations': '',
                 'page': '1',
                 'search_in': 'subject',
                 'shippable': '1',
