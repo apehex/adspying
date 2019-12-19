@@ -41,6 +41,7 @@ class CookiesPoliciesSpider(LegalDocumentsSpider):
         #############################################################
 
         self.providers = {
+            'airbnb': 'https://www.airbnb.com/terms/cookie_policy',
             'amazon': 'https://www.amazon.fr/gp/help/customer/display.html/?nodeId=201890250',
             'facebook': 'https://www.facebook.com/policies/cookies/',
             'google': 'https://policies.google.com/technologies/cookies',
