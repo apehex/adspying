@@ -41,6 +41,7 @@ class PrivacyPoliciesSpider(LegalDocumentsSpider):
         #############################################################
 
         self.providers = {
+            'airbnb': 'https://www.airbnb.com/terms/privacy_policy',
             'amazon': 'https://www.amazon.fr/gp/help/customer/display.html?nodeId=201909010',
             'edf': 'https://particulier.edf.fr/fr/accueil/cookies-et-donnees-personnelles/charte-donnees-personnelles.html',
             'steam': 'https://store.steampowered.com/privacy_agreement/',

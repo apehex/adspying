@@ -41,6 +41,7 @@ class ServiceTermsSpider(LegalDocumentsSpider):
         #############################################################
 
         self.providers = {
+            'airbnb': 'https://www.airbnb.com/terms',
             'auvieuxcampeur': 'https://www.auvieuxcampeur.fr/mention-legale',
             'bluely': 'https://www.bluely.eu/en/legal-notices',
             'clickworker': 'https://workplace.clickworker.com/en/agreements/10123?_ga=2.234456860.300522425.1531068679-588812912.1531068679',
