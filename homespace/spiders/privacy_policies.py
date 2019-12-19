@@ -64,6 +64,7 @@ class PrivacyPoliciesSpider(LegalDocumentsSpider):
             'pornhub': 'https://fr.pornhub.com/information',
             'reddit': 'https://www.redditinc.com/policies/privacy-policy',
             'slack': 'https://slack.com/intl/fr-fr/policy-archives/privacy/2014-07-22',
+            'soundcloud': 'https://soundcloud.com/pages/privacy/05-2018',
             'stackoverflow': 'https://stackoverflow.com/legal/privacy-policy',
             'steam': 'https://store.steampowered.com/privacy_agreement/',
             'trustpilot': 'https://legal.trustpilot.com/end-user-privacy-terms',
