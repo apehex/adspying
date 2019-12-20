@@ -1,74 +1,720 @@
 <html>
- <body class="hide_chat {{abtesting.getQuickVariantsClasses()}}" ng-class="{
+ <body class="hide_chat variant-1A-active menuVisible" ng-class="{
       'mobile': pageLayoutService.mobile,
       'menuVisible': pageLayoutService.menuVisible,
       'fullscreen': pageLayoutService.fullscreen,
       'pageLoaded': crawlerService.isPageLoaded()
     }" ng-mouseleave="careerService.showOptinPopupPlaygrounds()">
-  <script>
-   window.MathJax={"HTML-CSS":{scale:110},PreviewHTML:{scale:110},CommonHTML:{scale:110},showMathMenu:!1,showMathMenuMSIE:!1,skipStartupTypeset:!0}
-  </script>
-  <script src="https://files.tech.io/codingame/MathJax/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
+  <div id="MathJax_Message" style="display: none;">
+  </div>
+  <div class="fb_reset" id="fb-root">
+   <div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
+    <div>
+    </div>
+    <div>
+    </div>
+   </div>
+  </div>
   <help-popup>
+   <div class="help-popup ng-hide" help-popup-window-resize="" ng-class="{ 'mobile': mobile === true }" ng-show="helpOn">
+    <div class="header" help-popup-drag-and-drop="" ng-mousedown="onMouseDown($event)">
+     <div class="title" ng-bind="title">
+     </div>
+     <div class="back-button ng-hide" ng-click="previousArticle()" ng-show="hasHistory">
+      <img alt="Back" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjRBRkQyMDExMjRCRTExRTVCM0VBOUZEREQxMTRDNDhGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjRBRkQyMDEyMjRCRTExRTVCM0VBOUZEREQxMTRDNDhGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NEFGRDIwMEYyNEJFMTFFNUIzRUE5RkRERDExNEM0OEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NEFGRDIwMTAyNEJFMTFFNUIzRUE5RkRERDExNEM0OEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5CX103AAAAeElEQVR42pSSQQqAIBBFxwhP1qa5XKvOoasu0IXc1mb6ZoGY0vjhISqPcQZJRKjCDBywtfuWcEiK10i5EFf+k1RCZKSUGXhgn/0KTjDRN6GsoMk+wDTUGXM3RsTAZc9bwNZwQt4gawdRHnDvyGui10qv6Fvf6BJgAHvsiZr62By2AAAAAElFTkSuQmCC"/>
+     </div>
+     <div class="close-button" ng-click="closePopup()">
+      <img alt="Close" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RENBODdBQ0E4NkNDMTFFNDk0QTNFNEExNjY0NjVGNzIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RENBODdBQzk4NkNDMTFFNDk0QTNFNEExNjY0NjVGNzIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkY0M0JDODZGODUxNTExRTRBODNBODY1RkIwQzlCQzVGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkY0M0JDODcwODUxNTExRTRBODNBODY1RkIwQzlCQzVGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Xe6rDQAAAJhJREFUeNqcksEKwjAQRCfGL/G3FD147re0QqFeVEQ/U7rO2gkkNR7qwIPd7CzJJoGZgezJk0TlOVG1g+e+0JDRJs2bPH6o5p5mDWBDAiZtyYsclV/ITnH4eNkVSGelriLXyb1pa2/q7bd6eZAP5wvninlIZmeFUiO+ZWX2x5FqQ98qQ3dp6HZWuOv+o+Jc7eKHw9Kv8RZgAABEqIOWu+UiAAAAAElFTkSuQmCC"/>
+     </div>
+    </div>
+    <div class="content_wrapper" ng-click="$event.stopPropagation()">
+     <div class="content" help-link-manager="" ng-bind-html="content">
+     </div>
+    </div>
+   </div>
   </help-popup>
   <navigation>
+   <nav class="" id="navigation" ng-class="{impersonated: sessionService.session.impersonated}" ng-show="pageLayoutService.menuVisible">
+    <!-- -->
+    <!-- -->
+    <div class="navigation_nav-container" ng-if="!showStartHeader()">
+     <!-- -->
+     <!-- -->
+     <div class="navigation-desktop" ng-if="!pageLayoutService.mobile">
+      <div class="left">
+       <a class="navigation-logo" href="/home" ng-click="navigationService.toggleMenu(null)">
+       </a>
+       <div class="navigation-desktop_nav-tabs">
+        <!-- -->
+        <a class="navigation-desktop_nav-tab" href="/training" id="navigation-practice" ng-attr-id="navigation-{{tab.id}}" ng-attr-target="{{tab.target}}" ng-class="{'navigation-desktop_selected': navigationService.isSelected(tab), 'tab-additionnal-margin': tab.id === 'contribute' &amp;&amp; contributionService.getNewContributionCount() &gt; 0}" ng-click="navigationService.clickTab(tab)" ng-href="/training" ng-repeat="tab in tabs track by $index">
+         <span translate="navigation.tabs.practice">
+          Practice
+         </span>
+         <!-- -->
+        </a>
+        <!-- -->
+        <a class="navigation-desktop_nav-tab" href="/multiplayer" id="navigation-compete" ng-attr-id="navigation-{{tab.id}}" ng-attr-target="{{tab.target}}" ng-class="{'navigation-desktop_selected': navigationService.isSelected(tab), 'tab-additionnal-margin': tab.id === 'contribute' &amp;&amp; contributionService.getNewContributionCount() &gt; 0}" ng-click="navigationService.clickTab(tab)" ng-href="/multiplayer" ng-repeat="tab in tabs track by $index">
+         <span translate="navigation.tabs.compete">
+          Compete
+         </span>
+         <!-- -->
+        </a>
+        <!-- -->
+        <a class="navigation-desktop_nav-tab" href="/contributions" id="navigation-contribute" ng-attr-id="navigation-{{tab.id}}" ng-attr-target="{{tab.target}}" ng-class="{'navigation-desktop_selected': navigationService.isSelected(tab), 'tab-additionnal-margin': tab.id === 'contribute' &amp;&amp; contributionService.getNewContributionCount() &gt; 0}" ng-click="navigationService.clickTab(tab)" ng-href="/contributions" ng-repeat="tab in tabs track by $index">
+         <span translate="navigation.tabs.contribute">
+          Contribute
+         </span>
+         <!-- -->
+        </a>
+        <!-- -->
+        <a class="navigation-desktop_nav-tab" href="/learn" id="navigation-learn" ng-attr-id="navigation-{{tab.id}}" ng-attr-target="{{tab.target}}" ng-class="{'navigation-desktop_selected': navigationService.isSelected(tab), 'tab-additionnal-margin': tab.id === 'contribute' &amp;&amp; contributionService.getNewContributionCount() &gt; 0}" ng-click="navigationService.clickTab(tab)" ng-href="/learn" ng-repeat="tab in tabs track by $index">
+         <span translate="navigation.tabs.learn">
+          Learn
+         </span>
+         <!-- -->
+        </a>
+        <!-- -->
+       </div>
+      </div>
+      <cg-navigation-search class="navigation-search" theme="dark">
+       <div class="cg-navigation-search">
+        <cg-selector class="cg-selector" get-suggestions="$ctrl.getSuggestions(searchValue)" get-url="$ctrl.getUrl(suggestion)" select-suggestion="$ctrl.selectSuggestion(suggestion, searchValue, isOnClick)" theme="dark">
+         <div class="cg-selector theme-dark" ng-class="'theme-' + (theme || 'light')">
+          <input autocomplete="off" class="cg-selector-input ng-pristine ng-untouched ng-valid ng-empty" ng-focus="openMenu()" ng-keydown="keydown($event)" ng-model="directiveScope.searchValue" ng-model-options="{ debounce: 500 }" placeholder="Search" translate="" translate-attr-placeholder="cg-selector.search" type="text"/>
+          <div class="progress-anim ng-hide" ng-show="loading">
+           <div class="ui-spinner">
+            <span class="side side-left">
+             <span class="fill">
+             </span>
+            </span>
+            <span class="side side-right">
+             <span class="fill">
+             </span>
+            </span>
+           </div>
+          </div>
+          <div class="search-icon">
+           <svg cg-svg="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNS45MSIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE1LjkxIDE2Ij48ZGVmcz48c3R5bGU+IC5fX1FDOGRsQ2lfX2Nscy0xIHsgZmlsbDogIzI1MmUzODsgZmlsbC1ydWxlOiBldmVub2RkOyB9IDwvc3R5bGU+PC9kZWZzPjxwYXRoIGlkPSJTZWFyY2hfMTYiIGNsYXNzPSJfX1FDOGRsQ2lfX2Nscy0xICIgZD0iTTExNjIuOTYsMTA1MWE2LDYsMCwxLDEsNS45Ny02QTUuOTkyLDUuOTkyLDAsMCwxLDExNjIuOTYsMTA1MVptMC0xMC4yOWE0LjI4NSw0LjI4NSwwLDEsMCw0LjI2LDQuMjlBNC4yODMsNC4yODMsMCwwLDAsMTE2Mi45NiwxMDQwLjcxWm04Ljk0LDE0LjI5YTEsMSwwLDAsMS0uNy0wLjI5bC00Ljk3LTVhMS4wMjcsMS4wMjcsMCwwLDEsMC0xLjQyLDEsMSwwLDAsMSwxLjQxLDBsNC45Nyw1QTEsMSwwLDAsMSwxMTcxLjksMTA1NVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTU3IC0xMDM5KSI+PC9wYXRoPjwvc3ZnPg==" class="icon" viewbox="0 0 15.91 16">
+            <path class="__QC8dlCi__cls-1" d="M1162.96,1051a6,6,0,1,1,5.97-6A5.992,5.992,0,0,1,1162.96,1051Zm0-10.29a4.285,4.285,0,1,0,4.26,4.29A4.283,4.283,0,0,0,1162.96,1040.71Zm8.94,14.29a1,1,0,0,1-.7-0.29l-4.97-5a1.027,1.027,0,0,1,0-1.42,1,1,0,0,1,1.41,0l4.97,5A1,1,0,0,1,1171.9,1055Z" id="Search_16" transform="translate(-1157 -1039)">
+            </path>
+           </svg>
+          </div>
+          <!-- -->
+         </div>
+        </cg-selector>
+       </div>
+      </cg-navigation-search>
+      <div class="right">
+       <navigation-optin origin="header">
+        <!-- -->
+       </navigation-optin>
+       <div class="navigation-auth" ng-show="!navigationService.isLogged()">
+        <button class="navigation-auth_login-button" ng-click="login()" translate="navigation.connect.login">
+         Log In
+        </button>
+        <button class="navigation-auth_signup-button" ng-click="signup()" translate="navigation.connect.signup">
+         Sign Up
+        </button>
+       </div>
+       <div class="navigation-notifications ng-hide" ng-show="navigationService.isLogged()">
+        <div class="navigation-notifications_nav-notifications-wrapper" ng-class="{
+			'navigation-notifications_have-notifications': notificationsStatistics.getUnseenNotificationCount()
+		}" ng-click="navigationService.toggleMenu('notifications')">
+         <div class="navigation-notifications_nav-notifications-icon">
+         </div>
+         <!-- -->
+        </div>
+        <!-- -->
+       </div>
+       <navigation-profile>
+        <!-- -->
+       </navigation-profile>
+       <div class="navigation-additional-links" ng-click="navigationService.toggleMenu('additionalLinks')">
+        <div class="cg-menu-actions theme-black" list-actions="additionalLinks" ng-class="theme?'theme-black':''" ng-click="toggleListActions()" theme="'black'" top-overlay="true">
+         <div class="menu-actions">
+          <div class="icon-actions white" ng-class="black ? 'black' : 'white'">
+          </div>
+         </div>
+         <!-- -->
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- -->
+    </div>
+    <!-- -->
+   </nav>
   </navigation>
   <instant-messages>
+   <div id="instant-messages">
+    <!-- -->
+   </div>
   </instant-messages>
   <cg-codingamer-card-popup-display>
+   <div card-data="service.popupConfig.cardData" cg-codingamer-card="" class="codingamer-card-popup" style="display: none;">
+    <div id="codingamer-card" ng-click="clickCard($event)">
+     <div class="header-container-card">
+      <div class="header-container-card-overlay">
+      </div>
+      <a class="cover-link cover" href="/profile/" ng-href="/profile/" ng-style="cardData.cover?{'background-image': 'url(' + fileServletService.getFileUrl(cardData.cover, 'codingamercard_cover') + ')'}:null" target="_blank">
+      </a>
+      <a class="profil-pict" href="/profile/" ng-href="/profile/" ng-style="cardData.avatar?{'background-image': 'url(' + fileServletService.getFileUrl(cardData.avatar, 'codingamercard_avatar') + ')'}:null" target="_blank">
+       <!-- -->
+      </a>
+      <div class="pseudo-container">
+       <a class="pseudo-card" href="/profile/" ng-bind="cardData.pseudo" ng-href="/profile/" target="_blank">
+       </a>
+       <!-- -->
+      </div>
+     </div>
+     <div class="info-container">
+      <!-- -->
+      <!-- -->
+      <!-- -->
+     </div>
+     <div class="unknown-size">
+      <!-- -->
+      <!-- -->
+      <p class="languages" ng-bind="getSkills()" title="">
+      </p>
+     </div>
+     <div class="buttons">
+      <!-- -->
+      <!-- -->
+      <!-- -->
+     </div>
+    </div>
+    <div ng-transclude="">
+    </div>
+   </div>
   </cg-codingamer-card-popup-display>
-  <cg-confirm-popup>
-  </cg-confirm-popup>
+  <div class="cg-confirm-popup">
+   <div class="cg-popup" close="defaultAction()" data-open="popupService.confirmPopup">
+    <!-- -->
+   </div>
+  </div>
   <cg-solution-overlay-content>
+   <div class="cg-popup" close="onHide()" data-open="solution">
+    <!-- -->
+   </div>
   </cg-solution-overlay-content>
-  <cg-share-popup>
-  </cg-share-popup>
-  <cg-level-popup>
-  </cg-level-popup>
-  <cg-arena-popup>
-  </cg-arena-popup>
+  <div class="cg-share-popup">
+   <div class="cg-popup" close="defaultAction()" data-open="popupService.sharePopup" on-click="disableShowMore()">
+    <!-- -->
+   </div>
+  </div>
+  <div class="cg-level-popup">
+   <!-- -->
+  </div>
+  <div class="cg-arena-popup">
+   <!-- -->
+  </div>
   <cg-info-map-tooltip-display>
+   <div class="info-map-tooltip" style="display: none;">
+    <!-- -->
+   </div>
   </cg-info-map-tooltip-display>
-  <cg-helper-tooltip>
-  </cg-helper-tooltip>
+  <div class="cg-helper-tooltip" ng-click="$event.stopPropagation()">
+   <div class="overlay overlay-rect1">
+   </div>
+   <div class="overlay overlay-rect2">
+   </div>
+   <div class="overlay overlay-rect3">
+   </div>
+   <div class="overlay overlay-rect4">
+   </div>
+   <!-- -->
+  </div>
   <cg-career-popup>
+   <div class="cg-career-popup">
+    <!-- -->
+   </div>
   </cg-career-popup>
-  <cg-generic-popup>
-  </cg-generic-popup>
+  <div class="cg-generic-popup">
+   <div class="cg-popup" close="popupService.getLastGenericPopup().cancellable?reject():accept()" data-open="popupService.getLastGenericPopup()" no-overflow="popupService.getLastGenericPopup().noOverflow">
+    <!-- -->
+   </div>
+  </div>
   <cg-login-popup>
+   <div class="cg-login-popup">
+    <div class="cg-popup" close="$ctrl.defaultAction()" data-open="$ctrl.popupService.loginPopup" non-skippable="$ctrl.popupService.loginPopup.skipMode === 'mandatory'">
+     <!-- -->
+    </div>
+   </div>
   </cg-login-popup>
-  <div id="content" ng-class="pageLayoutService.pageClass">
+  <div class="privacy-policy-content" id="content" ng-class="pageLayoutService.pageClass">
    <cg-cookies-banner origin="codingame">
+    <!-- -->
    </cg-cookies-banner>
-   <cg-panel close="rankXpService.closeXpPanel()" data-visible="rankXpService.xpPanelOpen" id="panelXP" mobile-mode="pageLayoutService.mobile">
-    <cg-profile-xp-panel>
-    </cg-profile-xp-panel>
-   </cg-panel>
+   <div class="cgPanel" close="rankXpService.closeXpPanel()" data-visible="rankXpService.xpPanelOpen" id="panelXP" mobile-mode="pageLayoutService.mobile" ng-class="{'mobile-mode': mobileMode}">
+    <!-- -->
+    <!-- -->
+   </div>
    <invite-panel>
+    <!-- -->
    </invite-panel>
    <div class="column-contents">
     <div class="left-column">
      <div cg-scroll-on-route-change="" id="scrollable-pane">
+      <!-- -->
       <div class="contentView" ui-view="">
+       <privacy-policy-page>
+        <div id="privacy-policy">
+         <div class="privacy-policy_content">
+          <h1 class="privacy-policy_title" translate="privacyPolicy.title">
+           Privacy policy
+          </h1>
+          <!-- -->
+          <div class="privacy-policy-container" ng-include="getI18NPolicy()">
+           <p>
+            This Privacy Policy was last updated on February 2019.
+           </p>
+           <p>
+            CodinGame SA ("we," “us” or “our”) is committed to protecting and respecting your privacy. This Privacy Policy sets out how we collect, use and share information which identifies you or is associated with you (“personal information”).
+           </p>
+           <p>
+            Please read this Privacy Policy carefully to understand our views and practices regarding your personal information and how we will treat it. By using and accessing https://www.codingame.com (the “Service”), you consent to the use of your personal information as described in this Privacy Policy.
+           </p>
+           <p>
+            You should also be aware that we use cookies to store and access information whilst providing the Service. Please see our
+            <a href="/legal/cookies-policy">
+             Cookies Policy
+            </a>
+            for more details.
+           </p>
+           <p>
+            Please note that your data shall be processed respecting the amended “Informatique et Libertés” Law, n°78/17 of 6 January 1978 and “REGULATION (EU) 2016/679” of 27 April 2016 on the protection of natural persons with regard to the processing of personal data (GDPR).
+           </p>
+           <p>
+            For the majority of the personal data processing, the legal basis of the data processing is the contractual relationship between CodinGame and you. The legal foundation for the data processing may also be the legitimate interest of CodinGame.
+           </p>
+           <p>
+            For your information, the Controller is:
+           </p>
+           <pre>CodinGame SA
+Cap Omega - RPT Benjamin Franklin
+CS 3952 
+34960 MONTPELLIER Cedex 2
+France</pre>
+           <h2>
+            Information we may collect
+           </h2>
+           <p>
+            We collect the categories of information set out below when you use the Service.
+           </p>
+           <h2>
+            Information we collect directly from you
+           </h2>
+           <p>
+            We collect information from you when you submit information to us or the Service. The following are examples of when we may collect information directly from you:
+           </p>
+           <ul>
+            <li>
+             Account information such as nickname and email address
+            </li>
+            <li>
+             When you fill in and submit forms on the Service, including forms submitted at the time of registering to use our Service, conducting assessments, reporting a problem with the Service or requesting further information from us.
+            </li>
+            <li>
+             When you contact us via online submission, telephone, electronic mail or regular mail, we may keep a record of that correspondence.
+            </li>
+            <li>
+             When you complete surveys via the Service.
+            </li>
+            <li>
+             When you post comments or opinions to us on the Service (chat, forum, etc.) or third party website where we have a profile or presence (e.g. on our Facebook page).
+            </li>
+            <li>
+             When you want to be contacted by an employer, we collect your preferences of salary, date of hiring, geographical area, position type, years of experience, LinkedIn profile.
+            </li>
+           </ul>
+           <p>
+            We do no collect sensitive data.
+           </p>
+           <h3>
+            Data we collect with your consent
+           </h3>
+           <p>
+            We can also collect data on your contacts/friends if you accept to share with us your address book from Google. CodinGame only processes the name and the email address of your contacts to inform you when one of your contact subscribes to the Service. CodinGame only stores a fingerprint (one-way hash) of the email address of your contacts and an encrypted version of the names of the contacts (the decryption key being the email address which is not kept by CodinGame). In this way, neither CodinGame nor a hostile third party could get access to the name and email address of your contacts from our database.
+           </p>
+           <h2>
+            Information about how you connect to the Service
+           </h2>
+           <p>
+            We collect your IP address, your presumed country and your presumed city
+           </p>
+           <p>
+            If you connect through a social network, we will process your "social ID".
+           </p>
+           <h2>
+            Information about how you use the Service
+           </h2>
+           <p>
+            The information we collect directly from you, about how you use the Service and about how you connect to Service may be transferred to, and stored at, a destination outside the European Economic Area ("EEA"). It may also be processed by staff operating outside the EEA who work for us or for one of our suppliers or any of our employer clients. Such staff maybe engaged in, among other things the provision of support services. By using the Service you consent to any transfer, storage or processing of your personal information outside of your country. We only transfer your personal data to countries that ensure adequate level of protection. We will take all steps reasonably necessary to ensure that personal information is treated securely and in accordance with this Privacy Policy and article 46 of GDPR. You can obtain the list of aforementioned countries and a communication of the safeguards we have implemented to protect your data in countries outside the EEA, by sending an email to
+            <a href="mailto:privacy@codingame.com">
+             privacy@codingame.com
+            </a>
+            .
+           </p>
+           <p>
+            Note that those transfers are necessary for the performance of the contract.
+           </p>
+           <p>
+            All information you provide to us is stored on secure servers of a third party providing data hosting services to us under our control and backed-up on servers belonging to CodinGame.
+           </p>
+           <p>
+           </p>
+           <h2>
+            Uses made of the information we collect
+           </h2>
+           <p>
+            We use the information we collect in the following ways:
+           </p>
+           <ul>
+            <li>
+             To manage your account and provide you with the features of the Service, validate and keep your personal information accurate. We will use information we collect directly from you for this purpose.
+            </li>
+            <li>
+             To ensure that content from the Service is presented in the most effective manner for you and for your device and to display content and features that are tailored to you, your interests and how you use the Service. We will use information we collect directly from you, information about how you use the Service and information about how you connect to the Service for this purpose.
+            </li>
+            <li>
+             To send you emails about the CodinGame community or to send you emails about the website.
+            </li>
+            <li>
+             To provide you with information about products or services of CodinGame that you request from us or which we feel may interest you. We will use information we collect directly from you for this purpose.
+            </li>
+            <li>
+             To determine and predict information that may be of interest or relevant to you. We will use information we collect directly from you, information about how you use the Service and information about how you connect to the Service for this purpose.
+            </li>
+            <li>
+             To allow employer(s) to have access to your profile.
+            </li>
+            <li>
+             To notify you about changes to the Service and address complaints, comments and issues you have in relation to your use of the Service. We will use information we collect directly from you for this purpose.
+            </li>
+            <li>
+             To prevent, detect and investigate illegal activities, breaches of any agreements entered into between you and us and threats to the security of the Service. We will use information we collect directly from you, information about how you use the Service and information about how you connect to the Service for this purpose.
+            </li>
+            <li>
+             To moderate conversations on the chat and the forum.
+            </li>
+            <li>
+             To produce aggregate statistical information and analytics about users of and their submissions to the Service from which individuals cannot be directly identified.
+            </li>
+            <li>
+             To contact you if someone you know subscribe to the Service or permit you to follow your contacts already registered on the platform. We will use the data you have agreed to share with us (Google or Facebook contacts databases) for this purpose.
+            </li>
+           </ul>
+           <h2>
+            Integrity and Retention of Personal Information
+           </h2>
+           <p>
+            CodinGame will retain your personal information for the period necessary to fulfill the purposes outlined in this Privacy Policy unless a longer retention period is required or permitted by law. Most of the time we will retain your personal data during full duration of your subscription and until you decide to delete your account.
+           </p>
+           <p>
+            Upon account deletion, all your personal data are either deleted or anonymized.
+           </p>
+           <p>
+            As Controller of the data processing, CodinGame processed data in a manner that ensures appropriate security of the personal data, including protection against unauthorized or unlawful processing and against accidental loss, destruction or damage, using appropriate technical or organizational measures.
+           </p>
+           <h2>
+            Disclosure of Personal Information
+           </h2>
+           <p>
+            We may disclose your personal information to any member of our group, which means our subsidiaries, our ultimate holding company and its subsidiaries and the employees, agents, officers, directors and contractors of the foregoing entities. These companies will only use your personal information in the same way and for the same purposes as we can under this Privacy Policy.
+           </p>
+           <p>
+            We may also disclose your personal information to third parties, including the following third parties:
+           </p>
+           <ul>
+            <li>
+             Who provide a service to us. These third parties will only be allowed to use your personal information in accordance with our instructions and will be required to keep your information secure.
+            </li>
+            <li>
+             The organizer of a test or contest you participated in.
+            </li>
+            <li>
+             In the event that we sell or buy or transfer any business or assets (in part or whole), in which case we may disclose your personal information to the prospective seller, buyer or recipient of such business or assets.
+            </li>
+            <li>
+             In order to respond to a subpoena, court order or other legal duty or obligation (including without limitations requests or demands from law enforcement and government authorities and regulators).
+            </li>
+            <li>
+             In order to investigate, prevent, or take action regarding suspected or actual prohibited activities, including but not limited to, fraud and situations involving potential threats to the physical safety of any person or to prevent financial loss to any person or entity, including CodinGame SA, its customers, clients, and other parties.
+            </li>
+            <li>
+             In order to enforce or apply any agreement we have with you.
+            </li>
+            <li>
+             In order for you to be contacted by employers.
+            </li>
+           </ul>
+           <p>
+            Attention: you are not authorized to disclose personal data from other users of the Service you may have access to (e.g. during a chat session or on the forum).
+           </p>
+           <h2>
+            Individual Rights
+           </h2>
+           <p>
+            You have the right to access and rectify your personal data, to object receiving marketing emails and with legitimate reasons, you have the right to object to the processing of your personal data or to request the erasure of data which concern you. You have also the right to data portability, to give instructions regarding your data in case you die and the right to withdraw your consent. You may at any time request to exercise those rights by contacting us by email:
+            <a href="mailto:privacy@codingame.com">
+             privacy@codingame.com
+            </a>
+            or by postal mail sent to the following address:
+           </p>
+           <pre>CodinGame SA
+Cap Omega - RPT Benjamin Franklin
+CS 39521
+34960 MONTPELLIER Cedex 2
+France
+
+</pre>
+           <p>
+            If you have any question or any claim, we will do our best to answer you, but in case we are not able to satisfy your demand, you can lodge a complaint with the dedicated data protection authority (for France this is the "CNIL").
+           </p>
+           <h2>
+            Changes to our Privacy Policy
+           </h2>
+           <p>
+            Any changes we may make to our privacy policy in the future will be posted on this page.
+           </p>
+           <p>
+            We may change, modify, add or remove portions of this Privacy Policy at any time in order to maintain the transparency we apply in the processing of your data. We will use reasonable endeavours to inform you of any material changes when they occur. We may do this by email or notice on the site as we consider appropriate. Any changes will be updated on this Privacy Policy. You should periodically review our Privacy Policy for any such changes and can object to them by unsubscribing from the Service (i.e. deleting your account). Please further note, depending on your particular interaction with us, different portions of this Privacy Policy may apply to you at different times.
+           </p>
+           <h2>
+            Contact
+           </h2>
+           <p>
+            Questions, comments and requests regarding this privacy policy are welcome and should be directed to
+            <a href="mailto:privacy@codingame.com">
+             privacy@codingame.com
+            </a>
+            .
+           </p>
+          </div>
+         </div>
+        </div>
+       </privacy-policy-page>
       </div>
-      <cg-footer ng-show="pageLayoutService.showFooter">
-      </cg-footer>
+      <footer class="" id="footer" ng-show="pageLayoutService.showFooter">
+       <div class="logo">
+        <span class="copyright" translate="footer.copyright" translate-values="{year: year}">
+         © 2019 All rights reserved.
+        </span>
+       </div>
+       <div class="links">
+        <a href="/blog" target="_self" translate="footer.blog">
+         BLOG
+        </a>
+        <a href="/about" translate="footer.about">
+         ABOUT US
+        </a>
+        <a href="/legal/privacy-policy" translate="footer.legal">
+         PRIVACY
+        </a>
+        <a href="/rules" translate="footer.rules">
+         RULES
+        </a>
+        <a href="/faq" translate="footer.faq">
+         FAQ
+        </a>
+        <a href="/careers/home" translate="footer.careers">
+         CAREERS
+        </a>
+        <a href="/work/?cg_referrer=%24direct" target="_blank" translate="footer.companies">
+         COMPANIES
+        </a>
+        <a href="/work/offers/screening/?cg_referrer=%24direct" target="_blank" translate="footer.assessment">
+         CODING TESTS
+        </a>
+       </div>
+       <div class="buttons-group">
+        <div class="social-networks">
+         <a class="social-networks-button" href="https://twitter.com/codingame" target="_blank">
+          <svg cg-svg="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZGVmcz48c3R5bGU+IC5fXzJGX3JndmVfX2Nscy0xIHsgZmlsbDogIzdlODA4MjsgZmlsbC1ydWxlOiBldmVub2RkOyB9IDwvc3R5bGU+PC9kZWZzPjxwYXRoIGlkPSJUd2l0dGVyXzMyIiBjbGFzcz0iX18yRl9yZ3ZlX19jbHMtMSAiIGQ9Ik0xNjk0LjAxLDU3YTE2LDE2LDAsMSwxLTE2LDE2QTE2LDE2LDAsMCwxLDE2OTQuMDEsNTdabTEwLjI2LDEwLjI4NS0xLjkyLDEuOTU4czAuMzIsMTEuNTQ0LTExLjIxLDExLjc0OGMtNC43Ni4xNjMtNi4wOC0xLjk1OC02LjA4LTEuOTU4czMuNDgsMC44MTYsNS43Ni0xLjMwNWEzLjk5MiwzLjk5MiwwLDAsMS0zLjg0LTMuMjYzLDIuMTY0LDIuMTY0LDAsMCwwLDEuOTIuMzI2YzAtLjE0Mi0zLjM0LTAuNzE0LTMuMi00LjI0MmEyLjQsMi40LDAsMCwwLDEuOTIuNjUzcy0zLjM4LTIuMjg1LTEuMjgtNS41NDhjMy43Nyw0LjcxOCw3LjkxLDQuNSw4LjMsNC41NjVhMy43NiwzLjc2LDAsMCwxLS4zLTEuNDY1QTMuNzE4LDMuNzE4LDAsMCwxLDE2OTguMDIsNjVhMy42NDIsMy42NDIsMCwwLDEsMi45NywxLjU0OGMwLjI0LS4xNDguNC0wLjI0MywwLjQtMC4yNDNsMi41Ni0uOTc5LTEuOTIsMi4yODRaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTY3OCAtNTcpIj48L3BhdGg+PC9zdmc+" class="social-networks-button-icon" viewbox="0 0 32 32">
+           <path class="__2F_rgve__cls-1" d="M1694.01,57a16,16,0,1,1-16,16A16,16,0,0,1,1694.01,57Zm10.26,10.285-1.92,1.958s0.32,11.544-11.21,11.748c-4.76.163-6.08-1.958-6.08-1.958s3.48,0.816,5.76-1.305a3.992,3.992,0,0,1-3.84-3.263,2.164,2.164,0,0,0,1.92.326c0-.142-3.34-0.714-3.2-4.242a2.4,2.4,0,0,0,1.92.653s-3.38-2.285-1.28-5.548c3.77,4.718,7.91,4.5,8.3,4.565a3.76,3.76,0,0,1-.3-1.465A3.718,3.718,0,0,1,1698.02,65a3.642,3.642,0,0,1,2.97,1.548c0.24-.148.4-0.243,0.4-0.243l2.56-.979-1.92,2.284Z" id="Twitter_32" transform="translate(-1678 -57)">
+           </path>
+          </svg>
+         </a>
+         <a class="social-networks-button" href="https://www.facebook.com/CodinGame" target="_blank">
+          <svg cg-svg="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZGVmcz48c3R5bGU+IC5fXzJqckxwSGJfX2Nscy0xIHsgZmlsbDogIzdlODA4MjsgZmlsbC1ydWxlOiBldmVub2RkOyB9IDwvc3R5bGU+PC9kZWZzPjxwYXRoIGlkPSJGYWNlYm9va18zMiIgY2xhc3M9Il9fMmpyTHBIYl9fY2xzLTEgIiBkPSJNMTUzOCw1N2ExNiwxNiwwLDEsMS0xNiwxNkExNi4wMDcsMTYuMDA3LDAsMCwxLDE1MzgsNTdabTIsMTJ2MWg0bC0xLDNoLTN2OWgtNFY3M2gtMlY3MGgyVjY3YTIuOTIzLDIuOTIzLDAsMCwxLDMtM2g0djRoLTJBMS4xNTcsMS4xNTcsMCwwLDAsMTU0MCw2OVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNTIyIC01NykiPjwvcGF0aD48L3N2Zz4=" class="social-networks-button-icon" viewbox="0 0 32 32">
+           <path class="__2jrLpHb__cls-1" d="M1538,57a16,16,0,1,1-16,16A16.007,16.007,0,0,1,1538,57Zm2,12v1h4l-1,3h-3v9h-4V73h-2V70h2V67a2.923,2.923,0,0,1,3-3h4v4h-2A1.157,1.157,0,0,0,1540,69Z" id="Facebook_32" transform="translate(-1522 -57)">
+           </path>
+          </svg>
+         </a>
+         <a class="social-networks-button" href="https://fr.linkedin.com/company/codingame" target="_blank">
+          <svg cg-svg="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZGVmcz48c3R5bGU+IC5fX2w4UlV3NW9fX2Nscy0xIHsgZmlsbDogIzdlODA4MjsgZmlsbC1ydWxlOiBldmVub2RkOyB9IDwvc3R5bGU+PC9kZWZzPjxwYXRoIGlkPSJMaW5rZWRJbl8zMiIgY2xhc3M9Il9fbDhSVXc1b19fY2xzLTEgIiBkPSJNMTc0NSw1N2ExNiwxNiwwLDEsMS0xNiwxNkExNiwxNiwwLDAsMSwxNzQ1LDU3Wm0tNCwyM2gtMy41YTEuMTc3LDEuMTc3LDAsMCwxLS41LTFWNzBhMS43NjksMS43NjksMCwwLDEsMS0xaDNjMC44NywwLDEsLjE2MSwxLDF2OUMxNzQyLDgwLDE3NDIsODAsMTc0MSw4MFptLTEuNS0xMi4wMzFhMi41LDIuNSwwLDEsMSwyLjUtMi41QTIuNSwyLjUsMCwwLDEsMTczOS41LDY3Ljk2OVpNMTc1My40OCw4MGgtMy4xNWMtMC4yOSwwLS4zMy0wLjMxNy0wLjMzLTFWNzRhMS44MSwxLjgxLDAsMCwwLTEuNDctMS41QTEuNjcxLDEuNjcxLDAsMCwwLDE3NDcsNzR2NWMwLDAuNzE0LS4wNCwxLTAuMzMsMWgtMy4xNWEwLjUwOCwwLjUwOCwwLDAsMS0uNTItMC41di0xMGEwLjUwOCwwLjUwOCwwLDAsMSwuNTItMC41aDMuMTVhMC41MDgsMC41MDgsMCwwLDEsLjUyLjV2MC4wODFhNC4zOTQsNC4zOTQsMCwwLDEsMi4zOC0uNTgxYzMuODksMCw0LjQzLDIuNDA1LDQuNDMsNXY1LjVBMC41MDgsMC41MDgsMCwwLDEsMTc1My40OCw4MFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNzI5IC01NykiPjwvcGF0aD48L3N2Zz4=" class="social-networks-button-icon" viewbox="0 0 32 32">
+           <path class="__l8RUw5o__cls-1" d="M1745,57a16,16,0,1,1-16,16A16,16,0,0,1,1745,57Zm-4,23h-3.5a1.177,1.177,0,0,1-.5-1V70a1.769,1.769,0,0,1,1-1h3c0.87,0,1,.161,1,1v9C1742,80,1742,80,1741,80Zm-1.5-12.031a2.5,2.5,0,1,1,2.5-2.5A2.5,2.5,0,0,1,1739.5,67.969ZM1753.48,80h-3.15c-0.29,0-.33-0.317-0.33-1V74a1.81,1.81,0,0,0-1.47-1.5A1.671,1.671,0,0,0,1747,74v5c0,0.714-.04,1-0.33,1h-3.15a0.508,0.508,0,0,1-.52-0.5v-10a0.508,0.508,0,0,1,.52-0.5h3.15a0.508,0.508,0,0,1,.52.5v0.081a4.394,4.394,0,0,1,2.38-.581c3.89,0,4.43,2.405,4.43,5v5.5A0.508,0.508,0,0,1,1753.48,80Z" id="LinkedIn_32" transform="translate(-1729 -57)">
+           </path>
+          </svg>
+         </a>
+         <a class="social-networks-button" href="https://www.youtube.com/channel/UCJ6woCHjGCBXqpf91SsAcoQ" target="_blank">
+          <svg cg-svg="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZGVmcz48c3R5bGU+IC5fXzJTcTZoVkxfX2Nscy0xIHsgZmlsbDogIzdlODA4MjsgZmlsbC1ydWxlOiBldmVub2RkOyB9IDwvc3R5bGU+PC9kZWZzPjxwYXRoIGlkPSJZb3V0dWJlXzMyIiBjbGFzcz0iX18yU3E2aFZMX19jbHMtMSAiIGQ9Ik0xNjQzLDU3YTE2LDE2LDAsMSwxLTE2LDE2QTE2LDE2LDAsMCwxLDE2NDMsNTdabTUuMTUsMjIuMDA5aC0xMC4zMWMtMi4xMywwLTMuODUtLjYyOS0zLjg1LTMuODI1VjcwLjgzYzAtMy4zODcsMS43Mi0zLjgyNCwzLjg1LTMuODI0aDEwLjMxYzIuMTIsMCwzLjg1LjA1NSwzLjg1LDMuODI0djQuMzU0QzE2NTIsNzguNjI2LDE2NTAuMjcsNzkuMDA5LDE2NDguMTUsNzkuMDA5Wm0tNy4xNi05LjAyMlY3Nmw2LjAyLTMuNTA4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE2MjcgLTU3KSI+PC9wYXRoPjwvc3ZnPg==" class="social-networks-button-icon" viewbox="0 0 32 32">
+           <path class="__2Sq6hVL__cls-1" d="M1643,57a16,16,0,1,1-16,16A16,16,0,0,1,1643,57Zm5.15,22.009h-10.31c-2.13,0-3.85-.629-3.85-3.825V70.83c0-3.387,1.72-3.824,3.85-3.824h10.31c2.12,0,3.85.055,3.85,3.824v4.354C1652,78.626,1650.27,79.009,1648.15,79.009Zm-7.16-9.022V76l6.02-3.508Z" id="Youtube_32" transform="translate(-1627 -57)">
+           </path>
+          </svg>
+         </a>
+        </div>
+        <div class="langchooser">
+         <button class="langmenu-item-button" ng-click="langMenuVisible = !langMenuVisible">
+          <span class="langmenu-item">
+           <span class="flag footer-usa_uk" ng-class="langs[getCurrentLanguage()].flag">
+           </span>
+           <span class="label" ng-bind="langs[getCurrentLanguage()].name">
+            EN
+           </span>
+          </span>
+         </button>
+         <!-- -->
+        </div>
+       </div>
+      </footer>
      </div>
     </div>
     <div class="chat-wrapper">
      <div id="chat">
-      <cg-chat>
-      </cg-chat>
+      <div class="chat theme-black" ng-class="{'small-chat' : !chatBigLayout, 'theme-black': theme === 'black' || !theme || theme === 'auto'}" ng-click="toggleIfSmall()">
+       <!-- -->
+       <!-- -->
+       <cg-discord-disclaimer ng-if="chatBigLayout" theme="theme">
+        <div class="cg-discord-disclaimer_container" ng-class="{'theme-white': $ctrl.theme === 'white'}">
+         <!-- -->
+         <!-- -->
+         <div class="cg-discord-disclaimer_big" ng-if="!$ctrl.minifyDicordDisclaimer">
+          <div class="cg-discord-disclaimer_banner-container">
+           <img alt="codingame" class="cg-discord-disclaimer_banner-icons" ng-src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOS43OCIgaGVpZ2h0PSIzOS43ODEiIHZpZXdCb3g9IjAgMCAzOS43OCAzOS43ODEiPjxkZWZzPjxzdHlsZT4gLl9fMVJ0WmlMU19fY2xzLTEgeyBmaWxsOiAjZjJiYjEzOyBmaWxsLXJ1bGU6IGV2ZW5vZGQ7IH0gPC9zdHlsZT48L2RlZnM+PHBhdGggaWQ9ImNvZGluIiBjbGFzcz0iX18xUnRaaUxTX19jbHMtMSAiIGQ9Ik0xNzM4LjMyLDEwMy4zOTNsLTAuMTMsMGEyLjg2OSwyLjg2OSwwLDAsMS0yLjc4LTIuOTMyLDIuODEsMi44MSwwLDAsMSwyLjg1LTIuNjg3bDAuMTMsMGEyLjg2OSwyLjg2OSwwLDAsMSwyLjc4LDIuOTMyLDIuODEsMi44MSwwLDAsMS0yLjg1LDIuNjg4bS05LjQ4LTEzLjMxNWExOS45MDUsMTkuOTA1LDAsMCwwLTE3LjY4LDI5LjA0MWM0LjY1LS43LDEyLjU2LTIuODQsMTMuMTEtOS4zYTYuMzM0LDYuMzM0LDAsMCwxLDYuNDMtNi4xYzIuMTMsMCwzLjk3LDEuMTUsMy45OSwzLjU2OSwwLjE4LDUuMi00LjI0LDUuMDMtOS4yNyw3LjYyMy01LjgyLDMuNzE0LTYuMjYsNy41NzYtNS41NSwxMS42NGEzLjYyNiwzLjYyNiwwLDAsMCwuNTIsMS40NDUsMTkuOSwxOS45LDAsMSwwLDguNDUtMzcuOTE2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTcwOC45NCAtOTAuMDk0KSI+PC9wYXRoPjwvc3ZnPg==" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOS43OCIgaGVpZ2h0PSIzOS43ODEiIHZpZXdCb3g9IjAgMCAzOS43OCAzOS43ODEiPjxkZWZzPjxzdHlsZT4gLl9fMVJ0WmlMU19fY2xzLTEgeyBmaWxsOiAjZjJiYjEzOyBmaWxsLXJ1bGU6IGV2ZW5vZGQ7IH0gPC9zdHlsZT48L2RlZnM+PHBhdGggaWQ9ImNvZGluIiBjbGFzcz0iX18xUnRaaUxTX19jbHMtMSAiIGQ9Ik0xNzM4LjMyLDEwMy4zOTNsLTAuMTMsMGEyLjg2OSwyLjg2OSwwLDAsMS0yLjc4LTIuOTMyLDIuODEsMi44MSwwLDAsMSwyLjg1LTIuNjg3bDAuMTMsMGEyLjg2OSwyLjg2OSwwLDAsMSwyLjc4LDIuOTMyLDIuODEsMi44MSwwLDAsMS0yLjg1LDIuNjg4bS05LjQ4LTEzLjMxNWExOS45MDUsMTkuOTA1LDAsMCwwLTE3LjY4LDI5LjA0MWM0LjY1LS43LDEyLjU2LTIuODQsMTMuMTEtOS4zYTYuMzM0LDYuMzM0LDAsMCwxLDYuNDMtNi4xYzIuMTMsMCwzLjk3LDEuMTUsMy45OSwzLjU2OSwwLjE4LDUuMi00LjI0LDUuMDMtOS4yNyw3LjYyMy01LjgyLDMuNzE0LTYuMjYsNy41NzYtNS41NSwxMS42NGEzLjYyNiwzLjYyNiwwLDAsMCwuNTIsMS40NDUsMTkuOSwxOS45LDAsMSwwLDguNDUtMzcuOTE2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTcwOC45NCAtOTAuMDk0KSI+PC9wYXRoPjwvc3ZnPg=="/>
+           <img alt="x" class="cg-discord-disclaimer_banner-icons cross-icon" ng-src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj48ZGVmcz48c3R5bGU+IC5fX2YzTDRCRnhfX2Nscy0xIHsgZmlsbDogI2ZmZjsgZmlsbC1ydWxlOiBldmVub2RkOyB9IDwvc3R5bGU+PC9kZWZzPjxwYXRoIGlkPSJ4IiBjbGFzcz0iX19mM0w0QkZ4X19jbHMtMSAiIGQ9Ik0xNzcxLjQxLDExMGw0LjMsNC4yOTNhMSwxLDAsMCwxLTEuNDIsMS40MTRsLTQuMjktNC4yOTMtNC4yOSw0LjI5M2ExLDEsMCwwLDEtMS40Mi0xLjQxNGw0LjMtNC4yOTMtNC4zLTQuMjkzYTEsMSwwLDAsMSwxLjQyLTEuNDE0bDQuMjksNC4yOTMsNC4yOS00LjI5M2ExLDEsMCwwLDEsMS40MiwxLjQxNFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNzY0IC0xMDQpIj48L3BhdGg+PC9zdmc+" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj48ZGVmcz48c3R5bGU+IC5fX2YzTDRCRnhfX2Nscy0xIHsgZmlsbDogI2ZmZjsgZmlsbC1ydWxlOiBldmVub2RkOyB9IDwvc3R5bGU+PC9kZWZzPjxwYXRoIGlkPSJ4IiBjbGFzcz0iX19mM0w0QkZ4X19jbHMtMSAiIGQ9Ik0xNzcxLjQxLDExMGw0LjMsNC4yOTNhMSwxLDAsMCwxLTEuNDIsMS40MTRsLTQuMjktNC4yOTMtNC4yOSw0LjI5M2ExLDEsMCwwLDEtMS40Mi0xLjQxNGw0LjMtNC4yOTMtNC4zLTQuMjkzYTEsMSwwLDAsMSwxLjQyLTEuNDE0bDQuMjksNC4yOTMsNC4yOS00LjI5M2ExLDEsMCwwLDEsMS40MiwxLjQxNFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNzY0IC0xMDQpIj48L3BhdGg+PC9zdmc+"/>
+           <img alt="discord" class="cg-discord-disclaimer_banner-icons" ng-src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NS42NSIgaGVpZ2h0PSIzOS45MzgiIHZpZXdCb3g9IjAgMCA1NS42NSAzOS45MzgiPjxkZWZzPjxzdHlsZT4gLl9fMXNxdW9OaV9fY2xzLTEgeyBmaWxsOiAjNzI4OWRhOyBmaWxsLXJ1bGU6IGV2ZW5vZGQ7IH0gPC9zdHlsZT48L2RlZnM+PHBhdGggaWQ9ImRpc2NvcmQiIGNsYXNzPSJfXzFzcXVvTmlfX2Nscy0xICIgZD0iTTE4NDAuNjUsOTUuMjQ3YTIzLjQ4LDIzLjQ4LDAsMCwwLTEzLjM1LTQuOTY4bC0wLjY2Ljc2NGM4LjEsMi40MzYsMTEuODcsNi4wMTksMTEuODcsNi4wMTlhMzkuNTc2LDM5LjU3NiwwLDAsMC0xNC4zNS00LjUzOCw0MC4yNTYsNDAuMjU2LDAsMCwwLTkuNjMuMSw0LjU3Nyw0LjU3NywwLDAsMC0uODEuMSwzNy4yNywzNy4yNywwLDAsMC0xMC44MiwzLjAxYy0xLjc3Ljc2NC0yLjgyLDEuMzM4LTIuODIsMS4zMzhzMy45MS0zLjc3NCwxMi40OS02LjIxMWwtMC40Ny0uNTczYTIzLjU4NCwyMy41ODQsMCwwLDAtMTMuMzUsNC45NjgsNjMuMTM5LDYzLjEzOSwwLDAsMC02Ljg3LDI3LjYxM3M0LjAxLDYuODgsMTQuNTQsNy4yMTRjMCwwLDEuNzctMi4xLDMuMi0zLjkxNy02LjA2LTEuODE2LTguMzQtNS41OS04LjM0LTUuNTlzMC40NywwLjMzNCwxLjMzLjgxMmEwLjU4OSwwLjU4OSwwLDAsMSwuMTkuMWMwLjE0LDAuMDk1LjI5LDAuMTQzLDAuNDMsMC4yMzlhMjcuNTM2LDI3LjUzNiwwLDAsMCwzLjQ4LDEuNjI0LDM2LjMsMzYuMywwLDAsMCw3LjAxLDIuMDU0LDMzLjMzMywzMy4zMzMsMCwwLDAsMTIuMzUuMDQ4LDM0LjI2LDM0LjI2LDAsMCwwLDYuOTEtMi4wNTQsMjcuMDgyLDI3LjA4MiwwLDAsMCw1LjQ4LTIuODE5cy0yLjM4LDMuODctOC42Myw1LjYzN2MxLjQzLDEuNzY4LDMuMTUsMy44MjIsMy4xNSwzLjgyMiwxMC41My0uMzM0LDE0LjU0LTcuMjE0LDE0LjU0LTcuMTY2QTYzLjEzOSw2My4xMzksMCwwLDAsMTg0MC42NSw5NS4yNDdabS0yOS44NCwyMy4xN2E1LjI3MSw1LjI3MSwwLDAsMSwwLTEwLjUxQTUuMjcxLDUuMjcxLDAsMCwxLDE4MTAuODEsMTE4LjQxN1ptMTcuNCwwYTUuMjcxLDUuMjcxLDAsMSwxLDQuODYtNS4yNTVBNS4wNzEsNS4wNzEsMCwwLDEsMTgyOC4yMSwxMTguNDE3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3OTEuODggLTkwLjEyNSkiPjwvcGF0aD48L3N2Zz4=" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NS42NSIgaGVpZ2h0PSIzOS45MzgiIHZpZXdCb3g9IjAgMCA1NS42NSAzOS45MzgiPjxkZWZzPjxzdHlsZT4gLl9fMXNxdW9OaV9fY2xzLTEgeyBmaWxsOiAjNzI4OWRhOyBmaWxsLXJ1bGU6IGV2ZW5vZGQ7IH0gPC9zdHlsZT48L2RlZnM+PHBhdGggaWQ9ImRpc2NvcmQiIGNsYXNzPSJfXzFzcXVvTmlfX2Nscy0xICIgZD0iTTE4NDAuNjUsOTUuMjQ3YTIzLjQ4LDIzLjQ4LDAsMCwwLTEzLjM1LTQuOTY4bC0wLjY2Ljc2NGM4LjEsMi40MzYsMTEuODcsNi4wMTksMTEuODcsNi4wMTlhMzkuNTc2LDM5LjU3NiwwLDAsMC0xNC4zNS00LjUzOCw0MC4yNTYsNDAuMjU2LDAsMCwwLTkuNjMuMSw0LjU3Nyw0LjU3NywwLDAsMC0uODEuMSwzNy4yNywzNy4yNywwLDAsMC0xMC44MiwzLjAxYy0xLjc3Ljc2NC0yLjgyLDEuMzM4LTIuODIsMS4zMzhzMy45MS0zLjc3NCwxMi40OS02LjIxMWwtMC40Ny0uNTczYTIzLjU4NCwyMy41ODQsMCwwLDAtMTMuMzUsNC45NjgsNjMuMTM5LDYzLjEzOSwwLDAsMC02Ljg3LDI3LjYxM3M0LjAxLDYuODgsMTQuNTQsNy4yMTRjMCwwLDEuNzctMi4xLDMuMi0zLjkxNy02LjA2LTEuODE2LTguMzQtNS41OS04LjM0LTUuNTlzMC40NywwLjMzNCwxLjMzLjgxMmEwLjU4OSwwLjU4OSwwLDAsMSwuMTkuMWMwLjE0LDAuMDk1LjI5LDAuMTQzLDAuNDMsMC4yMzlhMjcuNTM2LDI3LjUzNiwwLDAsMCwzLjQ4LDEuNjI0LDM2LjMsMzYuMywwLDAsMCw3LjAxLDIuMDU0LDMzLjMzMywzMy4zMzMsMCwwLDAsMTIuMzUuMDQ4LDM0LjI2LDM0LjI2LDAsMCwwLDYuOTEtMi4wNTQsMjcuMDgyLDI3LjA4MiwwLDAsMCw1LjQ4LTIuODE5cy0yLjM4LDMuODctOC42Myw1LjYzN2MxLjQzLDEuNzY4LDMuMTUsMy44MjIsMy4xNSwzLjgyMiwxMC41My0uMzM0LDE0LjU0LTcuMjE0LDE0LjU0LTcuMTY2QTYzLjEzOSw2My4xMzksMCwwLDAsMTg0MC42NSw5NS4yNDdabS0yOS44NCwyMy4xN2E1LjI3MSw1LjI3MSwwLDAsMSwwLTEwLjUxQTUuMjcxLDUuMjcxLDAsMCwxLDE4MTAuODEsMTE4LjQxN1ptMTcuNCwwYTUuMjcxLDUuMjcxLDAsMSwxLDQuODYtNS4yNTVBNS4wNzEsNS4wNzEsMCwwLDEsMTgyOC4yMSwxMTguNDE3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3OTEuODggLTkwLjEyNSkiPjwvcGF0aD48L3N2Zz4="/>
+          </div>
+          <div class="cg-discord-disclaimer_big-text" translate="cg-discord-disclaimer.incentiveText">
+           Join the CodinGame community on Discord to chat about puzzle contributions, challenges, streams, blog articles - all that good stuff!
+          </div>
+          <a class="cg-discord-disclaimer_big-join-button" href="https://discord.gg/qAKXEEv" rel="noopener" target="_blank" translate="cg-discord-disclaimer.joinUs">
+           JOIN US ON DISCORD
+          </a>
+         </div>
+         <!-- -->
+         <button class="cg-discord-disclaimer_toggle" ng-class="{'theme-white': $ctrl.theme === 'white','minified': $ctrl.minifyDicordDisclaimer}" ng-click="$ctrl.minifyDiscordDisclaimerToggle()">
+          <img alt="toggle" class="cg-discord-disclaimer_toggle-arrow" ng-src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgMTAgNiI+PGRlZnM+PHN0eWxlPiAuX19YYUtWTUpsX19jbHMtMSB7IGZpbGw6ICM4Mzg4OTE7IGZpbGwtcnVsZTogZXZlbm9kZDsgfSA8L3N0eWxlPjwvZGVmcz48cGF0aCBpZD0iYXJyb3ciIGNsYXNzPSJfX1hhS1ZNSmxfX2Nscy0xICIgZD0iTTE4OTMsMTAyYTEuMDA2LDEuMDA2LDAsMCwwLS43MS4yOTNsLTQsNGExLDEsMCwwLDAsMS40MiwxLjQxNGwzLjI5LTMuMjkzLDMuMjksMy4yOTNhMSwxLDAsMCwwLDEuNDItMS40MTRsLTQtNEExLjAwNiwxLjAwNiwwLDAsMCwxODkzLDEwMloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xODg4IC0xMDIpIj48L3BhdGg+PC9zdmc+" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgMTAgNiI+PGRlZnM+PHN0eWxlPiAuX19YYUtWTUpsX19jbHMtMSB7IGZpbGw6ICM4Mzg4OTE7IGZpbGwtcnVsZTogZXZlbm9kZDsgfSA8L3N0eWxlPjwvZGVmcz48cGF0aCBpZD0iYXJyb3ciIGNsYXNzPSJfX1hhS1ZNSmxfX2Nscy0xICIgZD0iTTE4OTMsMTAyYTEuMDA2LDEuMDA2LDAsMCwwLS43MS4yOTNsLTQsNGExLDEsMCwwLDAsMS40MiwxLjQxNGwzLjI5LTMuMjkzLDMuMjksMy4yOTNhMSwxLDAsMCwwLDEuNDItMS40MTRsLTQtNEExLjAwNiwxLjAwNiwwLDAsMCwxODkzLDEwMloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xODg4IC0xMDIpIj48L3BhdGg+PC9zdmc+"/>
+         </button>
+        </div>
+       </cg-discord-disclaimer>
+       <!-- -->
+       <!-- -->
+       <cg-chat-navbar current-room="currentRoom" max-visible-tabs="MAX_TABS_SHOWN" ng-if="chatBigLayout" rooms="roomsArray" switch-room="switchRoomFromPanel(currentTabRoom)" theme="theme">
+        <div class="cg-chat-navbar" ng-class="{'theme-white': $ctrl.theme === 'white'}">
+         <!-- -->
+         <!-- -->
+         <!-- -->
+         <!-- -->
+        </div>
+       </cg-chat-navbar>
+       <!-- -->
+       <!-- -->
+       <!-- -->
+       <div class="big" ng-if="chatBigLayout">
+        <div class="messages-wrap">
+         <div chat-autoscroll="" class="messages" id="messages">
+          <div class="room-intro">
+           <!-- -->
+           <!-- -->
+           <!-- -->
+          </div>
+          <!-- -->
+         </div>
+        </div>
+        <div class="footer">
+         <div class="chat-state">
+          <!-- -->
+         </div>
+         <div class="send-form">
+          <form class="ng-pristine ng-valid ng-valid-maxlength">
+           <div class="cg-inputcontainer">
+            <textarea class="chat-input cg-field ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" id="chat-input" maxlength="10000" ng-change="inputChange()" ng-click="clickInput($event)" ng-keydown="chatKeydown($event)" ng-maxlength="10000" ng-model="messageWrapper.chatMessage" ng-trim="false"></textarea>
+            <div class="cg-inputoverlay">
+             <!-- -->
+            </div>
+            <!-- -->
+           </div>
+          </form>
+          <span class="emojis-btn chat-chat_smiley" ng-click="toggleEmojis($event)" title="Emojis" translate="" translate-attr-title="chat.titles.emojis">
+          </span>
+         </div>
+         <div class="settings-bar">
+          <span class="button-wrapper hide-wrapper" ng-click="toggleChat($event)" title="Hide" translate="" translate-attr-title="chat.titles.hide">
+           <span class="hide-btn chat-chat_hide">
+           </span>
+          </span>
+          <span class="button-wrapper" ng-click="toggleSettings($event)" title="Settings" translate="" translate-attr-title="chat.titles.settings">
+           <span class="settings-btn chat-chat_settings">
+           </span>
+          </span>
+          <!-- -->
+          <span class="button-wrapper" ng-click="openPeople()" ng-if="!chatService.credentials.guest" title="Participants" translate="" translate-attr-title="chat.titles.people">
+           <span class="occupants-btn chat-chat_people ng-hide" ng-show="currentRoom.type === 'groupchat'">
+           </span>
+          </span>
+          <!-- -->
+          <button article-id="chatService.helpCenterId" class="help-center cg-help-button" ng-click="launchHelp($event)" title="Help" type="button">
+          </button>
+         </div>
+         <!-- -->
+         <!-- -->
+        </div>
+       </div>
+       <!-- -->
+       <!-- -->
+       <div class="chat-people" ng-class="{ 'chat-people-visible' : peopleVisible}" ng-if="!chatService.credentials.guest">
+        <div class="people-header" ng-click="closePeople()">
+         <span class="people-close">
+          <span class="chat-button_close_black">
+          </span>
+         </span>
+         <span class="people-title" translate="chat.occupants">
+          Online Participants
+         </span>
+        </div>
+        <div class="people" vs-repeat="">
+         <!-- -->
+        </div>
+       </div>
+       <!-- -->
+      </div>
      </div>
     </div>
    </div>
   </div>
-  <script src="https://static.codingame.com/runtime~app.77157c5f.js" type="text/javascript">
-  </script>
-  <script src="https://static.codingame.com/vendors~app.0657c420.js" type="text/javascript">
-  </script>
-  <script src="https://static.codingame.com/app.de66ee47.js" type="text/javascript">
-  </script>
+  <div class="cfp-hotkeys-container fade" ng-class="{in: helpVisible}" style="display: none;">
+   <div class="cfp-hotkeys">
+    <!-- -->
+    <h4 class="cfp-hotkeys-title" ng-if="!header">
+     Keyboard Shortcuts:
+    </h4>
+    <!-- -->
+    <!-- -->
+    <table>
+     <tbody>
+      <!-- -->
+      <tr ng-repeat="hotkey in hotkeys | filter:{ description: '!$$undefined$$' }">
+       <td class="cfp-hotkeys-keys">
+        <!-- -->
+        <span class="cfp-hotkeys-key" ng-repeat="key in hotkey.format() track by $index">
+         ?
+        </span>
+        <!-- -->
+       </td>
+       <td class="cfp-hotkeys-text">
+        Show / hide this help menu
+       </td>
+      </tr>
+      <!-- -->
+     </tbody>
+    </table>
+    <!-- -->
+    <div class="cfp-hotkeys-close" ng-click="toggleCheatSheet()">
+     ×
+    </div>
+   </div>
+  </div>
  </body>
 </html>
