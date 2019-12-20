@@ -59,5 +59,5 @@ class ServiceTermsSpider(LegalDocumentsSpider):
             'slack': 'https://slack.com/intl/en-fr/terms-of-service',
             'stackoverflow': 'https://stackoverflow.com/legal/terms-of-service/public',
             'trustpilot': 'https://legal.trustpilot.com/end-user-terms-and-conditions',
-            'twitter': 'https://twitter.com/en/tos/previous/version_10',
+            'twitter': 'https://twitter.com/en/tos/previous/version_11',
             'xhamster': 'https://fr.xhamster.com/info/terms',}
