@@ -68,7 +68,7 @@ class PrivacyPoliciesSpider(LegalDocumentsSpider):
             'stackoverflow': 'https://stackoverflow.com/legal/privacy-policy',
             'steam': 'https://store.steampowered.com/privacy_agreement/',
             'trustpilot': 'https://legal.trustpilot.com/end-user-privacy-terms',
-            'twitter': 'https://twitter.com/en/privacy/previous/version_13',
+            'twitter': 'https://twitter.com/en/privacy',
             'uber': 'https://privacy.uber.com/policy',
             'wikimedia': 'https://foundation.wikimedia.org/wiki/Privacy_policy',
             'winamax': 'https://www.winamax.fr/a-propos_conditions-generales-d-utilisation_politique-de-confidentialite',
