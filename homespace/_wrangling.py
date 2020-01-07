@@ -15,60 +15,109 @@ from nltk.metrics.distance import edit_distance
 import numpy as np
 import re
 
-from typical import checks
+from typical import checks, iterable, numerical
 
 #####################################################################
 # ENCODING & FORMAT
 #####################################################################
 
 @checks
-def convert_unicode_to_lower_string(
-        unicode_bytes: bytes) -> str:
-    """Convert a unicode byte object to a standard string.
-
-    Args:
-        unicode_bytes (unicode): text, as a byte string.
-
-    Returns:
-        str: text in lower case, as a standard python str type.
+def format_text(
+        text: str) -> str:
     """
-    return unicode_bytes.encode('utf-8', 'ignore').lower()
+    Remove duplicate spacing and convert to lower case.
 
-def format_text(unicode_bytes):
-    formatted_text = unicode_bytes.encode('utf-8', 'ignore')
-    formatted_text = formatted_text.strip()
-    formatted_text = formatted_text.lower()
-    return formatted_text
+    Parameters
+    ----------
+    text: str.
+        Any chunk of text.
 
-def format_number(unicode_bytes):
-    formatted_number = format_text(unicode_bytes)
-    number_matches = re.search('([-+]?[0-9]*\.?[0-9]+).*', formatted_number)
-    if number_matches:
-        formatted_number = number_matches.group(1)
+    Returns
+    -------
+    out: str.
+        The formated text.
+    """
+    return remove_extra_spacing(text.lower())
+
+def format_number(
+        text: str) -> numerical:
+    """
+    Convert strings to numpy float.
+
+    Parameters
+    ----------
+    text: str.
+        Any chunk of text.
+
+    Returns
+    -------
+    out: np.float64.
+        The formated text.
+    """
+    __as_text = format_text(text)
+    __is_a_number = re.search(
+        '([-+]?[0-9]+\.?[0-9]*).*',
+        format_text(text))
+    if __is_a_number:
+        return np.float64(__is_a_number.group(1))
     else:
-        formatted_number = np.nan
-    formatted_number = np.float64(formatted_number)
-    return formatted_number
+        return np.float64(np.nan)
 
 #####################################################################
 # TRANSLATION
 #####################################################################
 
-def string_distance(s1, s2):
-    distance = edit_distance(s1, s2)
-    distance -= abs(len(s1) - len(s2))
-    return distance
+@checks
+def string_distance(
+        s1: str,
+        s2: str) -> numerical:
+    """
+    Calculate a custom distance between strings.
 
-def find_closest_reference(value, references):
-    distances = [
-        edit_distance(
-            s1=value,
-            s2=ref,
-            substitution_cost=2)
-        for ref in references]
-    min_index = np.argmin(distances)
-    closest_reference = references[min_index]
-    return closest_reference
+    Does not take into account the difference in length.
+
+    Parameters
+    ----------
+    s1: str.
+        Any chunk of text.
+    s2: str.
+        Any chunk of text.
+
+    Returns
+    -------
+    out: float.
+        The distance between s1 and s2.
+    """
+    return (
+        edit_distance(s1, s2)
+        - abs(len(s1) - len(s2)))
+
+@checks
+def find_closest_reference(
+        target: str,
+        candidates: iterable,
+        distance: callable=string_distance) -> str:
+    """
+    Find the element in an iterable closest to a given value.
+
+    Parameters
+    ----------
+    target: str.
+        The value to match.
+    candidates: iterable.
+        An iterable object in which the function picks.
+
+    Returns
+    -------
+    out: str.
+        The closest element from the target.
+    """
+    __distances = [
+        distance(
+            s1=target,
+            s2=__s)
+        for __s in candidates]
+    return candidates[np.argmin(__distances)]
 
 #####################################################################
 # TEXT
@@ -79,6 +128,16 @@ def remove_extra_spacing(
         text: str) -> str:
     """
     Replace any spacing by a single whitspace.
+
+    Parameters
+    ----------
+    text: str.
+        Any chunk of text.
+
+    Returns
+    -------
+    out: str.
+        A lean version of the input.
     """
     return ' '.join(text.split())
 
@@ -88,7 +147,7 @@ def remove_extra_spacing(
 
 @checks
 def extract_text_from_html_markup(
-        html:str) -> str:
+        html: str) -> str:
     """
     Extract the text *visible* to a user on an internet browser,
     from a string of html markup.
