@@ -15,7 +15,7 @@ from nltk.metrics.distance import edit_distance
 import numpy as np
 import re
 
-from typical import checks, iterable, numerical
+from typical import checks, iterable, numeric
 
 #####################################################################
 # ENCODING & FORMAT
@@ -39,8 +39,9 @@ def format_text(
     """
     return remove_extra_spacing(text.lower())
 
+@checks
 def format_number(
-        text: str) -> numerical:
+        text: str) -> numeric:
     """
     Convert strings to numpy float.
 
@@ -70,7 +71,7 @@ def format_number(
 @checks
 def string_distance(
         s1: str,
-        s2: str) -> numerical:
+        s2: str) -> numeric:
     """
     Calculate a custom distance between strings.
 
