@@ -131,8 +131,8 @@ make_references = list(make_df[0].values)
 
 replace_make_dict = {
     old: find_closest_reference(
-        value=old,
-        references=make_references)
+        target=old,
+        candidates=make_references)
     for old in make_old}
 
 replace_make_dict = {
