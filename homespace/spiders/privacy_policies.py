@@ -61,7 +61,7 @@ class PrivacyPoliciesSpider(LegalDocumentsSpider):
             'medium': 'https://medium.com/policy/medium-privacy-policy-f03bf92035c9',
             'microsoft': 'https://privacy.microsoft.com/en-US/privacystatement',
             'mozilla': 'https://www.mozilla.org/en-US/privacy/',
-            'patreon': 'https://support.patreon.com/hc/en-us/articles/360038128931-Former-Patreon-Privacy-Policy',
+            'patreon': 'https://privacy.patreon.com/policies',
             'pivotal': 'https://pivotal.io/privacy-policy',
             'pornhub': 'https://fr.pornhub.com/information',
             'reddit': 'https://www.redditinc.com/policies/privacy-policy',
@@ -72,6 +72,7 @@ class PrivacyPoliciesSpider(LegalDocumentsSpider):
             'trustpilot': 'https://legal.trustpilot.com/end-user-privacy-terms',
             'twitter': 'https://twitter.com/en/privacy',
             'uber': 'https://privacy.uber.com/policy',
+            'vporn': 'https://www.vporn.com/privacy/',
             'wikimedia': 'https://foundation.wikimedia.org/wiki/Privacy_policy',
             'winamax': 'https://www.winamax.fr/a-propos_conditions-generales-d-utilisation_politique-de-confidentialite',
             'xhamster': 'https://fr.xhamster.com/info/privacy',}
