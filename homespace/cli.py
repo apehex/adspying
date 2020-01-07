@@ -21,21 +21,6 @@ from typical import (
     numeric)
 
 #####################################################################
-# ARG CLEANING & STANDARDIZING
-#####################################################################
-
-@checks
-def remove_special_characters(
-        value: str) -> str:
-    """
-    Replace all the special characters in the argument by '_'. 
-    """
-    return re.sub(
-        '\W+',
-        '_',
-        value)
-
-#####################################################################
 # TRANSLATE TEXT VALUES INTO URL ARGS
 #####################################################################
 
