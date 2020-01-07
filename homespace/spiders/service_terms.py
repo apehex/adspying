@@ -54,7 +54,7 @@ class ServiceTermsSpider(LegalDocumentsSpider):
             'linkedin': 'https://www.linkedin.com/legal/preview/user-agreement',
             'medium': 'https://medium.com/policy/medium-terms-of-service-9db0094a1e0f',
             'microsoft': 'https://www.microsoft.com/en-us/servicesagreement/',
-            'patreon': 'https://www.patreon.com/policy/oldterms',
+            'patreon': 'https://www.patreon.com/policy/legal',
             'pivotal': 'https://pivotal.io/svcs-terms',
             'pornhub': 'https://fr.pornhub.com/information#terms',
             'redditinc': 'https://www.redditinc.com/policies/user-agreement',

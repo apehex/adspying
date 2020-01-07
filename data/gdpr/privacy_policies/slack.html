@@ -1,527 +1,1250 @@
 <html>
- <body class="deprecated">
-  <script>
-   var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-if (w > 1440) document.querySelector('body').classList.add('widescreen');
-  </script>
-  <nav class="top persistent">
-   <a aria-label="Page d'accueil de Slack" class="logo" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=logo" data-qa="logo" href="https://slack.com/">
-   </a>
-   <ul>
-    <li>
-     <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_product" data-qa="product" href="https://slack.com/is">
-      Produit
-     </a>
-    </li>
-    <li>
-     <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_pricing" data-qa="pricing" href="https://slack.com/pricing?ui_step=55&amp;ui_element=5">
-      Tarifs
-     </a>
-    </li>
-    <li>
-     <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_support" data-qa="support" href="https://get.slack.help/hc/fr-fr">
-      Assistance
-     </a>
-    </li>
-    <li class="mobile_btn download_slack">
-     <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_download" data-qa="download_slack" href="/get">
-      Télécharger Slack
-     </a>
-    </li>
-    <li>
-     <a class="" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_create_team" data-gtm-click="SignUp,optout_nav_create_team" data-qa="create_team" href="https://slack.com/create">
-      Créer un espace de travail
-     </a>
-    </li>
-    <li>
-     <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_find_team" data-gtm-click="optout_nav_find_team" data-qa="find_team" href="https://slack.com/get-started">
-      Trouver votre espace de travail
-     </a>
-    </li>
-    <li class="sign_in hide_on_mobile">
-     <a class="btn_sticky btn_filled" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_sign_in" data-gtm-click="optout_nav_signin" data-qa="sign_in" href="https://slack.com/signin">
-      Connexion
-     </a>
-    </li>
-    <li class="mobile_btn mobile_menu_btn">
-     <a class="btn_sticky" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_mobile_menu_btn" href="#">
-      Menu
-     </a>
-    </li>
-   </ul>
-  </nav>
-  <nav aria-hidden="true" class="mobile_menu loading menu_scroll">
-   <div class="mobile_menu_wrapper">
-    <div class="mobile_menu_header">
-     <a class="logo" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_logo" href="https://slack.com/">
-     </a>
-     <a aria-label="fermer" class="close" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_menu_close" href="#">
-      <ts-icon class="ts_icon ts_icon_times">
-      </ts-icon>
-     </a>
-    </div>
-    <ul>
-     <li>
-      <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_product" href="https://slack.com/is">
-       Produit
-      </a>
-     </li>
-     <li>
-      <a class="mobile_nav_pricing" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_pricing" href="https://slack.com/pricing?ui_step=55&amp;ui_element=5">
-       Tarifs
-      </a>
-     </li>
-     <li>
-      <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_support" href="https://get.slack.help/hc/fr-fr">
-       Assistance
-      </a>
-     </li>
-     <li>
-      <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_download" href="/get">
-       Télécharger
-       <span class="optional_desktop_nav_message">
-        l'application Slack
-       </span>
-      </a>
-     </li>
-    </ul>
-    <ul class="mobile_menu_footer">
-     <li>
-      <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_sign_in" data-gtm-click="optout_nav_signin" href="https://slack.com/signin" target="_blank">
-       <ts-icon class="ts_icon small float_none team_icon ts_icon_plus default signup_icon">
-       </ts-icon>
-       <span class="switcher_label">
-        Connexion
-       </span>
-      </a>
-     </li>
-     <li>
-      <a class="" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_create_team" data-gtm-click="SignUp,optout_nav_create_team" href="https://slack.com/create" target="_blank">
-       <ts-icon class="ts_icon small float_none team_icon c-icon--slack default signup_icon">
-       </ts-icon>
-       <span class="switcher_label">
-        Créer un espace de travail
-       </span>
-      </a>
-     </li>
-    </ul>
-   </div>
-  </nav>
-  <div class="" id="page">
-   <div class="" data-qa="page_contents" id="page_contents">
-    <!--[if lt IE 9]>&lt;style type=&quot;text/css&quot;&gt;
-				nav.top {
-					position: relative;
-				}
-				#page_contents &gt; h1 {
-					width: 920px;
-					margin-right: auto;
-					margin-left: auto;
-				}
-				h2, .align_margin {
-					padding-left: 50px;
-				}
-				.card {
-					width: 920px;
-					margin: 0 auto;
-					.card {
-						width: 880px;
-					}
-				}
-				.linux_col {
-					display: none;
-				}
-
-				.platform_icon {
-					display: none;
-				}
-			&lt;/style&gt;<![endif]-->
-    <div class="large_bottom_margin">
-     <h1>
-      Désolé, votre navigateur n'est pas pris en charge !
-     </h1>
-     <p class="align_margin">
-      Si vous utilisez Internet Explorer 10 ou version plus récente, vérifiez que
-      <strong>
-       l'Affichage de compatibilité
-      </strong>
-      est désactivé.
-     </p>
-     <p class="align_margin">
-      Veuillez passer à un de nos
-      <a href="https://get.slack.help/hc/fr-fr/articles/201746897">
-       navigateurs pris en charge
-      </a>
-      , ou essayez une de nos applications.
-     </p>
-    </div>
-    <h2 class="clear_both hide_on_mobile">
-     Applications pour ordinateur
-    </h2>
-    <div class="card clearfix large_bottom_margin no_bottom_padding hide_on_mobile clear_both">
-     <div class="col span_1_of_3 small align_center">
-      <div class="platform_icon platform_icon_100 mac_icon">
-       <a data-gtm-click="download-page-mac" href="" id="download_page_mac_icon" target="new">
-       </a>
-      </div>
-      <h3 class="small_bottom_margin">
-       Mac
-      </h3>
-      <p>
-       Nécessite la version 10.10 ou une version plus récente
-      </p>
-      <p class="no_bottom_margin">
-       <a aria-label="Télécharger depuis le Mac App Store" class="btn btn_macos" data-gtm-click="download-page-mac" href="" id="download_page_mac" target="new">
-       </a>
-       <br/>
-      </p>
-      <p class="small_top_margin">
-       <span class="input_note">
-        v4.2.0
-       </span>
-       <a class="input_note" data-gtm-click="download-page-mac" href="" id="download_page_mac_ddl">
-        Téléchargement direct
-       </a>
-      </p>
-     </div>
-     <div class="col span_1_of_3 small align_center">
-      <div class="platform_icon platform_icon_100 windows_icon_blue">
-       <a data-gtm-click="download-page-windows" href="/ssb/download-win" id="download_page_windows_icon" target="new">
-       </a>
-      </div>
-      <h3 class="small_bottom_margin">
-       Windows
-      </h3>
-      <p>
-       Nécessite Windows
-       <span class="show_if_wide">
-        7 ou version plus récente
-       </span>
-       <span class="show_if_narrow">
-        7+
-       </span>
-      </p>
-      <a class="btn" data-gtm-click="download-page-windows" href="/ssb/download-win" id="download_page_windows" target="new">
-       <i class="ts_icon ts_icon_arrow_circle_o_down">
-       </i>
-       Télécharger
-      </a>
-      <p class="small_top_margin">
-       <span class="input_note">
-        v4.2.0
-       </span>
-      </p>
-     </div>
-     <div class="col span_1_of_3 small align_center no_right_padding linux_col">
-      <div class="platform_icon platform_icon_100 linux_icons_2">
-      </div>
-      <h3 class="small_bottom_margin">
-       Linux (version bêta)
-      </h3>
-      <p>
-       Choisissez votre
-       <span class="show_if_wide">
-        système d'exploitation
-       </span>
-       <span class="show_if_narrow">
-        OS
-       </span>
-      </p>
-      <div class="download_linux_form inline_block">
-       <label class="select small float_left small_right_margin no_bottom_margin">
-        <select class="small no_top_margin" id="choose_linux">
-         <option value="https://downloads.slack-edge.com/linux_releases/slack-desktop-4.2.0-amd64.deb">
-          Ubuntu 64-bit
-         </option>
-         <option value="https://downloads.slack-edge.com/linux_releases/slack-4.2.0-0.1.fc21.x86_64.rpm">
-          Fedora 64-bit
-         </option>
-        </select>
-       </label>
-       <a class="btn float_left" data-gtm-click="download-page-linux" href="https://downloads.slack-edge.com/linux_releases/slack-desktop-4.2.0-amd64.deb" id="download_page_linux">
-        <i class="ts_icon ts_icon_arrow_circle_o_down float_left">
-        </i>
-        <span class="show_if_wide">
-         Télécharger
-        </span>
-       </a>
-      </div>
-      <p class="small_top_margin">
-       <span class="input_note">
-        v4.2.0
-       </span>
-      </p>
-      <script type="text/javascript">
-       (function () {
-	try {
-		var getElementById = document.getElementById.bind(document),
-			selectNode = getElementById('choose_linux'),
-			linkNode = getElementById('download_page_linux'),
-			updateButton = function () {
-				linkNode.href = selectNode.options[selectNode.selectedIndex].value;
-			};
-		selectNode.addEventListener('change', updateButton);
-		updateButton();
-	} catch (ex) {
-	}
-})();
-      </script>
-     </div>
-    </div>
-    <h2>
-     Applications mobiles
-    </h2>
-    <div class="card clearfix large_bottom_margin no_bottom_padding clear_both">
-     <div class="col span_1_of_3 align_center no_right_padding small">
-      <div class="platform_icon platform_icon_100 ios_icon">
-       <a data-gtm-click="download-page-ios" href="https://itunes.apple.com/app/slack-app/id618783545?ls=1&amp;mt=8" id="download_page_ios_icon" target="new">
-       </a>
-      </div>
-      <h3>
-       iOS
-      </h3>
-      <p>
-       <a aria-label="Télécharger sur l’iOS App Store" class="btn btn_ios small_right_margin" data-gtm-click="download-page-ios" href="https://itunes.apple.com/app/slack-app/id618783545?ls=1&amp;mt=8" id="download_page_ios" target="new">
-       </a>
-      </p>
-     </div>
-     <div class="col span_1_of_3 align_center no_right_padding small">
-      <div class="platform_icon platform_icon_100 android_icon">
-       <a data-gtm-click="download-page-android" href="https://play.google.com/store/apps/details?id=com.Slack" id="download_page_android_icon" target="new">
-       </a>
-      </div>
-      <h3>
-       Android
-      </h3>
-      <p>
-       <a aria-label="Télécharger sur Google Play" class="btn btn_android" data-gtm-click="download-page-android" href="https://play.google.com/store/apps/details?id=com.Slack" id="download_page_android" target="new">
-       </a>
-      </p>
-     </div>
-     <div class="col span_1_of_3 align_center no_right_padding small">
-      <div class="platform_icon platform_icon_100 winphone_icon">
-       <a data-gtm-click="download-page-winphone" href="https://www.microsoft.com/en-us/store/apps/slack-beta/9nblggh1jj9h" id="download_page_winphone_icon" target="new">
-       </a>
-      </div>
-      <h3>
-       Windows Phone (version bêta)
-      </h3>
-      <p>
-       <a aria-label="Télécharger depuis le Windows Store" class="btn btn_windows" data-gtm-click="download-page-winphone" href="https://www.microsoft.com/en-us/store/apps/slack-beta/9nblggh1jj9h" id="download_page_winphone" target="new">
-       </a>
-      </p>
-     </div>
-     <div class="clear_both">
-     </div>
-    </div>
-    <p class="align_center large_bottom_padding large_top_padding">
-     Vous ne trouvez pas la plateforme que vous recherchez ?
-     <a class="bold" href="/help/contact">
-      Contactez-nous.
-     </a>
-    </p>
-   </div>
-   <div id="overlay">
-   </div>
+ <body class="">
+  <a class="c-button v--primary c-skip-link is-focusable" data-clog-click="" data-clog-ui-component="inc_skip_link" data-clog-ui-element="link_skip" href="#main">
+   Passer au contenu principal
+  </a>
+  <div aria-live="polite" class="u-visually-hidden" id="announce">
   </div>
-  <footer data-qa="footer">
-   <section class="links">
-    <div class="grid">
-     <div class="col span_1_of_4 nav_col">
-      <ul>
-       <li class="cat_1">
-        Utiliser Slack
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_product" data-qa="product_footer" href="/is">
-         Produit
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_enterprise" data-qa="enterprise_footer" href="/enterprise">
-         Enterprise
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_pricing" data-qa="pricing_footer" href="/pricing?ui_step=28&amp;ui_element=5">
-         Tarifs
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_support" data-qa="support_footer" href="https://get.slack.help/hc/fr-fr">
-         Assistance
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_getting_started" data-qa="getting_started" href="/guides">
-         Guides Slack
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_app_directory" data-qa="app_directory" href="/apps">
-         Liste des applications
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_api" data-qa="api" href="https://api.slack.com/">
-         API
-        </a>
-       </li>
-      </ul>
+  <header class="nav-deux" role="banner">
+   <nav aria-label="Navigation principale" class="c-nav c-nav--primary c-nav--alternate is-mobile" role="navigation">
+    <div class="c-nav__row o-nav--primary o-content-container">
+     <div class="c-slacklogo">
+      <a aria-label="Slack" class="c-slacklogo--white" data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_home" data-qa="logo" href="https://slack.com/intl/fr-fr/">
+       <img alt="Slack" class="c-slacklogo--white" height="25" src="https://a.slack-edge.com/4a5c4/marketing/img/icons/icon_slack.svg" width="100"/>
+       <img alt="Slack" class="c-slacklogo--color" height="25" src="https://a.slack-edge.com/4a5c4/marketing/img/icons/icon_slack.svg" width="100"/>
+      </a>
      </div>
-     <div class="col span_1_of_4 nav_col">
-      <ul>
-       <li class="cat_2">
-        Slack
-        <ts-icon class="ts_icon_heart">
-        </ts-icon>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_jobs" data-qa="jobs" href="/jobs">
-         Recrutement
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_customers" data-qa="customers" href="/customers">
-         Témoignages
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_developers" data-qa="developers" href="/developers">
-         Développeurs
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_events" data-qa="events" href="/events">
-         Événements
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_blog" data-qa="blog_footer" href="https://slackhq.com/">
-         Blog
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="col span_1_of_4 nav_col">
-      <ul>
-       <li class="cat_3">
-        Aspects juridiques
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_privacy" data-qa="privacy" href="/privacy-policy">
-         Confidentialité
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_security" data-qa="security" href="/security">
-         Sécurité
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_tos" data-qa="tos" href="/terms-of-service">
-         Conditions d’utilisation
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_policies" data-qa="policies" href="/policies">
-         Règles
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="col span_1_of_4 nav_col">
-      <ul>
-       <li class="cat_4">
-        Liens utiles
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_downloads" data-qa="downloads" href="/downloads">
-         Télécharger l’application pour ordinateur
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_downloads_mobile" data-qa="downloads_mobile" href="/downloads">
-         Télécharger l'application mobile
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_brand_guidelines" data-qa="brand_guidelines" href="/brand-guidelines">
-         Directives de la marque
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_slack_at_work" data-qa="slack_at_work" href="https://slackatwork.com">
-         Slack au travail
-        </a>
-       </li>
-       <li>
-        <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_status" data-qa="status" href="https://status.slack.com/">
-         Statut
-        </a>
-       </li>
-      </ul>
-     </div>
-    </div>
-   </section>
-   <div class="footnote">
-    <section>
-     <a aria-label="Page d’accueil de Slack" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_slack_icon" href="https://slack.com">
-      <ts-icon aria-hidden="" class="c-icon--slack">
-      </ts-icon>
-     </a>
-     <ul>
-      <li>
-       <a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_contact_us" data-qa="contact_us" href="/help/contact">
-        Nous contacter
+     <ul class="c-nav__list">
+      <li aria-haspopup="true" class="c-nav--primary__listitem" tabindex="0">
+       <div class="c-tooltip" data-js-tooltip-delay="0" id="nav_features_btn" role="button">
+        <span class="c-custom-link-text">
+         Pourquoi choisir Slack ?
+        </span>
+        <nav aria-label="Navigation dans le produit" class="c-tooltip__content v--south v--alternate" id="features_dd">
+         <div class="c-nav--column bordered-links">
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_features" href="https://slack.com/intl/fr-fr/features">
+           Fonctionnement
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_security" href="https://slack.com/intl/fr-fr/security">
+           Sécurité
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_customers" href="https://slack.com/intl/fr-fr/customer-stories">
+           Témoignages
+          </a>
+         </div>
+        </nav>
+       </div>
+      </li>
+      <li aria-haspopup="true" class="c-nav--primary__listitem" tabindex="0">
+       <div class="c-tooltip" data-js-tooltip-delay="0" id="nav_solutions_btn" role="button">
+        <span class="c-custom-link-text">
+         Solutions
+        </span>
+        <nav aria-label="Navigation dans les solutions" class="c-tooltip__content v--south v--alternate" id="solutions_dd">
+         <div class="c-nav--column bordered-links">
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_solutions_engineering" data-qa="solutions_engineering" href="https://slack.com/intl/fr-fr/solutions/engineering">
+           Ingénierie
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_solutions_financial_services" data-qa="financial_services" href="https://slack.com/intl/fr-fr/solutions/financial-services">
+           Services financiers
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_solutions_sales" data-qa="solutions_sales" href="https://slack.com/intl/fr-fr/solutions/sales">
+           Ventes
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_solutions_information_technology" data-qa="solutions_information_technology" href="https://slack.com/intl/fr-fr/solutions/information-technology">
+           Informatique
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_solutions_marketing" data-qa="solutions_marketing" href="https://slack.com/intl/fr-fr/solutions/marketing">
+           Marketing
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_solutions_customer_support" data-qa="solutions_customer_support" href="https://slack.com/intl/fr-fr/solutions/customer-support">
+           Assistance client
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_solutions_hr" data-qa="solutions_human_resources" href="https://slack.com/intl/fr-fr/solutions/human-resources">
+           Ressources humaines
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_solutions_project_management" data-qa="solutions_project_management" href="https://slack.com/intl/fr-fr/solutions/project-management">
+           Gestion de projets
+          </a>
+          <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_solutions_media" data-qa="media" href="https://slack.com/intl/fr-fr/solutions/media">
+           Médias
+          </a>
+         </div>
+        </nav>
+       </div>
+      </li>
+      <li aria-haspopup="true" class="c-nav--primary__listitem" tabindex="0">
+       <div class="c-tooltip" data-js-tooltip-delay="0" id="nav_resources_btn" role="button">
+        <span class="c-custom-link-text">
+         Ressources
+        </span>
+        <nav aria-label="Navigation dans les ressources" class="c-tooltip__content v--south v--alternate has--secondary" id="resources_dd">
+         <div class="c-nav__row c-nav--wrapper">
+          <div class="c-nav--column c-menu--dropdown">
+           <button class="c-menu--toggle" data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_resource_library" data-qa="resource_library">
+            Bibliothèque des ressources
+           </button>
+           <button class="c-menu--toggle" data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_blog" data-qa="blog">
+            Blog
+           </button>
+           <div class="c-nav--menu bordered-links">
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_help_center" data-qa="help_center" href="https://get.slack.help/hc/fr-fr">
+             Centre d'assistance
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_api" data-qa="api" href="https://api.slack.com">
+             API
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_app_directory" data-qa="app_directory" href="https://slack.com/intl/fr-fr/apps">
+             Liste des applications
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_downloads" data-qa="download" href="https://slack.com/intl/fr-fr/download">
+             Télécharger
+            </a>
+           </div>
+          </div>
+          <div class="c-nav--column c-nav--secondary">
+           <div class="c-nav--menu bordered-links" data-menu="resources_library">
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_resources_library" href="https://slack.com/intl/fr-fr/resources">
+             Bibliothèque – Accueil
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_resources_slack_101" href="https://slack.com/intl/fr-fr/resources/slack-101">
+             Présentation de Slack
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_resources_why_slack" href="https://slack.com/intl/fr-fr/resources/why-use-slack">
+             Pourquoi utiliser Slack ?
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_resources_using_slack" href="https://slack.com/intl/fr-fr/resources/using-slack">
+             Utiliser Slack
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_resources_slack_admins" href="https://slack.com/intl/fr-fr/resources/slack-for-admins">
+             Slack pour les administrateurs
+            </a>
+           </div>
+           <div class="c-nav--menu bordered-links" data-menu="blog">
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_blog" href="https://slackhq.com">
+             Blog – Accueil
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_blog_collaboration" href="https://slackhq.com/categories/collaboration">
+             Collaboration
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_blog_productivity" href="https://slackhq.com/categories/productivity">
+             Productivité
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_blog_transformation" href="https://slackhq.com/categories/transformation">
+             Transformation
+            </a>
+            <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_blog_at_slack" href="https://slackhq.com/categories/at-slack">
+             @Slack
+            </a>
+           </div>
+          </div>
+         </div>
+        </nav>
+       </div>
+      </li>
+      <li class="c-nav--primary__listitem v--desktop" tabindex="-1">
+       <a class="bordered-link" data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_enterprise" data-qa="enterprise" href="https://slack.com/intl/fr-fr/enterprise">
+        Pour les entreprises
        </a>
       </li>
-      <li>
-       <a aria-label="Slack sur Twitter" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_slack_twitter" data-qa="slack_twitter" href="https://twitter.com/SlackHQ">
-        <ts-icon aria-hidden="" class="ts_icon_twitter">
-        </ts-icon>
+      <li class="c-nav--primary__listitem v--desktop" tabindex="-1">
+       <a class="bordered-link" data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_pricing" data-qa="pricing" href="https://slack.com/intl/fr-fr/pricing">
+        Tarifs
        </a>
       </li>
-      <li class="yt">
-       <a aria-label="Slack sur YouTube" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_slack_youtube" data-qa="slack_youtube" href="https://www.youtube.com/channel/UCY3YECgeBcLCzIrFLP4gblw">
-        <ts-icon aria-hidden="" class="ts_icon_youtube">
-        </ts-icon>
+      <li class="c-nav--primary__listitem v--desktop u-push--right">
+       <a data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_sign_in_nav" data-qa="link_sign_in_nav" href="https://slack.com/signin">
+        Connexion
+       </a>
+      </li>
+      <li class="c-nav--primary__listitem v--desktop">
+       <a class="c-button v--left v--primary" data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="link_get_started" data-gtm-click="SignUp" data-qa="cta_get_started" href="https://slack.com/get-started">
+        Premiers pas
        </a>
       </li>
      </ul>
-    </section>
+     <button aria-label="Menu" class="nav_menu_btn c-nav__icon v--menu u-border-radius--none" data-clog-click="" data-clog-ui-component="inc_header_nav_deux" data-clog-ui-element="btn_menu" id="nav_menu_btn">
+      <img alt="" src="https://a.slack-edge.com/a425/marketing/img/icons/icon_menu.svg"/>
+     </button>
+    </div>
+   </nav>
+   <nav aria-label="Navigation principale" class="c-nav__mobile v--primary is-hidden" id="main_nav" role="navigation">
+    <div class="c-nav__toolbar v--top">
+     <a class="c-nav__logo" data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_home" href="https://slack.com/intl/fr-fr/">
+      <img alt="Slack" class="" src="https://a.slack-edge.com/4a5c4/marketing/img/icons/icon_slack.svg" width="125"/>
+     </a>
+     <button class="c-nav__icon v--close" data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="btn_close" id="nav_close_btn">
+      <img alt="Fermer la navigation" src="https://a.slack-edge.com/5ced7/marketing/img/icons/icon_close.svg" width="18"/>
+     </button>
+    </div>
+    <div class="c-nav__scroller">
+     <ul class="c-nav__list v--left v--main c-nav__tree bordered-links">
+      <li class="c-nav--primary__listitem">
+       <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_features" href="https://slack.com/intl/fr-fr/features">
+        Pourquoi choisir Slack ?
+       </a>
+      </li>
+      <li class="c-nav--primary__listitem">
+       <button class="c-nav__tree__toggle" data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions">
+        Solutions
+       </button>
+       <div class="c-nav__tree__content c-nav--menu bordered-links">
+        <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions_engineering" href="https://slack.com/intl/fr-fr/solutions/engineering">
+         Ingénierie
+        </a>
+        <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions_financial_services" href="https://slack.com/intl/fr-fr/solutions/financial-services">
+         Services financiers
+        </a>
+        <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions_information_technology" href="https://slack.com/intl/fr-fr/solutions/information-technology">
+         Informatique
+        </a>
+        <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions_customer_support" href="https://slack.com/intl/fr-fr/solutions/customer-support">
+         Assistance client
+        </a>
+        <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions_project_management" href="https://slack.com/intl/fr-fr/solutions/project-management">
+         Gestion de projets
+        </a>
+        <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions_sales" href="https://slack.com/intl/fr-fr/solutions/sales">
+         Ventes
+        </a>
+        <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions_marketing" href="https://slack.com/intl/fr-fr/solutions/marketing">
+         Marketing
+        </a>
+        <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions_human_resources" href="https://slack.com/intl/fr-fr/solutions/human-resources">
+         Ressources humaines
+        </a>
+        <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_solutions_media" href="https://slack.com/intl/fr-fr/solutions/media">
+         Médias
+        </a>
+       </div>
+      </li>
+      <li class="c-nav--primary__listitem">
+       <button class="c-nav__tree__toggle" data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources">
+        Ressources
+       </button>
+       <div class="c-nav__tree__content">
+        <ul class="bordered-links">
+         <li>
+          <button class="c-nav__tree__toggle_sub" data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_library">
+           Bibliothèque des ressources
+          </button>
+         </li>
+         <div class="c-nav__tree__content--sub">
+          <ul>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_library" href="https://slack.com/intl/fr-fr/resources/">
+             Bibliothèque – Accueil
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_slack_101" href="https://slack.com/intl/fr-fr/resources/slack-101">
+             Présentation de Slack
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_why_slack" href="https://slack.com/intl/fr-fr/resources/why-use-slack">
+             Pourquoi utiliser Slack ?
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_using_slack" href="https://slack.com/intl/fr-fr/resources/using-slack">
+             Utiliser Slack
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_slack_admins" href="https://slack.com/intl/fr-fr/resources/slack-for-admins">
+             Slack pour les administrateurs
+            </a>
+           </li>
+          </ul>
+         </div>
+         <li>
+          <button class="c-nav__tree__toggle_sub" data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_blog">
+           Blog
+          </button>
+         </li>
+         <div class="c-nav__tree__content--sub">
+          <ul class="bordered-links">
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_blog" href="https://slackhq.com">
+             Blog – Accueil
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_blog_collaboration" href="https://slackhq.com/categories/collaboration">
+             Collaboration
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_blog_productivity" href="https://slackhq.com/categories/productivity">
+             Productivité
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_blog_transformation" href="https://slackhq.com/categories/transformation">
+             Transformation
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_blog_at_slack" href="https://slackhq.com/categories/at-slack">
+             @Slack
+            </a>
+           </li>
+          </ul>
+         </div>
+         <li>
+          <button class="c-nav__tree__toggle_sub" data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_tips">
+           Astuces Slack
+          </button>
+         </li>
+         <div class="c-nav__tree__content--sub">
+          <ul class="bordered-links">
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_slack_tips" href="https://slack.com/intl/fr-fr/slack-tips">
+             Astuces Slack – Accueil
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_tips_productivity" href="https://slack.com/intl/fr-fr/slack-tips/boost-work-productivity">
+             Augmentez votre productivité
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_tips_basics" href="https://slack.com/intl/fr-fr/slack-tips/slack-basics">
+             Principes de base de Slack
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_tips_cross_functional" href="https://slack.com/intl/fr-fr/slack-tips/cross-functional-collaboration">
+             Collaboration pluridisciplinaire
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_tips_every_dept_role" href="https://slack.com/intl/fr-fr/slack-tips/every-department-and-role">
+             Chaque service et chaque rôle
+            </a>
+           </li>
+           <li>
+            <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_tips_quick_simple" href="https://slack.com/intl/fr-fr/slack-tips/quick-and-simple">
+             Simple et rapide
+            </a>
+           </li>
+          </ul>
+         </div>
+         <li>
+          <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_help" href="https://get.slack.help/hc/fr-fr">
+           Centre d’assistance
+          </a>
+         </li>
+         <li>
+          <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_api" href="https://api.slack.com">
+           API
+          </a>
+         </li>
+         <li>
+          <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_resources_app_dir" href="https://slack.com/intl/fr-fr/apps">
+           Liste des applications
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+      <li class="c-nav--primary__listitem">
+       <a data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_pricing" href="https://slack.com/intl/fr-fr/pricing">
+        Tarifs
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="c-nav__button-container">
+     <div class="c-feature-grid v--two">
+      <a class="c-nav__cta--workspace c-button v--primary v--clear" data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_sign_in_nav" data-gtm-click="optout_signin" href="https://slack.com/signin">
+       Connexion
+      </a>
+      <a class="c-button v--primary" data-clog-click="" data-clog-ui-component="inc_mobile_nav_deux" data-clog-ui-element="link_get_app" href="https://slack.com/intl/fr-fr/get">
+       Télécharger Slack
+      </a>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <main id="main" role="main">
+   <section class="legal-hero o-hero v--short">
+    <div class="o-hero__content">
+     <header class="o-hero__header">
+      <h1 class="o-hero__header__headline--larger">
+       Règles de confidentialité (archivées)
+      </h1>
+     </header>
+    </div>
+   </section>
+   <div class="legal-main">
+    <div class="o-content-container">
+     <div class="o-two-thirds">
+      <div class="legal-sidebar">
+       <nav aria-labelledby="legal_navigation_header" class="c-nav--sidebar t-contains-subtle-links" role="navigation">
+        <h2 class="u-visually-hidden" id="legal_navigation_header">
+         Navigation légale
+        </h2>
+        <button class="c-nav--sidebar__mobileheader v--main" data-clog-click="" data-clog-ui-element="btn_legal_navigation_mobile">
+         <span class="collapsed-text">
+          <span class="u-visually-hidden">
+           Pages
+          </span>
+          Archives
+          <span class="u-visually-hidden">
+           supplémentaires
+          </span>
+         </span>
+         <span class="expanded-text">
+          Fermer la consultation des mentions légales
+         </span>
+        </button>
+        <div class="c-nav--sidebar__menu">
+         <h3 class="c-nav--sidebar__listheader">
+          Premiers pas
+         </h3>
+         <ul class="c-nav__list v--left">
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal" href="https://slack.com/intl/fr-fr/policies">
+            Vue d’ensemble
+           </a>
+          </li>
+         </ul>
+         <h3 class="c-nav--sidebar__listheader">
+          Conditions
+         </h3>
+         <button class="c-nav--sidebar__mobileheader" data-clog-click="" data-clog-ui-element="btn_legal_navigation_terms_mobile">
+          Conditions
+         </button>
+         <ul class="c-nav__list v--left">
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_tos" href="https://slack.com/intl/fr-fr/terms-of-service">
+            Conditions d’utilisation client
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_tos_user" href="https://slack.com/intl/fr-fr/terms-of-service/user">
+            Conditions d'utilisation
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_tos_industry" href="https://slack.com/intl/fr-fr/terms-of-service/supplement">
+            Addendum client
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_tos_api" href="https://slack.com/intl/fr-fr/terms-of-service/api">
+            Conditions d'utilisation API
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_tos_app" href="https://slack.com/intl/fr-fr/terms-of-service/app-directory">
+            Contrat de la liste des applications
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_sla" href="https://slack.com/intl/fr-fr/terms/service-level-agreement">
+            Contrat de niveau de service
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_dpa" href="https://slack.com/intl/fr-fr/terms-of-service/data-processing">
+            Informations complémentaires sur le traitement des données
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_tos_partners" href="https://slack.com/intl/fr-fr/terms-of-service/partners">
+            Conditions d'utilisation du programme de partenariat Slack
+           </a>
+          </li>
+         </ul>
+         <h3 class="c-nav--sidebar__listheader">
+          Règles
+         </h3>
+         <button class="c-nav--sidebar__mobileheader" data-clog-click="" data-clog-ui-element="btn_legal_navigation_policies_mobile">
+          Règles
+         </button>
+         <ul class="c-nav__list v--left">
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_privacy" href="https://slack.com/intl/fr-fr/privacy-policy">
+            Règles de confidentialité de Slack
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_privacy_shield" href="https://slack.com/intl/fr-fr/privacy-shield-notice">
+            Compte-rendu du bouclier de protection
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_acceptable_use" href="https://slack.com/intl/fr-fr/acceptable-use-policy">
+            Politique d’utilisation acceptable
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_data_request" href="https://slack.com/intl/fr-fr/user-data-request-policy">
+            Politique de demande de données
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_subprocessors" href="https://slack.com/intl/fr-fr/slack-subprocessors">
+            Slack et ses sous-processeurs
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_affiliates" href="https://slack.com/intl/fr-fr/affiliates">
+            Sociétés affiliées de Slack
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_transparency_report" href="https://slack.com/intl/fr-fr/transparency-report">
+            Rapport de transparence
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_dmca" href="https://slack.com/intl/fr-fr/dmca-policy">
+            Politique DMCA
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_cookie" href="https://slack.com/intl/fr-fr/cookie-policy?eu_nc=1">
+            Politique en matière de cookies (témoins)
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_gdpr" href="https://slack.com/intl/fr-fr/gdpr">
+            Engagement RGPD de Slack
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_accessibility_plan" href="https://slack.com/intl/fr-fr/accessibility-plan">
+            Forfait d’accessibilité pluriannuel
+           </a>
+          </li>
+         </ul>
+         <h3 class="c-nav--sidebar__listheader">
+          Sécurité
+         </h3>
+         <button class="c-nav--sidebar__mobileheader" data-clog-click="" data-clog-ui-element="btn_legal_navigation_security_mobile">
+          Sécurité
+         </button>
+         <ul class="c-nav__list v--left">
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_security" href="https://slack.com/intl/fr-fr/security">
+            Vue d’ensemble
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_security" href="https://slack.com/intl/fr-fr/security-practices">
+            Pratiques de sécurité
+           </a>
+          </li>
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_vulnerability" href="https://slack.com/intl/fr-fr/report-vulnerability">
+            Signaler une vulnérabilité
+           </a>
+          </li>
+         </ul>
+         <h3 class="c-nav--sidebar__listheader">
+          Contact
+         </h3>
+         <button class="c-nav--sidebar__mobileheader" data-clog-click="" data-clog-ui-element="btn_legal_navigation_contact_mobile">
+          Contact
+         </button>
+         <ul class="c-nav__list v--left">
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="false" class="" data-clog-click="" data-clog-ui-element="link_legal_contact_europe" href="https://slack.com/intl/fr-fr/company-information">
+            Informations sur l’entreprise
+           </a>
+          </li>
+         </ul>
+         <h3 class="c-nav--sidebar__listheader">
+          Archives
+         </h3>
+         <button class="c-nav--sidebar__mobileheader is-selected" data-clog-click="" data-clog-ui-element="btn_legal_navigation_archives_mobile">
+          Archives
+         </button>
+         <ul class="c-nav__list v--left">
+          <li class="c-nav--sidebar__listitem">
+           <a aria-current="page" class="is-selected" data-clog-click="" data-clog-ui-element="link_archives" href="https://slack.com/intl/fr-fr/policy-archives">
+            Archives des Conditions d'utilisation et des règles
+           </a>
+          </li>
+         </ul>
+        </div>
+       </nav>
+      </div>
+      <div class="legal-content">
+       <p>
+        Effective: July 22, 2014
+       </p>
+       <h2>
+        Our Policy:
+       </h2>
+       <p>
+        Welcome to the web site: https://slack.com (the “Site”) of Slack Technologies, Inc. (“Slack Technologies”, “we”, “us” and/or “our”). This Site is operated by Slack Technologies and has been created to provide information about our company and our service, Slack, which includes real-time communication, messaging, archiving and search services and related systems, technologies, and mobile applications (together with the Site, the “Service(s)”) to our Service users and visitors (“you”, “your”). This Privacy Policy sets forth Slack Technologies’s policy with respect to information including personally identifiable data (“Personal Data”) and other information that is collected from visitors to the Site and users of the Services.
+       </p>
+       <p>
+        At the outset, we want to be clear that Slack Technologies is not in the business of selling your information. We consider our custodianship of your information to be a vital part of our relationship with you. There are, however, certain ways in which we will use your Personal Data, as set forth in more detail in this policy.
+       </p>
+       <p>
+        Slack Technologies has received TRUSTe's Privacy Seal signifying that this privacy statement and our practices have been reviewed for compliance with the TRUSTe program viewable on the validation page available by clicking the TRUSTe seal. The TRUSTe certification covers only our collection, use and disclosure of information we collect through our website: https://slack.com and our service, Slack. The TRUSTe program also covers information that may be collected through our mobile application. The use of information collected through our service shall be limited to the purpose of providing the service for which the Client has engaged Slack Technologies.
+       </p>
+       <p>
+        If you have an unresolved privacy or data use concern that we have not addressed satisfactorily, please contact TRUSTe
+        <a data-no-clog="" href="https://feedback-form.truste.com/watchdog/request" target="new">
+         here
+        </a>
+        .
+       </p>
+       <p>
+        Slack Technologies complies with the U.S. - E.U. Safe Harbor framework and the U.S. - Swiss Safe Harbor framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal data from European Union member countries and Switzerland. Slack Technologies has certified that it adheres to the Safe Harbor Privacy Principles of notice, choice, onward transfer, security, data integrity, access, and enforcement. To learn more about the Safe Harbor program, and to view Slack Technologies’s certification, please visit
+        <a data-no-clog="" href="http://www.export.gov/safeharbor/">
+         http://www.export.gov/safeharbor/
+        </a>
+        .
+       </p>
+       <h2>
+        Information We Collect:
+       </h2>
+       <p>
+        When you interact with us through the Services, we may collect Personal Data and other information from you, as further described below:
+       </p>
+       <h3>
+        Personal Data That You Provide:
+       </h3>
+       <p>
+        We collect Personal Data from you, such as your name, email address and company name, when you voluntarily provide such information, such as when you contact us with inquiries, register for access to our Service, or use certain Services. We may also collect your credit card information if you decide to upgrade your plan with us. By providing us with Personal Data, you are consenting to our use of it in accordance with this Privacy Policy. If you provide Personal Data, you acknowledge and agree that such Personal Data may be stored on the servers of Slack Technologies and other authorized parties located in the United States and other countries.
+       </p>
+       <p>
+        When you download and use our Services, we automatically collect information on the type of device you use, operating system version, and the device identifier.
+       </p>
+       <p>
+        We do not ask you for, access or track any location based information from your mobile device at any time while downloading or using our Mobile Apps or services.
+       </p>
+       <h3>
+        Other Information:
+       </h3>
+       <ul>
+        <li>
+         <strong>
+          Non-Identifiable Data:
+         </strong>
+         When you interact with Slack Technologies through the Services, we receive and store certain personally non-identifiable information. Such information, which is collected passively using various technologies, will not be used to specifically identify you. Slack Technologies may store such information itself or such information may be included in databases owned and maintained by Slack Technologies affiliates, agents or service providers. The Services may use such information and pool it with other information to track, for example, the total number of users of our Services, the aspects of the Services being used, the domain names of our visitors' Internet service providers and the like. In operating the Services, we or our vendors may also use a technology called "cookies." A cookie is a piece of information that the computer that hosts our Services gives to your browser when you access the Services. Our cookies help provide additional functionality to the Services, help us analyze Services usage more accurately and may be used in marketing the Service. For instance, we may set a cookie on your browser that allows you to access the Services without needing to remember and then enter a password more than once during a visit. We will not collect Personal Data through such cookies except with your permission. On most web browsers, you will find a “help” section that provides information on how to receive notification when you are receiving a new cookie and how to turn cookies off. We recommend that you leave cookies turned on because you may not be able to use the Service without them. The use of cookies by our service providers is not covered by our privacy policy. We do not have access or control over these cookies. Our service providers use persistent cookies to gather statistics that improve quality of service. Our third party partners also employ clear gifs (a.k.a. Web Beacons/Web Bugs), images, and scripts that help them better manage content on our site. We do not tie the information gathered to our Customers’ or Users’ personal data.
+        </li>
+        <li>
+         <strong>
+          Aggregated Personal Data:
+         </strong>
+         In an ongoing effort to better understand and serve the users of the Services, Slack Technologies often conducts research on its customer demographics, interests and behavior based on the Personal Data and other information provided to us. This research may be compiled and analyzed on an aggregate basis, and Slack Technologies may share this aggregate data with its affiliates, agents and business partners. This aggregate information does not identify you personally. Slack Technologies may also disclose aggregated user statistics in order to describe our services to current and prospective business partners, customers and to other third parties for other lawful purposes.
+        </li>
+        <li>
+         <strong>
+          Mobile Analytics:
+         </strong>
+         We use mobile analytics software to allow us to better understand the functionality of our Mobile Software on your phone. This software may record information such as how often you use the application, the events that occur within the application, aggregated usage, performance data, and where the application was downloaded from.
+        </li>
+       </ul>
+       <h2>
+        Use of Personal Data and Other Information:
+       </h2>
+       <p>
+        Slack Technologies uses the Personal Data and other information you provide in a manner that is consistent with this Privacy Policy. If you provide Personal Data for a certain reason, we may use the Personal Data in connection with the reason for which it was provided. For instance, if you contact us by email, we will use the Personal Data you provide to answer your question or resolve your problem. Also, if you provide Personal Data in order to obtain access to the Services, we will use your Personal Data to provide you with access to such services and to monitor your use of such services. Slack Technologies and its subsidiaries and affiliates (the “Related Companies”) may also use your Personal Data and other personally non-identifiable information collected through the Services to help us improve the content and functionality of the Services, to better understand our users and to improve the Services, and to send you tips about using Slack or inform you of new features and other news about Slack. Any email we send to you, other than those necessary to operate the service, will include the means for you to "opt-out" of receiving similar email in the future. In addition, you can adjust your preferences for email communication by visiting this page:
+        <a data-no-clog="" href="https://my.slack.com/account/settings">
+         https://my.slack.com/account/settings
+        </a>
+        .
+       </p>
+       <h2>
+        Disclosure of Personal Data and Other Information:
+       </h2>
+       <p>
+        In certain circumstances we may share your Personal Data with certain third parties without further notice to you, as set forth below:
+       </p>
+       <ul>
+        <li>
+         <strong>
+          Your Use:
+         </strong>
+         We will display your Personal Data on the Service (e.g., profile page) according to the preferences you set in your account. Please consider carefully what information you disclose in connection with the Services, how you select your preferences, and your desired level of privacy. For example, if you provide your phone number or Skype handle for use in the Service, then users of the Service within your business will be able to contact you in those ways. Through certain features of the Service, you may also have the ability to make some of your files or information available to third parties or the public. Always remember that when you share any type of information with others, such information may be broadly and quickly disseminated.
+        </li>
+        <li>
+         <strong>
+          Business Transfers:
+         </strong>
+         As we develop our business, we might sell or buy businesses or assets. In the event of a corporate sale, merger, reorganization, dissolution or similar event, Personal Data may be part of the transferred assets. You will be notified via email and/or a prominent notice on our Web site of any change in ownership or uses of your personal data, as well as any choices you may have regarding your personal data.
+        </li>
+        <li>
+         <strong>
+          Related Companies:
+         </strong>
+         We may also share your Personal Data with our Related Companies for purposes consistent with this Privacy Policy.
+        </li>
+        <li>
+         <strong>
+          Consultants and Similar Third Parties:
+         </strong>
+         Slack Technologies, like many businesses, sometimes hires other companies to perform certain business-related functions. Examples of such functions include mailing information, hosting servers, providing data center services, maintaining databases and processing payments. When we use another entity to perform a function of this nature, we only provide them with the information that they need to perform their specific function. These companies are authorized to use your personal data only as necessary to provide these services to us.
+        </li>
+        <li>
+         <strong>
+          Legal Requirements:
+         </strong>
+         Slack Technologies may disclose your Personal Data if required to do so by law or in the good faith belief that such action is necessary to (i) comply with a legal obligation, (ii) protect and defend the rights or property of Slack Technologies or third parties, (iii) act in urgent circumstances to protect the personal safety of users of the Services or the public, or (iv) protect against legal liability.
+        </li>
+       </ul>
+       <h2>
+        Business Users:
+       </h2>
+       <p>
+        If you are a user whose company has a business account for the Services, our agreement with your company may contain additional terms and conditions relating to our use and disclosure of data (including Personal Data). In addition, your company’s administrator may have certain rights to access your information and Personal Data in connection with the Services and to set your company’s policies regarding your use of various aspects of the Services. Please refer to your company administrator if you have questions regarding any of the foregoing.
+       </p>
+       <h2>
+        Information Collected for our Clients
+       </h2>
+       <p>
+        Slack Technologies collects information under the direction of its Clients, and has no direct relationship with the individuals whose personal data it processes. If you are a customer of one of our Clients and would no longer like to be contacted by one of our Clients that use our service, please contact the Client that you interact with directly. We may transfer personal information to companies that help us provide our service. Transfers to subsequent third parties are covered by the service agreements with our Clients.
+       </p>
+       <p>
+        An individual who seeks access, or who seeks to correct, amend, or delete inaccurate data should direct his query to the Slack Technologies’s Client (the data controller). If the Client requests Slack Technologies to remove the data, we will respond to their request within 30 days.
+       </p>
+       <p>
+        We will retain personal data we process on behalf of our Clients for as long as needed to provide services to our Client. Slack Technologies will retain and use this personal information as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements.
+       </p>
+       <h2>
+        Your Choices:
+       </h2>
+       <ul>
+        <li>
+         You can choose not to provide any Personal Data. If you choose not to provide any Personal Data, you may not be able to use the Services.
+        </li>
+        <li>
+         To keep your Personal Data accurate and current, please use the account control and preferences page
+         <a data-no-clog="" href="https://my.slack.com/account">
+          https://my.slack.com/account
+         </a>
+         to update, correct or delete Personal Data in our possession. These changes take effect immediately.
+        </li>
+        <li>
+         You may turn off cookies as described above, but if you do so you may not be able to use the Services.
+        </li>
+       </ul>
+       <h2>
+        Data Retention:
+       </h2>
+       <p>
+        We will retain your Personal Data for as long as your account is active or as needed to provide you services. We will retain and use your Personal Data as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements.
+       </p>
+       <h2>
+        Exclusions:
+       </h2>
+       <p>
+        This Privacy Policy does not apply to any Personal Data collected by Slack Technologies other than Personal Data collected through the Services, the site, and the Slack mobile application. This Privacy Policy shall also not apply to any unsolicited information you provide to Slack Technologies through the Services or through any other means. This includes, but is not limited to any ideas for new products or modifications to existing products, and other unsolicited submissions (collectively, “Unsolicited Information”). All Unsolicited Information shall be deemed to be non-confidential and Slack Technologies shall be free to reproduce, use, disclose, and distribute such Unsolicited Information to others without limitation or attribution.
+       </p>
+       <h2>
+        Children:
+       </h2>
+       <p>
+        As a Service directed to adult business users, Slack Technologies does not knowingly collect Personal Data from children under the age of 13. Children should not use the Service or submit any Personal Data through the Services. If you have reason to believe that a child under the age of 13 has provided Personal Data to Slack Technologies through the Services, please contact us, and we will endeavor to delete that information from our databases.
+       </p>
+       <h2>
+        Other Services:
+       </h2>
+       <p>
+        This Privacy Policy applies only to the Services. The Services may contain links to or integrations with other websites and services not operated or controlled by Slack Technologies (the “Third Parties”). The policies and procedures we described here do not apply to the Third Parties and we do not endorse those parties or their products or services. Please contact those parties directly for information on their privacy policies.
+       </p>
+       <h2>
+        Testimonials
+       </h2>
+       <p>
+        We display personal testimonials of satisfied customers on our site in addition to other endorsements. With your consent we may post your testimonial along with your name. If you wish to update or delete your testimonial, you can contact us at
+        <a data-no-clog="" href="mailto:feedback@slack.com">
+         feedback@slack.com
+        </a>
+        .
+       </p>
+       <h2>
+        Security:
+       </h2>
+       <p>
+        Slack Technologies takes reasonable steps to protect the Personal Data provided via the Services from loss, misuse, and unauthorized access or disclosure (for more information on our current practices and policies regarding data privacy, security and confidentiality, please see
+        <a data-no-clog="" href="/security">
+         https://slack.com/security
+        </a>
+        ; we keep that document updated as these practices and policies evolve over time). If you have any questions about security on our Web site, you can contact
+        <a data-no-clog="" href="mailto:feedback@slack.com">
+         feedback@slack.com
+        </a>
+        .
+       </p>
+       <p>
+        When you enter sensitive information (such as login credentials) we encrypt the transmission of that information using secure socket layer technology (SSL). We follow generally accepted standards to protect the personal data submitted to us, both during transmission and once we receive it. However, no electronic or email transmission or digital storage mechanism is ever fully secure or error free. Therefore, you should take special care in deciding what information you share electronically in connection with the Service.
+       </p>
+       <h2>
+        Other Terms and Conditions:
+       </h2>
+       <p>
+        Your access to and use of the Services is subject to our Terms of Service at
+        <a data-no-clog="" href="/terms-of-service">
+         https://slack.com/terms-of-service
+        </a>
+        .
+       </p>
+       <h2>
+        Changes to Slack Technologies’s Privacy Policy:
+       </h2>
+       <p>
+        The Services and our business may change from time to time. As a result, at times it may be necessary for Slack Technologies to make changes to this Privacy Policy. Slack Technologies reserves the right to update or modify this Privacy Policy at any time and from time to time without prior notice. However, if we make a change to this Privacy Policy that has a material impact on your rights or the way we collect or use your Personal Data, we will endeavor to provide you notice (e.g., by email or by posting a notice on the Site or Services) prior to the change becoming effective. Please review this policy periodically, and especially before you provide any Personal Data. This Privacy Policy was last updated on the date indicated above. Your continued use of the Services after any changes or revisions to this Privacy Policy shall indicate your agreement with the terms of such revised Privacy Policy.
+       </p>
+       <h2>
+        Contacting Slack Technologies:
+       </h2>
+       <p>
+        Please also feel free to contact us if you have any questions about Slack Technologies’s Privacy Policy or the information practices of the Services. You may contact us at
+        <a data-no-clog="" href="mailto:feedback@slack.com">
+         feedback@slack.com
+        </a>
+        or at our mailing address below:
+       </p>
+       <p>
+        Slack Technologies
+        <br/>
+        680 Folsom Street, Suite 145
+        <br/>
+        San Francisco, CA
+        <br/>
+        94107
+       </p>
+       <hr/>
+       <h2>
+        Changes to this document
+       </h2>
+       <ul>
+        <li>
+         On July 22nd, 2014, we updated this document to use our new name: Slack Technologies, Inc.
+        </li>
+       </ul>
+       <p class="u-margin-top--xx-large">
+        <em>
+         Cette traduction n’est fournie qu’à titre informatif. Dans l’éventualité où des incohérences apparaîtraient entre celle-ci et la version anglaise, c’est la version anglaise qui prévaudrait.
+        </em>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <section class="o-section c-cta c-cta--signup t-dark-theme u-hide-on-print u-padding-top--ultra u-padding-bottom--ultra">
+   <div class="o-content-container">
+    <h3 class="c-cta--signup__headline u-text--center">
+     Essayez gratuitement Slack avec votre équipe
+    </h3>
+    <a class="c-button v--secondary v--no-border" data-clog-click="" data-clog-ui-component="inc_cta_footer" data-clog-ui-element="link_get_app" data-gtm-click="mobile-cta-android" data-qa="footer_mobile_get_app" href="https://slack.onelink.me/FQG3?af_sub1=%2Fintl%2Ffr-fr%2Fpolicy-archives%2Fprivacy%2F2014-07-22&amp;af_slk_web_endpoint=%2Fintl%2Ffr-fr%2Fpolicy-archives%2Fprivacy%2F2014-07-22&amp;af_slk_web_visitor_uid=3gxb6974vswqkmkji0vb88l6r&amp;pid=slack_web">
+     Obtenir Slack pour Android
+    </a>
+   </div>
+  </section>
+  <footer class="c-nav c-nav--footer">
+   <div class="c-nav--footer__menu">
+    <div class="o-content-container c-nav--footer__row">
+     <a aria-label="Slack" data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_home" href="https://slack.com/intl/fr-fr/">
+      <svg class="c-nav--footer__svgicon c-slackhash" height="54" viewbox="0 0 54 54" width="54" xmlns="http://www.w3.org/2000/svg">
+       <g fill="none" fill-rule="evenodd">
+        <path d="M19.712.133a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386h5.376V5.52A5.381 5.381 0 0 0 19.712.133m0 14.365H5.376A5.381 5.381 0 0 0 0 19.884a5.381 5.381 0 0 0 5.376 5.387h14.336a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386" fill="#36C5F0">
+        </path>
+        <path d="M53.76 19.884a5.381 5.381 0 0 0-5.376-5.386 5.381 5.381 0 0 0-5.376 5.386v5.387h5.376a5.381 5.381 0 0 0 5.376-5.387m-14.336 0V5.52A5.381 5.381 0 0 0 34.048.133a5.381 5.381 0 0 0-5.376 5.387v14.364a5.381 5.381 0 0 0 5.376 5.387 5.381 5.381 0 0 0 5.376-5.387" fill="#2EB67D">
+        </path>
+        <path d="M34.048 54a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386h-5.376v5.386A5.381 5.381 0 0 0 34.048 54m0-14.365h14.336a5.381 5.381 0 0 0 5.376-5.386 5.381 5.381 0 0 0-5.376-5.387H34.048a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386" fill="#ECB22E">
+        </path>
+        <path d="M0 34.249a5.381 5.381 0 0 0 5.376 5.386 5.381 5.381 0 0 0 5.376-5.386v-5.387H5.376A5.381 5.381 0 0 0 0 34.25m14.336-.001v14.364A5.381 5.381 0 0 0 19.712 54a5.381 5.381 0 0 0 5.376-5.387V34.25a5.381 5.381 0 0 0-5.376-5.387 5.381 5.381 0 0 0-5.376 5.387" fill="#E01E5A">
+        </path>
+       </g>
+      </svg>
+     </a>
+     <nav aria-label="Navigation de bas de page" class="c-footer--wrap t-contains-subtle-links" role="navigation">
+      <div class="c-nav--footer__block">
+       <p class="c-nav--footer__listheader">
+        Produit
+       </p>
+       <ul class="c-nav--footer__list">
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_features" data-qa="why_slack_footer" href="https://slack.com/intl/fr-fr/features">
+          Pourquoi choisir Slack ?
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_enterprise" data-qa="enterprise" href="https://slack.com/intl/fr-fr/enterprise">
+          Pour les entreprises
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_security" data-qa="security" href="https://slack.com/intl/fr-fr/security">
+          Sécurité
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_customers" data-qa="customer_stories" href="https://slack.com/intl/fr-fr/customer-stories">
+          Témoignages de clients
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_pricing" data-qa="pricing_footer" href="https://slack.com/intl/fr-fr/pricing">
+          Tarifs
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_slack_demo" data-qa="slack_demo" href="https://slackdemo.com/intl/fr-fr/?vst=3gxb6974vswqkmkji0vb88l6r" rel="noopener" target="_blank">
+          Démo Slack
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="c-nav--footer__block">
+       <p class="c-nav--footer__listheader">
+        Slack pour les équipes
+       </p>
+       <ul class="c-nav--footer__list">
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_solutions_engineering" data-qa="solutions_eng_footer" href="https://slack.com/intl/fr-fr/solutions/engineering">
+          Ingénierie
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_solutions_financial_services" data-qa="solutions_eng_footer" href="https://slack.com/intl/fr-fr/solutions/financial-services">
+          Services financiers
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_solutions_sales" data-qa="solutions_sales_footer" href="https://slack.com/intl/fr-fr/solutions/sales">
+          Ventes
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_solutions_information_technology" data-qa="solutions_it_footer" href="https://slack.com/intl/fr-fr/solutions/information-technology">
+          Informatique
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_solutions_marketing" data-qa="solutions_mktg_footer" href="https://slack.com/intl/fr-fr/solutions/marketing">
+          Marketing
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_solutions_customer_support" data-qa="solutions_ce_footer" href="https://slack.com/intl/fr-fr/solutions/customer-support">
+          Assistance client
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_solutions_human_resources" data-qa="solutions_hr_footer" href="https://slack.com/intl/fr-fr/solutions/human-resources">
+          Ressources humaines
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_solutions_project_management" data-qa="solutions_pjm_footer" href="https://slack.com/intl/fr-fr/solutions/project-management">
+          Gestion de projets
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_solutions_media" data-qa="solutions_media_footer" href="https://slack.com/intl/fr-fr/solutions/media">
+          Médias
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="c-nav--footer__block">
+       <p class="c-nav--footer__listheader">
+        Ressources
+       </p>
+       <ul class="c-nav--footer__list">
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_blog" data-qa="blog" href="https://slackhq.com/" rel="noopener">
+          Blog
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_help_center" data-qa="help_center" href="https://slack.com/intl/fr-fr/help" rel="noopener">
+          Centre d’assistance
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_api" data-qa="api" href="https://api.slack.com/" rel="noopener">
+          API
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_app_directory" data-qa="app_directory" href="https://slack.com/intl/fr-fr/apps">
+          Liste des applications
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_downloads" data-qa="download" href="https://slack.com/intl/fr-fr/download">
+          Télécharger Slack
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_partners" data-qa="partners" href="https://slack.com/intl/fr-fr/partners">
+          Partenaires
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="c-nav--footer__block">
+       <p class="c-nav--footer__listheader">
+        À propos de Slack
+       </p>
+       <ul class="c-nav--footer__list">
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_about_us" data-qa="about_us_footer" href="https://slack.com/intl/fr-fr/about">
+          À propos de nous
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_leadership" data-qa="leadership_footer" href="https://slack.com/intl/fr-fr/about/leadership">
+          Nos dirigeants
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_brand" data-qa="media_kit" href="https://slack.com/intl/fr-fr/media-kit">
+          Dossier de presse
+         </a>
+        </li>
+        <li class="c-nav--footer__listitem">
+         <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_careers" data-qa="careers" href="https://slack.com/intl/fr-fr/careers">
+          Emplois
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+    </div>
+   </div>
+   <div class="c-nav--footer__metasocial" role="contentinfo">
+    <div class="o-content-container">
+     <ul class="c-nav__list">
+      <li class="c-nav--footer__listitem--meta v--center">
+       <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_status" data-qa="status" href="https://status.slack.com" rel="noopener" target="_blank">
+        Statut
+       </a>
+      </li>
+      <li class="c-nav--footer__listitem--meta v--center">
+       <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_legal" data-qa="privacy_terms" href="https://slack.com/intl/fr-fr/legal">
+        Politique de confidentialité et Conditions d'utilisation
+       </a>
+      </li>
+      <li class="c-nav--footer__listitem--meta v--center">
+       <a data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_help_contact" data-qa="contact" href="https://slack.com/intl/fr-fr/help/contact">
+        Nous contacter
+       </a>
+      </li>
+      <li class="c-nav--footer__listitem--meta c-locale-ctn">
+       <div class="c-locale-new-overlay" id="new_locale_overlay">
+        <div class="c-locale-new-menu">
+         <button class="c-locale-new-menu__close" data-clog-click="" data-clog-manual="" id="btn_close_locale">
+          <svg aria-hidden="true" height="18" viewbox="-255 347 100 100" width="18" xmlns="http://www.w3.org/2000/svg">
+           <path d="M-160.4 434.2l-37.2-37.2 37.1-37.1-7-7-37.1 37.1-37.1-37.1-7 7 37.1 37.1-37.2 37.2 7.1 7 37.1-37.2 37.2 37.2">
+           </path>
+          </svg>
+         </button>
+         <div class="c-locale-new-menu__contents" id="new_locale_overlay_contents">
+          <p class="c-feature-grid__item__title">
+           Changer de région
+          </p>
+          <p class="c-locale-new-menu__info">
+           Si vous sélectionnez une autre région, la langue et le contenu de slack.com changeront.
+          </p>
+          <div class="c-locale-new-menu__cols">
+           <div class="c-locale-new-menu__col">
+            <h4 class="c-locale-new-menu__continent">
+             Amériques
+            </h4>
+            <a class="c-locale-new-menu__locale" data-clog-manual="" data-geocode="es-la" data-locale="es-LA" href="https://slack.com/intl/es-la/policy-archives/privacy/2014-07-22">
+             Latinoamérica (español)
+            </a>
+            <a class="c-locale-new-menu__locale" data-clog-manual="" data-geocode="pt-br" data-locale="pt-BR" href="https://slack.com/intl/pt-br/policy-archives/privacy/2014-07-22">
+             Brasil (português)
+            </a>
+            <a class="c-locale-new-menu__locale" data-clog-manual="" data-geocode="en-us" data-locale="en-US" href="https://slack.com/policy-archives/privacy/2014-07-22">
+             United States (English)
+            </a>
+           </div>
+           <div class="c-locale-new-menu__col">
+            <h4 class="c-locale-new-menu__continent">
+             Europe
+            </h4>
+            <a class="c-locale-new-menu__locale" data-clog-manual="" data-geocode="de-de" data-locale="de-DE" href="https://slack.com/intl/de-de/policy-archives/privacy/2014-07-22">
+             Deutschland (Deutsch)
+            </a>
+            <a class="c-locale-new-menu__locale" data-clog-manual="" data-geocode="es-es" data-locale="es-ES" href="https://slack.com/intl/es-es/policy-archives/privacy/2014-07-22">
+             España (español)
+            </a>
+            <a class="c-locale-new-menu__locale is-selected" data-clog-manual="" data-geocode="fr-fr" data-locale="fr-FR" href="https://slack.com/intl/fr-fr/policy-archives/privacy/2014-07-22">
+             France (français)
+            </a>
+            <a class="c-locale-new-menu__locale" data-clog-manual="" data-geocode="en-gb" data-locale="en-GB" href="https://slack.com/intl/en-gb/policy-archives/privacy/2014-07-22">
+             United Kingdom (English)
+            </a>
+           </div>
+           <div class="c-locale-new-menu__col">
+            <h4 class="c-locale-new-menu__continent">
+             Asie-Pacifique
+            </h4>
+            <a class="c-locale-new-menu__locale" data-clog-manual="" data-geocode="en-in" data-locale="en-GB" href="https://slack.com/intl/en-in/policy-archives/privacy/2014-07-22">
+             India (English)
+            </a>
+            <a class="c-locale-new-menu__locale" data-clog-manual="" data-geocode="ja-jp" data-locale="ja-JP" href="https://slack.com/intl/ja-jp/policy-archives/privacy/2014-07-22">
+             日本 (日本語)
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <a class="c-locale-new-switcher" data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_locale_picker" data-locale="en-US" data-qa="locale-switcher" href="#" id="new_locale_switcher">
+        <svg class="c-locale-new-switcher__globe" height="18" viewbox="0 0 100 100" width="18">
+         <path d="M50.008 5.874c-11.308 0-22.613 4.3-31.219 12.906-17.211 17.211-17.211 45.226 0 62.438 17.211 17.21 45.195 17.21 62.406 0 17.212-17.212 17.243-45.227.032-62.438-8.606-8.606-19.912-12.906-31.22-12.906zm-3.125 6.125h.125v34.969H28.914c.58-10.29 4.095-20.385 10.594-28.157 2.27-2.715 4.757-4.983 7.375-6.812zm6.125 0h.062a38 38 0 0 1 7.407 6.812c6.498 7.772 10.014 17.866 10.593 28.157H53.008v-34.97zm-18.094 2.937c-7.508 8.978-11.557 20.412-12.156 32.032H11.977c.687-8.725 4.343-17.25 11.03-23.938a38.166 38.166 0 0 1 11.907-8.094zm30.219.062a38.176 38.176 0 0 1 11.812 8.063c6.685 6.685 10.369 15.19 11.063 23.906H77.227c-.598-11.59-4.623-23-12.094-31.969zm-53.156 37.97h10.78c.59 11.638 4.638 23.07 12.157 32.062a38.133 38.133 0 0 1-11.875-8.063c-6.7-6.7-10.376-15.258-11.062-24zm16.937 0h18.094V88.03h-.063c-2.644-1.838-5.146-4.135-7.437-6.875-6.512-7.787-10.025-17.876-10.594-28.188zm24.094 0H71.07c-.568 10.31-4.082 20.4-10.593 28.187-2.298 2.747-4.817 5.034-7.47 6.875V52.967zm24.219 0h10.812c-.679 8.741-4.39 17.295-11.094 24A38.07 38.07 0 0 1 65.04 85.06c.01-.011.022-.02.031-.031 7.52-8.992 11.568-20.424 12.157-32.063z">
+         </path>
+        </svg>
+        <span>
+         Changer de région
+        </span>
+        <svg class="c-locale-new-switcher__chevron" height="20" viewbox="0 0 27 14" width="11">
+         <path d="M1 1.5c0 .15.05.25.15.35l12.25 11.5c.2.2.5.2.7 0l12.25-11.5c.2-.2.2-.5 0-.7-.2-.198-.5-.198-.7 0L13.75 12.3 1.85 1.15c-.2-.2-.55-.2-.7 0-.1.1-.15.2-.15.35z">
+         </path>
+        </svg>
+       </a>
+      </li>
+     </ul>
+     <ul class="c-nav__list">
+      <li class="c-nav--footer__listitem--social">
+       <a aria-label="Twitter" data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_social_twitter" data-qa="twitter" href="https://twitter.com/slackhq" rel="noopener" target="_blank" title="Twitter">
+        <svg class="c-nav--footer__svgicon" height="20" version="1" viewbox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+         <path d="M31.993 6.077c-1.177.523-2.44.876-3.77 1.033 1.355-.812 2.396-2.098 2.887-3.63-1.27.75-2.673 1.3-4.168 1.592C25.744 3.797 24.038 3 22.15 3c-3.626 0-6.563 2.938-6.563 6.563 0 .514.057 1.016.17 1.496C10.3 10.783 5.464 8.17 2.227 4.2c-.565.97-.89 2.098-.89 3.3 0 2.28 1.16 4.287 2.92 5.465-1.076-.035-2.088-.33-2.973-.82v.08c0 3.182 2.26 5.835 5.264 6.438-.55.15-1.13.23-1.73.23-.423 0-.833-.04-1.233-.117.834 2.606 3.26 4.504 6.13 4.558-2.245 1.76-5.075 2.81-8.15 2.81-.53 0-1.053-.03-1.566-.09C2.905 27.914 6.355 29 10.062 29c12.072 0 18.675-10 18.675-18.675 0-.284-.008-.568-.02-.85 1.283-.925 2.395-2.08 3.276-3.398z">
+         </path>
+        </svg>
+       </a>
+      </li>
+      <li class="c-nav--footer__listitem--social">
+       <a aria-label="Facebook" data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_social_facebook" data-qa="facebook" href="https://facebook.com/slackhq" rel="noopener" target="_blank" title="Facebook">
+        <svg class="c-nav--footer__svgicon" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+         <path d="M15.115 0H.885A.883.883 0 0 0 0 .885v14.23c0 .49.395.885.885.885h7.659V9.803h-2.09v-2.4h2.09V5.62c0-2.069 1.27-3.189 3.104-3.189.875 0 1.643.053 1.867.096v2.155h-1.291c-1.003 0-1.184.469-1.184 1.173v1.547h2.379l-.31 2.4H11.04V16h4.075c.49 0 .885-.395.885-.885V.885A.883.883 0 0 0 15.115 0z" fill-rule="evenodd">
+         </path>
+        </svg>
+       </a>
+      </li>
+      <li class="c-nav--footer__listitem--social">
+       <a aria-label="YouTube" data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_social_youtube" data-qa="youtube" href="https://www.youtube.com/channel/UCY3YECgeBcLCzIrFLP4gblw" rel="noopener" target="_blank" title="YouTube">
+        <svg class="c-nav--footer__svgicon" height="20" version="1" viewbox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+         <path d="M31.67 9.18s-.312-2.354-1.27-3.39c-1.218-1.358-2.58-1.366-3.206-1.443C22.717 4 16.002 4 16.002 4h-.015s-6.715 0-11.19.347c-.626.077-1.988.085-3.206 1.443C.635 6.826.32 9.18.32 9.18S0 11.94 0 14.7v2.59c0 2.762.32 5.522.32 5.522s.312 2.352 1.27 3.386c1.22 1.358 2.816 1.317 3.528 1.46 2.56.26 10.877.342 10.877.342s6.722-.012 11.2-.355c.624-.08 1.987-.088 3.204-1.446.956-1.036 1.27-3.388 1.27-3.388s.32-2.76.32-5.523V14.7c0-2.76-.32-5.522-.32-5.522z">
+         </path>
+         <path d="M12 10v12l10-6" fill="#FFF">
+         </path>
+        </svg>
+       </a>
+      </li>
+      <li class="c-nav--footer__listitem--social">
+       <a aria-label="LinkedIn" data-clog-click="" data-clog-ui-component="inc_footer_nav" data-clog-ui-element="link_social_linkedin" data-qa="linkedin" href="https://www.linkedin.com/company/tiny-speck-inc/" rel="noopener" target="_blank" title="LinkedIn">
+        <svg class="c-nav--footer__svgicon" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+         <path d="M14.816 0C15.466 0 16 .512 16 1.152v13.696c0 .63-.533 1.152-1.184 1.152H1.184C.534 16 0 15.477 0 14.848V1.152C0 .512.533 0 1.184 0zM3.563 4.96a1.382 1.382 0 0 0 0-2.763c-.768 0-1.376.619-1.376 1.376 0 .768.608 1.387 1.376 1.387zm10.069 4.49c0-2.058-.437-3.637-2.848-3.637-1.152 0-1.92.63-2.24 1.227h-.032V5.995H6.24v7.637h2.368V9.856c0-.992.181-1.963 1.419-1.963 1.216 0 1.237 1.142 1.237 2.027v3.712h2.368zM2.368 13.633h2.379V5.995H2.368z" fill-rule="evenodd">
+         </path>
+        </svg>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="c-nav--footer__legal">
+    <div class="o-content-container">
+     <span>
+      © Copyright 2020 Slack Technologies, Inc. Tous droits réservés. Les différentes marques commerciales appartiennent à leurs propriétaires respectifs.
+     </span>
+    </div>
    </div>
   </footer>
-  <script type="text/javascript">
-   /**
- * A placeholder function that the build script uses to
- * replace file paths with their CDN versions.
- *
- * @param {String} file_path - File path
- * @returns {String}
- */
-function vvv(file_path) {
-		 var vvv_warning = 'You cannot use vvv on dynamic values. Please make sure you only pass in static file paths.'; if (window.TS && window.TS.warn) { window.TS.warn(vvv_warning); } else { console.warn(vvv_warning); } 
-	return file_path;
-}
+  <script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-8-8cacda2/rollup-marketing.1d29fcff7fdc37141302.marketing.min.js" type="text/javascript">
+  </script>
+  <script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-8-8cacda2/marketing-core.3a12a0194d301355bcb7.marketing.min.js" type="text/javascript">
+  </script>
+  <script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-8-8cacda2/marketing-page-navigation.3e0222affaf37425f28c.marketing.min.js" type="text/javascript">
+  </script>
+  <script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-8-8cacda2/marketing-page-navigation-mobile.29df1650b0c0eb81f3bc.marketing.min.js" type="text/javascript">
+  </script>
+  <script>
+   TD.boot_data.xhp = true;
+TD.boot_data.version_uid = "2706366d1d1ce95b4cec9f838993b653d005d058";
+TD.boot_data.environment = "prod";
+TD.boot_data.abs_root_url = "https:\/\/slack.com\/";
 
-var cdn_url = "https:\/\/a.slack-edge.com";
-var vvv_abs_url = "https:\/\/slack.com\/";
-var inc_js_setup_data = {
-	emoji_sheets: {
-		apple: 'https://a.slack-edge.com/80588/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png',
-		google: 'https://a.slack-edge.com/80588/img/emoji_2017_12_06/sheet_google_64_indexed_256.png',
-	},
-};
+TD.boot_data.anonymous_visitor = true;
+TD.boot_data.beacon_timing_url = "https:\/\/slack.com\/beacon\/timing";
+TD.boot_data.referral_code = "";
+TD.boot_data.hc_tracking_qs = "";
+TD.boot_data.auth_cookie_domain = ".slack.com";
+
+TD.boot_data.geo = {"country":"FR","region":"B9","city":"Lyon","zip":"69004","lat":45.748,"lon":4.85,"metro":null,"area":null,"isp":"Free SAS","org":null,"country_label":"France","region_label":"Rhone-Alpes","country3":"FRA","continent":"EU","ok":true};
+TD.boot_data.geocode = "fr-fr";
+TD.boot_data.intl_prefix = "\/intl\/fr-fr";
+TD.boot_data.request_uri = "\/intl\/fr-fr\/policy-archives\/privacy\/2014-07-22";
+TD.boot_data.canonical_web_url = "https:\/\/slack.com\/intl\/fr-fr\/policy-archives\/privacy\/2014-07-22";
+TD.boot_data.i18n_locale = "fr-FR";
+TD.boot_data.geo_root_url = "https:\/\/slack.com\/intl\/fr-fr\/";
+
+TD.boot_data.is_usa = false;
+TD.boot_data.is_spain = false;
+TD.boot_data.is_germany = false;
+TD.boot_data.is_france = true;
+TD.boot_data.is_japan = false;
+TD.boot_data.is_europe = true;
+
+TD.boot_data.is_latam = false;
+TD.boot_data.is_brazil = false;
+TD.boot_data.is_india = false;
+TD.boot_data.is_uk = false;
+
+TD.boot_data.is_english = false;
+TD.boot_data.is_spanish = false;
+TD.boot_data.is_german = false;
+TD.boot_data.is_french = true;
+TD.boot_data.is_japanese = false;
+TD.boot_data.is_portuguese = false;
+
+TD.boot_data.job_board_token = "slack";
+TD.boot_data.zd_locale = "";
+
+
+TS.boot_data = {};
+_.extend(TD.boot_data, TS.boot_data);
+TD.model.user_id = TD.boot_data.user_id;
+
+TD.model.user_realname  = TD.boot_data.user_realname;
+TD.model.user_email = TD.boot_data.user_email;
+
+TD.model.team_id = TD.boot_data.team_id;
+TD.model.team_url = TD.boot_data.team_url;
+TD.model.team_domain = TD.boot_data.team_domain;
+TD.model.visitor_uid = "3gxb6974vswqkmkji0vb88l6r";
+TD.model.enterprise_id = TD.boot_data.enterprise_id;
+
+TD.model.session_id = "3gxb6974vswqkmkji0vb88l6r.1578424375";
+TD.model.session_is_fresh = true;
+
+TD.model.is_first_visit = true;
+TD.model.is_customer =  (TD.model.visitor_uid.indexOf('.') == 0);
+TD.model.is_prospect = !TD.model.is_customer;
+TD.model.is_signed_in = !!(TD.model.user_id);
+
+TD.model.num_signed_in_users = 0;
+TD.model.is_enterprise = !!(TD.boot_data.enterprise_id);
+TD.model.visitor_score = null;TD.model.curr_plan = '';
+TD.boot_data.clog_ui_step = "page_legal_subpage";
+if(TD.boot_data.team_id) TD.clog.setTeam(TD.boot_data.team_id);
+if(TD.boot_data.user_id) TD.clog.setUser(TD.boot_data.user_id);
+TD.boot_data.res_hub_i18n = true;
   </script>
   <script type="text/javascript">
-   // common boot_data
-	var boot_data = {"api_url":"\/api\/","app":"web","user_id":null,"team_id":"T00000000","visitor_uid":"49jc0f66hdrtsrcpzleysvqb0","no_login":true,"version_ts":"1578417832","version_uid":"1470cfed0f1b0b14e2c76045e4f95eb8c37a09e5","cache_version":"v18-kudu","cache_ts_version":"v2-bunny","redir_domain":"slack-redir.net","signin_url":"https:\/\/slack.com\/signin","abs_root_url":"https:\/\/slack.com\/","team_url":"","image_proxy_url":"https:\/\/slack-imgs.com\/","beacon_timing_url":"https:\/\/slack.com\/beacon\/timing","beacon_error_url":"https:\/\/slack.com\/beacon\/error","clog_url":"clog\/track\/","api_token":"","hc_tracking_qs":"","vvv_paths":{"lz_string":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/lz-string-1.4.4.worker.8de1b00d670ff3dc706a0.js","codemirror":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror.min.68c6a0612abccc6b8859.min.js","codemirror_addon_simple":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_simple.993fc5f8ddd401f632aa.min.js","codemirror_load":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_load.0d3e5062c28aa8e9e6d1.min.js","codemirror_files":{"apl":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_apl.9ce98c8b2445b223c87f.min.js","asciiarmor":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_asciiarmor.35587937ea51c2a23f21.min.js","asn.1":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_asn.1.01c610862397e25be991.min.js","asterisk":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_asterisk.d93b4ab488fa39d1535a.min.js","brainfuck":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_brainfuck.3221aa1bb90186bc6d4c.min.js","clike":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_clike.3a18e868c67f6bec091c.min.js","clojure":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_clojure.bf2f84229d951df10391.min.js","cmake":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_cmake.4cb381831483c4f54c57.min.js","cobol":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_cobol.e3c8cbfc57d0356677be.min.js","coffeescript":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_coffeescript.e5700626f114f2990579.min.js","commonlisp":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_commonlisp.855edfc0e1d91ca05c16.min.js","css":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_css.27f0fa1f2f9973678f41.min.js","crystal":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_crystal.a8e4e2df1c115cd80acf.min.js","cypher":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_cypher.516264675e3396487f3d.min.js","d":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_d.2a53d502e667770d2d50.min.js","dart":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_dart.d1093f3b93237ea73dda.min.js","diff":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_diff.4b76d702ffd8e40cb38e.min.js","django":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_django.1a6c031a26daa21a69b8.min.js","dockerfile":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_dockerfile.60437cdd733ddff4d69e.min.js","dtd":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_dtd.5af3bbf93960c84f502f.min.js","dylan":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_dylan.7ce8f21e520d682f4f8b.min.js","ebnf":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_ebnf.c466e4e331e317ee3bb6.min.js","ecl":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_ecl.edab48690c7dd0b0e7bf.min.js","eiffel":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_eiffel.38295779d877f2d93172.min.js","elm":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_elm.625d59400baf6602f80b.min.js","erlang":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_erlang.cf95861dfcac37137635.min.js","factor":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_factor.d3614dfa41ac0dc7845c.min.js","forth":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_forth.8483485b0c45acd9968e.min.js","fortran":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_fortran.147f9339b4bb1fa52f5a.min.js","gas":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_gas.d4bc1b52ee0bf562d38b.min.js","gfm":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_gfm.044ebe7563e132ddc776.min.js","gherkin":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_gherkin.99ee8d0c0b0e43df3fc2.min.js","go":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_go.ccc3fb5d2fa18b721472.min.js","groovy":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_groovy.3b799fcdb725113b26e6.min.js","haml":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_haml.b06fccb4a8688693ce60.min.js","handlebars":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_handlebars.a4009c0e6acae85449ae.min.js","haskell":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_haskell.5dec8bb1085b65f77cfb.min.js","haxe":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_haxe.2b4004075fa59db4215d.min.js","htmlembedded":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_htmlembedded.49015cbee7f6bed4fdb2.min.js","htmlmixed":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_htmlmixed.92d93d53a16e075846ef.min.js","http":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_http.8a2463c82ca535330324.min.js","idl":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_idl.514b6a5e6ff99c326676.min.js","jade":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_jade.32c0ae969c0912c7d1a7.min.js","javascript":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_javascript.ac1833e9e239d532b5a9.min.js","jinja2":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_jinja2.db12ecfd4bbcb8759663.min.js","julia":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_julia.7b2cde58dc0eeb07e670.min.js","livescript":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_livescript.959c4dc72566a2647887.min.js","lua":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_lua.1fd9b346cd1e6eae8005.min.js","markdown":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_markdown.357d4f0231d705ccf4a8.min.js","mathematica":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_mathematica.45ce6a8448747555ee8f.min.js","mirc":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_mirc.642a0a9093c3edeed1d3.min.js","mllike":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_mllike.b2e59e34b2aeb0b0e33e.min.js","modelica":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_modelica.9beba902fad68d652504.min.js","mscgen":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_mscgen.9ded5d132cea548a584e.min.js","mumps":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_mumps.6275100d3cba3cddb171.min.js","nginx":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_nginx.392947a5cde360e55391.min.js","nsis":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_nsis.1806098f2effc4c5efd7.min.js","ntriples":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_ntriples.5c6b91f6dc29d225159b.min.js","octave":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_octave.99cbf3e0a722d95277fd.min.js","oz":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_oz.4547ccfddc5285febdda.min.js","pascal":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_pascal.1fdbc75f659ab7b20ef9.min.js","pegjs":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_pegjs.3521154b9d0fb8dde2c8.min.js","perl":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_perl.26162b1de3f2488ffedc.min.js","php":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_php.8e7702141c4d006bb20d.min.js","pig":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_pig.ccf3929396ee7d241406.min.js","powershell":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_powershell.89f2e9bf6c82ad1dd9be.min.js","properties":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_properties.ea7ce14c425174adbf15.min.js","puppet":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_puppet.09d4a043903a52237467.min.js","python":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_python.9cfcb8242c3c5f4d0902.min.js","q":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_q.7609b6efaf5ddfdfa4a5.min.js","r":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_r.34936e41f11ec18a7574.min.js","rpm":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_rpm.c29179d9188701eb5f3e.min.js","rst":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_rst.13bec6331c0175cbb096.min.js","ruby":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_ruby.82dea11644c74e4ea542.min.js","rust":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_rust.0e6cc1a0d2d2d8f8ebdb.min.js","sass":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_sass.1fbce54b2c30443779ee.min.js","scheme":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_scheme.8879ee5f8875d6bcc804.min.js","shell":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_shell.dc5d3558fddedd18394f.min.js","sieve":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_sieve.3b322726b907140b94e8.min.js","slim":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_slim.c7c0bc0f173834409511.min.js","smalltalk":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_smalltalk.98c12375c87c5190c839.min.js","smarty":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_smarty.7ba62377f59f71769997.min.js","solr":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_solr.26c4e419b0c8799bbb7d.min.js","soy":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_soy.88e95ffb45a4ac4245a6.min.js","sparql":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_sparql.8c0531110d8a9cc305af.min.js","spreadsheet":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_spreadsheet.bc9aa8372d994191bdf5.min.js","sql":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_sql.10943fd4b23f23287346.min.js","stex":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_stex.5ce81cdd023b89aee79a.min.js","stylus":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_stylus.f397f02de356ae6f9c70.min.js","swift":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_swift.f9e3a18a1494c65022d7.min.js","tcl":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_tcl.ee14ce352833c4fc479e.min.js","textile":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_textile.735f225481eb57341209.min.js","tiddlywiki":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_tiddlywiki.c231972447ed1bbe0448.min.js","tiki":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_tiki.d77f0e66e73eccddc4bb.min.js","toml":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_toml.4065b4ec065704035704.min.js","tornado":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_tornado.333309dcf41514a3a3fd.min.js","troff":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_troff.f6b0fa08741119ef6a5c.min.js","ttcn":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_ttcn.25fd0ff729db16f0136c.min.js","ttcn:cfg":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_ttcn-cfg.a66e3a4b4bd8571ce680.min.js","turtle":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_turtle.d7399c7c708ae1a73f45.min.js","twig":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_twig.71f123bdd3422c683281.min.js","vb":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_vb.b09123c6bc1e4be389ec.min.js","vbscript":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_vbscript.9997bbf95aea02545ba7.min.js","velocity":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_velocity.667ea49e2a56e7dee9ae.min.js","verilog":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_verilog.e66107ac567e2affd610.min.js","vhdl":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_vhdl.b07fe79cfa9f5af6216e.min.js","vue":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_vue.59cef1117edec87b5572.min.js","xml":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_xml.1cc4ec39e3ec515aaca6.min.js","xquery":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_xquery.78c0eb783c75a527ef64.min.js","yaml":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_yaml.a05212b810071b5c613f.min.js","z80":"https:\/\/a.slack-edge.com\/bv1-8-8cacda2\/codemirror_lang_z80.5679835fc3114c5600e2.min.js"}},"notification_sounds":[{"value":"b2.mp3","label":"Ding","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/b2.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/b2.ogg"},{"value":"animal_stick.mp3","label":"Boing","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/animal_stick.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/animal_stick.ogg"},{"value":"been_tree.mp3","label":"Chute","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/been_tree.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/been_tree.ogg"},{"value":"complete_quest_requirement.mp3","label":"Ta-da","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/complete_quest_requirement.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/complete_quest_requirement.ogg"},{"value":"confirm_delivery.mp3","label":"Plink","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/confirm_delivery.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/confirm_delivery.ogg"},{"value":"save_and_checkout.mp3","label":"Waouh\u00a0!","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/save_and_checkout.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/save_and_checkout.ogg"},{"value":"here_you_go_lighter.mp3","label":"Et voil\u00e0","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/here_you_go_lighter.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/here_you_go_lighter.ogg"},{"value":"hi_flowers_hit.mp3","label":"Bonjour","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/hi_flowers_hit.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/hi_flowers_hit.ogg"},{"value":"knock_brush.mp3","label":"Knock Brush","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/knock_brush.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/knock_brush.ogg"},{"value":"item_pickup.mp3","label":"Yoink","url":"https:\/\/a.slack-edge.com\/7e91\/sounds\/push\/item_pickup.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/item_pickup.ogg"},{"value":"hummus.mp3","label":"Houmous","url":"https:\/\/a.slack-edge.com\/7fa9\/sounds\/push\/hummus.mp3","url_ogg":"https:\/\/a.slack-edge.com\/46ebb\/sounds\/push\/hummus.ogg"},{"value":"none","label":"Aucun"}],"alert_sounds":[{"value":"frog.mp3","label":"Grenouille","url":"https:\/\/slack.global.ssl.fastly.net\/a34a\/sounds\/frog.mp3"}],"call_sounds":[{"value":"call\/alert_v2.mp3","label":"Alerte","url":"https:\/\/slack.global.ssl.fastly.net\/08f7\/sounds\/call\/alert_v2.mp3"},{"value":"call\/incoming_ring_v2.mp3","label":"Sonnerie entrante","url":"https:\/\/slack.global.ssl.fastly.net\/08f7\/sounds\/call\/incoming_ring_v2.mp3"},{"value":"call\/outgoing_ring_v2.mp3","label":"Sonnerie sortante","url":"https:\/\/slack.global.ssl.fastly.net\/08f7\/sounds\/call\/outgoing_ring_v2.mp3"},{"value":"call\/pop_v2.mp3","label":"R\u00e9action entrante","url":"https:\/\/slack.global.ssl.fastly.net\/08f7\/sounds\/call\/pop_v2.mp3"},{"value":"call\/they_left_call_v2.mp3","label":"Ils ont quitt\u00e9 l'appel","url":"https:\/\/slack.global.ssl.fastly.net\/08f7\/sounds\/call\/they_left_call_v2.mp3"},{"value":"call\/you_left_call_v2.mp3","label":"Vous avez quitt\u00e9 l'appel","url":"https:\/\/slack.global.ssl.fastly.net\/08f7\/sounds\/call\/you_left_call_v2.mp3"},{"value":"call\/they_joined_call_v2.mp3","label":"Ils ont rejoint l'appel","url":"https:\/\/slack.global.ssl.fastly.net\/08f7\/sounds\/call\/they_joined_call_v2.mp3"},{"value":"call\/you_joined_call_v2.mp3","label":"Vous avez rejoint l'appel","url":"https:\/\/slack.global.ssl.fastly.net\/08f7\/sounds\/call\/you_joined_call_v2.mp3"},{"value":"call\/confirmation_v2.mp3","label":"Confirmation","url":"https:\/\/slack.global.ssl.fastly.net\/08f7\/sounds\/call\/confirmation_v2.mp3"}],"call_sounds_version":"v2","a11y_sounds":[],"img":{"app_icon":"https:\/\/a.slack-edge.com\/80588\/img\/slack_growl_icon_vogue.png"},"page_needs_enterprise":false,"page_needs_custom_emoji":false,"is_deprecated_webclient_browser":false,"is_unsupported_webclient_browser":true,"default_tz":"America\/Los_Angeles","feature_builder_webhook_admin":false,"feature_builder_webhook_trigger":false,"feature_ally_bugbash":false,"feature_builder_scheduled_trigger":false,"feature_builder_admin_views":true,"feature_block_kit_max_selected_items":true,"feature_builder_app_collaborators":true,"feature_builder_feedback_button":false,"feature_app_views_v1":true,"feature_org_admin_store":true,"feature_audit_logs_view":false,"feature_audit_logs_view_workspace":false,"feature_data_location_view":true,"feature_sk_i18n":false,"feature_org_modern_setting_page":false,"feature_org_dashboard_reset_sessions":false,"feature_workspace_dashboard_reset_sessions":false,"feature_account_creation_show_custom_tos":true,"feature_idp_group_count":false,"feature_accessible_selects":false,"feature_builder_channel_actions":true,"feature_builder_disable_global_triggers":true,"feature_workflow_builder_enabled_org_setting":true,"feature_builder_can_access":false,"feature_esc_retention_client":false,"feature_granular_dnd":false,"feature_push_idle_always":false,"feature_context_bar_custom_status":false,"feature_context_bar_guests":false,"feature_context_bar_tz_issues":false,"feature_multi_file_layout":true,"feature_migration_org_approvals":true,"feature_newxp_3266":true,"feature_tinyspeck":false,"feature_get_user_perms_from_team_obj":false,"feature_org_guest_conversion":false,"feature_org_level_user_groups_phase_2_frontend":false,"feature_desktop_copy_text":false,"feature_ssb_q319_deprecation":true,"feature_ssb_q319_deprecation_dark":false,"feature_ssb_q319_deprecation_modal":false,"feature_ssb_q319_deprecation_modal_store_override":false,"feature_ssb_q319_deprecation_block":true,"feature_deprecate_get_member_by_name":false,"feature_react_file_viewer":false,"feature_react_file_viewer_navigation":true,"feature_unknown_files":true,"feature_unknown_messages":true,"feature_add_message_perf":false,"feature_fix_custom_emoji_errors":true,"feature_modern_delete_file":true,"feature_sonic_channel_options":false,"feature_copy_channel_link":true,"feature_collapse_reactions":false,"feature_select_model_option_fetcher_m11n":false,"feature_a11y_message_summary":true,"feature_easy_profile_img_download":true,"feature_undo_mark_all_as_read":false,"feature_email_workflow":false,"feature_plain_text_mode":true,"feature_message_kit_in_message_pane":false,"feature_channel_details_membership_list":false,"feature_all_dm_mute":true,"feature_all_dm_mute_bots":false,"feature_file_threads":true,"feature_file_threads_dark_launch":true,"feature_broadcast_indicator":true,"feature_new_replies_after_bcast":true,"feature_sonic_emoji":false,"feature_emoji_search_keywords_in_autocomplete":false,"feature_custom_emoji_search_by_creator":true,"feature_sonic_frequent_emoji_from_pref":false,"feature_email_ingestion":false,"feature_sidebar_context_menu":false,"feature_attachments_inline":false,"feature_fix_files":true,"feature_paging_api":false,"feature_aaa_admin_apis":true,"feature_aaa_admin_apis_events_docs":true,"feature_app_launcher_banners":false,"feature_app_launcher_filters":false,"feature_help_test_primer":false,"feature_app_directory_primer":false,"feature_custom_status_expiry":true,"feature_channel_notification_settings":true,"feature_channel_sidebar_drafts_section":true,"feature_navigate_history":true,"feature_message_actions_refresh":true,"feature_compose_flow":false,"feature_compose_flow_web":false,"feature_compose_flow_sidebar":false,"feature_compose_flow_send":false,"feature_better_snooze":true,"feature_sonic_dnd_manager":false,"feature_sonic_dnd_rtm":false,"feature_sonic_presence_manager":false,"feature_faster_count_all_unreads":true,"feature_sonic_user_groups":false,"feature_channel_selector_for_team_guests_update":false,"feature_lazy_user_groups":true,"feature_sonic_service_down":true,"feature_m11n_user_fetch_stats":true,"feature_untrustworthy_navigator_online":true,"feature_connectivity_manager":true,"feature_desktop_symptom_events":false,"feature_client_boot_should_reload":true,"feature_client_mvp":false,"feature_data_residency_debugging":false,"feature_ent_admin_approved_apps":true,"feature_ent_admin_approved_apps_v2":true,"feature_sonic_member_directory":false,"feature_modernized_xws_permalink_dialogs":true,"feature_dashboard_sortable_lists":false,"feature_sk_loading_button_motions":false,"feature_sk_base_icon":false,"feature_wta_perm_api_split":false,"feature_wta_conversations_api_channel_created_msg":false,"feature_app_compliance_info_collection_part_deux_eh":false,"feature_app_compliance_info_collection_part_deux":false,"feature_app_compliance_info_collection_part_the_third":false,"feature_ce_eng_contact_form_v3":true,"feature_ce_eng_contact_form_v3b":false,"feature_guest_api_changes":false,"feature_gdpr_exports":true,"feature_allow_bulk_delete_join_leave_messages":true,"feature_shared_channels_block_large_orgs":false,"feature_channel_is_remove_create_shared_channel":false,"feature_shared_channels_multi_org":false,"feature_remove_double_diamonds":false,"feature_remove_double_rings":false,"feature_create_private_c_channels":false,"feature_gdpr_user_join_tos":true,"feature_user_invite_tos_april_2018":true,"feature_reactji_education_tip":true,"feature_incremental_unread_counts":false,"feature_neue_type":false,"feature_cust_acq_i18n_tweaks":false,"feature_contact_sales_11_2019_updates":true,"feature_proj_updated_pricing_lp":true,"feature_proj_updated_pricing_lp_11_2019_updates":true,"feature_proj_media_lp":true,"feature_proj_2019_policy_launch":true,"feature_proj_update_security_lp":false,"feature_whitelist_zendesk_chat_widget":false,"feature_live_support_free_plan":false,"feature_offline_mode":false,"feature_force_ls_compression":false,"feature_use_imgproxy_resizing":true,"feature_share_mention_comment_cleanup":false,"feature_electron_memory_logging":false,"feature_native_app_start_non_mac":false,"feature_localization_phase_two":true,"feature_locale_es_LA":true,"feature_locale_en_GB":true,"feature_locale_pt_BR":true,"feature_new_locale_toast":true,"feature_channel_exports":false,"feature_docs":true,"feature_docs_translations":false,"feature_docs_mentions_and_channels":false,"feature_docs_large_body_font":true,"feature_vacation_delight":false,"feature_calls_esc_ui":true,"feature_calls_survey_request_response":true,"feature_remote_files_api":true,"feature_token_ip_whitelist":true,"feature_sidebar_theme_undo":false,"feature_hide_on_startup":true,"feature_dont_set_channel_membership_twice":false,"feature_allow_intra_word_formatting":true,"feature_i18n_channels_validate_emoji":true,"feature_fw_eng_normalization":true,"feature_slim_scrollbar":false,"feature_primary_search":false,"feature_modern_sounds":false,"feature_modern_fuzzy_matcher":false,"feature_sli_channel_archive_suggestions":true,"feature_steeple_church":true,"feature_steeple_church_link":true,"feature_steeple_church_ext":true,"feature_strollers_to_perch":true,"feature_fuzzy_match":true,"feature_sidebar_virtualized":false,"feature_msg_edit_warn_modal":false,"feature_fantail_nurture":true,"feature_pourover":false,"feature_modern_mpim_make_name":false,"feature_people_search":false,"feature_react_messages":true,"feature_edge_upload_proxy_check":false,"feature_legacy_file_upload_analytics":true,"feature_sonic_clipboard":false,"feature_sonic_dm_browser":true,"feature_sonic_find_more_wksps":false,"feature_sonic_inputs":false,"feature_threaded_slack_owned_plugins":true,"feature_deprecate_unused_commands":true,"feature_react_member_profile_card":false,"feature_error_boundary_copy":true,"feature_sonic_cloud_files_picker":false,"feature_sonic_snippets":false,"feature_copy_channel_name":true,"feature_app_popouts_i18n":false,"feature_box_content_picker":true,"feature_app_subdomain_check":true,"feature_sonic_draft_migration":true,"feature_modernize_slack_actions":false,"feature_gdrive_do_not_install_by_default":true,"feature_zero_workspace_onboarding":true,"feature_ekm_backfill_add_sleep":false,"feature_ekm_message_revocation_polling_test":false,"feature_ekm_message_revocation":true,"feature_longer_channel_names":true,"feature_team_admins_list_api":false,"feature_roles_store":false,"feature_ms_latest":true,"feature_guests_use_entitlements":true,"feature_app_canvases":false,"feature_app_home_docs":true,"feature_app_home_admin_pages":false,"feature_app_actions_admin_pages":false,"feature_app_views_reminders":false,"feature_app_views_reminders_list":false,"feature_reminders_user":false,"feature_blocks_reminders_list":false,"feature_message_blocks":false,"feature_silence_app_dms":false,"feature_set_tz_automatically":true,"feature_confirm_clear_all_unreads_pref":true,"feature_block_mounts":true,"feature_attachments_v2":true,"feature_block_kit_documentation":true,"feature_block_kit_expandable_block":false,"feature_group_block":false,"feature_block_kit_deep_links":false,"feature_show_block_kit_in_share_dialogs":false,"feature_block_kit_event_block":false,"feature_block_kit_user_block":false,"feature_block_kit_radio_buttons":true,"feature_block_kit_checkboxes":false,"feature_block_kit_range_datepicker":false,"feature_add_app_home_team_name":false,"feature_date_time_picker":false,"feature_beacon_js_errors":false,"feature_beacon_js_admin_errors":false,"feature_dialogs_v2_mobile":true,"feature_user_app_disable_speed_bump":true,"feature_tractor_shared_invite_link":true,"feature_newxp_2119":true,"feature_tractor_backup_channelname_copy":true,"feature_sk_tables":false,"feature_desync_resync":true,"feature_stranger_danger":true,"feature_degraded_rtm_always_fails":false,"feature_pjpeg":false,"feature_pdf_thumb":true,"feature_apps_manage_permissions_scope_changes":true,"feature_reminder_cross_workspace":true,"feature_global_nav":false,"feature_global_nav_rollback":false,"feature_classic_nav":false,"feature_new_reactions":true,"feature_pages_example":false,"feature_sonic_pins":false,"feature_sonic_video_placeholder":true,"feature_iap1":false,"feature_ia_browsers":false,"feature_ia_messaging":false,"feature_ia_platform_translations":false,"feature_sonic_hard_reload":true,"feature_hidden_wksp_unfurls":true,"feature_guest_wksp_unfurls":false,"feature_workspace_scim_management":false,"feature_unified_member":false,"feature_turn_mpdm_notifs_on":true,"feature_desktop_force_production_channel":false,"feature_desktop_logs_upload":false,"feature_macos_disable_hw":true,"feature_desktop_notifications_2018":false,"feature_quill_upgrade":true,"feature_ally_sounds":false,"feature_wysiwyg_anchor_text":false,"feature_bots_not_members":true,"feature_wta_stop_creation":true,"feature_m11n_channel_details":false,"feature_granular_bot_ga":false,"feature_wta_org_level_apps":false,"feature_channel_actions":true,"feature_colorful_slash_commands":false,"feature_channel_actions_client":true,"feature_shortcuts_prompt":true,"feature_accessible_dialogs":true,"feature_app_actions_global":false,"feature_app_actions_fe_refactor":false,"feature_calls_clipboard_broadcasting_optin":true,"feature_screen_share_needs_aero":false,"feature_sli_trending_dashboard":false,"feature_i18n_select_empty_state_string":false,"feature_accessible_fs_dialogs":true,"feature_channel_header_labels":false,"feature_trap_kb_within_fs_modals":true,"feature_dialog_speedbump":true,"feature_modern_image_viewer":true,"feature_emoji_by_id":true,"feature_mc_migration_banner":true,"feature_file_comment_deleted_rtm_handler":false,"feature_aria_application_mode":false,"feature_modern_request_workspace_dialog":false,"feature_modern_profile_flexpane":false,"feature_scg_conversion_channels":true,"feature_reduce_unexpected_uninstalls":true,"feature_idp_group_warning":false,"feature_enterprise_retention_allow_override_on_org_level_channels":false,"feature_track_time_spent":true,"feature_announce_only":true,"feature_announce_only_websocket":true,"feature_announce_only_promo":false,"feature_at_mention_invites":true,"feature_channel_invite_tokenization":true,"feature_better_tokenization_webapp_fast_follow":true,"feature_imports_cancel":true,"feature_email_workobject_ui":false,"feature_email_notify":false,"feature_email_private":true,"feature_enforce_tls_ui":false,"feature_prototype_centralized_channel_mgmt":false,"feature_calendar_simple_agenda_view":false,"feature_analytics_enable_division":false,"feature_enterprise_analytics_apps_tab":false,"feature_enterprise_analytics_2019_q1_update":true,"feature_insights_allow_access_to_app":false,"feature_insights_comms_impact_message_stats":false,"feature_migration_background_client":true,"feature_unfurl_metadata":false,"feature_plus_menu_add_apps_link":false,"feature_recent_files_omnipicker":false,"feature_granular_bot":true,"feature_granular_bot_update_tool":true,"feature_switzerland_vat_field_in_checkout_v2":true,"feature_japan_vat_changes202002_email_comms":true,"feature_admin_move_channels_message":false,"feature_fyt_copy":false,"feature_get_started_description":false,"feature_see_more_channels":false,"feature_creator_sonic_url":false,"feature_jira_newxp_2372":true,"feature_newxp_fe_invite_modern":true,"feature_modernize_channel_create_modal":true,"feature_sonic_placeholder_labels":false,"feature_sonic_esc_creation":false,"feature_platform_calls_api":true,"feature_platform_calls_admin_pages_copy":false,"feature_platform_calls_phone_integration_a11y_copy":false,"feature_threaded_call_block":false,"feature_trigger_id_scope":false,"feature_lifecycle_logging_plans_page":true,"feature_slack_message_attachment_tooltip":false,"feature_modern_gdrive_create":false,"feature_enterprise_mobile_device_check":false,"feature_newxp_2778":true,"feature_newxp_3567":true,"feature_shared_channels_custom_emojis_url":false,"feature_shared_channels_custom_emojis_url_client":false,"feature_new_copy_for_identity_basic":false,"feature_sonic_leave_workspace_dialog":false,"feature_shared_channels_free_trial":true,"feature_better_invites_get_started":true,"feature_shared_channels_new_user_trial":false,"feature_shared_channel_invites_v2":true,"feature_better_invites_call_v2_api":true,"feature_better_invites_route_to_channel":true,"feature_paid_onboarding_pageupdate":true,"feature_download_access_logs":true,"feature_trace_webapp_init":true,"feature_announcement_only_channel_copy_change_translations":true,"feature_currency_usd_fix":true,"feature_gg_from_the_start":true,"feature_gg_from_the_start_v2":false,"feature_stripe_completely_down_banner":false,"feature_feat_browser_control":true,"feature_targeted_promotional_discounts":true,"feature_team_menu_megaphone_transition":true,"feature_plans_page_free_column":false,"feature_fair_billing_detail_pdf_translation":true,"feature_checkout_v2_product_switch_checkout_review":true,"feature_checkout_v2_product_switch_checkout_form":false,"feature_checkout_v2_ach_support":true,"feature_checkout_v2_teams_in_dunning_phase_two":false,"feature_deprecation_dashboards":true,"feature_contextual_message_shortcuts":false,"feature_enterprise_analytics_2019_q3_enhancements":false,"feature_invite_requests_domain_approved_translations":false,"feature_tiny_thumb_ui":true,"feature_org_level_apps":false,"feature_channel_sections":false,"feature_global_actions_v0":false,"feature_message_navigation_shortcuts":false,"feature_search_limit_team_filter":false,"feature_analytics_scim_fields_paid":false,"feature_org_apps_dashboard":false,"feature_google_directory_invites":false,"feature_modernize_admin_invites":false,"feature_better_imports_error":false,"feature_help_center_incident_banner":true,"feature_desktop_spellchecker_v3_prefs":false,"feature_scg_error_message":true,"feature_search_results_virtualized":false,"feature_search_tabs_a11y_improvements":false,"feature_show_email_forwarded_by":false,"feature_new_enough_periodic_reloads":false,"feature_tls_deprecation_additional_messaging_for_admins":false,"feature_ia_hc_show_both":false,"client_logs":{"0":{"numbers":["0"],"user_facing":false},"2":{"numbers":["2"],"user_facing":false},"4":{"numbers":["4"],"user_facing":false},"5":{"numbers":["5"],"user_facing":false},"23":{"numbers":["23"],"user_facing":false},"sounds":{"name":"sounds","numbers":["37"]},"37":{"name":"sounds","numbers":["37"],"user_facing":true},"47":{"numbers":["47"],"user_facing":false},"48":{"numbers":["48"],"user_facing":false},"Message History":{"name":"Message History","numbers":["58"]},"58":{"name":"Message History","numbers":["58"],"user_facing":true},"67":{"numbers":["67"],"user_facing":false},"72":{"numbers":["72"],"user_facing":false},"73":{"numbers":["73"],"user_facing":false},"82":{"numbers":["82"],"user_facing":false},"88":{"numbers":["88"],"user_facing":false},"91":{"numbers":["91"],"user_facing":false},"93":{"numbers":["93"],"user_facing":false},"96":{"numbers":["96"],"user_facing":false},"99":{"numbers":["99"],"user_facing":false},"Channel Marking (MS)":{"name":"Channel Marking (MS)","numbers":["141"]},"141":{"name":"Channel Marking (MS)","numbers":["141"],"user_facing":true},"Channel Marking (Client)":{"name":"Channel Marking (Client)","numbers":["142"]},"142":{"name":"Channel Marking (Client)","numbers":["142"],"user_facing":true},"Close Old IMs (Client)":{"name":"Close Old IMs (Client)","numbers":["221"]},"221":{"name":"Close Old IMs (Client)","numbers":["221"],"user_facing":true},"365":{"numbers":["365"],"user_facing":false},"389":{"numbers":["389"],"user_facing":false},"438":{"numbers":["438"],"user_facing":false},"444":{"numbers":["444"],"user_facing":false},"481":{"numbers":["481"],"user_facing":false},"488":{"numbers":["488"],"user_facing":false},"529":{"numbers":["529"],"user_facing":false},"552":{"numbers":["552"],"user_facing":false},"dashboard":{"name":"dashboard","numbers":["666"]},"666":{"name":"dashboard","numbers":["666"],"user_facing":false},"667":{"numbers":["667"],"user_facing":false},"773":{"numbers":["773"],"user_facing":false},"777":{"numbers":["777"],"user_facing":false},"794":{"numbers":["794"],"user_facing":false},"Client Responsiveness":{"name":"Client Responsiveness","user_facing":false,"numbers":["808"]},"808":{"name":"Client Responsiveness","user_facing":false,"numbers":["808"]},"Message Pane Scrolling":{"name":"Message Pane Scrolling","numbers":["888"]},"888":{"name":"Message Pane Scrolling","numbers":["888"],"user_facing":true},"Unread banner and divider":{"name":"Unread banner and divider","numbers":["999"]},"999":{"name":"Unread banner and divider","numbers":["999"],"user_facing":true},"1000":{"numbers":["1000"],"user_facing":false},"Duplicate badges (desktop app icons)":{"name":"Duplicate badges (desktop app icons)","numbers":["1701"]},"1701":{"name":"Duplicate badges (desktop app icons)","numbers":["1701"],"user_facing":true},"Members":{"name":"Members","numbers":["1975"]},"1975":{"name":"Members","numbers":["1975"],"user_facing":true},"lazy loading":{"name":"lazy loading","numbers":["1989"]},"1989":{"name":"lazy loading","numbers":["1989"],"user_facing":true},"thin_channel_membership":{"name":"thin_channel_membership","numbers":["1990"]},"1990":{"name":"thin_channel_membership","numbers":["1990"],"user_facing":true},"stats":{"name":"stats","numbers":["1991"]},"1991":{"name":"stats","numbers":["1991"],"user_facing":true},"ms":{"name":"ms","numbers":["1996"]},"1996":{"name":"ms","numbers":["1996"],"user_facing":true},"shared_channels_connection":{"name":"shared_channels_connection","numbers":["1999"]},"1999":{"name":"shared_channels_connection","numbers":["1999"],"user_facing":false},"dnd":{"name":"dnd","numbers":["2002"]},"2002":{"name":"dnd","numbers":["2002"],"user_facing":true},"2003":{"numbers":["2003"],"user_facing":false},"Threads":{"name":"Threads","numbers":["2004"]},"2004":{"name":"Threads","numbers":["2004"],"user_facing":true},"2005":{"numbers":["2005"],"user_facing":false},"Reactions":{"name":"Reactions","numbers":["2006"]},"2006":{"name":"Reactions","numbers":["2006"],"user_facing":true},"TSSSB.focusTabAndSwitchToChannel":{"name":"TSSSB.focusTabAndSwitchToChannel","numbers":["2007"]},"2007":{"name":"TSSSB.focusTabAndSwitchToChannel","numbers":["2007"],"user_facing":false},"Presence Detection":{"name":"Presence Detection","numbers":["2017"]},"2017":{"name":"Presence Detection","numbers":["2017"],"user_facing":true},"mc_sibs":{"name":"mc_sibs","numbers":["9999"]},"9999":{"name":"mc_sibs","numbers":["9999"],"user_facing":false},"Member searching":{"name":"Member searching","numbers":["90211"]},"90211":{"name":"Member searching","numbers":["90211"],"user_facing":true},"98765":{"numbers":["98765"],"user_facing":false},"8675309":{"numbers":["8675309"],"user_facing":false}}};
-	boot_data.start_ms = Date.now();
+   TD.clog.track("WEBSITE_IMPRESSION", {
+	trigger: "privacy_2014-07-22",
+	contexts: { ui_context: { step: "page_legal_subpage", action: 'impression' } }
+});
   </script>
-  <style>
-   .color_9f69e7:not(.nuc) {color:#9F69E7;}.color_4bbe2e:not(.nuc) {color:#4BBE2E;}.color_e7392d:not(.nuc) {color:#E7392D;}.color_3c989f:not(.nuc) {color:#3C989F;}.color_674b1b:not(.nuc) {color:#674B1B;}.color_e96699:not(.nuc) {color:#E96699;}.color_e0a729:not(.nuc) {color:#E0A729;}.color_684b6c:not(.nuc) {color:#684B6C;}.color_5b89d5:not(.nuc) {color:#5B89D5;}.color_2b6836:not(.nuc) {color:#2B6836;}.color_99a949:not(.nuc) {color:#99A949;}.color_df3dc0:not(.nuc) {color:#DF3DC0;}.color_4cc091:not(.nuc) {color:#4CC091;}.color_9b3b45:not(.nuc) {color:#9B3B45;}.color_d58247:not(.nuc) {color:#D58247;}.color_bb86b7:not(.nuc) {color:#BB86B7;}.color_5a4592:not(.nuc) {color:#5A4592;}.color_db3150:not(.nuc) {color:#DB3150;}.color_235e5b:not(.nuc) {color:#235E5B;}.color_9e3997:not(.nuc) {color:#9E3997;}.color_53b759:not(.nuc) {color:#53B759;}.color_c386df:not(.nuc) {color:#C386DF;}.color_385a86:not(.nuc) {color:#385A86;}.color_a63024:not(.nuc) {color:#A63024;}.color_5870dd:not(.nuc) {color:#5870DD;}.color_ea2977:not(.nuc) {color:#EA2977;}.color_50a0cf:not(.nuc) {color:#50A0CF;}.color_d55aef:not(.nuc) {color:#D55AEF;}.color_d1707d:not(.nuc) {color:#D1707D;}.color_43761b:not(.nuc) {color:#43761B;}.color_e06b56:not(.nuc) {color:#E06B56;}.color_8f4a2b:not(.nuc) {color:#8F4A2B;}.color_902d59:not(.nuc) {color:#902D59;}.color_de5f24:not(.nuc) {color:#DE5F24;}.color_a2a5dc:not(.nuc) {color:#A2A5DC;}.color_827327:not(.nuc) {color:#827327;}.color_3c8c69:not(.nuc) {color:#3C8C69;}.color_8d4b84:not(.nuc) {color:#8D4B84;}.color_84b22f:not(.nuc) {color:#84B22F;}.color_4ec0d6:not(.nuc) {color:#4EC0D6;}.color_e23f99:not(.nuc) {color:#E23F99;}.color_e475df:not(.nuc) {color:#E475DF;}.color_619a4f:not(.nuc) {color:#619A4F;}.color_a72f79:not(.nuc) {color:#A72F79;}.color_7d414c:not(.nuc) {color:#7D414C;}.color_aba727:not(.nuc) {color:#ABA727;}.color_965d1b:not(.nuc) {color:#965D1B;}.color_4d5e26:not(.nuc) {color:#4D5E26;}.color_dd8527:not(.nuc) {color:#DD8527;}.color_bd9336:not(.nuc) {color:#BD9336;}.color_e85d72:not(.nuc) {color:#E85D72;}.color_dc7dbb:not(.nuc) {color:#DC7DBB;}.color_bc3663:not(.nuc) {color:#BC3663;}.color_9d8eee:not(.nuc) {color:#9D8EEE;}.color_8469bc:not(.nuc) {color:#8469BC;}.color_73769d:not(.nuc) {color:#73769D;}.color_b14cbc:not(.nuc) {color:#B14CBC;}
-  </style>
-  <!-- slack-www-hhvm-main-iad-hlw5/ 2020-01-07 10:08:44/ v1470cfed0f1b0b14e2c76045e4f95eb8c37a09e5/ B:H -->
  </body>
 </html>
