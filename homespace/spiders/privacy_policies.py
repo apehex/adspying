@@ -61,6 +61,7 @@ class PrivacyPoliciesSpider(LegalDocumentsSpider):
             'medium': 'https://medium.com/policy/medium-privacy-policy-f03bf92035c9',
             'microsoft': 'https://privacy.microsoft.com/en-US/privacystatement',
             'mozilla': 'https://www.mozilla.org/en-US/privacy/',
+            'patreon': 'https://support.patreon.com/hc/en-us/articles/360038128931-Former-Patreon-Privacy-Policy',
             'pivotal': 'https://pivotal.io/privacy-policy',
             'pornhub': 'https://fr.pornhub.com/information',
             'reddit': 'https://www.redditinc.com/policies/privacy-policy',

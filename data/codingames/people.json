@@ -158,6 +158,47 @@
         ]
       },
       "id": "point.0033608852298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "address": "",
+        "names": ["laurent chervet"],
+        "projects": ["codingames"],
+        "links": ["snips", "project-alice"],
+        "data": [
+          "https://github.com/Psychokiller1888",
+          "https://twitter.com/Psychokiller188",
+          "https://www.youtube.com/channel/UC6wQ14eRFCJAwmFKJ2kaW5w",
+          "https://github.com/project-alice-assistant"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.057753,
+          45.7864851
+        ]
+      },
+      "id": "point."
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "address": "15 place bellecour, lyon, france",
+        "names": ["souad cousinier lazaar"],
+        "projects": ["codingames"],
+        "links": [],
+        "data": ["https://www.doctolib.fr/psychologue/lyon/souad-cousinier-lazaar"]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.834223,
+          45.758018
+        ]
+      },
+      "id": "point.0033620311989"
     }
   ]
 }
