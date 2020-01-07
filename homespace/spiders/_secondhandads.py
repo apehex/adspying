@@ -20,7 +20,7 @@ import scrapy
 
 from typical import checks
 
-from homespace.cli import remove_special_characters
+from homespace._wrangling import remove_special_characters
 from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
 #####################################################################

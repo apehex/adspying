@@ -141,6 +141,27 @@ def remove_extra_spacing(
     """
     return ' '.join(text.split())
 
+@checks
+def remove_special_characters(
+        text: str) -> str:
+    """
+    Replace all the special characters by '_'.
+
+    Parameters
+    ----------
+    text: str.
+        Any chunk of text.
+
+    Returns
+    -------
+    out: str.
+        A safe version of the input. 
+    """
+    return re.sub(
+        '\W+',
+        '_',
+        text)
+
 #####################################################################
 # HTML
 #####################################################################
