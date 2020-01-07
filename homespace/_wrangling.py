@@ -23,7 +23,7 @@ from typical import checks
 
 @checks
 def convert_unicode_to_lower_string(
-        unicode_bytes: str) -> str:
+        unicode_bytes: bytes) -> str:
     """Convert a unicode byte object to a standard string.
 
     Args:
