@@ -89,7 +89,19 @@ class LeboncoinSmartphonesSpider(LeboncoinSpider):
                 'price': 'min-30',
                 'search_in': 'subject',
                 'shippable': '1',
-                'text': 'pieces ' + IRRELEVANT_ITEMS_FILTER},}
+                'text': 'pieces ' + IRRELEVANT_ITEMS_FILTER},
+            'casse': {
+                'category': '17',
+                'locations': '',
+                'page': '1',
+                'phone_brand': '',
+                'phone_color': '',
+                'phone_memory': '',
+                'phone_model': '',
+                'price': 'min-30',
+                'search_in': 'subject',
+                'shippable': '1',
+                'text': 'casse ' + IRRELEVANT_ITEMS_FILTER},}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {
