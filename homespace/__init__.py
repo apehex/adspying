@@ -5,7 +5,7 @@
 Homespace
 =========
 
-A toolbox to scrape and visualize second hand ads.
+A toolbox to scrape, visualize and evaluate second hand ads.
 """
 
 from __future__ import division, print_function, absolute_import
