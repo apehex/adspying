@@ -10,7 +10,7 @@ Where the scraping happens.
 
 from __future__ import division, print_function, absolute_import
 
-__author__ = 'David Mougeolle'
+__author__ = 'Moodule'
 __email__ = 'moodule@protonmail.com'
 __version__ = '0.1.0'
 __title__ = 'homespace.spiders'

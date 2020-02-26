@@ -1,4 +1,10 @@
+# -*- coding: utf-8 -*-
+
 """
+=========
+Exporting
+=========
+
 Item Exporters are used to export/serialize items into different formats.
 """
 
@@ -9,13 +15,29 @@ import io
 from scrapy.exporters import BaseItemExporter, JsonItemExporter
 from scrapy.utils.python import to_bytes, to_unicode
 
+from typical import checks, iterable
+
 #####################################################################
 # HTML
 #####################################################################
 
+@checks
 def write_html_row(
-        values):
+        values: iterable) -> str:
     """
+    Enclose the items in an HTML table:
+    - one column by attribute
+    - one row by item
+
+    Parameters
+    ----------
+    values: list.
+        The list of items.
+
+    Returns
+    -------
+    out: str.
+        The serialized items.
     """
     return write_html_tag(
         value=''.join([write_html_tag(v, '<td>') for v in values]),

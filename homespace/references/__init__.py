@@ -19,7 +19,7 @@ import pandas as pd
 # CONTENT
 #####################################################################
 
-__author__ = """David Mougeolle"""
+__author__ = 'Moodule'
 __email__ = 'moodule@protonmail.com'
 __version__ = '0.1.0'
 

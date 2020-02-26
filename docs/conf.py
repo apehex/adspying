@@ -48,8 +48,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Homespace Moodule'
-copyright = u"2019, David Mougeolle"
-author = u"David Mougeolle"
+copyright = u"2019, Moodule"
+author = u"Moodule"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -130,7 +130,7 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'homespace.tex',
      u'Homespace Moodule Documentation',
-     u'David Mougeolle', 'manual'),
+     u'Moodule', 'manual'),
 ]
 
 
