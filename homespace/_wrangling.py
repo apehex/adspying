@@ -26,11 +26,11 @@ def format_datetime(
         string: str,
         format: str = '%d/%m/%Y') -> str:
     """
-    Mold any serialized datetime to a constant format.
+    Mold any serialized datetime to the ISO-8601 format.
 
     Example:
-        27-02-2020 8:42:53
-        => 2020/02/27-08:42 
+        27/02/2020 8:42
+        => 2020-02-27T08:42:00 
 
     Parameters
     ----------
@@ -42,11 +42,11 @@ def format_datetime(
     Returns
     -------
     out: str.
-        The serialized datetime with format '%Y/%m/%d-%H:%M'. 
+        The serialized datetime with ISO-8601 format '%Y-%m-%dT%H:%M:%S'. 
     """
     return datetime.strptime(
         string,
-        format).strftime('%Y/%m/%d-%H:%M')
+        format).strftime('%Y-%m-%dT%H:%M:%S')
 
 @checks
 def format_text(
