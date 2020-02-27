@@ -188,6 +188,9 @@ class SecondHandAdsSpider(scrapy.Spider):
         # used to convert datetime from webservice format to ISO 8601
         __loader.context['datetime_format'] = self._datetime_format
 
+        # used to prepend to url postfixes
+        __loader.context['base_url'] = self._base_url
+
         __loader.add_value('url', response.url)
 
         # scrape generic ad attributes
