@@ -47,7 +47,7 @@ def format_datetime(
     """
     return datetime.strptime(
         string,
-        format).strftime('%Y-%m-%dT%H:%M:%S')
+        format).isoformat(sep='T', timespec='seconds')
 
 @checks
 def format_text(
