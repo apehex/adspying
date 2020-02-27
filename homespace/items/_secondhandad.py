@@ -16,7 +16,36 @@ from scrapy import Field, Item
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
-from homespace._wrangling import remove_extra_spacing
+from homespace._wrangling import format_datetime, remove_extra_spacing
+
+#####################################################################
+# SERIALIZE DATETIMES
+#####################################################################
+
+def parse_datetime(
+        text: str,
+        loader_context: dict) -> str:
+    """
+    Format the dates according to ISO 8601.
+
+    The loader context is setup by the crawler to match the formating
+    of its target website.
+
+    Parameters
+    ----------
+    text: str.
+        The serialized datetime, as displayed on the website.
+    loader_context: dict.
+        The item load context.
+
+    Results
+    -------
+    out: str.
+        The serialized datetime, in ISO 8601 format.
+    """
+    return format_datetime(
+        string=text,
+        format=loader_context.get('datetime_format', '%Y-%m-%dT%H:%M:%S'))
 
 #####################################################################
 # GENERIC AD
@@ -24,6 +53,10 @@ from homespace._wrangling import remove_extra_spacing
 
 class SecondHandAd(Item):
     """
+    Generic ad item, composed of:
+    - ad information
+    - vendor information
+    - item information
     """
     # Ad
     url = Field()
@@ -72,10 +105,10 @@ class SecondHandAdLoader(ItemLoader):
     location_in = MapCompose(remove_extra_spacing)
     location_out = Join()
 
-    first_posted_in = MapCompose(remove_extra_spacing)
+    first_posted_in = MapCompose(remove_extra_spacing, parse_datetime)
     first_posted_out = Join()
 
-    last_updated_in = MapCompose(remove_extra_spacing)
+    last_updated_in = MapCompose(remove_extra_spacing, parse_datetime)
     last_updated_out = Join()
 
     description_in = MapCompose(remove_extra_spacing)

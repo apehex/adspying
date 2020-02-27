@@ -121,6 +121,7 @@ class SecondHandAdsSpider(scrapy.Spider):
         # classes to store, clean and export the data
         self._item_class = SecondHandAd
         self._loader_class = SecondHandAdLoader
+        self._datetime_format = '%Y-%m-%dT%H:%M:%S'
 
         # enable specific pipelines
         self._pipelines = ['CsvPipeline', 'HtmlTablePipeline', 'JsonPipeline', 'MongoDbPipeline']
@@ -183,6 +184,9 @@ class SecondHandAdsSpider(scrapy.Spider):
         __loader = self._loader_class(
             item=self._item_class(),
             selector=response.xpath(self._ad_xpath))
+
+        # used to convert datetime from webservice format to ISO 8601
+        __loader.context['datetime_format'] = self._datetime_format
 
         __loader.add_value('url', response.url)
 
