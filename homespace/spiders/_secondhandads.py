@@ -5,11 +5,16 @@
 Second Hand Ad Spider
 =====================
 
-Base class for scraping second hand ads.
+Base class for scraping second hand listings.
 
-This parent class outlines the processing of ad listings:
-- define the search queries
-- 
+It defines the overall querying process:
+1) search the webservice for ads
+2) crawl the listing pages to get the ads' urls
+3) scrape each individual ad informations
+
+The actual queries are defined in the subclasses, since it depends:
+- on the item of interest
+- and on the webservice being searched
 """
 
 from __future__ import division, print_function, absolute_import
@@ -28,6 +33,17 @@ from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 #####################################################################
 
 class SecondHandAdsSpider(scrapy.Spider):
+    """
+    Base class for scraping second hand listings.
+
+    It defines the overall querying process:
+    1) search the webservice for ads
+    2) crawl the listing pages to get the ads' urls
+    3) scrape each individual ad informations
+
+    The actual queries are defined in the subclasses, since it all
+    depends on the item of interest and the webservice searched.
+    """
     name = 'second_hand_ads'
     project = 'homespace'
 
@@ -49,7 +65,7 @@ class SecondHandAdsSpider(scrapy.Spider):
     def _fill_current_query_args_with_cli_args(
             self):
         """
-        Clean, format and translate to match the leboncoin url referential.
+        Merge the default query arguments with those given through the cli.
         """
         for __key, __value in self._current_query_args.items():
             self._current_query_args[__key] = getattr(
@@ -60,7 +76,7 @@ class SecondHandAdsSpider(scrapy.Spider):
     def _set_stop_conditions(
             self):
         """
-        Define when the scraping should stop:
+        Define the stopping conditions:
         - after x pages of listing
         - when the listed ads get older than y
         """
@@ -73,8 +89,12 @@ class SecondHandAdsSpider(scrapy.Spider):
     # CRAWLING METHODS
     #################################################################
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+            self,
+            *args,
+            **kwargs):
         """
+        Fill all the crawling parameters with default values.
         """
         super(SecondHandAdsSpider, self).__init__(*args, **kwargs)
 
@@ -105,8 +125,10 @@ class SecondHandAdsSpider(scrapy.Spider):
         # enable specific pipelines
         self._pipelines = ['CsvPipeline', 'HtmlTablePipeline', 'JsonPipeline', 'MongoDbPipeline']
 
-    def start_requests(self):
+    def start_requests(
+            self):
         """
+        Query the webservice with an ad search.
         """
         # translate the cli args to the url std for leboncoin
         self._set_stop_conditions()
@@ -123,8 +145,13 @@ class SecondHandAdsSpider(scrapy.Spider):
                 callback=self.parse_listing,
                 meta={'page': str(i+1)})
 
-    def parse_listing(self, response):
+    def parse_listing(
+            self,
+            response):
         """
+        Parse the listing of ads returned by the webservice:
+        - retrieve the url of each individual ad
+        - follow each link to scrape the detailed informations
         """
         __page = response.meta.get(
             'page',
@@ -142,8 +169,14 @@ class SecondHandAdsSpider(scrapy.Spider):
             page = __page,
             count = len(__ad_links)))
 
-    def parse_item(self, response):
+    def parse_item(
+            self,
+            response):
         """
+        Parse the detailed information available in the webpage
+        of a given ad.
+
+        Use the specific xpath defined in the subclasses. 
         """
         # select only the part of the page dedicated to the ad
         # ie discard header, menus etc
