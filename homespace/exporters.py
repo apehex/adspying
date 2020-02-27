@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 """
-=========
-Exporting
-=========
+===============
+Items Exporting
+===============
 
-Item Exporters are used to export/serialize items into different formats.
+Export/serialize items into different formats.
 """
 
 from __future__ import division, print_function, absolute_import
@@ -47,6 +47,19 @@ def write_html_tag(
         value,
         tag):
     """
+    Serialize any tag as a string.
+
+    Parameters
+    ----------
+    value: str.
+        The text enclosed in the tag.
+    tag: str.
+        The HTML tag type.
+
+    Returns
+    -------
+    out: str.
+        The serialized HTML tag.
     """
     return '{}{}{}'.format(
         tag,
