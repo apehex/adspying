@@ -22,6 +22,33 @@ from typical import checks, iterable, numeric
 #####################################################################
 
 @checks
+def format_datetime(
+        string: str,
+        format: str = '%d/%m/%Y') -> str:
+    """
+    Mold any serialized datetime to a constant format.
+
+    Example:
+        27-02-2020 8:42:53
+        => 2020/02/27-08:42 
+
+    Parameters
+    ----------
+    string: str.
+        A serialized datetime.
+    format: str.
+        Location of the relevant datetime values in the input string.
+
+    Returns
+    -------
+    out: str.
+        The serialized datetime with format '%Y/%m/%d-%H:%M'. 
+    """
+    return datetime.strptime(
+        string,
+        format).strftime('%Y/%m/%d-%H:%M')
+
+@checks
 def format_text(
         text: str) -> str:
     """
