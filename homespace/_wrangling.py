@@ -11,6 +11,7 @@ Clean the raw data scraped from the web.
 from __future__ import absolute_import, division, print_function
 
 from bs4 import BeautifulSoup
+from datetime import datetime
 from nltk.metrics.distance import edit_distance
 import numpy as np
 import re
