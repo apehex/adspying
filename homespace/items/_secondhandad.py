@@ -10,6 +10,7 @@ Base class for all the specific ad items.
 
 from __future__ import division, print_function, absolute_import
 
+from datetime import datetime, timedelta
 from geopy.geocoders import Nominatim
 
 from scrapy import Field, Item
@@ -80,7 +81,7 @@ class SecondHandAd(Item):
     # Additional
     latitude = Field()
     longitude = Field()
-    age = Field()
+    age = Field() # in days
     user_rating = Field()
 
 class SecondHandAdLoader(ItemLoader):
@@ -138,6 +139,8 @@ class SecondHandAdLoader(ItemLoader):
     def load_item(
             self):
         """
+        Complete the information available on the web with
+        computed data.
         """
         __item = super(SecondHandAdLoader, self).load_item()
         __geolocator = Nominatim(user_agent='homespace')
@@ -145,7 +148,18 @@ class SecondHandAdLoader(ItemLoader):
             __item.get('location', 'north pole'),
             exactly_one=True)
 
+        # gps coordinates
         __item['latitude'] = __location.latitude
         __item['longitude'] = __location.longitude
+
+        # timeline
+        __item['first_posted'] = __item['last_updated']
+        __item['age'] = (
+            datetime.now()
+            - datetime.strptime(
+                __item.get(
+                    'last_updated',
+                    datetime.now().isoformat(sep='T', timespec='seconds')),
+                '%Y-%m-%dT%H:%M:%S')).days
 
         return __item
