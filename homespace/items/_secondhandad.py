@@ -12,6 +12,7 @@ from __future__ import division, print_function, absolute_import
 
 from datetime import datetime, timedelta
 from geopy.geocoders import Nominatim
+from urllib.parse import urljoin
 
 from scrapy import Field, Item
 from scrapy.loader import ItemLoader
@@ -139,8 +140,7 @@ class SecondHandAdLoader(ItemLoader):
     def load_item(
             self):
         """
-        Complete the information available on the web with
-        computed data.
+        Complete the raw information with computed data.
         """
         __item = super(SecondHandAdLoader, self).load_item()
         __geolocator = Nominatim(user_agent='homespace')
@@ -161,5 +161,10 @@ class SecondHandAdLoader(ItemLoader):
                     'last_updated',
                     datetime.now().isoformat(sep='T', timespec='seconds')),
                 '%Y-%m-%dT%H:%M:%S')).days
+
+        # vendor
+        __item['vendor'] = urljoin(
+            self.context.get('base_url', ''),
+            __item['vendor'])
 
         return __item
