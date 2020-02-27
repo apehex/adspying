@@ -38,8 +38,12 @@ class LeboncoinSpider(SecondHandAdsSpider):
     # CRAWLING METHODS
     #################################################################
 
-    def __init__(self, *args, **kwargs):
+    def __init__(
+            self,
+            *args,
+            **kwargs):
         """
+        Define the parameters specific to leboncoin.fr
         """
         super(LeboncoinSpider, self).__init__(*args, **kwargs)
 
@@ -123,3 +127,4 @@ class LeboncoinSpider(SecondHandAdsSpider):
         # classes to store, clean and export the data
         self._item_class = SecondHandAd
         self._loader_class = SecondHandAdLoader
+        self._datetime_format = '%d/%m/%Y à %Hh%M'
