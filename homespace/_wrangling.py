@@ -24,7 +24,7 @@ from typical import checks, iterable, numeric
 @checks
 def format_datetime(
         string: str,
-        format: str = '%d/%m/%Y') -> str:
+        format: str) -> str:
     """
     Mold any serialized datetime to the ISO-8601 format.
 
