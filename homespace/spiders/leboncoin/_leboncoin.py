@@ -133,3 +133,4 @@ class LeboncoinSpider(SecondHandAdsSpider):
 
         # context
         self._datetime_format = '%d/%m/%Y à %Hh%M'
+        self._icon = 'heart'
