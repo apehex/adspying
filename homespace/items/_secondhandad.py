@@ -85,6 +85,9 @@ class SecondHandAd(Item):
     age = Field() # in days
     user_rating = Field()
 
+    # Dataviz
+    icon = Field() # for map markers
+
 class SecondHandAdLoader(ItemLoader):
 
     default_output_processor = TakeFirst()
@@ -166,5 +169,8 @@ class SecondHandAdLoader(ItemLoader):
         __item['vendor'] = urljoin(
             self.context.get('base_url', ''),
             __item.get('vendor', ''))
+
+        # map marker
+        __item['icon'] = self.context.get('icon', 'marker')
 
         return __item
