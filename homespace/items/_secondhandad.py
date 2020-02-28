@@ -153,7 +153,7 @@ class SecondHandAdLoader(ItemLoader):
         __item['longitude'] = __location.longitude
 
         # timeline
-        __item['first_posted'] = __item['last_updated']
+        __item['first_posted'] = __item.get('last_updated', '')
         __item['age'] = (
             datetime.now()
             - datetime.strptime(
@@ -165,6 +165,6 @@ class SecondHandAdLoader(ItemLoader):
         # vendor
         __item['vendor'] = urljoin(
             self.context.get('base_url', ''),
-            __item['vendor'])
+            __item.get('vendor', ''))
 
         return __item
