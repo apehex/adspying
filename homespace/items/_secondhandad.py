@@ -85,6 +85,10 @@ class SecondHandAd(Item):
     age = Field() # in days
     user_rating = Field()
 
+    # Evaluation & sorting
+    value_rating = Field()
+    leverage_rating = Field()
+
     # Dataviz
     icon = Field() # for map markers
 
@@ -140,6 +144,12 @@ class SecondHandAdLoader(ItemLoader):
     user_rating_in = MapCompose(remove_extra_spacing)
     user_rating_out = Join()
 
+    value_rating_in = MapCompose(remove_extra_spacing)
+    value_rating_out = Join()
+
+    leverage_rating_in = MapCompose(remove_extra_spacing)
+    leverage_rating_out = Join()
+
     def load_item(
             self):
         """
@@ -172,5 +182,9 @@ class SecondHandAdLoader(ItemLoader):
 
         # map marker
         __item['icon'] = self.context.get('icon', 'marker')
+
+        # evaluation & sorting depend on the query
+        __item['value_rating'] = 5 # neutral value
+        __item['leverage_rating'] = 5 # neutral value
 
         return __item
