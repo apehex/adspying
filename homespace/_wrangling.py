@@ -280,6 +280,30 @@ def prettify_html(
         markup=html,
         features="lxml").prettify()
 
+@checks
+def serialize_html_tag(
+        tag: str,
+        value: str):
+    """
+    Serialize any tag as a string.
+
+    Parameters
+    ----------
+    tag: str.
+        The HTML tag type.
+    value: str.
+        The text enclosed in the tag.
+
+    Returns
+    -------
+    out: str.
+        The serialized HTML tag.
+    """
+    return '{}{}{}'.format(
+        tag,
+        value,
+        tag.replace('<', '</'))
+
 #####################################################################
 # DATA MINING
 #####################################################################

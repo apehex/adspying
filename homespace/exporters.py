@@ -17,12 +17,14 @@ from scrapy.utils.python import to_bytes, to_unicode
 
 from typical import checks, iterable
 
+from homespace._wrangling import serialize_html_tag
+
 #####################################################################
 # HTML
 #####################################################################
 
 @checks
-def write_html_row(
+def serialize_html_table_row(
         values: iterable) -> str:
     """
     Enclose the items in an HTML table:
@@ -39,32 +41,9 @@ def write_html_row(
     out: str.
         The serialized items.
     """
-    return write_html_tag(
-        value=''.join([write_html_tag(v, '<td>') for v in values]),
-        tag='<tr>')
-
-def write_html_tag(
-        value,
-        tag):
-    """
-    Serialize any tag as a string.
-
-    Parameters
-    ----------
-    value: str.
-        The text enclosed in the tag.
-    tag: str.
-        The HTML tag type.
-
-    Returns
-    -------
-    out: str.
-        The serialized HTML tag.
-    """
-    return '{}{}{}'.format(
-        tag,
-        value,
-        tag.replace('<', '</'))
+    return serialize_html_tag(
+        tag='<tr>',
+        value=''.join([serialize_html_tag(tag='<td>', value=v) for v in values]))
 
 class HtmlItemExporter(BaseItemExporter):
 
@@ -139,7 +118,7 @@ class HtmlItemExporter(BaseItemExporter):
                     self.fields_to_export = list(item.fields.keys())
             row = list(self._build_row(self.fields_to_export))
             self.stream.write(to_unicode(
-                write_html_tag(
+                serialize_html_tag(
                     value=write_html_row(row),
                     tag='<thead>'),
                 self.encoding))
