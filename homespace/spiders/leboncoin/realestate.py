@@ -95,3 +95,6 @@ class LeboncoinRealEstateSpider(LeboncoinSpider):
         # classes to store, clean and export the data
         self._item_class = RealEstateAd
         self._loader_class = RealEstateAdLoader
+
+        # context
+        self._icon = 'veterinary'
