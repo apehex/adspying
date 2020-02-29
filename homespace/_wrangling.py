@@ -23,6 +23,7 @@ from typical import checks, iterable, numeric
 #####################################################################
 
 ANY_AREA_REGEX = '(\d+)\s*(?:m²|m2)?'
+PRICE_REGEX = '([-+]?[0-9]*\.?[0-9]+)'
 
 #####################################################################
 # ENCODING & FORMAT
@@ -328,5 +329,28 @@ def extract_area_value(
 
     if area_matches:
         return int(area_matches.group(0))
+    else:
+        return -1
+
+@checks
+def extract_price_value(
+        text: str) -> int:
+    """
+    Extract the numeric value of a price in a string like '320 €'.
+
+    Parameters
+    ----------
+    text: str.
+        Any chunk of text.
+
+    Returns
+    -------
+    out: int.
+        A positive value of there's a match, -1 otherwise.
+    """
+    area_matches = re.search(PRICE_REGEX, text, re.IGNORECASE)
+
+    if area_matches:
+        return int(float(area_matches.group(0)))
     else:
         return -1
