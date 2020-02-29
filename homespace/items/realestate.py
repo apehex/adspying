@@ -74,3 +74,28 @@ class RealEstateAdLoader(SecondHandAdLoader):
 
     buildable_in = MapCompose(remove_extra_spacing)
     buildable_out = Join()
+
+    def load_item(
+            self):
+        """
+        Complete the raw information with computed data.
+        """
+        __item = super(RealEstateAdLoader, self).load_item()
+
+        # evaluation & sorting depend on the query
+        __item['value_rating'] = 5 # neutral value
+        __item['leverage_rating'] = 5 # neutral value
+
+        # summary
+        __item['summary'] = (
+            'price: ' + serialize_html_tag('<strong>', str(__item.get('price', ''))) + '<br />'
+            + 'indoor area: ' + serialize_html_tag('<strong>', str(__item.get('indoor_area', ''))) + ' m²<br />'
+            + 'outdoor area: ' + serialize_html_tag('<strong>', str(__item.get('outdoor_area', ''))) + ' m²<br />'
+            + 'rooms: ' + serialize_html_tag('<strong>', str(__item.get('rooms', ''))) + '<br />'
+            + 'floors: ' + serialize_html_tag('<strong>', str(__item.get('floors', ''))) + '<br />'
+            + 'energy grade: ' + serialize_html_tag('<strong>', str(__item.get('energy_grade', ''))) + '<br />'
+            + 'value: ' + serialize_html_tag('<strong>', str(__item.get('value_rating', ''))) + ' / 10<br />'
+            + 'leverage: ' + serialize_html_tag('<strong>', str(__item.get('leverage_rating', ''))) + ' / 10<br />'
+            + 'age: ' + serialize_html_tag('<strong>', str(__item.get('age', ''))) + ' days<br />')
+
+        return __item
