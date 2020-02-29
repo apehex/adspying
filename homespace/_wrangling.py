@@ -19,6 +19,12 @@ import re
 from typical import checks, iterable, numeric
 
 #####################################################################
+# CONSTANTS
+#####################################################################
+
+ANY_AREA_REGEX = '(\d+)\s*(?:m²|m2)?'
+
+#####################################################################
 # ENCODING & FORMAT
 #####################################################################
 
@@ -273,3 +279,30 @@ def prettify_html(
     return BeautifulSoup(
         markup=html,
         features="lxml").prettify()
+
+#####################################################################
+# DATA MINING
+#####################################################################
+
+@checks
+def extract_area_value(
+        text: str) -> int:
+    """
+    Extract the numeric value of an area in a string like '102 m²'.
+
+    Parameters
+    ----------
+    text: str.
+        Any chunk of text.
+
+    Returns
+    -------
+    out: int.
+        A positive value of there's a match, -1 otherwise.
+    """
+    area_matches = re.search(ANY_AREA_REGEX, text, re.IGNORECASE)
+
+    if area_matches:
+        return int(area_matches.group(0))
+    else:
+        return -1
