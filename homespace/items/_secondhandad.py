@@ -18,7 +18,7 @@ from scrapy import Field, Item
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
-from homespace._wrangling import format_datetime, remove_extra_spacing
+from homespace._wrangling import format_datetime, remove_all_spacing, remove_extra_spacing
 
 #####################################################################
 # SERIALIZE DATETIMES
@@ -105,7 +105,7 @@ class SecondHandAdLoader(ItemLoader):
     title_in = MapCompose(remove_extra_spacing)
     title_out = Join()
 
-    price_in = TakeFirst()
+    price_in = MapCompose(remove_all_spacing, int)
     price_out = Join()
 
     condition_in = MapCompose(remove_extra_spacing)
@@ -123,8 +123,8 @@ class SecondHandAdLoader(ItemLoader):
     description_in = MapCompose(remove_extra_spacing)
     description_out = Join()
 
-    images_in = Join(', ')
-    images_out = Join()
+    images_in = MapCompose(remove_extra_spacing)
+    images_out = Join(', ')
 
     brand_in = MapCompose(remove_extra_spacing)
     brand_out = Join()
