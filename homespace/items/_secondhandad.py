@@ -18,7 +18,7 @@ from scrapy import Field, Item
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
-from homespace._wrangling import extract_price_value, format_datetime, remove_all_spacing, remove_extra_spacing, serialize_html_tag
+from homespace._wrangling import extract_price_value, format_datetime, format_text, remove_all_spacing, serialize_html_tag
 
 #####################################################################
 # SERIALIZE DATETIMES
@@ -97,58 +97,58 @@ class SecondHandAdLoader(ItemLoader):
 
     default_output_processor = TakeFirst()
 
-    url_in = MapCompose(remove_extra_spacing)
+    url_in = MapCompose(format_text)
     url_out = Join()
 
-    vendor_in = MapCompose(remove_extra_spacing)
+    vendor_in = MapCompose(format_text)
     vendor_out = Join()
 
-    title_in = MapCompose(remove_extra_spacing)
+    title_in = MapCompose(format_text)
     title_out = Join()
 
-    price_in = MapCompose(remove_all_spacing, extract_price_value)
+    price_in = MapCompose(format_text, remove_all_spacing, extract_price_value)
     price_out = TakeFirst()
 
-    condition_in = MapCompose(remove_extra_spacing)
+    condition_in = MapCompose(format_text)
     condition_out = Join()
 
-    location_in = MapCompose(remove_extra_spacing)
+    location_in = MapCompose(format_text)
     location_out = Join()
 
-    first_posted_in = MapCompose(remove_extra_spacing, parse_datetime)
+    first_posted_in = MapCompose(format_text, parse_datetime)
     first_posted_out = Join()
 
-    last_updated_in = MapCompose(remove_extra_spacing, parse_datetime)
+    last_updated_in = MapCompose(format_text, parse_datetime)
     last_updated_out = Join()
 
-    description_in = MapCompose(remove_extra_spacing)
+    description_in = MapCompose(format_text)
     description_out = Join()
 
-    images_in = MapCompose(remove_extra_spacing)
+    images_in = MapCompose(format_text)
     images_out = Join(', ')
 
-    brand_in = MapCompose(remove_extra_spacing)
+    brand_in = MapCompose(format_text)
     brand_out = Join()
 
-    model_in = MapCompose(remove_extra_spacing)
+    model_in = MapCompose(format_text)
     model_out = Join()
 
-    make_in = MapCompose(remove_extra_spacing)
+    make_in = MapCompose(format_text)
     make_out = Join()
 
-    color_in = MapCompose(remove_extra_spacing)
+    color_in = MapCompose(format_text)
     color_out = Join()
 
-    price_new_in = MapCompose(remove_extra_spacing)
+    price_new_in = MapCompose(format_text)
     price_new_out = Join()
 
-    user_rating_in = MapCompose(remove_extra_spacing)
+    user_rating_in = MapCompose(format_text)
     user_rating_out = Join()
 
-    value_rating_in = MapCompose(remove_extra_spacing)
+    value_rating_in = MapCompose(format_text)
     value_rating_out = Join()
 
-    leverage_rating_in = MapCompose(remove_extra_spacing)
+    leverage_rating_in = MapCompose(format_text)
     leverage_rating_out = Join()
 
     def load_item(
