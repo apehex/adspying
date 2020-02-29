@@ -18,7 +18,7 @@ from scrapy import Field, Item
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
-from homespace._wrangling import format_datetime, remove_all_spacing, remove_extra_spacing
+from homespace._wrangling import format_datetime, remove_all_spacing, remove_extra_spacing, serialize_html_tag
 
 #####################################################################
 # SERIALIZE DATETIMES
@@ -91,6 +91,7 @@ class SecondHandAd(Item):
 
     # Dataviz
     icon = Field() # for map markers
+    summary = Field() # all the information as an html paragraph
 
 class SecondHandAdLoader(ItemLoader):
 
@@ -180,11 +181,19 @@ class SecondHandAdLoader(ItemLoader):
             self.context.get('base_url', ''),
             __item.get('vendor', ''))
 
-        # map marker
-        __item['icon'] = self.context.get('icon', 'marker')
-
         # evaluation & sorting depend on the query
         __item['value_rating'] = 5 # neutral value
         __item['leverage_rating'] = 5 # neutral value
+
+        # map marker
+        __item['icon'] = self.context.get('icon', 'marker')
+
+        # summary
+        __item['summary'] = (
+            'price: ' + serialize_html_tag('<strong>', str(__item.get('price', ''))) + '<br />'
+            + 'condition: ' + serialize_html_tag('<strong>', str(__item.get('condition', ''))) + '<br />'
+            + 'value: ' + serialize_html_tag('<strong>', str(__item.get('value_rating', ''))) + ' / 10<br />'
+            + 'leverage: ' + serialize_html_tag('<strong>', str(__item.get('leverage_rating', ''))) + ' / 10<br />'
+            + 'age: ' + serialize_html_tag('<strong>', str(__item.get('age', ''))) + ' days<br />')
 
         return __item
