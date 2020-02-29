@@ -15,6 +15,7 @@ from datetime import datetime
 from nltk.metrics.distance import edit_distance
 import numpy as np
 import re
+import unicodedata
 
 from typical import checks, iterable, numeric
 
@@ -73,7 +74,7 @@ def format_text(
     out: str.
         The formated text.
     """
-    return remove_extra_spacing(text.lower())
+    return remove_extra_spacing(remove_accents(text.lower()))
 
 @checks
 def format_number(
@@ -159,6 +160,25 @@ def find_closest_reference(
 #####################################################################
 # TEXT
 #####################################################################
+
+@checks
+def remove_accents(
+        text: str):
+    """
+    Replace all the accented character with regular characters.
+
+    Parameters
+    ----------
+    text: str.
+        Any chunk of text.
+
+    Returns
+    -------
+    out: str.
+        The closest string without accents.
+    """
+    nfkd_form = unicodedata.normalize('NFKD', text)
+    return u"".join([c for c in nfkd_form if not unicodedata.combining(c)])
 
 @checks
 def remove_all_spacing(
