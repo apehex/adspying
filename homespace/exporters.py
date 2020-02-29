@@ -43,7 +43,7 @@ def serialize_html_table_row(
     """
     return serialize_html_tag(
         tag='<tr>',
-        value=''.join([serialize_html_tag(tag='<td>', value=v) for v in values]))
+        value=''.join([serialize_html_tag(tag='<td>', value=str(v)) for v in values]))
 
 class HtmlItemExporter(BaseItemExporter):
 
@@ -97,7 +97,7 @@ class HtmlItemExporter(BaseItemExporter):
         values = list(self._build_row(x for _, x in fields))
 
         self.stream.write(to_unicode(
-            write_html_row(values),
+            serialize_html_table_row(values),
             self.encoding))
 
     def _build_row(self, values):
@@ -119,7 +119,7 @@ class HtmlItemExporter(BaseItemExporter):
             row = list(self._build_row(self.fields_to_export))
             self.stream.write(to_unicode(
                 serialize_html_tag(
-                    value=write_html_row(row),
+                    value=serialize_html_table_row(row),
                     tag='<thead>'),
                 self.encoding))
 
