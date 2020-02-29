@@ -36,6 +36,7 @@ class RealEstateAd(SecondHandAd):
     fees_included = Field()
 
     # Computed
+    price_per_square_meter = Field()
     time_to_work = Field()
     buildable = Field()
 
@@ -81,6 +82,9 @@ class RealEstateAdLoader(SecondHandAdLoader):
         Complete the raw information with computed data.
         """
         __item = super(RealEstateAdLoader, self).load_item()
+
+        if __item.get('price', 0) > 0 and __item.get('indoor_area', 0) > 0:
+            __item['price_per_square_meter'] = __item['price'] / __item['indoor_area']
 
         # evaluation & sorting depend on the query
         __item['value_rating'] = 5 # neutral value
