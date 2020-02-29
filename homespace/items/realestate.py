@@ -88,7 +88,7 @@ class RealEstateAdLoader(SecondHandAdLoader):
 
         # summary
         __item['summary'] = (
-            'price: ' + serialize_html_tag('<strong>', str(__item.get('price', ''))) + '<br />'
+            'price: ' + serialize_html_tag('<strong>', str(__item.get('price', ''))) + ' €<br />'
             + 'indoor area: ' + serialize_html_tag('<strong>', str(__item.get('indoor_area', ''))) + ' m²<br />'
             + 'outdoor area: ' + serialize_html_tag('<strong>', str(__item.get('outdoor_area', ''))) + ' m²<br />'
             + 'rooms: ' + serialize_html_tag('<strong>', str(__item.get('rooms', ''))) + '<br />'
