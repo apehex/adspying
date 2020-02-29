@@ -153,6 +153,24 @@ def find_closest_reference(
 #####################################################################
 
 @checks
+def remove_all_spacing(
+        text: str) -> str:
+    """
+    Remove all the spaces in a string.
+
+    Parameters
+    ----------
+    text: str.
+        Any chunk of text.
+
+    Returns
+    -------
+    out: str.
+        The string without spaces.
+    """
+    return ''.join(text.split())
+
+@checks
 def remove_extra_spacing(
         text: str) -> str:
     """
