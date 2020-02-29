@@ -190,7 +190,7 @@ class SecondHandAdLoader(ItemLoader):
 
         # summary
         __item['summary'] = (
-            'price: ' + serialize_html_tag('<strong>', str(__item.get('price', ''))) + '<br />'
+            'price: ' + serialize_html_tag('<strong>', str(__item.get('price', ''))) + ' €<br />'
             + 'condition: ' + serialize_html_tag('<strong>', str(__item.get('condition', ''))) + '<br />'
             + 'value: ' + serialize_html_tag('<strong>', str(__item.get('value_rating', ''))) + ' / 10<br />'
             + 'leverage: ' + serialize_html_tag('<strong>', str(__item.get('leverage_rating', ''))) + ' / 10<br />'
