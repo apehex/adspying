@@ -13,7 +13,7 @@ from __future__ import division, print_function, absolute_import
 from scrapy import Field
 from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
-from homespace._wrangling import format_datetime, remove_all_spacing, remove_extra_spacing, extract_area_value
+from homespace._wrangling import format_datetime, remove_all_spacing, remove_extra_spacing, extract_area_value, serialize_html_tag
 from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
 #####################################################################
@@ -47,16 +47,16 @@ class RealEstateAdLoader(SecondHandAdLoader):
     category_out = Join()
 
     rooms_in = MapCompose(remove_all_spacing, int)
-    rooms_out = Join()
+    rooms_out = TakeFirst()
 
     floors_in = MapCompose(remove_all_spacing, int)
-    floors_out = Join()
+    floors_out = TakeFirst()
 
     indoor_area_in = MapCompose(remove_extra_spacing, extract_area_value)
-    indoor_area_out = Join()
+    indoor_area_out = TakeFirst()
 
     outdoor_area_in = MapCompose(remove_extra_spacing, extract_area_value)
-    outdoor_area_out = Join()
+    outdoor_area_out = TakeFirst()
 
     energy_grade_in = MapCompose(remove_extra_spacing)
     energy_grade_out = Join()
