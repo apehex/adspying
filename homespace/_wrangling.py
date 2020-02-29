@@ -22,7 +22,8 @@ from typical import checks, iterable, numeric
 # CONSTANTS
 #####################################################################
 
-ANY_AREA_REGEX = '(\d+)\s*(?:m²|m2)?'
+ANY_AREA_REGEX = '(\d+)\s*(?:m²|m2|metres?\ carres?)?'
+OUTDOOR_AREA_REGEX = '(?:terrain|jardin|parc)\s*(?:de)?\s*' + ANY_AREA_REGEX
 PRICE_REGEX = '([-+]?[0-9]*\.?[0-9]+)'
 
 #####################################################################
@@ -328,7 +329,7 @@ def extract_area_value(
     area_matches = re.search(ANY_AREA_REGEX, text, re.IGNORECASE)
 
     if area_matches:
-        return int(area_matches.group(0))
+        return int(area_matches.group(1))
     else:
         return -1
 
@@ -351,6 +352,6 @@ def extract_price_value(
     area_matches = re.search(PRICE_REGEX, text, re.IGNORECASE)
 
     if area_matches:
-        return int(float(area_matches.group(0)))
+        return int(float(area_matches.group(1)))
     else:
         return -1
