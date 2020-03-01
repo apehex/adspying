@@ -55,7 +55,10 @@ def parse_datetime(
 
 class SecondHandAd(Item):
     """
-    Generic ad item, composed of:
+    The data of each ad is stored in an 'item' object, waiting for
+    further processing.
+
+    The generic item is composed of:
     - ad information
     - vendor information
     - item information
@@ -94,6 +97,13 @@ class SecondHandAd(Item):
     summary = Field() # all the information as an html paragraph
 
 class SecondHandAdLoader(ItemLoader):
+    """
+    Generic ad loader: cleans and formats the raw data scraped from
+    the webservices.
+
+    The data of each ad is then stored in an 'item' object, waiting for
+    further processing.
+    """
 
     default_output_processor = TakeFirst()
 
