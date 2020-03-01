@@ -123,6 +123,7 @@ class SecondHandAdsSpider(scrapy.Spider):
         self._loader_class = SecondHandAdLoader
 
         # context
+        self._domain = ''
         self._datetime_format = '%Y-%m-%dT%H:%M:%S'
         self._icon = 'marker'
 
@@ -197,6 +198,9 @@ class SecondHandAdsSpider(scrapy.Spider):
 
         # used to prepend to url postfixes
         __loader.context['base_url'] = self._base_url
+
+        # used to display the source of an item (after data aggregation)
+        __loader.context['domain'] = self._domain
 
         __loader.add_value('url', response.url)
 
