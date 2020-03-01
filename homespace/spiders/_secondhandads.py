@@ -147,7 +147,7 @@ class SecondHandAdsSpider(scrapy.Spider):
                     self._base_url,
                     self._search_page_url.format(urlencode(self._current_query_args))),
                 callback=self.parse_listing,
-                meta={'page': str(i+1)})
+                meta={'page': str(i+1), 'dont_redirect': True})
 
     def parse_listing(
             self,
@@ -167,7 +167,8 @@ class SecondHandAdsSpider(scrapy.Spider):
         for __link in __ad_links:
             yield scrapy.Request(
                 url=urljoin(self._base_url, __link),
-                callback=self.parse_item)
+                callback=self.parse_item,
+                meta={'dont_redirect': True})
 
         self.log('[Page {page}] {count} ads queued...'.format(
             page = __page,
