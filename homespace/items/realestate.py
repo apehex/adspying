@@ -76,6 +76,68 @@ class RealEstateAdLoader(SecondHandAdLoader):
     buildable_in = MapCompose(format_text)
     buildable_out = Join()
 
+    def _summarize(
+            self,
+            item: dict) -> str:
+        """
+        Generate an HTML summary of an item, to display
+        in a dashboard.
+
+        Parameters
+        ----------
+        item: dict.
+            The scraped item.
+
+        Returns
+        -------
+        out: str.
+            The corresponding summary.
+        """
+        return (
+            '{}: {} {}<br />'.format(
+                'price',
+                serialize_html_tag('<i>', str(item.get('price', ''))),
+                '€')
+            + '{}: {} {}<br />'.format(
+                'indoor area',
+                serialize_html_tag('<i>', str(item.get('indoor_area', ''))),
+                'm²')
+            + '{}: {} {}<br />'.format(
+                'outdoor area',
+                serialize_html_tag('<i>', str(item.get('indoor_area', ''))),
+                'm²')
+            + '{}: {} {}<br />'.format(
+                'rooms',
+                serialize_html_tag('<i>', str(item.get('rooms', ''))),
+                '')
+            + '{}: {} {}<br />'.format(
+                'floors',
+                serialize_html_tag('<i>', str(item.get('floors', ''))),
+                '')
+            + '{}: {} {}<br />'.format(
+                'energy grade',
+                serialize_html_tag('<i>', str(item.get('energy_grade', ''))),
+                '')
+            + '{}: {} {}<br />'.format(
+                'value',
+                serialize_html_tag('<i>', str(item.get('value_rating', ''))),
+                '/ 10')
+            + '{}: {} {}<br />'.format(
+                'leverage',
+                serialize_html_tag('<i>', str(item.get('leverage_rating', ''))),
+                '/ 10')
+            + '{}: {} {}<br />'.format(
+                'age',
+                serialize_html_tag('<i>', str(item.get('value_rating', ''))),
+                'days')
+            + '{}: {} {}<br />'.format(
+                'url',
+                serialize_html_tag(
+                    tag='<a>',
+                    value=str(self.context.get('domain', 'leboncoin.fr')),
+                    attributes={'href': item.get('url', '')}),
+                ''))
+
     def load_item(
             self):
         """
@@ -86,54 +148,7 @@ class RealEstateAdLoader(SecondHandAdLoader):
         if __item.get('price', 0) > 0 and __item.get('indoor_area', 0) > 0:
             __item['price_per_square_meter'] = __item['price'] / __item['indoor_area']
 
-        # evaluation & sorting depend on the query
-        __item['value_rating'] = 5 # neutral value
-        __item['leverage_rating'] = 5 # neutral value
-
         # summary
-        __item['summary'] = (
-            '{}: {} {}<br />'.format(
-                'price',
-                serialize_html_tag('<i>', str(__item.get('price', ''))),
-                '€')
-            + '{}: {} {}<br />'.format(
-                'indoor area',
-                serialize_html_tag('<i>', str(__item.get('indoor_area', ''))),
-                'm²')
-            + '{}: {} {}<br />'.format(
-                'outdoor area',
-                serialize_html_tag('<i>', str(__item.get('indoor_area', ''))),
-                'm²')
-            + '{}: {} {}<br />'.format(
-                'rooms',
-                serialize_html_tag('<i>', str(__item.get('rooms', ''))),
-                '')
-            + '{}: {} {}<br />'.format(
-                'floors',
-                serialize_html_tag('<i>', str(__item.get('floors', ''))),
-                '')
-            + '{}: {} {}<br />'.format(
-                'energy grade',
-                serialize_html_tag('<i>', str(__item.get('energy_grade', ''))),
-                '')
-            + '{}: {} {}<br />'.format(
-                'value',
-                serialize_html_tag('<i>', str(__item.get('value_rating', ''))),
-                '/ 10')
-            + '{}: {} {}<br />'.format(
-                'leverage',
-                serialize_html_tag('<i>', str(__item.get('leverage_rating', ''))),
-                '/ 10')
-            + '{}: {} {}<br />'.format(
-                'age',
-                serialize_html_tag('<i>', str(__item.get('value_rating', ''))),
-                'days')
-            + '{}: {} {}<br />'.format(
-                'url',
-                serialize_html_tag(
-                    tag='<a>',
-                    value=str(self.context.get('domain', 'leboncoin.fr')),
-                    attributes={'href': __item.get('url', '')}),
-                ''))
+        __item['summary'] = self._summarize(__item)
 
         return __item
