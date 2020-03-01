@@ -190,10 +190,32 @@ class SecondHandAdLoader(ItemLoader):
 
         # summary
         __item['summary'] = (
-            'price: ' + serialize_html_tag('<strong>', str(__item.get('price', ''))) + ' €<br />'
-            + 'condition: ' + serialize_html_tag('<strong>', str(__item.get('condition', ''))) + '<br />'
-            + 'value: ' + serialize_html_tag('<strong>', str(__item.get('value_rating', ''))) + ' / 10<br />'
-            + 'leverage: ' + serialize_html_tag('<strong>', str(__item.get('leverage_rating', ''))) + ' / 10<br />'
-            + 'age: ' + serialize_html_tag('<strong>', str(__item.get('age', ''))) + ' days<br />')
+            '{}: {} {}<br />'.format(
+                'price',
+                serialize_html_tag('<i>', str(__item.get('price', ''))),
+                '€')
+            + '{}: {} {}<br />'.format(
+                'condition',
+                serialize_html_tag('<i>', str(__item.get('condition', ''))),
+                '')
+            + '{}: {} {}<br />'.format(
+                'value',
+                serialize_html_tag('<i>', str(__item.get('value_rating', ''))),
+                '/ 10')
+            + '{}: {} {}<br />'.format(
+                'leverage',
+                serialize_html_tag('<i>', str(__item.get('leverage_rating', ''))),
+                '/ 10')
+            + '{}: {} {}<br />'.format(
+                'age',
+                serialize_html_tag('<i>', str(__item.get('value_rating', ''))),
+                'days')
+            + '{}: {} {}<br />'.format(
+                'url',
+                serialize_html_tag(
+                    tag='<a>',
+                    value=str(self.context.get('domain', 'leboncoin.fr')),
+                    attributes={'href': __item.get('url', '')}),
+                ''))
 
         return __item
