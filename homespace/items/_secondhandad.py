@@ -161,6 +161,52 @@ class SecondHandAdLoader(ItemLoader):
     leverage_rating_in = MapCompose(format_text)
     leverage_rating_out = Join()
 
+    def _summarize(
+            self,
+            item: dict) -> str:
+        """
+        Generate an HTML summary of an item, to display
+        in a dashboard.
+
+        Parameters
+        ----------
+        item: dict.
+            The scraped item.
+
+        Returns
+        -------
+        out: str.
+            The corresponding summary.
+        """
+        return (
+            '{}: {} {}<br />'.format(
+                'price',
+                serialize_html_tag('<i>', str(item.get('price', ''))),
+                '€')
+            + '{}: {} {}<br />'.format(
+                'condition',
+                serialize_html_tag('<i>', str(item.get('condition', ''))),
+                '')
+            + '{}: {} {}<br />'.format(
+                'value',
+                serialize_html_tag('<i>', str(item.get('value_rating', ''))),
+                '/ 10')
+            + '{}: {} {}<br />'.format(
+                'leverage',
+                serialize_html_tag('<i>', str(item.get('leverage_rating', ''))),
+                '/ 10')
+            + '{}: {} {}<br />'.format(
+                'age',
+                serialize_html_tag('<i>', str(item.get('value_rating', ''))),
+                'days')
+            + '{}: {} {}<br />'.format(
+                'url',
+                serialize_html_tag(
+                    tag='<a>',
+                    value=str(self.context.get('domain', 'leboncoin.fr')),
+                    attributes={'href': item.get('url', '')}),
+                ''))
+
     def load_item(
             self):
         """
@@ -199,33 +245,6 @@ class SecondHandAdLoader(ItemLoader):
         __item['icon'] = self.context.get('icon', 'marker')
 
         # summary
-        __item['summary'] = (
-            '{}: {} {}<br />'.format(
-                'price',
-                serialize_html_tag('<i>', str(__item.get('price', ''))),
-                '€')
-            + '{}: {} {}<br />'.format(
-                'condition',
-                serialize_html_tag('<i>', str(__item.get('condition', ''))),
-                '')
-            + '{}: {} {}<br />'.format(
-                'value',
-                serialize_html_tag('<i>', str(__item.get('value_rating', ''))),
-                '/ 10')
-            + '{}: {} {}<br />'.format(
-                'leverage',
-                serialize_html_tag('<i>', str(__item.get('leverage_rating', ''))),
-                '/ 10')
-            + '{}: {} {}<br />'.format(
-                'age',
-                serialize_html_tag('<i>', str(__item.get('value_rating', ''))),
-                'days')
-            + '{}: {} {}<br />'.format(
-                'url',
-                serialize_html_tag(
-                    tag='<a>',
-                    value=str(self.context.get('domain', 'leboncoin.fr')),
-                    attributes={'href': __item.get('url', '')}),
-                ''))
+        __item['summary'] = self._summarize(__item)
 
         return __item
