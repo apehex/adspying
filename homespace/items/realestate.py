@@ -92,14 +92,48 @@ class RealEstateAdLoader(SecondHandAdLoader):
 
         # summary
         __item['summary'] = (
-            'price: ' + serialize_html_tag('<i>', str(__item.get('price', ''))) + ' €<br />'
-            + 'indoor area: ' + serialize_html_tag('<i>', str(__item.get('indoor_area', ''))) + ' m²<br />'
-            + 'outdoor area: ' + serialize_html_tag('<i>', str(__item.get('outdoor_area', ''))) + ' m²<br />'
-            + 'rooms: ' + serialize_html_tag('<i>', str(__item.get('rooms', ''))) + '<br />'
-            + 'floors: ' + serialize_html_tag('<i>', str(__item.get('floors', ''))) + '<br />'
-            + 'energy grade: ' + serialize_html_tag('<i>', str(__item.get('energy_grade', ''))) + '<br />'
-            + 'value: ' + serialize_html_tag('<i>', str(__item.get('value_rating', ''))) + ' / 10<br />'
-            + 'leverage: ' + serialize_html_tag('<i>', str(__item.get('leverage_rating', ''))) + ' / 10<br />'
-            + 'age: ' + serialize_html_tag('<i>', str(__item.get('age', ''))) + ' days<br />')
+            '{}: {} {}<br />'.format(
+                'price',
+                serialize_html_tag('<i>', str(__item.get('price', ''))),
+                '€')
+            + '{}: {} {}<br />'.format(
+                'indoor area',
+                serialize_html_tag('<i>', str(__item.get('indoor_area', ''))),
+                'm²')
+            + '{}: {} {}<br />'.format(
+                'outdoor area',
+                serialize_html_tag('<i>', str(__item.get('indoor_area', ''))),
+                'm²')
+            + '{}: {} {}<br />'.format(
+                'rooms',
+                serialize_html_tag('<i>', str(__item.get('rooms', ''))),
+                '')
+            + '{}: {} {}<br />'.format(
+                'floors',
+                serialize_html_tag('<i>', str(__item.get('floors', ''))),
+                '')
+            + '{}: {} {}<br />'.format(
+                'energy grade',
+                serialize_html_tag('<i>', str(__item.get('energy_grade', ''))),
+                '')
+            + '{}: {} {}<br />'.format(
+                'value',
+                serialize_html_tag('<i>', str(__item.get('value_rating', ''))),
+                '/ 10')
+            + '{}: {} {}<br />'.format(
+                'leverage',
+                serialize_html_tag('<i>', str(__item.get('leverage_rating', ''))),
+                '/ 10')
+            + '{}: {} {}<br />'.format(
+                'age',
+                serialize_html_tag('<i>', str(__item.get('value_rating', ''))),
+                'days')
+            + '{}: {} {}<br />'.format(
+                'url',
+                serialize_html_tag(
+                    tag='<a>',
+                    value=str(self.context.get('domain', 'leboncoin.fr')),
+                    attributes={'href': __item.get('url', '')}),
+                ''))
 
         return __item
