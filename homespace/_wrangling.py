@@ -325,7 +325,7 @@ def serialize_html_tag(
     return '{}{}{}'.format(
         tag.replace(
             '>',
-            ' '.join(['{}="{}"'.format(k, v) for k, v in attributes.items()]) + '>'),
+            ' ' + ' '.join(['{}="{}"'.format(k, v) for k, v in attributes.items()]) + '>'),
         value,
         tag.replace('<', '</'))
 
