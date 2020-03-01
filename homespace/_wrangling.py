@@ -305,7 +305,8 @@ def prettify_html(
 @checks
 def serialize_html_tag(
         tag: str,
-        value: str):
+        value: str = '',
+        attributes: dict = {}) -> str:
     """
     Serialize any tag as a string.
 
@@ -322,7 +323,9 @@ def serialize_html_tag(
         The serialized HTML tag.
     """
     return '{}{}{}'.format(
-        tag,
+        tag.replace(
+            '>',
+            ' '.join(['{}="{}"'.format(k, v) for k, v in attributes.items()]) + '>'),
         value,
         tag.replace('<', '</'))
 
