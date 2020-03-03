@@ -60,12 +60,12 @@ class LeboncoinRealEstateSpider(LeboncoinSpider):
             'farmily': {
                 'category': '9',
                 'immo_sell_type': '',
-                'locations': '',
+                'locations': 'Saint-Etienne__45.42470618490638_4.41202442998187_10000_100000',
                 'page': '1',
                 'real_estate_type': '1',
                 'rooms': '2-max',
                 'shippable': '',
-                'square': '60-max',
+                'square': '50-max',
                 'price': 'min-250000',
                 'text': ''},}
 
