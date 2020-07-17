@@ -84,24 +84,24 @@ class LeboncoinRealEstateSpider(LeboncoinSpider):
         self._ad_specific_attributes_xpath = {
             'category': (
                 '//div[contains(@data-qa-id, "criteria_item_real_estate_type")]'
-                + '/div/div[2]/text()'),
+                + '/div[2]/p[2]/text()'),
             'energy_grade': (
                 '//div[contains(@data-qa-id, "criteria_item_energy_rate")]'
-                + '/div/div[2]/div'
-                + '/div[contains(@class, "_1sd0z")]/text()'),
+                + '/div[2]/div[2]'
+                + '/div[contains(@class, "styles_active__JYbKW")]/text()'),
             'fees_included': (
-                '//div[contains(@data-qa-id, "criteria_item_fai_included")]'
-                + '/div/div[2]/text()'),
+                '//div[contains(@data-qa-id, "criteria_item_charges_included")]'
+                + '/div[2]/p[2]/text()'),
             'ghg_grade': (
                 '//div[contains(@data-qa-id, "criteria_item_ges")]'
-                + '/div/div[2]/div'
-                + '/div[contains(@class, "_1sd0z")]/text()'),
+                + '/div[2]/div[2]'
+                + '/div[contains(@class, "styles_active__JYbKW")]/text()'),
             'indoor_area': (
                 '//div[contains(@data-qa-id, "criteria_item_square")]'
-                + '/div/div[2]/text()'),
+                + '/div[2]/p[2]/text()'),
             'rooms': (
                 '//div[contains(@data-qa-id, "criteria_item_rooms")]'
-                + '/div/div[2]/text()'),}
+                + '/div[2]/p[2]/text()'),}
 
         # classes to store, clean and export the data
         self._item_class = RealEstateAd
