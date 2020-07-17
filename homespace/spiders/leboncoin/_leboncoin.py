@@ -95,34 +95,27 @@ class LeboncoinSpider(SecondHandAdsSpider):
         # AD PAGE DATA SELECTION
         #############################################################
         self._ad_xpath = (
-            '//section[@id="container"]/main/div/div/div'
-            + '/section/section[contains(@class, "_35sFG")]'
-            + '/section[contains(@class, "OjX8R")]')
+            '//article[@id="grid"]')
         self._ad_generic_attributes_xpath = {
             'condition': (
                 '//div[contains(@data-qa-id, "criteria_item_item_condition")]'
-                + '/div/div[2]/text()'),
+                + '/div[2]/p[2]/text()'),
             'description': (
                 '//div[contains(@data-qa-id, "adview_description_container")]'
-                + '//span[contains(@class, "content-CxPmi")]/text()'),
+                + '//span[contains(@class, "_1fFkI")]/text()'),
             'images': (
-                'div[contains(@class, "_2NKYa")]'
-                + '/div[contains(@data-qa-id, "adview_gallery_container")]/div'
-                + '/div[contains(@class, "GwNx3")]/div'
-                + '/div[contains(@class, "_3bgJP")]/div/div/div'
-                + '/div[contains(@class, "_2x8BQ")]/img/@src'),
+                '//img[contains(@alt, "image-galerie")]/@src'),
             'last_updated': (
-                '//div[contains(@data-qa-id, "adview_date")]/text()'),
+                '//p[contains(@data-qa-id, "adview_date")]/text()'),
             'location': (
-                '//div[contains(@data-qa-id, "adview_location_informations")]'
-                + '/span/text()'),
+                '//div[6]/h2/text()'),
             'price': (
                 '//div[contains(@data-qa-id, "adview_price")]'
                 + '/div/span/text()'),
-            'title': '//div[contains(@data-qa-id, "adview_title")]/h1/text()',
+            'title': '//h1[contains(@data-qa-id, "adview_title")]/text()',
             'vendor': (
                 '//div[contains(@data-qa-id, "adview_contact_container")]'
-                + '/div[1]/div/div/a/@href')}
+                + '/div/div/div/a/@href')}
 
         # select data specific to a given ad search (say smartphones)
         self._ad_specific_attributes_xpath = {} # intended to be overriden by the subclass
@@ -133,5 +126,5 @@ class LeboncoinSpider(SecondHandAdsSpider):
 
         # context
         self._domain = 'leboncoin.fr'
-        self._datetime_format = '%d/%m/%Y a %Hh%M'
+        self._datetime_format = '%d/%m/%Y a %H:%M'
         self._icon = 'heart'
