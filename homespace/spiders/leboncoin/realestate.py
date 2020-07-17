@@ -67,7 +67,18 @@ class LeboncoinRealEstateSpider(LeboncoinSpider):
                 'shippable': '',
                 'square': '50-max',
                 'price': 'min-250000',
-                'text': ''},}
+                'text': ''},
+            'chulie': {
+                'category': '10', # renting
+                'immo_sell_type': '',
+                'locations': 'd_54',
+                'page': '1',
+                'real_estate_type': '1,2',
+                'rooms': '2-max',
+                'shippable': '',
+                'square': '40-max',
+                'price': '300-700',
+                'text': 'jardin'},}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {
