@@ -18,7 +18,14 @@ from scrapy import Field, Item
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
-from homespace._wrangling import extract_price_value, format_datetime, format_text, remove_all_spacing, serialize_html_tag
+from homespace._wrangling import (
+    extract_price_value,
+    format_datetime,
+    format_number,
+    format_text,
+    remove_all_spacing,
+    remove_special_characters,
+    serialize_html_tag)
 
 #####################################################################
 # SERIALIZE DATETIMES
@@ -70,6 +77,7 @@ class SecondHandAd(Item):
     price = Field()
     condition = Field()
     location = Field()
+    postal_code = Field()
     first_posted = Field()
     last_updated = Field()
     description = Field()
@@ -124,6 +132,9 @@ class SecondHandAdLoader(ItemLoader):
 
     location_in = MapCompose(format_text)
     location_out = Join()
+
+    postal_code_in = MapCompose(str, remove_special_characters, format_number, int)
+    postal_code_out = TakeFirst()
 
     first_posted_in = MapCompose(format_text, parse_datetime)
     first_posted_out = Join()
@@ -215,7 +226,10 @@ class SecondHandAdLoader(ItemLoader):
         __item = super(SecondHandAdLoader, self).load_item()
         __geolocator = Nominatim(user_agent='homespace')
         __location = __geolocator.geocode(
-            __item.get('location', 'north pole'),
+            (
+                str(__item.get('postal_code', '69000'))
+                + ', '
+                + __item.get('location', 'lyon')),
             exactly_one=True)
 
         # gps coordinates

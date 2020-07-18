@@ -109,6 +109,8 @@ class LeboncoinSpider(SecondHandAdsSpider):
                 '//p[contains(@data-qa-id, "adview_date")]/text()'),
             'location': (
                 '//div[6]/h2/text()'),
+            'postal_code': (
+                '//div[6]/h2/span[2]/text()[2]'),
             'price': (
                 '//div[contains(@data-qa-id, "adview_price")]'
                 + '/div/span/text()'),
