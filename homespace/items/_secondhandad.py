@@ -242,7 +242,7 @@ class SecondHandAdLoader(ItemLoader):
             datetime.now()
             - datetime.strptime(
                 __item.get(
-                    'last_updated',
+                    'first_posted',
                     datetime.now().isoformat(sep='T', timespec='seconds')),
                 '%Y-%m-%dT%H:%M:%S')).days
 
