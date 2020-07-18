@@ -10,6 +10,8 @@ Exporting data.
 
 from __future__ import division, print_function, absolute_import
 
+from copy import deepcopy
+from datetime import datetime, timedelta
 from functools import wraps
 from inspect import getfullargspec
 import os
@@ -254,6 +256,40 @@ class JsonPipeline(BasePipeline):
 # MONGODB
 #####################################################################
 
+def _update_item_data(
+        old_item: dict,
+        new_item: dict) -> dict:
+    """
+    """
+    __updated_item = deepcopy(new_item)
+
+    # first posted: kept from the oldest record
+    __updated_item['first_posted'] = old_item.get(
+        'first_posted',
+        new_item.get(
+            'first_posted',
+            datetime.now().isoformat(sep='T', timespec='seconds')))
+
+    # age: from the oldest post
+    __updated_item['age'] = (
+        datetime.now()
+        - datetime.strptime(
+            __updated_item.get(
+                'first_posted',
+                datetime.now().isoformat(sep='T', timespec='seconds')),
+            '%Y-%m-%dT%H:%M:%S')).days
+
+    # history of reposting
+    if old_item.get('url', '') == new_item.get('url', ''):
+        __updated_item['reposting_count'] = old_item.get('reposting_count', 0)
+    else:
+        __updated_item['reposting_count'] = old_item.get('reposting_count', 0) + 1
+
+    # price delta since the first post
+    __updated_item['starting_price'] = old_item.get('starting_price', 0)
+
+    return __updated_item
+
 def _update_or_insert(
         collection,
         filter,
@@ -263,7 +299,10 @@ def _update_or_insert(
     if collection.count_documents(filter):
         collection.update_one(
             filter=filter,
-            update={'$set': dict(item)})
+            update={
+                '$set': _update_item_data(
+                    collection.find_one(filter),
+                    item)})
     else:
         collection.insert_one(dict(item))
 
@@ -322,7 +361,9 @@ class MongoDbPipeline(object):
             if __url:
                 _update_or_insert(
                     __collection,
-                    {'url': __url},
+                    {
+                        'vendor': item.get('vendor', ''),
+                        'location': item.get('location', '')},
                     item)
             else:
                 __collection.insert_one(dict(item))
