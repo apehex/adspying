@@ -90,10 +90,14 @@ class SecondHandAd(Item):
     color = Field()
     price_new = Field()
 
+    # timeline
+    age = Field() # in days
+    reposting_count = Field()
+    starting_price = Field()
+
     # Additional
     latitude = Field()
     longitude = Field()
-    age = Field() # in days
     user_rating = Field()
 
     # Evaluation & sorting
@@ -237,7 +241,9 @@ class SecondHandAdLoader(ItemLoader):
         __item['longitude'] = __location.longitude
 
         # timeline
-        __item['first_posted'] = __item.get('last_updated', '')
+        __item['first_posted'] = __item.get(
+            'last_updated',
+            datetime.now().isoformat(sep='T', timespec='seconds'))
         __item['age'] = (
             datetime.now()
             - datetime.strptime(
@@ -245,6 +251,8 @@ class SecondHandAdLoader(ItemLoader):
                     'first_posted',
                     datetime.now().isoformat(sep='T', timespec='seconds')),
                 '%Y-%m-%dT%H:%M:%S')).days
+        __item['reposting_count'] = 0
+        __item['starting_price'] = __item.get('price', 0)
 
         # vendor
         __item['vendor'] = urljoin(
