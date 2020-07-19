@@ -147,7 +147,10 @@ class SecondHandAdsSpider(scrapy.Spider):
                     self._base_url,
                     self._search_page_url.format(urlencode(self._current_query_args))),
                 callback=self.parse_listing,
-                meta={'page': str(i+1), 'dont_redirect': True})
+                meta={
+                    'page': str(i+1),
+                    'dont_redirect': True,
+                    'proxy': '127.0.0.1:9050'})
 
     def parse_listing(
             self,
