@@ -109,3 +109,34 @@ class LeboncoinRealEstateSpider(LeboncoinSpider):
 
         # context
         self._icon = 'veterinary'
+
+        # export only relevant fields
+        self.fields_to_export = [
+            'category',
+            'title',
+            'description',
+            'location',
+            'postal_code',
+            'latitude',
+            'longitude',
+            'first_posted',
+            'last_updated',
+            'reposting_count',
+            'age',
+            'price',
+            'starting_price',
+            'price_per_square_meter',
+            'indoor_area',
+            'outdoor_area',
+            'rooms',
+            'fees_included',
+            'energy_grade',
+            'ghg_grade',
+            'images',
+            'time_to_work',
+            'value_rating',
+            'leverage_rating',
+            'user_rating',
+            'summary',
+            'url',
+            'vendor']

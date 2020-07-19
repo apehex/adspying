@@ -129,6 +129,10 @@ class BasePipeline(object):
                 crawler.spider,
                 'query',
                 'default')
+            fields_to_export = getattr(
+                crawler.spider,
+                'fields_to_export',
+                None)
 
         return cls(
             parent_path=os.path.join(
