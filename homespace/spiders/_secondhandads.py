@@ -150,7 +150,7 @@ class SecondHandAdsSpider(scrapy.Spider):
                 meta={
                     'page': str(i+1),
                     'dont_redirect': True,
-                    'proxy': '127.0.0.1:9050'})
+                    'proxy': '127.0.0.1:8118'})
 
     def parse_listing(
             self,
@@ -171,7 +171,9 @@ class SecondHandAdsSpider(scrapy.Spider):
             yield scrapy.Request(
                 url=urljoin(self._base_url, __link),
                 callback=self.parse_item,
-                meta={'dont_redirect': True})
+                meta={
+                    'dont_redirect': True,
+                    'proxy': '127.0.0.1:8118'})
 
         self.log('[Page {page}] {count} ads queued...'.format(
             page = __page,
