@@ -260,6 +260,21 @@ def _update_item_data(
         old_item: dict,
         new_item: dict) -> dict:
     """
+    Process the timeline of the scraped data.
+    The previous versions are not simply overwritten: it keeps track
+    of the price and reposting evolution over time.
+
+    Parameters
+    ----------
+    old_item: dict.
+        The item already stored in the database.
+    new_item: dict.
+        The online version of the item, on the last scraping.
+
+    Returns
+    -------
+    out: dict.
+        The current item data, with the overall timeline.
     """
     __updated_item = deepcopy(new_item)
 
