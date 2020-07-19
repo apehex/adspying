@@ -112,8 +112,9 @@ class LeboncoinRealEstateSpider(LeboncoinSpider):
 
         # export only relevant fields
         self.fields_to_export = [
-            'category',
+            'url',
             'title',
+            'category',
             'description',
             'location',
             'postal_code',
@@ -136,7 +137,5 @@ class LeboncoinRealEstateSpider(LeboncoinSpider):
             'time_to_work',
             'value_rating',
             'leverage_rating',
-            'user_rating',
             'summary',
-            'url',
             'vendor']
