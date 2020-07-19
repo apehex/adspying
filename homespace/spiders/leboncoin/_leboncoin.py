@@ -117,7 +117,7 @@ class LeboncoinSpider(SecondHandAdsSpider):
             'title': '//h1[contains(@data-qa-id, "adview_title")]/text()',
             'vendor': (
                 '//div[contains(@data-qa-id, "adview_contact_container")]'
-                + '/div/div/div/a/@href')}
+                + '/div[1]/div[1]/a/@href')}
 
         # select data specific to a given ad search (say smartphones)
         self._ad_specific_attributes_xpath = {} # intended to be overriden by the subclass
