@@ -68,25 +68,32 @@ class LeboncoinVehiculesSpider(LeboncoinSpider):
                 'locations': '',
                 'mileage': '',
                 'page': '1',
-                'price': 'min-10000',
-                'regdate': '2000-max',
+                'price': 'min-5000',
+                'regdate': '2010-max',
                 'shippable': '1',
-                'text': ''}}
+                'text': '',
+                'vehicle_is_eligible_p2p': '2'}}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {
+            'color': (
+                '//div[contains(@data-qa-id, "criteria_item_vehicule_color")]'
+                + '/div[2]/p[2]/text()'),
             'fuel': (
                 '//div[contains(@data-qa-id, "criteria_item_fuel")]'
-                + '/div/div[2]/text()'),
+                + '/div[2]/p[2]/text()'),
             'gearbox': (
                 '//div[contains(@data-qa-id, "criteria_item_gearbox")]'
-                + '/div/div[2]/text()'),
+                + '/div[2]/p[2]/text()'),
+            'issuance': (
+                '//div[contains(@data-qa-id, "criteria_item_issuance_date")]'
+                + '/div[2]/p[2]/text()'),
             'make': (
                 '//div[contains(@data-qa-id, "criteria_item_regdate")]'
-                + '/div/div[2]/text()'),
+                + '/div[2]/p[2]/text()'),
             'mileage': (
                 '//div[contains(@data-qa-id, "criteria_item_mileage")]'
-                + '/div/div[2]/text()'),}
+                + '/div[2]/p[2]/text()'),}
 
         # classes to store, clean and export the data
         self._item_class = VehiculeAd
