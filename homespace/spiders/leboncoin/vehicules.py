@@ -68,11 +68,22 @@ class LeboncoinVehiculesSpider(LeboncoinSpider):
                 'locations': '',
                 'mileage': '',
                 'page': '1',
-                'price': 'min-5000',
+                'price': '500-5000', # remove renting / 1€
                 'regdate': '2010-max',
                 'shippable': '1',
                 'text': '',
-                'vehicle_is_eligible_p2p': '2'}}
+                'vehicle_is_eligible_p2p': ''},
+            'frigorifique': {
+                'category': '5', # utility vehicules
+                'fuel': '',
+                'locations': '',
+                'mileage': '',
+                'page': '1',
+                'price': '500-8000', # remove renting / 1€
+                'regdate': '2010-max',
+                'shippable': '1',
+                'text': 'frigorifique',
+                'vehicle_is_eligible_p2p': ''}}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {
