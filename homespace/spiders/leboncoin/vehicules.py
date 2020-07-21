@@ -62,7 +62,7 @@ class LeboncoinVehiculesSpider(LeboncoinSpider):
                 'regdate': '',
                 'shippable': '1',
                 'text': ''},
-            'vans': {
+            'vanlife': {
                 'category': '5', # utility vehicules
                 'fuel': '',
                 'locations': '',
@@ -109,3 +109,32 @@ class LeboncoinVehiculesSpider(LeboncoinSpider):
         # classes to store, clean and export the data
         self._item_class = VehiculeAd
         self._loader_class = VehiculeAdLoader
+
+        # context
+        self._icon = 'veterinary'
+
+        # export only relevant fields
+        self.fields_to_export = [
+            'url',
+            'title',
+            'description',
+            'first_posted',
+            'last_updated',
+            'reposting_count',
+            'age',
+            'price',
+            'starting_price',
+            'model',
+            'make',
+            'issuance',
+            'mileage',
+            'fuel',
+            'value_rating',
+            'leverage_rating',
+            'location',
+            'postal_code',
+            'latitude',
+            'longitude',
+            'images',
+            'summary',
+            'vendor']
