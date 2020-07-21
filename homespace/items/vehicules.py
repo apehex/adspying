@@ -24,11 +24,12 @@ class VehiculeAd(SecondHandAd):
     """
     # Specifications
     fuel = Field()
+    gearbox = Field()
+    issuance = Field()
     mileage = Field()
     consumption = Field()
     size_inside = Field()
     size_outside = Field()
-    gearbox = Field()
 
 class VehiculeAdLoader(SecondHandAdLoader):
     """
@@ -36,6 +37,12 @@ class VehiculeAdLoader(SecondHandAdLoader):
     # Specifications
     fuel_in = Identity()
     fuel_out = Join()
+
+    gearbox_in = Identity()
+    gearbox_out = Join()
+
+    issuance_in = Identity()
+    issuance_out = Join()
 
     mileage_in = Identity()
     mileage_out = Join()
@@ -49,5 +56,3 @@ class VehiculeAdLoader(SecondHandAdLoader):
     size_outside_in = Identity()
     size_outside_out = Join()
 
-    gearbox_in = Identity()
-    gearbox_out = Join()
