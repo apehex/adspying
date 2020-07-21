@@ -260,6 +260,22 @@ class JsonPipeline(BasePipeline):
 # MONGODB
 #####################################################################
 
+def  _interpret_serialized_datetimes(
+        item: dict) -> dict:
+    """
+    """
+    __new_item = deepcopy(item)
+
+    __new_item['first_posted'] = datetime.fromisoformat(item.get(
+        'first_posted',
+        datetime.now().isoformat(sep='T', timespec='seconds')))
+
+    __new_item['last_updated'] = datetime.fromisoformat(item.get(
+        'last_updated',
+        datetime.now().isoformat(sep='T', timespec='seconds')))
+
+    return __new_item
+
 def _update_item_data(
         old_item: dict,
         new_item: dict) -> dict:
@@ -287,16 +303,14 @@ def _update_item_data(
         'first_posted',
         new_item.get(
             'first_posted',
-            datetime.now().isoformat(sep='T', timespec='seconds')))
+            datetime.now()))
 
     # age: from the oldest post
     __updated_item['age'] = (
         datetime.now()
-        - datetime.strptime(
-            __updated_item.get(
-                'first_posted',
-                datetime.now().isoformat(sep='T', timespec='seconds')),
-            '%Y-%m-%dT%H:%M:%S')).days
+        - __updated_item.get(
+            'first_posted',
+            datetime.now())).days
 
     # history of reposting
     if old_item.get('url', '') == new_item.get('url', ''):
