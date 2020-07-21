@@ -319,7 +319,13 @@ def _update_item_data(
         __updated_item['reposting_count'] = old_item.get('reposting_count', 0) + 1
 
     # price delta since the first post
-    __updated_item['starting_price'] = old_item.get('starting_price', 0)
+    __updated_item['starting_price'] = old_item.get(
+        'starting_price',
+        old_item.get(
+            'price',
+            new_item.get(
+                'price',
+                0)))
 
     return __updated_item
 
