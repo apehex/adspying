@@ -78,7 +78,7 @@ class LeboncoinRealEstateSpider(LeboncoinSpider):
                 'shippable': '',
                 'square': '40-max',
                 'price': '300-700',
-                'text': 'jardin'},}
+                'text': '("jardin" OR "terrain" OR "potager") NOT "pas de jardin" NOT "ni jardin" NOT "sans jardin"'},}
 
         # scrape the resulting listing
         self._ad_specific_attributes_xpath = {
