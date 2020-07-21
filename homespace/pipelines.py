@@ -139,8 +139,8 @@ class BasePipeline(object):
                 os.path.realpath(
                     crawler.settings.get('EXPORT_FOLDER_PATH')),
                 __project_name,
-                __spider_name),
-            file_name=__query_name.replace('_', '-'))
+                __query_name.replace('_', '-')),
+            file_name=__spider_name)
 
     @redirects
     def open_spider(
@@ -352,8 +352,11 @@ class MongoDbPipeline(object):
         self._mongo_client = MongoClient(self._mongo_db_uri)
         self._mongo_db_collection = getattr(
             spider,
-            'name',
-            'default')
+            'query',
+            getattr(
+                spider,
+                'name',
+                'default'))
 
         if self._mongo_client:
             self._mongo_db = self._mongo_client[self._mongo_db_name]
