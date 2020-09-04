@@ -21,10 +21,12 @@ import googlemaps
 PP = pprint.PrettyPrinter(indent=4)
 
 #####################################################################
-# GOOGLE MAPS API
+# GMAPS API
 #####################################################################
 
-KEY = "AIzaSyCDpsGLGxA8sm686Q_or5cVFQWUF_zLErs"
+KEY = ""
+with open("gmaps_api-key.txt", "r") as __file:
+    KEY = __file.readline()
 GMAPS_CLIENT = googlemaps.Client(key=KEY)
 
 #####################################################################
