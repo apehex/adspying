@@ -21,10 +21,15 @@ import googlemaps
 PP = pprint.PrettyPrinter(indent=4)
 
 #####################################################################
-# HOMES
+# GOOGLE MAPS API
 #####################################################################
 
 KEY = "AIzaSyCDpsGLGxA8sm686Q_or5cVFQWUF_zLErs"
+GMAPS_CLIENT = googlemaps.Client(key=KEY)
+
+#####################################################################
+# HOMES
+#####################################################################
 
 HOMES = [
     {"lat": 49.2128736, "lng": 5.9750234},
@@ -131,12 +136,15 @@ INSPE_NANCY = {"lat": 48.704244, "lng": 6.163837}
 INSPE_METZ = {"lat": 49.101173, "lng": 6.150357}
 
 #####################################################################
-# LOCALIZATION
+# FETCH DATA
 #####################################################################
 
-_gmaps_client = googlemaps.Client(key=KEY)
-_distances_nancy = _gmaps_client.distance_matrix(HOMES, INSPE_NANCY)
-_distances_metz = _gmaps_client.distance_matrix(HOMES, INSPE_METZ)
+#####################################################################
+# GEOCODE
+#####################################################################
+
+_distances_nancy = GMAPS_CLIENT.distance_matrix(HOMES, INSPE_NANCY)
+_distances_metz = GMAPS_CLIENT.distance_matrix(HOMES, INSPE_METZ)
 
 _distances = []
 _durations = []
@@ -147,6 +155,50 @@ for i in range(len(HOMES)):
     _durations.append((
         _distances_nancy['rows'][i]['elements'][0]['duration']['value'] / 60.0,
         _distances_metz['rows'][i]['elements'][0]['duration']['value'] / 60.0))
+
+#####################################################################
+# GEOCODE
+#####################################################################
+
+def geocode(
+        item: dict,
+        filter: dict={"country": "FR", "administrative_area_level_1": "Grand Est"}) -> dict:
+    """
+    Parameters
+    ----------
+
+    Returns
+    -------
+
+    Raises
+    ------
+    """
+    __short_serialized_location = item.get('location', '')
+    __location = {}
+
+    if __short_serialized_location:
+        __probable_locations = _gmaps_client.geocode(
+            __short_serialized_location,
+            components=filter)
+        if len(__probable_locations):
+            __location['formatted_address'] = __probable_locations[0].get('formatted_address', '')
+            __location['latitude'] = __probable_locations[0]['geometry']['location']['lat']
+            __location['longitude'] = __probable_locations[0]['geometry']['location']['lng']
+        else:
+            pass # raise 'location not found in gmaps'
+
+    else:
+        pass # raise error 'location unknown'
+
+    return __location
+
+#####################################################################
+# REAL ESTATE
+#####################################################################
+
+# garage
+
+# price per square meter
 
 #####################################################################
 # EXPORT
