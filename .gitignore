@@ -102,3 +102,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# api key
+gmaps_api-key.txt
