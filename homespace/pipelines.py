@@ -78,8 +78,6 @@ def redirects(
     In practice, it replaces the wrapped method with an
     empty one if the conditions are not met.
     """
-    __arg_spec = getfullargspec(pipeline_method)
-
     if pipeline_method.__name__ == 'open_spider':
         return _redirects_open_spider(pipeline_method)
     elif pipeline_method.__name__ == 'close_spider':
@@ -101,6 +99,7 @@ class BasePipeline(object):
             file_name,
             file_extension='.txt'):
         """
+        Initiate the output according to the calling spider.
         """
         self._file_path = os.path.join(
             parent_path,
@@ -213,6 +212,14 @@ class HtmlTablePipeline(BasePipeline):
             parent_path,
             file_name):
         """
+        Save the output in an html file.
+
+        Parameters
+        ----------
+        parent_path:
+
+        Returns
+        -------
         """
         super(HtmlTablePipeline, self).__init__(parent_path, file_name, '.html')
 
@@ -221,6 +228,7 @@ class HtmlTablePipeline(BasePipeline):
             self,
             spider):
         """
+        Serialize using the HTML table exporter.
         """
         super(HtmlTablePipeline, self).open_spider(spider)
         if self._file:
@@ -260,7 +268,7 @@ class JsonPipeline(BasePipeline):
 # MONGODB
 #####################################################################
 
-def  _interpret_serialized_datetimes(
+def  _interpret_serialized_data(
         item: dict) -> dict:
     """
     """
@@ -340,8 +348,8 @@ def _update_or_insert(
             filter=filter,
             update={
                 '$set': _update_item_data(
-                    collection.find_one(filter),
-                    item)})
+                    _interpret_serialized_data(collection.find_one(filter)),
+                    _interpret_serialized_data(item))})
     else:
         collection.insert_one(dict(item))
 
