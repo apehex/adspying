@@ -53,15 +53,15 @@ class LeboncoinVehiculesSpider(LeboncoinSpider):
         # forge a url to query leboncoin
         self._queries = {
             'default': {
-                'category': '5', # utility vehicules
+                'category': '2', # cars
                 'fuel': '',
-                'locations': '',
+                'locations': 'r_30', # auvergne rhone alpes
                 'mileage': '',
                 'page': '1',
-                'price': '',
-                'regdate': '',
+                'price': '250-1500',
+                'regdate': '2006-max',
                 'shippable': '1',
-                'text': ''},
+                'text': '-pieces'},
             'vanlife': {
                 'category': '5', # utility vehicules
                 'fuel': '',
