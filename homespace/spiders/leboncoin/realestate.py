@@ -60,14 +60,14 @@ class LeboncoinRealEstateSpider(LeboncoinSpider):
             'farmily': {
                 'category': '9',
                 'immo_sell_type': '',
-                'locations': 'Saint-Etienne__45.42470618490638_4.41202442998187_10000_100000',
+                'locations': 'Saint-Etienne_42000__45.43988_4.39554_10000_50000',
                 'page': '1',
                 'real_estate_type': '1',
                 'rooms': '2-max',
                 'shippable': '',
                 'square': '50-max',
-                'price': 'min-250000',
-                'text': ''},
+                'price': 'min-350000',
+                'text': '("jardin" OR "terrain" OR "potager") NOT "pas de jardin" NOT "ni jardin" NOT "sans jardin"'},
             'chulie': {
                 'category': '10', # renting
                 'immo_sell_type': '',
