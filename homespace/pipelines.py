@@ -20,8 +20,6 @@ from pymongo import MongoClient
 from scrapy.exporters import CsvItemExporter
 from scrapy.loader import ItemLoader
 
-from typical import checks
-
 from homespace.exporters import GeoJsonItemExporter, HtmlItemExporter
 from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 
@@ -29,7 +27,6 @@ from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 # ENABLE / DISABLE PIPELINES
 #####################################################################
 
-@checks
 def _redirects_open_spider(
         pipeline_method: callable) -> callable:
     """
@@ -44,7 +41,6 @@ def _redirects_open_spider(
             return None
     return open_spider_wrapper
 
-@checks
 def _redirects_close_spider(
         pipeline_method: callable) -> callable:
     """
@@ -53,7 +49,6 @@ def _redirects_close_spider(
     """
     return _redirects_open_spider(pipeline_method)
 
-@checks
 def _redirects_process_item(
         pipeline_method: callable) -> callable:
     """
@@ -68,7 +63,6 @@ def _redirects_process_item(
             return item
     return process_item_wrapper
 
-@checks
 def redirects(
         pipeline_method: callable) -> callable:
     """

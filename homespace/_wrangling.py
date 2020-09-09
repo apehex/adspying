@@ -17,8 +17,6 @@ import numpy as np
 import re
 import unicodedata
 
-from typical import checks, iterable, numeric
-
 #####################################################################
 # CONSTANTS
 #####################################################################
@@ -31,7 +29,6 @@ PRICE_REGEX = '([-+]?[0-9]*\.?[0-9]+)'
 # ENCODING & FORMAT
 #####################################################################
 
-@checks
 def format_datetime(
         string: str,
         format: str) -> str:
@@ -58,7 +55,6 @@ def format_datetime(
         string,
         format).isoformat(sep='T', timespec='seconds')
 
-@checks
 def format_text(
         text: str) -> str:
     """
@@ -76,9 +72,8 @@ def format_text(
     """
     return remove_extra_spacing(remove_accents(text.lower()))
 
-@checks
 def format_number(
-        text: str) -> numeric:
+        text: str):
     """
     Convert strings to numpy float.
 
@@ -105,10 +100,9 @@ def format_number(
 # TRANSLATION
 #####################################################################
 
-@checks
 def string_distance(
         s1: str,
-        s2: str) -> numeric:
+        s2: str):
     """
     Calculate a custom distance between strings.
 
@@ -130,10 +124,9 @@ def string_distance(
         edit_distance(s1, s2)
         - abs(len(s1) - len(s2)))
 
-@checks
 def find_closest_reference(
         target: str,
-        candidates: iterable,
+        candidates,
         distance: callable=string_distance) -> str:
     """
     Find the element in an iterable closest to a given value.
@@ -161,7 +154,6 @@ def find_closest_reference(
 # TEXT
 #####################################################################
 
-@checks
 def remove_accents(
         text: str):
     """
@@ -180,7 +172,6 @@ def remove_accents(
     nfkd_form = unicodedata.normalize('NFKD', text)
     return u"".join([c for c in nfkd_form if not unicodedata.combining(c)])
 
-@checks
 def remove_all_spacing(
         text: str) -> str:
     """
@@ -198,7 +189,6 @@ def remove_all_spacing(
     """
     return ''.join(text.split())
 
-@checks
 def remove_extra_spacing(
         text: str) -> str:
     """
@@ -216,7 +206,6 @@ def remove_extra_spacing(
     """
     return ' '.join(text.split())
 
-@checks
 def remove_special_characters(
         text: str) -> str:
     """
@@ -241,7 +230,6 @@ def remove_special_characters(
 # HTML
 #####################################################################
 
-@checks
 def extract_text_from_html_markup(
         html: str) -> str:
     """
@@ -281,7 +269,6 @@ def extract_text_from_html_markup(
         __chunk
         for __chunk in __chunks if __chunk)
 
-@checks
 def prettify_html(
         html: str) -> str:
     """
@@ -302,7 +289,6 @@ def prettify_html(
         markup=html,
         features="lxml").prettify()
 
-@checks
 def serialize_html_tag(
         tag: str,
         value: str = '',
@@ -333,7 +319,6 @@ def serialize_html_tag(
 # DATA MINING
 #####################################################################
 
-@checks
 def extract_area_value(
         text: str) -> int:
     """
@@ -356,7 +341,6 @@ def extract_area_value(
     else:
         return -1
 
-@checks
 def extract_price_value(
         text: str) -> int:
     """
