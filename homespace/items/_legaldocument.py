@@ -10,9 +10,9 @@ Base class for all the specific legal documents.
 
 from __future__ import division, print_function, absolute_import
 
+from itemloaders.processors import Identity, Join, MapCompose, TakeFirst
 from scrapy import Field, Item
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
 from homespace._wrangling import prettify_html
 

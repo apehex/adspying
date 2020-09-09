@@ -10,8 +10,8 @@ Items scraped from real-estate ads.
 
 from __future__ import division, print_function, absolute_import
 
+from itemloaders.processors import Identity, Join, MapCompose, TakeFirst
 from scrapy import Field
-from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
 from homespace._wrangling import format_datetime, format_text, remove_all_spacing, extract_area_value, serialize_html_tag
 from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
