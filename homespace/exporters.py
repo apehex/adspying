@@ -15,17 +15,14 @@ import io
 from scrapy.exporters import BaseItemExporter, JsonItemExporter
 from scrapy.utils.python import to_bytes, to_unicode
 
-from typical import checks, iterable
-
 from homespace._wrangling import serialize_html_tag
 
 #####################################################################
 # HTML
 #####################################################################
 
-@checks
 def serialize_html_table_row(
-        values: iterable) -> str:
+        values) -> str:
     """
     Enclose the items in an HTML table:
     - one column by attribute

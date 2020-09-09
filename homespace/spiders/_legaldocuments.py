@@ -15,8 +15,6 @@ from __future__ import division, print_function, absolute_import
 
 import scrapy
 
-from typical import checks
-
 from homespace.items._legaldocument import LegalDocument, LegalDocumentLoader
 
 #####################################################################

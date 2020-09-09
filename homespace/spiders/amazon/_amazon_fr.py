@@ -27,8 +27,6 @@ from urllib.parse import urlencode, urljoin
 
 import scrapy
 
-from typical import checks
-
 from homespace.items._secondhandad import SecondHandAd, SecondHandAdLoader
 from homespace.spiders._secondhandads import SecondHandAdsSpider
 
