@@ -9,6 +9,7 @@ Load the data references.
 """
 
 from __future__ import absolute_import, division, print_function
+from importlib.metadata import version
 
 import os
 
@@ -21,7 +22,7 @@ import pandas as pd
 
 __author__ = 'Moodule'
 __email__ = 'moodule@protonmail.com'
-__version__ = '0.1.0'
+__version__ = version(__package__)
 
 __all__ = []
 

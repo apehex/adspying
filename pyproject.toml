@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "homespace"
-version = "0.1.0"
+version = "0.1.1"
 description = "Find the best deals on second-hand ads websites :dart:"
 license = "MIT"
 authors = ["moodule <moodule@protonmail.com>"]
