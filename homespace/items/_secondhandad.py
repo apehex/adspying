@@ -14,9 +14,9 @@ from datetime import datetime, timedelta
 from geopy.geocoders import Nominatim
 from urllib.parse import urljoin
 
+from itemloaders.processors import Identity, Join, MapCompose, TakeFirst
 from scrapy import Field, Item
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import Identity, Join, MapCompose, TakeFirst
 
 from homespace._wrangling import (
     extract_price_value,
