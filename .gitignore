@@ -85,7 +85,6 @@ celerybeat-schedule
 .env
 
 # virtualenv
-Pipfile.lock
 .venv
 venv/
 ENV/
