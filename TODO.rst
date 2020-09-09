@@ -8,8 +8,9 @@ GLOBAL
 
 - [x] replace the '-' in the package name
 - [x] move the wrangling scripts into the data folder
-- [ ] move the scraping scripts into the data folder
-- [ ] keep only the modules in homespace
+- [x] use poetry for dep management, instead of pipenv
+- [x] move the scraping scripts into the data folder
+- [x] keep only the modules in homespace
 - [ ] move relevant sections to README (workflow, overall steps)
 - [ ] put all the initiation steps on a jupyter notebook
 - [ ] create a dashboard in dash / bokeh
@@ -33,8 +34,8 @@ STEPS TO VANLIFE :)
 *******************
 
 - [x] data collection
-- [ ] data cleaning & merging
-- [ ] ad scraping & alerts
+- [x] data cleaning & merging
+- [x] ad scraping & alerts
 - [ ] filtering & ranking tools
 - [ ] project dashboard
 - [ ] sharing datasets : kaggle, open datasets => loop back on gh
@@ -62,23 +63,23 @@ DATA COLLECTION
 ADS SCRAPING
 ************
 
-- [ ] referential :
-  - [ ] regions
-  - [ ] cities
-  - [ ] ad categories
-  - [ ] url formats by categories => parameters dict (cat => param => url parts)
-  - [ ] xpath to data
-- [ ] configure search : date, max price, min & max years, mileage
-- [ ] extract informations :
-  - [ ] by fixing filtering input (location, price etc)
-  - [ ] by scraping the html
-    - [ ] manufacturer
+- [x] referential :
+  - [x] regions
+  - [x] cities
+  - [x] ad categories
+  - [x] url formats by categories => parameters dict (cat => param => url parts)
+  - [x] xpath to data
+- [x] configure search : date, max price, min & max years, mileage
+- [x] extract informations :
+  - [x] by fixing filtering input (location, price etc)
+  - [x] by scraping the html
+    - [x] manufacturer
     - [ ] model
-    - [ ] location
-    - [ ] price
-    - [ ] mileage
+    - [x] location
+    - [x] price
+    - [x] mileage
     - [ ] contact
-    - [ ] ad age
+    - [x] ad age
     - [ ] ad update count
 - [ ] fill the gaps by asking the seller
 
@@ -163,7 +164,7 @@ DASHBOARD
   - [ ] habitable space : min x, y, z, V
   - [ ] budget : fuel, diy, van, insurance
   - [ ] miles / months, year, total
-  - [ ] priorities (relative weights) : price, space, (mile)age, 
+  - [ ] priorities (relative weights) : price, space, (mile)age,
   - [ ] ranges : consumption (from budget vs miles)
 - [ ] Reparation costs :
   - [ ] MOT
