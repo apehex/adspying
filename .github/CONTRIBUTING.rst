@@ -63,10 +63,10 @@ Ready to contribute? Here's how to set up `homespace` for local development.
 2. Clone your fork locally::
 
     $ git clone git@github.com:your_name_here/homespace.git
-3. Assuming you have pipenv installed, you can **create a new environment with all the dependencies** by typing::
+3. Assuming you have poetry installed, you can **create a new environment with all the dependencies** by typing::
 
     $ make init
-    $ pipenv shell
+    $ poetry shell
 
 4. Create a branch for local development::
 
@@ -108,7 +108,7 @@ Before you submit a pull request, check that it meets these guidelines:
 Add a New Test
 --------------
 
-When fixing a bug or adding features, it's good practice to add a test to demonstrate your fix or new feature behaves as expected. These tests should focus on one tiny bit of functionality and prove changes are correct. 
+When fixing a bug or adding features, it's good practice to add a test to demonstrate your fix or new feature behaves as expected. These tests should focus on one tiny bit of functionality and prove changes are correct.
 
 To write and run your new test, follow these steps:
 

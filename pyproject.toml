@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "homespace"
+version = "0.1.0"
+description = "Find the best deals on second-hand ads websites :dart:"
+license = "MIT"
+authors = ["moodule <moodule@protonmail.com>"]
+readme = "README.rst"
+repository = "https://github.com/moodule/homespace.git"
+keywords = ["scraping", "scrapy-crawler", "second-hand ads", "real-estate"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Framework :: Scrapy",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+beautifulsoup4 = "*"
+geopy = "*"
+googlemaps = {version = "*", optional = true}
+nltk = "*"
+numpy = {version = "*", optional = true}
+pandas = {version = "*", optional = true}
+pymongo = "*"
+scrapy = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+flake8 = "*"
+sphinx = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
