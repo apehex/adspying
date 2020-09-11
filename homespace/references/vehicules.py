@@ -57,7 +57,7 @@ def convert_imp_mpg_to_lpkm(mpg):
     else:
         liters_per_hundred_kilometers = 0.0
     return liters_per_hundred_kilometers
-    
+
 
 def convert_lpkm_to_us_mpg(lpkm):
     """Convert l/100km to US mpg fuel consumption.
