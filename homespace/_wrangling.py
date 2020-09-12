@@ -37,7 +37,7 @@ def format_datetime(
 
     Example:
         27/02/2020 8:42
-        => 2020-02-27T08:42:00 
+        => 2020-02-27T08:42:00
 
     Parameters
     ----------
@@ -49,7 +49,7 @@ def format_datetime(
     Returns
     -------
     out: str.
-        The serialized datetime with ISO-8601 format '%Y-%m-%dT%H:%M:%S'. 
+        The serialized datetime with ISO-8601 format '%Y-%m-%dT%H:%M:%S'.
     """
     return datetime.strptime(
         string,
@@ -95,60 +95,6 @@ def format_number(
         return np.float64(__is_a_number.group(1))
     else:
         return np.float64(np.nan)
-
-#####################################################################
-# TRANSLATION
-#####################################################################
-
-def string_distance(
-        s1: str,
-        s2: str):
-    """
-    Calculate a custom distance between strings.
-
-    Does not take into account the difference in length.
-
-    Parameters
-    ----------
-    s1: str.
-        Any chunk of text.
-    s2: str.
-        Any chunk of text.
-
-    Returns
-    -------
-    out: float.
-        The distance between s1 and s2.
-    """
-    return (
-        edit_distance(s1, s2)
-        - abs(len(s1) - len(s2)))
-
-def find_closest_reference(
-        target: str,
-        candidates,
-        distance: callable=string_distance) -> str:
-    """
-    Find the element in an iterable closest to a given value.
-
-    Parameters
-    ----------
-    target: str.
-        The value to match.
-    candidates: iterable.
-        An iterable object in which the function picks.
-
-    Returns
-    -------
-    out: str.
-        The closest element from the target.
-    """
-    __distances = [
-        distance(
-            s1=target,
-            s2=__s)
-        for __s in candidates]
-    return candidates[np.argmin(__distances)]
 
 #####################################################################
 # TEXT
@@ -219,7 +165,7 @@ def remove_special_characters(
     Returns
     -------
     out: str.
-        A safe version of the input. 
+        A safe version of the input.
     """
     return re.sub(
         '\W+',
