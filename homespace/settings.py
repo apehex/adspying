@@ -90,8 +90,7 @@ ITEM_PIPELINES = {
    'homespace.pipelines.CsvPipeline': 300,
    'homespace.pipelines.HtmlTablePipeline': 301,
    'homespace.pipelines.JsonPipeline': 302,
-   'homespace.pipelines.MongoDbPipeline': 303,
-   'homespace.pipelines.RawPipeline': 304,
+   'homespace.pipelines.MongoDbPipeline': 303
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
