@@ -1,4 +1,4 @@
-* Homespace apehex version:
+* Adspying apehex version:
 * Python version:
 * Operating System:
 
