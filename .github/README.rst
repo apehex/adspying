@@ -1,11 +1,10 @@
-=================
+================
 Adspying apehex
-=================
+================
 
 Find the best deals on second-hand ads websites :dart:
 
 - Free software: `MIT license`_
-- Documentation: `readthedocs`_
 
 Table of Contents
 -----------------
@@ -31,10 +30,10 @@ Development
 
 Contributions welcome! Read the `contribution guidelines`_ first.
 
-History
-~~~~~~~
+Todo
+~~~~
 
-See the `history`_.
+See the `todo`_.
 
 Community
 ~~~~~~~~~
@@ -44,11 +43,11 @@ See the `code of conduct`_.
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `audreyfeldroy/cookiecutter-pypackage`_ project template.
+This package was created with cookiecutter_ and the `apehex/cookiecutter-pypi`_ project template.
 
-.. _`audreyfeldroy/cookiecutter-pypackage`: https://github.com/audreyfeldroy/cookiecutter-pypackage
+.. _`MIT license`: LICENSE
+.. _`apehex/cookiecutter-pypi`: https://github.com/apehex/cookiecutter-pypi
 .. _`code of conduct`: CODE_OF_CONDUCT.rst
 .. _`contribution guidelines`: CONTRIBUTING.rst
-.. _`Cookiecutter`: https://github.com/audreyfeldroy/cookiecutter/
-.. _`MIT license`: .github/LICENSE
-.. _`readthedocs`: https://readthedocs.org/projects/adspying/
+.. _`cookiecutter`: https://github.com/audreyfeldroy/cookiecutter/
+.. _`todo`: TODO.rst
