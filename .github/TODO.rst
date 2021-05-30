@@ -18,6 +18,7 @@ GLOBAL
 - [ ] create a dashboard in dash / bokeh
 - [ ] move the referential in the python package
 - [ ] init script / notebook
+- [ ] verify the types with typical / typing
 
 *******
 WORFLOW
@@ -44,7 +45,6 @@ STEPS TO VANLIFE :)
 - [ ] contact, verification of ads
 - [ ] & finally buying ! and begining a new chapter !..
 - [ ] diy conversion : electricity, internet, solar, water, bedding, furniture, insulation
-- [ ] stacking money
 
 ***************
 DATA COLLECTION
@@ -91,6 +91,8 @@ WRANGLING
 
 - [ ] filter out the cars & trucks : keep only vans ?
 - [ ] list all vans & utilities
+- [ ] distance between ads:
+  - [ ] identify repost of the same content
 - [ ] remove the samples with 0 / NULL data
 - [x] swap the mpg / lpkm confusion errors
 - [ ] switch the metric / imperial measures when there's a mistake
@@ -104,112 +106,3 @@ MERGING
 - [ ] merge consumption / size
 - [ ] merge ads with referential (complete the ad infos)
 - [ ] put unrecognized ads in a separate file
-
-*******
-DATAVIZ
-*******
-
-- [ ] plot the ad price vs most characteristics
-- [ ] plot the averages / stds
-
-******
-MINING
-******
-
-- [x] plot consumption vs emission (by fuel type)
-- [x] linear regression :
-  - [x] mpg vs emission vs fuel type
-  - [ ] mpg vs (gross) weight
-- [x] estimation from combustion chemistry
-
-*************
-CAR VALUATION
-*************
-
-- [ ] age & mileage
-- [ ] fuel efficiency / current models
-- [ ] reparation cost
-- [ ] conversion cost
-- [ ] equipment cost
-- [ ] actual cost (price_new + all)
-- [ ] fuel & electricity price
-- [ ] cost at 0 & 100 000 km
-
-*******
-RANKING
-*******
-
-- [ ] normalize each column used for rating
-- [ ] metric for fuel consumption
-- [ ] metric for co2, co, nox, pm emissions
-- [ ] metric for habitable space
-- [ ] metric for mileage
-- [ ] metric for the cost
-- [ ] overall priority for each metric
-- [ ] global rating
-- [ ] rank all the potential vehicles
-- [ ] rank all the ads
-
-*******
-HONESTY
-*******
-
-- [ ] compare the informations from the seller to the ref
-- [ ] détails et contenu de l'annonce (déjà la taille...)
-- [ ] ratio estimated value / price
-
-*********
-DASHBOARD
-*********
-
-- [ ] Project :
-  - [ ] habitable space : min x, y, z, V
-  - [ ] budget : fuel, diy, van, insurance
-  - [ ] miles / months, year, total
-  - [ ] priorities (relative weights) : price, space, (mile)age,
-  - [ ] ranges : consumption (from budget vs miles)
-- [ ] Reparation costs :
-  - [ ] MOT
-  - [ ] paint
-  - [ ] tyres
-  - [ ] mech ?
-- [ ] Conversion costs :
-  - [ ] materials
-  - [ ] insulation
-  - [ ] water tank
-  - [ ] batteries
-  - [ ] solar panels ?
-  - [ ] tools
-  - [ ] garage
-- [ ] Living costs :
-  - [ ] electricity : kW/h
-  - [ ] diesel
-  - [ ] petrol
-  - [ ] lpg
-  - [ ] insurance
-  - [ ] parking (% time idle)
-  - [ ] total (over a period / distance)
-- [ ] rank & highlight ads
-
-************
-VERIFICATION
-************
-
-- [ ] mileage
-- [ ] technical checkup
-- [ ] papers
-
-**************
-DIY CONVERSION
-**************
-
-- [ ] cost of diy materials / tools / etc
-- [ ] planning & tracking of the conversion
-- [ ] satellite dish => internet connection
-
-****
-TEST
-****
-
-- [ ] find model & make
-- [ ] find closest make
